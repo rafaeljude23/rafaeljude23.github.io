@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Contact - Inspiration Marketing</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a href="index.html">
+          <img class="navbar-logo" src="images/InspirationMarketing-logo.png" width="300" height="auto" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link px-3" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="services.html">Services</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link px-3" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>        
+      </div>
+    </nav>
+
+    <div class="bg-primary py-5 mt-md-5">
+      <div class="container my-5">
+
+        <div class="row align-items-center">
+          <div class="col-md-6 text-white">
+            <h1 class="display-4 font-weight-bold mb-4">Let’s Get In Touch</h1>
+            <p class="lead">We would love to talk about your specific needs and see how our experience can help you grow your business. Reach out to us today and we'll get back to you as soon as possible!</p>
+          </div>
+          <div class="col-md-6">
+            <div class="card pt-3 pb-5 mt-5">
+              <div class="card-body">
+                <form  action="php/captcha_code.php" class="contactform" method="POST">
+                  <div  id="name-group" class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="fullname" id="" class="form-control">
+                  </div>
+                  <div id="email-group" class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" id="" class="form-control">
+                  </div>
+                  <div id="phone-group" class="form-group">
+                    <label>Subject</label>
+                    <input type="text" name="phone" id="" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label>Message</label>
+                    <textarea class="form-control" name="message" id="" rows="3"></textarea>
+                  </div>
+                  
+                  <button id="contactSubmit" type="submit" class="btn btn-primary bg-dark mt-3">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="pt-5 pb-4">  
+      <div class="container">
+        <div class="d-md-flex align-items-center justify-content-between">
+          <a href="index.html">
+            <img src="images/InspirationMarketing-logo.png" width="250" height="auto" alt="">
+          </a>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <hr>
+
+        <div class="text-center small">
+          All Rights Reserved © Copyright 2022
+        </div>
+        
+      </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/custom.js"></script>
+  </body>
+</html>
