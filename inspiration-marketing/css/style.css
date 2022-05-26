@@ -121,6 +121,21 @@ h1, h2, h3, h4, h5, h6,
 	display: inline-block;
 }
 
+/*Captcha*/
+canvas {
+  display: none;
+}
+
+.captcha {
+  height: 50px;
+  margin-top: 20px;
+}
+
+.block {
+  display: block;
+}
+
+
 @media (min-width: 993px) {
 	.navbar {
 		height: 100px;

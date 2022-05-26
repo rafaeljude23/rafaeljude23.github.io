@@ -47,7 +47,7 @@
           <div class="col-md-6">
             <div class="card pt-3 pb-5 mt-5">
               <div class="card-body">
-                <form  action="php/captcha_code.php" class="contactform" method="POST">
+                <form class="contactform" method="POST">
                   <div  id="name-group" class="form-group">
                     <label>Name</label>
                     <input type="text" name="fullname" id="" class="form-control">
@@ -64,8 +64,19 @@
                     <label>Message</label>
                     <textarea class="form-control" name="message" id="" rows="3"></textarea>
                   </div>
-                  
-                  <button id="contactSubmit" type="submit" class="btn btn-primary bg-dark mt-3">Submit</button>
+
+                  <div class="d-flex align-items-center">
+                    <div class="captcha captcha_text">
+                      <div id="captcha">
+                      </div>
+                      <img id="captchaImg" class="block" src="" alt="Enter the character string shown in the image">    
+                    </div>
+                    <img id="captchaRefresh" src="images/refresh.png" width="20" height="auto">  
+                  </div>
+                  <label for="captchaTextBox" class="block">Enter CAPTCHA code:</label>
+                  <input type="text" id="captchaTextBox"/><br>
+
+                  <button type="submit" class="btn btn-primary bg-dark mt-3">Submit</button>
                 </form>
               </div>
             </div>
