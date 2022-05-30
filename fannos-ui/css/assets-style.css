@@ -1271,6 +1271,10 @@ input[type="search"]::-webkit-search-cancel-button {
     background: #edeff2;
 }
 
+.scrollcards-home {
+    max-width: 1000px;
+}
+
 @media (max-width: 767px) {
     .flifgt-navigation, 
     #fbook-1, #select-box-mobile {
