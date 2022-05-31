@@ -150,36 +150,102 @@
           <div class="col-md-6">
             <div class="card pt-3 pb-5 mt-5">
               <div class="card-body">
-                <form class="contactform" method="POST">
-                  <div id="name-group" class="form-group">
+                <form action="contact.php" method="post" role="form" class="hp-email-form contact-form contactform needs-validation" novalidate="novalidate">
+                  <div class="form-group">
                     <label>Name</label>
-                    <input type="text" name="fullname" id="" class="form-control">
+                    <input type="text" name="name" id="" class="form-control" required="">
+                    <div class="invalid-feedback">
+                      Please provide a name.
+                    </div>
                   </div>
-                  <div id="email-group" class="form-group">
+                  <div class="form-group">
                     <label>Email</label>
-                    <input type="email" name="email" id="" class="form-control">
+                    <input type="email" name="email" id="" class="form-control" required="">
+                    <div class="invalid-feedback">
+                      Please provide an email.
+                    </div>
                   </div>
-                  <div id="phone-group" class="form-group">
+                  <div class="form-group">
                     <label>Subject</label>
-                    <input type="text" name="phone" id="" class="form-control">
+                    <input type="text" name="subject" id="" class="form-control" required="">
+                    <div class="invalid-feedback">
+                      Please provide an subject.
+                    </div>
                   </div>
                   <div class="form-group">
                     <label>Message</label>
                     <textarea class="form-control" name="message" id="" rows="3"></textarea>
                   </div>
 
-                  <div class="d-flex align-items-center">
-                    <div class="captcha captcha_text">
-                      <div id="captcha">
-                      </div>
-                      <img id="captchaImg" class="block" src="" alt="Enter the character string shown in the image">    
+                <!--VALIDATION Captcha Code-->
+                <div class="row no-gutters">
+                    <div class="col-lg-12 pl-0 pr-0">
+                        <div class="form-group mt-20" style="padding-top: 0px">
+                            <div class="comment-form__input-box" style="width:100%;">
+                                <input type="text" name="captchacode" placeholder="Security Check" id="validation-code" style="width: 100%;" class="form-control" required="">
+                                <div class="invalid-feedback">
+                                  Please provide a captcha code.
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <img id="captchaRefresh" src="images/refresh.png" width="20" height="auto">  
-                  </div>
-                  <label for="captchaTextBox" class="block">Enter CAPTCHA code:</label>
-                  <input type="text" id="captchaTextBox"/><br>
+                    <div class="col-lg-6 pl-0">
+                        <div class="form-group mt-20 cstm-group">
 
-                  <button type="submit" class="btn btn-primary bg-dark mt-3">Submit</button>
+                            <img class="img-fluid" src="verification.php/rand=<?php echo rand(); ?>" id="captcha_image" style="width:26%; border-radius:10px; height: 45px; ">
+                            <p style="line-height:1.4; font-size: 13px;margin-top:10px;margin-left:25px; color: #000;">Can't read the image? <br> <a href="javascript: refreshCaptcha();" style="color:#000;text-decoration: underline;">click here</a> to refresh</p>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 pr-0 text-right">
+
+                        <button class="btn btn-primary bg-dark mt-3" type="submit" id="sendMessageButton" style="margin-top:0px;border:0px;top:0px;">Submit Message</button>
+
+                    </div>
+                </div>
+
+
+
+
+                <!-------------- reCaptcha Button  ----------------->
+                <div class="form-group mt-20">
+
+                </div>
+
+
+
+                <!-------------------Captcha Script------------------------------>
+                <script>
+                    //Refresh Captcha
+                    function refreshCaptcha(){
+                        var img = document.images['captcha_image'];
+                        img.src = img.src.substring(
+                            0,img.src.lastIndexOf("?")
+                        )+"?rand="+Math.random()*1000;
+                    }
+                </script>
+
+                <script>
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function() {
+                  'use strict';
+                  window.addEventListener('load', function() {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                      form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                          event.preventDefault();
+                          event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                      }, false);
+                    });
+                  }, false);
+                })();
+                </script>
+
                 </form>
               </div>
             </div>
