@@ -1,0 +1,67 @@
+/* ----- Contact Deetails ----- */
+.contact-details {
+	padding-left: 50px;
+	max-width: 500px;
+	width: 100%;
+
+	p {
+		font-size: 0.8em;
+		font-weight: 600;
+		color: $gray-1;
+		margin: 0;
+
+		&:nth-of-type(1) {
+			max-width: 300px;
+			width: 100%;
+			font-weight: bold;
+		}
+
+		i {
+			margin-right: 15px;
+			color: $lightblue;
+
+			&.fa-phone {
+				font-size: 1.2em;
+				font-weight: bold;
+			}
+		}
+	}
+
+	hr {
+		border-top-color: #707070;
+		margin: 10px 0;
+		max-width: 350px;
+		width: 100%;
+	}	
+
+	&.billing-address {
+		padding-left: 150px;
+
+		p {
+			color: $lightblue;
+			font-size: 1em;
+			font-weight: 600;
+			line-height: 1.4;
+
+			&.change-address {
+				color: $red;
+			}
+		}
+	}
+}
+
+@include bootstrap-md () {
+	.contact-details.billing-address {
+		margin-top: 30px;
+		padding-left: 15px;
+	}
+}
+
+@include bootstrap-sm () {
+	.contact-details {
+		padding-left: 15px;
+	}
+}
+
+
+

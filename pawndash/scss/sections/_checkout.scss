@@ -1,0 +1,108 @@
+/* ----- Checkout ----- */
+.table.table-bordered {
+	border-color: #ccc;
+
+	th,tr,td {
+		border-color: #ccc;
+		color: $lightblue;
+	}
+
+	img {
+		max-width: 80px;
+		min-width: 40px;
+	}
+
+	thead  th {
+		font-size: 1.1em;
+		font-weight: bold;
+		// padding-left: 40px;
+		border-bottom: none;
+
+		&:not(:first-child) {
+			border-left: none;
+		}
+
+		&:not(:last-child) {
+			border-right: none;
+		}
+	}
+
+	tbody th {
+		padding:1rem;
+	}
+
+	td {
+		font-size: 1em;
+		font-weight: 600;
+		vertical-align: middle;
+		padding-left: 35px;
+		line-height: 1.2;
+	} 
+
+	.quantity {
+		@extend %border-line;
+		padding: 11px 0;
+		max-width: 70px;
+		min-width: 40px;
+	}
+
+	.totals {
+		padding: 1.625rem 0.75rem;
+		font-size: 0.95em;
+		font-weight: bold;
+
+		span {
+			&.total {
+				color: #222;
+			}
+		}
+	}
+}
+
+.btn-confirm {
+	padding: 1rem;
+	font-size: 1.1em;
+	max-width: 200px;
+}
+
+@include bootstrap-md () {
+	.table.table-bordered {
+
+		thead  th {
+			font-size: 1.1em;
+			padding-left: 25px;
+		}
+
+		td {
+			font-size: 1em;
+			padding-left: 15px;
+		} 
+
+		.quantity {
+			width: 50px;
+		}
+
+		.totals {
+			padding: 1.6rem 0.75rem;
+			font-size: 0.95em;
+			font-weight: bold;
+
+			span {
+				&.total {
+					color: #333;
+				}
+			}
+		}
+	}	
+}
+
+@include bootstrap-sm () {
+	.table.table-bordered {
+		td {
+
+			&.table-prod {
+				min-width: 250px;
+			}
+		}
+	}	
+}

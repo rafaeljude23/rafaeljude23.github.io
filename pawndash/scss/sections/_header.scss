@@ -1,0 +1,107 @@
+/* ----- Header ----- */
+header {
+	padding: 30px 0 0;
+
+	.navbar {
+
+		&.search-bar {
+			background: none;
+
+			// Logo
+			.navbar-brand {
+				padding: 0 15px;
+
+				img {
+					width: 180px;
+				}
+			}
+
+			form {
+				input[type=text] {
+					padding: 10px 15px;
+					font-size: 0.9em;
+					height: 40px;
+				}
+
+				button {
+					background: $darkblue;
+					font-weight: bold;
+					padding: 0;
+					max-width: 120px;
+					width: 100%;
+					height: 40px;
+
+					&:hover, &:focus {
+						background: #0c2291;
+					}
+				}
+			}
+		}
+
+		&.menu-bar {
+			.navbar-nav .nav-item {		
+				.nav-link {
+					color: #323232;
+					font-weight: 600;
+					padding: 7px 10px;
+					font-size: 1em;
+
+					&.dropdown-toggle {
+						font-weight: bold;
+						margin-left: 25px;
+
+						&:after {
+							margin-left: 10px;
+							font-size: 1.35em;
+							vertical-align: middle;
+						}
+					}
+
+					&:hover, &:focus, &:active {
+						text-decoration: none;
+						color: $red;
+					}
+				}
+
+				.dropdown-menu {
+					min-width: 7.5rem;
+					margin-left: 35px;
+
+					.dropdown-item {
+						font-size: 1em;
+						padding: 2px 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include bootstrap-lg () {
+	header {
+		.navbar {
+			&.menu-bar {
+				.navbar-nav .nav-item {		
+					.nav-link {
+						&.dropdown-toggle {
+							font-weight: bold;
+							margin-left: 0;
+
+							&:after {
+								margin-left: 10px;
+								font-size: 1.35em;
+								vertical-align: middle;
+							}
+						}
+					}
+
+					.dropdown-menu {
+						margin-left: 10px;
+						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+

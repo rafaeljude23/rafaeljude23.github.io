@@ -1,0 +1,86 @@
+/* ----- Google Fonts ----- */
+// @import url('https://fonts.googleapis.com/css?family=Crimson+Text:400i,700|Montserrat:100,200,300,400,500,700,800');
+
+
+/* ----- Fonts ----- */
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('../fonts/MyriadPro-Regular.woff2') format('woff2'),
+      url('../fonts/MyriadPro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica LT Std';
+  src: url('../fonts/HelveticaLTStd-Bold.woff2') format('woff2'),
+      url('../fonts/HelveticaLTStd-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+%tx-montserrat {
+  font-family: 'Montserrat', sans-serif;  
+}
+
+%tx-crimsontext {
+  font-family: 'Crimson Text', sans-serif;  
+}
+
+%tx-myriadpro {
+  font-family: 'Myriad Pro', sans-serif;  
+}
+
+%tx-helveticaLTStd {
+  font-family: 'Helvetica LT Std', sans-serif;
+}
+
+/* ----- Colors ----- */
+$default-color: #fff;
+$red-color: #ed1c24;
+$gray-color: #9b9b9b;
+$midgray-color: #adadad;
+$darkgray-color: #212121;
+
+/* ----- Bootstrap breakpoints ----- */
+$bootstrap-lg-breakpoint: 1199px;
+$bootstrap-md-breakpoint: 991px;
+$bootstrap-sm-breakpoint: 767px;
+$bootstrap-xs-breakpoint: 575px;
+
+/* ----- Large devices (desktops, less than 1200px) ----- */
+@mixin bootstrap-lg-breakpoint () {
+  @media screen and (max-width: #{$bootstrap-lg-breakpoint}) {
+    @content;
+  }
+}
+
+/* ----- Medium devices (tablets, less than 992px) ----- */
+@mixin bootstrap-md-breakpoint () {
+  @media screen and (max-width: #{$bootstrap-md-breakpoint}) {
+    @content;
+  }
+}
+
+/* ----- Small devices (landscape phones, less than 768px) ----- */
+@mixin bootstrap-sm-breakpoint () {
+  @media screen and (max-width: #{$bootstrap-sm-breakpoint}) {
+    @content;
+  }
+}
+
+/* ----- Extra small devices (portrait phones, less than 576px) ----- */
+@mixin bootstrap-xs-breakpoint () {
+  @media screen and (max-width: #{$bootstrap-xs-breakpoint}) {
+    @content;
+  }
+}
+
+@include bootstrap-lg-breakpoint () {}
+@include bootstrap-md-breakpoint () {}
+@include bootstrap-sm-breakpoint () {}
+@include bootstrap-xs-breakpoint () {}
+
+
+
+

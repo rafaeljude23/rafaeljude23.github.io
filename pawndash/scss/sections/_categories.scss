@@ -1,0 +1,72 @@
+/* ----- Popular Categories ----- */
+.categories {
+	padding: 50px;
+	color: #001870;
+	@extend %border-line;
+	@extend %border-margin;
+
+	a {
+		color: #001870;
+		font-weight: 600;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	img {
+		transition: 0.3s all;
+		max-width: 165px;
+		width: 100%;
+		margin: 15px auto 10px;
+		display: block;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	.label-categories {
+		font-size: 0.9em;
+		font-weight: bold;
+	}
+
+	.btn-outline-primary {
+	  border-radius: 0;
+	  border-color: $darkblue;
+	  color: $lightblue;
+	  padding: 12px 0;
+	  max-width: 210px;
+	  width: 100%;
+
+	  i {
+	  	margin-left: 4px;
+	  }
+
+	  &:hover {
+	  	background: $darkblue;
+	  	color: white;
+	  }
+	}
+}
+
+@media screen and (min-width: 993px) {
+	.categories .second-row {
+			max-width: 830px;
+		}	
+}
+
+@include bootstrap-lg () {
+	.categories .second-row {
+		max-width: 700px;
+	}	
+}
+
+
+@media screen and (max-width: 480px) {
+	.categories {
+			padding: 50px 25px;
+		}	
+}
+
+

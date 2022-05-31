@@ -1,0 +1,188 @@
+.select-header {
+	background-image: url(../images/select/select-bg.jpg);
+}
+
+.select-series {
+	padding: 0 0 500px;
+
+	h5 {
+		font-size: 1.1em;
+		margin-bottom: 25px;
+	}
+	
+	.nav {
+		margin-bottom: 30px;
+
+		.nav-link {
+			background-repeat: no-repeat;
+			background-position: top center;
+			background-size: contain;
+			background-image: url("../images/select/menu-bg.png");
+			width: 170px;
+			height: 40px;
+			padding: 8px;
+			margin: 0 -19px 0 0;
+			font-size: 1.3em;
+			padding: 2px 8px;
+
+			&.active {
+				background-image: url("../images/select/select-series-bg.png");
+				background-size: cover;
+				padding-top: 8px;
+				padding-left: 12px;
+				height: 36px;
+				width: 165px;
+				font-size: 0.875em; 
+				position: relative;
+
+				&:before {
+					content: "";
+					width: 55px;
+					height: 1px;
+					background: $red-color;
+					position: absolute;
+					bottom: -5px;
+					left: 15%;
+				}
+			}
+		}
+
+		.nav-item {
+			&:last-child {
+				.nav-link {
+					padding-left: 25px;
+					margin-left: -14px;
+					height: 36px;
+					background-image: url("../images/select/menu-last.png");
+				}
+			}
+		}
+	}
+}
+
+.build-cont {
+	position: absolute;
+	max-width: 925px;
+	bottom: -175px;
+	left: 50%;
+	transform: translate(-50%);
+	z-index: 9;
+	overflow: hidden;
+}
+
+.build-now {
+	width: 275px;
+	background: #5c5c5c;
+	margin-bottom: 32px;
+
+	&.active {
+			color: #1f1f1f;
+
+		.imTop, .imBot {
+			background: #fff;
+		}
+
+		h3 {
+			color: #1f1f1f;
+		}
+
+		.preview {
+			.border-box {
+				border-color: #fff;
+			}
+		}
+
+		.btn {
+			background: #010000;
+		}
+	}
+
+	h3 {
+		font-size: 1.5em;
+	}
+
+	.imTop, .imBot {
+		background: #050505;
+	}
+
+	.imBot {
+		padding: 10px 12px 5px;
+	}
+
+	.preview {
+		background-repeat: no-repeat;
+		background-position: top center;
+		background-size: contain;
+		width: 275px;
+		height: 175px;
+
+		&.b52-21 {
+			background-image: url("../images/select/B52-21.jpg");
+		}
+
+		&.b52-23 {
+			background-image: url("../images/select/B52-23.jpg");
+		}
+
+		&.tomcat-f21 {
+			background-image: url("../images/select/Tomcat-F21.jpg");
+		}
+
+		&.tomcat-f22 {
+			background-image: url("../images/select/Tomcat-F22.jpg");
+		}
+
+		&.tomcat-f24 {
+			background-image: url("../images/select/Tomcat-F24.jpg");
+		}
+
+		.border-box{
+			width: 250px;
+			height: 150px;
+			border: 2px solid $red-color;
+		}
+	}
+
+	.btn {
+		padding: 3px 7px;
+		font-size: 1.15em;
+	}
+
+	.model-from {
+		line-height: 1.4;
+
+		.dollar-sign {
+			vertical-align: 7px;
+			margin-right: 1px;
+		}
+
+		.price {
+			font-size: 1.6em;
+		}
+	}
+}
+
+.select-bot {
+	height: 400px;
+}
+
+
+@include bootstrap-sm-breakpoint () {
+	.select-series {
+		padding: 0;
+
+		h5 {
+			margin-bottom: -50px;
+		}
+	}
+
+	.build-cont {
+		position: relative;
+		overflow: hidden;
+		bottom: -100px;
+	}
+
+	.select-bot {
+		height: 300px;
+	}
+}

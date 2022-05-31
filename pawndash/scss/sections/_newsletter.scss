@@ -1,0 +1,75 @@
+/* ----- Newsletter ----- */
+.newsletter {
+	background: $darkblue;
+	padding: 10px 0;
+	color: white;
+	margin-top: 50px;
+
+	p {
+		margin: 5px 0 0;
+		font-size: 0.9em;
+
+		i {
+			font-size: 1.75em;
+			margin-right: 12px;
+		}
+
+		span {
+			font-size: 0.7em;
+			margin-left: 10px;
+		}
+	}
+	
+	form {
+		max-width: 470px;
+		width: 100%;
+
+		.form-control {
+			font-size: 1em;
+			padding-left: 20px;
+		}
+
+		.btn-primary {
+			font-size: 1em;
+			font-weight: bold;
+			padding: 8px 0;
+			max-width: 120px;
+			width: 100%;
+		}	
+	}		
+}
+
+
+@media screen and (min-width: 992px) {
+	.newsletter .container {
+		max-width: 1000px;
+	}
+}
+
+/* ----- Small devices (landscape phones, less than 768px) ----- */
+@include bootstrap-sm () {
+	.newsletter {
+		padding: 15px 0;
+
+		.container {			
+			p {
+				margin: 0 0 15px!important;
+			}
+
+			form {
+				margin: 0 auto;
+				display: block;
+
+				.form-control {
+					padding-left: 15px;
+				}
+			}		
+		}
+	}
+}
+
+
+
+
+
+

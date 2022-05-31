@@ -1,0 +1,172 @@
+/* ----- General ----- */
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: white;
+}
+
+h3, h4 {
+	color: $lightblue;;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+h4 {
+	font-size: 1.15em;
+	margin-bottom: 30px;
+}
+
+.btn-primary, .btn-secondary {
+	border-radius: 0;
+	border: none;
+	cursor: pointer;
+}
+
+.btn-primary {
+	background: $red;
+	font-weight: bold;
+
+	&:hover, &:focus {
+		background: #f22400;
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+/* ----- Form ----- */
+form {
+	.form-control {
+		border-radius: 0;
+
+		&:focus {
+			background: $input-focus;
+			border-color: lightgray;
+		}
+	}
+
+	&.input-form {
+		.form-control {
+			background: $gray;
+			border-color: lightgray;
+			font-weight: 600;
+			font-size: 0.925em;
+			padding: 20px;
+
+			&:focus {
+				background: $input-focus;
+			}
+		}
+
+		.btn-primary {
+			padding: 12px 0;
+			max-width: 200px;
+			margin: 25px 0;
+			font-size: 1.25em;
+		}
+
+	  input[type=number]::-webkit-inner-spin-button,
+	  input[type=number]::-webkit-outer-spin-button {
+	    -webkit-appearance: none;
+	    margin: 0;
+	  }
+
+		
+		.form-check-label {
+			font-size: 0.7em;
+			font-weight: 600;
+			color: $gray-1;
+			padding-left: 3em;
+
+			input[type="checkbox"] {
+			  -webkit-appearance: none;
+			  -moz-appearance: none;
+			  appearance: none;
+
+			  /* Styling checkbox */
+			  width: 21px;
+			  height: 21px;
+			  background-color: #fff;
+			  @extend %border-line;
+			  position: absolute;
+			  top: 0;
+			  left: 20px;
+			}
+
+			input[type="checkbox"]:checked {
+			  background: url("../images/check.png") no-repeat center;
+			  background-size: 12px 12px;
+			}
+		}
+	}
+}
+
+/* ----- Breadcrumb ----- */
+.breadcrumb {
+	background: transparent;
+	padding: 0;
+
+	.breadcrumb-item {
+		font-size: 0.75em;
+		font-weight: 600;
+		color: #707070;
+
+		+.breadcrumb-item:before {
+			content: ">";	
+			padding: 0 5px;	
+		}
+
+		&.active {
+			font-weight: bold;
+		}
+	}
+
+	&.headings {
+		.breadcrumb-item {
+			font-size: 1.5em;
+			font-weight: normal;
+			color: $lightblue;
+
+			+.breadcrumb-item:before {
+				color: $lightblue;	
+				padding: 0 12px;	
+			}
+
+			&.active {
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+@include bootstrap-lg () {
+	.breadcrumb {
+		&.headings {
+			.breadcrumb-item {
+				font-size: 1.25em;
+			}
+		}
+	}
+}
+
+@include bootstrap-sm () {
+	.breadcrumb {
+		&.headings {
+			.breadcrumb-item {
+				font-size: 1em;
+			}
+		}
+	}
+}
+
+/* ----- Image Banners ----- */
+.img-banners {
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.95;
+	}
+}
+
+

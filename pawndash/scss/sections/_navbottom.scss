@@ -1,0 +1,70 @@
+/* ----- Navigation bottom ----- */
+.navbottom {
+	padding: 50px 0 0;
+
+	.img-headset {
+		max-width: 45px;
+		width: 100%;
+		margin-right: 20px;
+	}
+
+	.questions {
+		font-size: 1em;
+		line-height: 1.4;
+
+		span {
+			font-size: 0.6em;
+		}
+	}
+
+	.contact-info {
+		font-size: 0.6em;
+
+		span {
+			font-weight: bold;
+		}
+	}
+
+	.social-icons {
+		margin-top: 7px;
+
+		a {
+			color: #707070;
+			font-size: 1.25em;
+			margin-right: 7px;
+		}
+	}
+
+	.title-menu-bottom {
+		font-weight: bold;
+		font-size: 0.7em;
+		margin-bottom: 15px;
+	}
+
+
+	.list-unstyled li a {		 
+		font-size: 0.6em;
+		color: #323232;		
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.navbottom .container {
+		max-width: 1000px;
+	}
+}
+
+@include bootstrap-xs () {
+	.navbottom 	{
+		padding: 40px 0 0;
+
+		.title-menu-bottom  {
+			margin: 20px 0 10px;
+		}
+
+		.list-unstyled {
+			margin: 0;
+		}
+	}
+}
+

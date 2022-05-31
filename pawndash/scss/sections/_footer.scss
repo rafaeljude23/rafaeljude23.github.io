@@ -1,0 +1,32 @@
+/* ----- Footer ----- */
+footer {
+	margin-top: 50px;
+	padding: 15px 0;
+	background: $gray;
+		
+	p {
+		font-size: 0.6em;
+		margin: 10px 0;
+	}
+
+	img {
+		margin-right: 15px; 
+	}
+
+}
+
+@media screen and (min-width: 992px) {
+	footer .container {
+		max-width: 1000px;
+	}
+}
+
+@include bootstrap-sm () {
+	footer {
+		p {
+			margin: 12px 0 5px;
+		}
+	}
+}
+
+

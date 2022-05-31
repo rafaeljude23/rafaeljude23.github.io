@@ -1,0 +1,17 @@
+.category-header {
+	background-image: url(../images/category/category-bg.jpg);
+	height: 288px;
+}
+
+.category-series {
+	background: linear-gradient(to bottom, #4b4b4b, #232323);
+	padding: 70px 0 150px;
+
+	img {
+		width: 475px;
+
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+}

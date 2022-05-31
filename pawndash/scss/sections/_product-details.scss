@@ -1,0 +1,100 @@
+/* ----- Product details ----- */
+.product-details {
+	.nav-pills {
+		border-bottom: 1px solid #ccc;
+		margin: 50px 0 0;
+		padding-left: 45px;
+
+		.nav-item {
+			&:first-child {
+				margin: 0 50px 0 25px;
+			}
+
+			.nav-link {
+				color: #333;
+				padding: 15px 0;
+				font-size: 1.5em;
+
+				&.active {
+					background: none;
+					color: $lightblue;
+					font-weight: bold;
+					border-radius: 0;
+					border-bottom: 3px inset $lightblue;
+				}
+			}
+		}
+	}
+
+	.tab-content {
+		padding: 70px 80px 40px 70px;
+		@extend %border-line;
+		border-top: none;
+
+		h3 {
+			font-weight: 600;
+			margin-bottom: 15px;
+			font-size: 1.65em;
+		}
+
+		p {
+			color: $lightblue;
+			font-size: 1.1em;
+			margin: 0 0 40px;
+
+			&.tags {
+				font-size: 1em;
+				margin: 0 0 10px;
+
+				span {
+					font-weight: bold;
+					margin-right: 5px;
+				}
+
+				a {
+					color: $lightblue;
+				}
+			}
+
+		}
+	}
+}
+
+@include bootstrap-md () {
+	.product-details {
+		.nav-pills {
+			padding-left: 10px;
+		}
+
+		.tab-content {
+			padding: 40px;
+		}
+	}	
+}
+
+@media screen and (max-width: 480px) {
+		.product-details {
+			.nav-pills {
+				.nav-item {
+					&:first-child {
+						margin: 0 25px 0 15px;
+					}
+					.nav-link {
+						font-size: 1.2em;
+				}
+			}
+		}
+
+		.tab-content {
+			padding: 40px 25px;
+
+			h3 {
+				font-size: 1.2em;
+			}
+
+			p {
+				font-size: 1em;
+			}
+		}
+	}
+}

@@ -1,0 +1,204 @@
+/* ----- Product Preview ----- */
+.product-preview {
+	margin: 2em 0 0;
+
+	hr {
+		border-color: #ccc;
+	}
+
+	&.absentee-bid {
+		margin: 0 0 4em;
+
+		.top-preview {
+			margin-top: 40px;
+			padding: 3em 1em 4em;
+
+			img {
+				max-width: 230px;
+			}
+		}
+
+		.atleast-bid {
+			font-size: 1.075em;
+			font-style: italic;
+			color: $red;
+			font-weight: 600;
+		}
+
+		.form-control {
+			max-width: 250px;
+			font-size: 1.75em!important;
+			font-weight: 600!important;
+			padding: 12px 15px!important;
+		}
+		
+		.btn-primary {
+			max-width: none!important;
+			padding: 15px 25px!important;
+		}
+
+		.current-bid {
+			font-size: 0.75em;
+			font-weight: bold;
+			color: $lightblue;
+
+			span {
+				font-size: 1.6em;
+				font-weight: 600;
+				margin-right: 7px;
+			}
+		}
+
+		.total {
+			font-size: 1.575em;
+			font-weight: bold;
+			color: $lightblue;
+		}
+
+		.includes {
+			color: $lightblue;
+			font-weight: bold;
+			font-size: 0.7em;
+			font-style: italic;
+		}
+
+		.form-check-label {
+			font-size: 0.75em;
+		}
+
+		.cancel-bid a {
+			color: $red;
+			font-weight: 600;
+			font-size: 0.8em;
+
+			&:hover, &:focus {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.top-preview {
+		@extend %border-line;
+		padding: 4em 2em 6em;
+
+		img {
+			max-width: 350px;
+			width: 100%;
+		}
+	}
+
+	.bottom-preview {
+		@extend %border-line;
+		padding: 15px 15px 25px;
+
+		&:focus, &:hover {
+			border-color: #aaa;
+		}
+	}
+
+	.place-bid {
+		margin-left: 50px;
+
+		h4 {
+			font-weight: 600;
+			font-size: 1.35em;
+			line-height: 1.25;
+		}
+
+		.color-gray {
+			font-size: 0.8em;
+			font-weight: 600;
+			color: $gray-1;
+
+			&.buyers-premium {
+				margin-bottom: 35px;
+			}
+		}
+
+		.appraised-value {
+			color: $green;
+			font-weight: 600;
+			font-size: 0.8em;
+
+			&.absentee {
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+
+			span {
+				font-size: 2.25em;
+				margin-right: 10px;
+			}
+		}
+
+		.time-left {
+			font-size: 1.15em;
+			font-weight: 600;
+			color: $lightblue;
+		}
+
+		.timer {
+			color: $lightblue;
+			font-weight: bold;
+			margin: 0 0 5px;
+			background: none;
+			border: none;
+
+			span {
+				background: $lightgray;
+				padding: 3px 5px;
+				font-size: 1.35em;
+				font-weight: 600;
+				border-radius: 4px;
+				margin: 0 1px;
+				@extend %border-line;
+			}
+		}
+
+		.timer-unit {
+			font-size: 0.6em;
+			font-weight: 600;
+				
+			span {
+				&:nth-of-type(1) {
+					margin-left: 7px;
+				}
+
+				&:nth-of-type(2) {
+					margin-left: 24px;
+				}
+
+				&:nth-of-type(3) {
+					margin-left: 22px;
+				}
+
+				&:nth-of-type(4) {
+					margin-left: 27px;
+				}
+			}
+		}
+
+		.input-form {
+			.form-control {
+				padding: 17px 15px;
+				font-size: 1.35em;
+				color: $lightblue;
+				font-weight: bold;
+			}
+
+			.btn-primary {
+				max-width: none;
+				font-size: 1.3em;
+				padding: 17px 0;
+			}
+		}
+	}
+}
+
+@include bootstrap-md () {
+	.product-preview .place-bid {
+		margin-left: 0;
+	}
+}
+
+

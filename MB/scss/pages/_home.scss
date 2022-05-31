@@ -1,0 +1,461 @@
+/* ----- Carousel Home ----- */
+.carousel-home {
+	.carousel-bg {
+	  padding: 250px 0 150px;
+
+	  &.home-bg {
+	    background: url(../images/home/home-bg.jpg) no-repeat top center;
+	  }
+	}
+
+	.carousel-control-prev, .carousel-control-next {
+		img {
+			margin-top: 100px;
+		}
+	}
+
+	.carousel-border {
+		width: 800px;
+		padding: 25px 15px 75px;
+		
+		h1, p {
+			max-width: 700px;
+		}
+
+		h1 {
+			font-size: 5.75em;
+			line-height: 1.3;		
+		}
+
+		p {
+			font-size: 2em;
+			line-height: 1;
+		}
+		
+		.bottom-left-border, .bottom-right-border {
+			background: $red-color;
+			height: 5px;
+			width: 34%;
+			bottom: 0;
+		}
+
+		.bottom-left-border {
+			left: 0;
+		}
+
+		.bottom-right-border {
+			right: 0;
+		}
+
+		.border-btn {
+			bottom: -22px;
+			left: 0;
+		}
+
+		.btn-outline-primary {
+			border-color: #fff;
+			border-width: 2px;
+			padding: 12px 22px;
+			letter-spacing: 1px;
+
+			&:focus, &:hover {
+				background: $red-color;
+				border-color: $red-color;
+			}
+		}
+	} 
+}
+
+/* ----- Our Standards ----- */
+.our-standards {
+  background: radial-gradient(#2d3030, #1b1c1c);
+  padding: 40px 0;
+
+	h1 {
+  		margin-bottom: 25px;
+  		font-size: 3.25em;
+	}
+
+  	p {
+		font-size: 1.5em;
+		line-height: 1.4em;
+  	}
+
+  	.carousel-indicators {
+	  li {
+	    width: 20px;
+	    height: 20px;
+	    margin: 0 5px;
+	  }
+	}
+}
+
+/* ----- Series ----- */
+.series {
+	h2 {
+		font-size: 2.25em;
+	}
+
+	.vert-line {
+		position: absolute;
+  		transform: rotate(-90deg);
+		width: 600px;
+		height: 50px;
+		top: 340px;
+		bottom: 0;
+	}
+
+	.vert-1 {
+		left: -275px;
+  		background-color: rgba(91, 91, 91, 0.502);
+	}
+
+	.vert-2 {
+		left: -220px;
+  		background-color: rgba(91, 91, 91, 0.502);
+	}
+
+	.vert-3 {
+		background-color: rgba(61, 61, 61, 0.902);
+		left: -275px;
+	}
+
+	.vert-4 {
+		background-color: rgba(79, 79, 79, 0.902);
+		left: -220px;
+	}
+
+	.vert-5 {
+  		background-color: rgba(91, 91, 91, 0.902);
+		right: -275px;
+	}
+}
+
+.b52-series, .tomcat-series {
+	background-size: cover;	
+	height: 665px;	
+}
+
+.series-boat {
+	top: 0;
+	left: 50%;
+	transform: translate(-50%);
+	z-index: 2;
+	width: 80px;
+}
+
+.series-header {
+	color: #2c2c2c;
+	padding: 12px 0 10px;
+}
+
+.b52-series {
+	background: url(../images/home/b52-series.jpg) no-repeat center;
+
+	.series-header {
+		background: #afafaf;
+	}
+}
+
+.tomcat-series {
+	background: url(../images/home/tomcat-series.jpg) no-repeat center;
+
+	.series-header {
+		background: #c9c9c9;
+	}
+}
+
+/* ----- Our events ----- */
+.our-events {
+	h1 {
+		font-size: 4.25em;
+		line-height: 1.1;
+	}
+
+	h4 {
+		font-size: 1.75em;
+		margin-bottom: 35px;
+	}
+}
+
+.event-cont {
+	max-width: 320px;
+
+	h3 {
+		font-size: 2em;
+	}
+
+	a {
+		&:hover {
+			color: $red-color;
+		}
+	}
+}
+
+/* ----- What clients say ----- */
+.clients-say {
+	background: linear-gradient(#161717, #000);
+	padding: 30px 0 55px;
+
+	.container {
+		max-width: 1000px;
+	}
+
+	h1 {
+		font-size: 4.25em;
+	}
+
+	.right-doublequote {
+		font-size: 8em;
+		height: 35px;
+		color: #3f4040;
+		line-height: 0.7;
+	}
+
+	p {
+		font-size: 1.1em;
+		line-height: 1.3;
+	}
+
+	.rounded-bg {
+		width: 250px;
+		height: 250px;
+		overflow: hidden;
+		border: 7px solid $red-color;
+	}
+
+	.rounded-img {
+		background: url(../images/home/tomcat-series.jpg) no-repeat top left;
+		background-size: cover;	
+		transform: scale(1.2);
+		width: 100%;
+		height: 100%;
+	}
+
+	h4 {
+		line-height: 1.3;
+	}
+}	
+
+/* ----- Map container ----- */
+.home-map {
+	background: url(../images/home/home-map.jpg) no-repeat top center;
+	background-size: cover;
+	height: 400px;
+}
+
+
+@include bootstrap-lg-breakpoint () {
+	.carousel-home {
+		.carousel-bg {
+		  padding: 180px 0 150px;
+		}
+
+		.carousel-control-prev, .carousel-control-next {
+			width: 10%;
+		}
+	}	
+}
+
+@include bootstrap-md-breakpoint () {
+	.carousel-home {
+		.carousel-control-prev, .carousel-control-next {
+
+			img {
+				margin: 50px;
+				width: 50px;
+			}
+		}
+
+		.carousel-border {
+			width: 600px;
+			padding: 25px 15px 75px;
+
+			h1 {
+				font-size: 5em;
+			}
+
+			p {
+				font-size: 1.75em;
+			}
+			
+			.bottom-left-border, .bottom-right-border {
+				width: 29%;
+			}
+		} 
+	}		
+
+	.our-events {
+		h1 {
+			font-size: 4em;
+		}
+
+		h4 {
+			font-size: 1.5em;
+		}
+	}
+
+	.event-cont {
+		h3 {
+			font-size: 1.75em;
+		}
+	}
+
+	.clients-say {
+		h1 {
+			font-size: 4em;
+		}
+	}	
+}
+
+@include bootstrap-sm-breakpoint () {
+	.carousel-home {
+		.carousel-bg {
+		  padding: 150px 0 125px;
+		}
+
+		.carousel-control-prev, .carousel-control-next {
+			img {
+				margin: 0;
+				width: 35px;
+			}
+		}
+
+		.carousel-border {
+			width: 425px;
+			padding: 15px 15px 50px;
+
+			h1 {
+				font-size: 3.5em;
+			}
+
+			p {
+				font-size: 1.3em;
+			}
+			
+			.bottom-left-border, .bottom-right-border {
+				width: 20%;
+			}
+		} 
+	}
+
+	.our-standards {
+		h1 {
+	  		font-size: 2.5em;
+		}
+
+	  	p {
+			font-size: 1.25em;
+	  	}
+	}
+
+	.series {
+		.vert-line {
+			position: static;
+			transform: rotate(0deg);
+			width: 100%;
+			margin-bottom: 3px;
+		}
+	}
+
+	.b52-series, .tomcat-series {
+		height: 500px;	
+	}
+
+	.our-events {
+		padding-top: 15px;
+
+		h1 {
+			font-size: 3.5em;
+		}
+
+		h4 {
+			font-size: 1.5em;
+		}
+	}
+
+	.event-cont {
+		h3 {
+			font-size: 1.75em;
+		}
+	}
+
+	.clients-say {
+		h1 {
+			font-size: 3.5em;
+		}
+	}	
+}
+
+@include bootstrap-xs-breakpoint () {
+	.carousel-home {
+		.carousel-control-prev, .carousel-control-next {
+			img {
+				width: 22px;
+			}
+		}
+
+		.carousel-border {
+			width: 290px;
+
+			h1 {
+				font-size: 2.3em;
+			}
+			
+			.bottom-left-border, .bottom-right-border {
+				width: 8%;
+			}
+		} 
+	}
+
+	.our-standards {
+		h1 {
+	  		font-size: 2em;
+		}
+
+	  	p {
+			font-size: 1.15em;
+	  	}
+
+	  	.carousel-indicators {
+		  li {
+		    width: 15px;
+		    height: 15px;
+		  }
+		}
+	}
+
+	.series {
+		h2 {
+			font-size: 1.85em;
+		}
+	}
+
+	.b52-series, .tomcat-series {
+		height: 450px;	
+	}
+
+	.home-map {
+		height: 350px;
+	}
+
+	.our-events {		
+		h1 {
+			font-size: 2.5em;
+		}
+
+		h4 {
+			font-size: 1.25em;
+		}
+	}
+
+	.clients-say {
+		h1 {
+			font-size: 2.5em;
+		}
+
+		.right-doublequote {
+			margin-top: 15px;
+		}
+	}	
+}

@@ -1,0 +1,77 @@
+/* ----- Top Navigation bar ----- */
+.navtop {
+	background: $darkblue;
+	padding: 10px 0;
+	box-shadow: 0 0 10px gray;
+
+	.breadcrumb {
+		background: transparent;
+		margin: 0;
+		padding: 0;
+
+		.breadcrumb-item {
+			font-size: 0.725em;
+			font-weight: 600;
+			color: white;
+
+			+.breadcrumb-item:before {
+				content: "|";			
+				color: white;	
+				padding-right: 0.5rem;
+				padding-left: 0.5rem;
+			}
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	p {
+		margin: 0;
+
+		a {
+			color: white;
+
+			&:focus, &:hover {
+				text-decoration: none;
+				color: #eee;
+			}
+		}
+
+		&.signup {
+			font-weight: 700;
+			font-size: 0.8em;
+
+			i {
+				margin-left: 5px;
+			}
+		}
+
+		&.icons {
+			letter-spacing: 7px;
+			font-size: 1.1em;	  
+		}
+	}
+}
+
+@include bootstrap-sm () {
+	.navtop {
+		position: relative;
+		padding: 12px 0;
+
+		p {
+			&.signup {
+				margin-top: 5px;
+			}
+
+			&.icons {
+				position: absolute;
+				top: -25px;
+				right: 10px;
+				z-index: 1;
+			}
+		}
+	}
+}
+

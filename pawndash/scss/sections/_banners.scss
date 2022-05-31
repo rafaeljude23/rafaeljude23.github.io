@@ -1,0 +1,135 @@
+/* ----- Banners ----- */
+.banners {
+	img {
+		cursor: pointer;
+
+		&:focus, &:hover {
+			opacity: 0.95;
+		}
+	}
+
+	&.bid-now {
+		padding: 30px 50px 40px;
+		position: relative;
+
+		h2 {
+			font-weight: bold;
+			font-size: 2.25em;
+		}
+
+		p {
+			font-size: 1.225em;
+			font-weight: 600;
+		}
+
+		a.btn {
+			font-weight: 600;
+			background: transparent;
+			border-radius: 0;
+			border-color: white;
+			height: 45px;
+			padding: 10px 0;
+			max-width: 130px;
+			width: 100%;
+			position: absolute; 
+			top: 50px;
+			right: 50px;
+
+			i {
+				margin-left: 5px;
+			}
+		}
+	}
+
+	&.blue {
+		background: #001870;
+		color: white;
+
+		a.btn {
+			border-color: white;
+			color: white;
+
+			&:hover {
+				background: white;
+				border-color: white;
+				color: #001870;
+			}
+		}
+	}
+
+	&.lightblue {
+		background: #a0eceb;
+		color: $lightblue;
+		
+		a.btn {
+			border-color: $lightblue;
+			color: $lightblue;
+
+			&:hover {
+				background: $lightblue;
+				border-color: $lightblue;
+				color: #a0eceb;
+			}
+		}
+	}
+
+	&.green {
+		background: #03e5c9;
+		color: $lightblue;
+
+		a.btn {
+			border-color: $lightblue;
+			color: $lightblue; 
+
+			&:hover {
+				background: $lightblue;
+				border-color: $lightblue;
+				color: #03e5c9;
+			}
+		}
+	}
+
+	&.gray {
+		background: #f2ecde;
+
+		a.btn {
+			&:hover {
+				color: #f2ecde;
+			}
+		}
+	}
+}
+
+@include bootstrap-md () {
+	.banners {
+		&.bid-now {
+			padding: 20px 40px 30px;
+			position: static;
+
+			h2 {
+				font-size: 2em;
+			}
+
+			p {
+				font-size: 1em;
+			}
+
+			a.btn {
+				position: static;
+				margin-top: 30px;
+			}
+		}
+	}
+}
+
+@include bootstrap-sm () {
+	.banners {
+		&.bid-now {
+
+			h2 {
+				font-size: 1.75em;
+			}
+		}
+	}
+}
+
