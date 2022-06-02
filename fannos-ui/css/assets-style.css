@@ -1279,6 +1279,29 @@ input[type="search"]::-webkit-search-cancel-button {
     max-width: 1000px;
 }
 
+.checked-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.checked-list li {
+    position: relative;
+    padding-left: 35px;
+}
+
+.checked-list li:before {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/airport/checked.png');
+    background-size: contain;
+    display: block;
+}
+
 @media (max-width: 767px) {
     .flifgt-navigation, 
     #fbook-1, #select-box-mobile {
