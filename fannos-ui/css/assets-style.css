@@ -1279,6 +1279,7 @@ input[type="search"]::-webkit-search-cancel-button {
     max-width: 1000px;
 }
 
+/* Airport lounge */
 .checked-list {
     list-style: none;
     padding: 0;
@@ -1300,6 +1301,51 @@ input[type="search"]::-webkit-search-cancel-button {
     background-image: url('../images/airport/tick-light.svg');
     background-size: contain;
     display: block;
+}
+
+/*FAQ*/
+.faq-accordion .card {
+    box-shadow: none !important;
+}
+
+.faq-accordion .card-header {
+    border: 1px solid #dfdfdf;
+}
+
+.faq-accordion .card-body {
+    color: #767676;
+}
+
+.faq-accordion .btn-link {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #000;
+    padding: 1.3rem 2rem 1.3rem 4rem;
+    text-decoration: none !important;
+    white-space: normal;
+    position: relative;
+    text-align: left;
+}
+
+.faq-accordion .btn-link:hover {
+    opacity: 0.9;
+}
+
+.faq-accordion .btn-link:before {
+   content: '';
+   width: 20px;
+   height: 20px;
+   border-left: 1px solid #000;
+   border-bottom: 1px solid #000;
+   transform: rotate(135deg);
+   position: absolute;
+   top: 30px;
+   left: 20px;
+}
+
+.faq-accordion .btn-link.collapsed:before {
+    transform: rotate(-45deg);
+    top: 15px;
 }
 
 @media (max-width: 767px) {
