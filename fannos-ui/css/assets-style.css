@@ -555,7 +555,24 @@ img.sticky {
 #insurance .bootstrap-datetimepicker-widget table thead tr:first-child th:hover {background: #0a3049 !important;color: #fff !important;}
 #insurance .bootstrap-datetimepicker-widget table th{padding: 10px 0px;}
 
+.contentbody{white-space: nowrap;}
 
+.tour-packages-wrapper .card-title,
+.tour-packages-wrapper .card-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tour-packages-wrapper .card-title {
+    -webkit-line-clamp: 1;
+}
+
+
+.tour-packages-wrapper .card-text {
+    -webkit-line-clamp: 2;
+}
 /* Responsive */
 @media only screen and (max-width:992px){
     .hotel-search .col-6:nth-child(2), .room-search .col-6:nth-child(1)  {
