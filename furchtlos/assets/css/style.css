@@ -831,6 +831,14 @@ body.product .splide__pagination__page.is-active {transform: unset;}
 .contact-page .submit-btn {
 	width: 200px;
 	height: 45px;
+	background: #231F20;
+	border: 1px solid #231F20;
+	transition: 0.3s;
+}
+
+.contact-page .submit-btn:hover {
+	background: transparent;
+	color: #231F20;
 }
 
 .contact-page .block-3 {
