@@ -68,7 +68,7 @@ section {
 
 /* Hero */
 .hero-section {
-	background: url('../images/hero-bg.jpeg') center center / cover no-repeat fixed;
+	background: url('../images/hero-bg.jpg') center center / cover no-repeat fixed;
 	min-height: 700px;
 	position: relative;
 }
