@@ -7,25 +7,18 @@
 
 :root {
 	--first-brand-color: #0477C0;
-	/*--second-brand-color: #29ABE2;
+	--second-brand-color: #29ABE2;
 	--third-brand-color: #808080;
-	--fourth-brand-color:  #000000;*/
+	--fourth-brand-color:  #000000;
 }
 
 /* General */
-section {
-	padding: 5rem 0 !important;
-}
-
-.vert-line {
-	background-color: inherit;
-	width: 1px;
-	height: 4rem;
-}
-
-
 .text-primary {
 	color: var(--first-brand-color) !important;
+}
+
+.text-secondary {
+	color: var(--second-brand-color) !important; 
 }
 
 .bg-primary {
@@ -36,12 +29,41 @@ section {
 	border-color: var(--first-brand-color) !important;
 }
 
-/*
-.text-primary,
+.btn-primary,
+.btn-warning {
+	background-image: linear-gradient(var(--second-brand-color), var(--third-brand-color));
+	border: 1px solid #fff !important;
+	color: #000;
+}
+
 .btn-primary:hover,
-.navbar .nav-link.active {
-	color: var(--second-brand-color) !important;
-}*/
+.btn-warning:hover {
+	background-image: linear-gradient(var(--third-brand-color), var(--second-brand-color));
+	color: #fff;
+}
+
+section {
+	padding: 5rem 0 !important;
+}
+
+.hero-overlay {
+	background-color: rgba(0, 0, 0, 0.25);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.vert-line {
+	background-color: inherit;
+	width: 1px;
+	height: 4rem;
+}
+
+.banner-section {
+  background-image: linear-gradient(var(--first-brand-color), var(--fourth-brand-color)) !important;
+}
 
 /* Navbar */
 .navbar, .navbar-brand img {
@@ -56,6 +78,17 @@ section {
             box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
 }
 
+.navbar-light .navbar-nav .nav-link {
+	font-size: 1.125rem;
+	color: #000;
+}
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link:hover {
+	color: var(--first-brand-color);
+}
+
+
 /* Footer */
 .footer {
 	background-color: #000;
@@ -66,20 +99,15 @@ section {
 	        filter: brightness(0) invert(1);
 }
 
-/* Hero */
-.hero-section {
-	background: url('../images/hero-bg.jpg') center center / cover no-repeat fixed;
-	min-height: 700px;
+/* Home */
+.home-page-hero {
+	background: url('../images/home-hero-bg.jpg') center center / cover no-repeat fixed;
+	min-height: 600px;
 	position: relative;
 }
 
-.hero-overlay {
-	background-color: rgba(0, 0, 0, 0.42);
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+.home-page-overlay {
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 .hero-content {
@@ -87,11 +115,16 @@ section {
 	z-index: 1;
 }
 
-.home-banner {
+/* About */
+.about-page-hero {
+	background: url('../images/about-hero-bg.jpg') center center / cover no-repeat fixed;
 	position: relative;
 }
 
-/* About */
+.about-page-overlay {
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
 .about-img {
 	display: block;
 	width: 100%;
@@ -100,14 +133,48 @@ section {
 	   object-fit: cover;
 }
 
+.about-wwwu-section {
+	position: relative;
+	background-color: var(--first-brand-color);
+	/*height: 20vh;*/
+}
+
+.about-wwwu-section:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  transform: skew(-30deg);
+  transform-origin:top;
+}
+
 /* Services */
 .services-section {
 	padding: 4rem 0 7rem;
 }
 
+.services-card {
+	transition: 0.3s;
+}
+
+.services-card:hover {
+	transform: translateY(-3px);
+}
+
 .home-services-icon {
 	-webkit-filter: brightness(0) invert(1);
 	        filter: brightness(0) invert(1);
+}
+
+.services-card-header {
+	padding: 4rem 1.5rem 1.5rem;
+}
+
+.services-page-card {
+	margin-bottom: 5rem;
 }
 
 .services-page-icon {
@@ -116,7 +183,15 @@ section {
 }
 
 /* Contact */
+.contact-hero {
+	padding-bottom: 7rem !important;
+}
 
+.contact-card {
+	margin-top: -10rem;
+	position: relative;
+	z-index: 1;
+}
 
 @media (min-width: 768px) {
 	.navbar {
@@ -129,5 +204,29 @@ section {
 
 	.navbar-sticky .navbar-brand img {
 		width: 150px;
+	}
+
+	.home-page-overlay {
+		width: 85%;
+		transform: skew(-30deg);
+		transform-origin:top;
+	}
+
+	.about-wwwu-section:before {
+		width: 80%;
+	}
+}
+
+@media (min-width: 992px) {
+	.home-page-hero {
+		min-height: 700px;
+	}
+
+	.home-page-overlay {
+		width: 70%;
+	}
+
+	.about-wwwu-section:before {
+		width: 60%;
 	}
 }
