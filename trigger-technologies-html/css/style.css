@@ -25,6 +25,14 @@
 	background-color: var(--first-brand-color) !important;
 }
 
+.bg-secondary {
+	background-color: var(--second-brand-color) !important; 
+}
+
+.bg-dark {
+	background-color: #000 !important;
+}
+
 .border-primary {
 	border-color: var(--first-brand-color) !important;
 }
@@ -169,17 +177,45 @@ section {
 	        filter: brightness(0) invert(1);
 }
 
-.services-card-header {
-	padding: 4rem 1.5rem 1.5rem;
-}
-
 .services-page-card {
-	margin-bottom: 5rem;
+	padding: 3rem 1.5rem;
+	margin-bottom: 4rem;
 }
 
 .services-page-icon {
 	-webkit-filter: invert(25%) sepia(80%) saturate(1989%) hue-rotate(184deg) brightness(102%) contrast(97%);
 	        filter: invert(25%) sepia(80%) saturate(1989%) hue-rotate(184deg) brightness(102%) contrast(97%);
+}
+
+.services-page-card ul {
+	list-style: none;
+	padding: 0;
+}
+
+.services-page-card li {
+	position: relative;
+	padding-left: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+.services-page-card li:before {
+		position: absolute;
+		top: 5px;
+		left: 0;
+		content: '';
+		clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+		display: block;
+		width: 15px;
+		height: 15px;
+		background-color: var(--second-brand-color);
+}
+
+.right-chevron {
+	clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+	background-color: var(--first-brand-color);
+	width: 20px;
+	height: 20px;
+	display: inline-block;
 }
 
 /* Contact */
@@ -214,6 +250,11 @@ section {
 
 	.about-wwwu-section:before {
 		width: 80%;
+	}
+
+	.services-page-card {
+		padding: 4rem 2.5rem;
+		margin-bottom: 5rem;
 	}
 }
 
