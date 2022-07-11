@@ -1466,3 +1466,14 @@ input[type="search"]::-webkit-search-cancel-button {
 .bg-gray {
     background-color: #eee;
 }
+
+/* Booking Cancellation */
+.bcancel-btn {
+    border:  1px solid #ddd;
+    border-radius: 10px;
+    color: #3662d8;
+}
+
+.bcancel-btn:hover {
+    border-color: #3662d8;
+}
