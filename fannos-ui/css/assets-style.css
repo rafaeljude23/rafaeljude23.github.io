@@ -1643,6 +1643,11 @@ input[type="search"]::-webkit-search-cancel-button {
 .hca-inner label {
     margin-left: 0;
 }
+
+.hotel-details-2 {
+    margin-top: -25px;
+}
+
 @media (max-width: 767px) {
 
 }
