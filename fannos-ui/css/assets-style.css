@@ -1651,3 +1651,106 @@ input[type="search"]::-webkit-search-cancel-button {
 @media (max-width: 767px) {
 
 }
+
+
+/*Full search*/
+.full-search-canvas,
+.full-date-canvas {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 999999999;
+    top: 0;
+    left: 0;
+    padding: 1.25rem;
+}
+
+.show-full {
+    display: none;
+}
+
+.full-search-close,
+.full-date-close,
+.travellerd-mobile-close {
+    font-size: 1.2rem;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 9;
+}
+
+.full-search-title,
+.full-travellerd-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.full-search-input {
+    position: relative;
+}
+
+.full-search-input i {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.full-search-input .form-control {
+    padding-left: 2rem;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+.full-search-submit {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+}
+
+/*T Datepicker*/
+.t-datepicker .input-group {
+    flex-wrap: nowrap;
+}
+
+.t-datepicker .t-check-in, 
+.t-datepicker .t-check-out {
+    width: 100%;
+}
+
+.t-check-out .t-datepicker-day {
+    left: 0;
+}
+
+.full-travellerd-close, 
+.full-travellerd-title  {
+    display: none;
+}
+
+/*Full screen traveller*/
+@media (max-width: 767px) {
+    .show-full {
+        display: block;
+    }
+
+    .travellerd.show {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        padding: 1.5rem !important;
+        /*transform: none!important;*/
+    }
+
+    .full-travellerd-close,
+    .full-travellerd-title {
+        display: block;
+    }
+}
