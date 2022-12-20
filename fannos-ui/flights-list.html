@@ -25,6 +25,7 @@
         crossorigin="anonymous" />
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+<!-- T - Datepicker -->
 <link href="css/t-datepicker.min.css" rel="stylesheet" type="text/css">
 <link href="css/t-datepicker-blue.css" rel="stylesheet" type="text/css">
 
@@ -379,34 +380,32 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
                                 </div>
-                                <input type="search" class="form-control" value="London"
+                                <input type="search" class="form-control full-search-toggle" value="London"
                                     style="background:#fff;">
                             </div>
                         </div>
                     </div>
 
 
-                    <div class="col-lg-2 col-6 full-date-toggle">
+                    <div class="col-lg-2 col-6 ">
                         <label class="m-0 font-weight-light">Departure</label>
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="DD/MM/YYYY" id="Rdep">
-                                <!-- <input type="search" class="form-control" placeholder="DD/MM/YYYY" id="Rdep"> -->
+                                <input type="search" class="form-control full-date-toggle" placeholder="DD/MM/YYYY" id="Rdep">
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-6 full-date-toggle">
+                    <div class="col-lg-2 col-6">
                         <label class="m-0 font-weight-light">Arrival</label>
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="DD/MM/YYYY" id="Rarr">
-                                <!-- <input type="search" class="form-control" placeholder="DD/MM/YYYY" id="Rarr"> -->
+                                <input type="search" class="form-control full-date-toggle" placeholder="DD/MM/YYYY" id="Rarr">
                             </div>
                         </div>
                     </div>
@@ -457,7 +456,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
                                 </div>
-                                <input type="search" class="form-control" value="Delhi" style="background:#fff;">
+                                <input type="search" class="form-control full-search-toggle" value="Delhi" style="background:#fff;">
                             </div>
                         </div>
                     </div>
@@ -468,7 +467,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
                                 </div>
-                                <input type="search" class="form-control" value="London"
+                                <input type="search" class="form-control full-search-toggle" value="London"
                                     style="background:#fff;">
                             </div>
                         </div>
@@ -508,7 +507,7 @@
                                             <span class="input-group-text"><i
                                                     class="icon fa fa-map-marker-alt"></i></span>
                                         </div>
-                                        <input type="search" class="form-control" name="residence"
+                                        <input type="search" class="form-control full-search-toggle" name="residence"
                                             placeholder="City or Airport">
                                     </div>
                                 </div>
@@ -521,7 +520,7 @@
                                             <span class="input-group-text"><i
                                                     class="icon fa fa-map-marker-alt"></i></span>
                                         </div>
-                                        <input type="search" class="form-control" name="destination"
+                                        <input type="search" class="form-control full-search-toggle" name="destination"
                                             placeholder="City or Airport">
                                     </div>
                                 </div>
@@ -576,17 +575,19 @@
                     <div class="full-date-canvas">
                         <div class="container">
                             <div class="full-date-close"><i class="fal fa-times"></i></div>
+                            <div class="full-search-title">Pick a date</div>
                             <div class="t-datepicker">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="t-check-in"></div>
+                                        <div class="t-check-in mb-3"></div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="t-check-out"></div>
                                     </div>                              
                                 </div>
                             </div>
-                            
+                            <div class="clearfix"></div>
+                            <button class="btn btn-danger full-date-btn" type="btn">Done</button>
                         </div>
                     </div>
 
@@ -1561,9 +1562,13 @@ $(document).on('click', '.flifgt-navigation .dropdown-menu', function (e) {
         // Full search
         $('.full-search-toggle').click(function(){
             $('.full-search-canvas').addClass('show-full');
+            $('.full-search-toggle').removeClass('active');
+            $(this).addClass('active');
+
         });
         $('.full-search-close').click(function(){
             $('.full-search-canvas').removeClass('show-full');
+            $('.full-search-toggle.active').val($('.full-search-input .form-control').val());
         });
 
         // Full date
@@ -1583,6 +1588,26 @@ $(document).on('click', '.flifgt-navigation .dropdown-menu', function (e) {
           // iconDate: '',
           // titleCheckIn: '',
           // titleCheckOut: '',
+          formatDate: 'dd-mm-yyyy',
+            showFullDateRanges : true,
+
+          autoClose: false,
+            }).on('afterCheckOut',function(e, dataDate){
+                // $('.full-date-btn').addClass('show-full');
+        });
+
+        $('.t-datepicker').click(function(){
+            $('.full-date-btn').addClass('show-full');
+        });
+
+         $('.full-date-btn').click(function(){
+            $(this).removeClass('show-full');
+            $('.t-datepicker').tDatePicker('hide') // hide all
+        });
+
+
+        $('#tAdults, #tChildren, #tInfants').change(function(){
+            $('.select-adult-mobile .dropdown-toggle').text(parseInt($('#tAdults').val()) + parseInt($('#tChildren').val()) + parseInt($('#tInfants').val()));
         });
 
         

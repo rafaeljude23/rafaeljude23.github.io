@@ -24,7 +24,10 @@
         crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.min.css">
     
-  
+  <!-- T - Datepicker CSS -->
+<link href="css/t-datepicker.min.css" rel="stylesheet" type="text/css">
+<link href="css/t-datepicker-blue.css" rel="stylesheet" type="text/css">
+
     <link href="css/assets-style.css" rel="stylesheet">
     <title>Hotels Details</title>
 </head>
@@ -91,7 +94,43 @@
         </div>
     </nav>
 
-   
+ 
+                     <!-- Full date canvas -->
+                    <div class="full-date-canvas">
+                        <div class="container">
+                            <div class="full-date-close"><i class="fal fa-times"></i></div>
+                            <div class="full-search-title">Pick a date</div>
+                            <div class="t-datepicker">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="t-check-in mb-3"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="t-check-out"></div>
+                                    </div>                              
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <button class="btn btn-danger full-date-btn" type="btn">Done</button>
+                        </div>
+                    </div>
+
+                    <!-- Full search canvas -->
+                    <div class="full-search-canvas">
+                        <div class="container">
+                            <div class="full-search-close"><i class="fal fa-times"></i></div>
+                            <div class="full-search-title">Enter Your Departure</div>
+                            <form>
+                                <div class="full-search-input">
+                                    <i class="fas fa-search"></i>
+                                    <input class="form-control" type="search" name="" placeholder="Search here...">
+                                </div>
+                                <button class="btn btn-danger full-search-submit" type="submit">Search</button>
+                            </form>
+                        </div>                        
+                    </div>
+
+
 
     <div class="container-fluid my-5 pt-5 pb-3 shadow-box p-0">
         <div class="container">
@@ -104,7 +143,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
                                 </div>
-                                <input type="search" class="form-control" value="Delhi" style="background:#fff;">
+                                <input type="search" class="form-control full-search-toggle" value="Delhi" style="background:#fff;">
                             </div>
                         </div>
                     </div>
@@ -116,7 +155,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="search" class="form-control" placeholder="DD/MM/YYYY" id="Rdep">
+                                <input type="search" class="form-control full-date-toggle" placeholder="DD/MM/YYYY" id="Rdep">
                             </div>
                         </div>
                     </div>
@@ -127,7 +166,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="search" class="form-control" placeholder="DD/MM/YYYY" id="Rarr">
+                                <input type="search" class="form-control full-date-toggle" placeholder="DD/MM/YYYY" id="Rarr">
                             </div>
                         </div>
                     </div>
@@ -626,6 +665,9 @@
     integrity="sha512-GDey37RZAxFkpFeJorEUwNoIbkTwsyC736KNSYucu1WJWFK9qTdzYub8ATxktr6Dwke7nbFaioypzbDOQykoRg=="
     crossorigin="anonymous"></script>
 
+    <!-- T-Datepicker JS -->
+<script src="js/t-datepicker.min.js"></script>
+
     <script>
         $(document).ready(function () {
             /* Hotels */
@@ -721,7 +763,54 @@
                     next: "fa fa-chevron-right",
                 }
             });
+
+        // Full search
+        $('.full-search-toggle').click(function(){
+            $('.full-search-canvas').addClass('show-full');
+            $('.full-search-toggle').removeClass('active');
+            $(this).addClass('active');
+
         });
+        $('.full-search-close').click(function(){
+            $('.full-search-canvas').removeClass('show-full');
+            $('.full-search-toggle.active').val($('.full-search-input .form-control').val());
+        });
+
+        // Full date
+        $('.full-date-toggle').click(function(){
+            $('.full-date-canvas').addClass('show-full');
+        });
+
+        $('.full-date-close').click(function(){
+            $('.full-date-canvas').removeClass('show-full');
+            $('#Rdep').val( $('.t-input-check-in').val() );
+            $('#Rarr').val( $('.t-input-check-out').val() );
+        });
+
+        // Call global the function
+        $('.t-datepicker').tDatePicker({
+          // options here
+          // iconDate: '',
+          // titleCheckIn: '',
+          // titleCheckOut: '',
+          formatDate: 'dd-mm-yyyy',
+            showFullDateRanges : true,
+
+          autoClose: false,
+            }).on('afterCheckOut',function(e, dataDate){
+                // $('.full-date-btn').addClass('show-full');
+        });
+
+        $('.t-datepicker').click(function(){
+            $('.full-date-btn').addClass('show-full');
+        });
+
+         $('.full-date-btn').click(function(){
+            $(this).removeClass('show-full');
+            $('.t-datepicker').tDatePicker('hide') // hide all
+        });
+        });
+
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=783rtweyugfsdhjb487&callback=initMap"></script>
 </body>

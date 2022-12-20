@@ -1,3 +1,5 @@
+
+
   <div class="search py-3 py-md-5">
     <div class="container formbox">
       <div class="row">
@@ -30,7 +32,7 @@
                             <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i> <span
                                 class="d-none d-md-block"></span></span>
                           </div>
-                          <input type="search" class="form-control" name="destination" placeholder="City or Station">
+                          <input type="search" class="form-control full-search-toggle" name="destination" placeholder="City or Station">
                         </div>
                       </div>
                     </div>
@@ -42,7 +44,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                           </div>
-                          <input type="search" class="form-control fromdate" placeholder="Check-in" id='hcheckin'
+                          <input type="search" class="form-control fromdate full-date-toggle" placeholder="Check-in" id='hcheckin'
                             name="check_in">
                         </div>
                       </div>
@@ -54,7 +56,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                           </div>
-                          <input type="search" class="form-control todate" placeholder="Check-out" id='hcheckout'
+                          <input type="search" class="form-control todate full-date-toggle" placeholder="Check-out" id='hcheckout'
                             name="check_in">
                         </div>
                       </div>
@@ -178,7 +180,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
                                 </div>
-                                <input type="search" class="form-control" value="Delhi" style="background:#fff;">
+                                <input type="search" class="form-control full-search-toggle" value="Delhi" style="background:#fff;">
                             </div>
                         </div>
                     </div>
@@ -189,7 +191,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
                                 </div>
-                                <input type="search" class="form-control" value="London"
+                                <input type="search" class="form-control full-search-toggle" value="London"
                                     style="background:#fff;">
                             </div>
                         </div>
@@ -201,7 +203,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="search" class="form-control" placeholder="DD/MM/YYYY" id="Rdep">
+                                <input type="search" class="form-control full-date-toggle" placeholder="DD/MM/YYYY" id="Rdep">
                             </div>
                         </div>
                     </div>
@@ -212,7 +214,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="search" class="form-control" placeholder="DD/MM/YYYY" id="Rarr">
+                                <input type="search" class="form-control full-date-toggle" placeholder="DD/MM/YYYY" id="Rarr">
                             </div>
                         </div>
                     </div>
@@ -224,6 +226,8 @@
                                 </div>
                                 <button class="btn bg-white dropdown-toggle d-flex justify-content-between align-items-center rounded-0 w-100" type="button" id="traveller" data-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Adult</button>
                           <ul class="dropdown-menu p-2 travellerd rounded shadow" aria-labelledby="traveller">
+                            <div class="full-travellerd-close"><i class="fal fa-times"></i></div>
+                            <div class="full-travellerd-title">Travellers</div>
                             <div class="btext">We allow up to 6 travellers total per booking.</div>
                             <div class="adult-count mb-3">
                                 <div class="row no-gutters">
@@ -504,7 +508,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
                           </div>
-                          <input type="search" class="form-control" name="destination" placeholder="City to Travel">
+                          <input type="search" class="form-control full-search-toggle" name="destination" placeholder="City to Travel">
                         </div>
                       </div>
                     </div>
@@ -515,7 +519,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                           </div>
-                          <input type="search" class="form-control fromdate" name="check_in" id="thingsFrom"
+                          <input type="search" class="form-control fromdate full-date-toggle" name="check_in" id="thingsFrom"
                             placeholder="From">
                         </div>
                       </div>
@@ -527,7 +531,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                           </div>
-                          <input type="search" class="form-control todate" name="check_in" id="thingsTO" placeholder="To">
+                          <input type="search" class="form-control todate full-date-toggle" name="check_in" id="thingsTO" placeholder="To">
                         </div>
                       </div>
                     </div>
@@ -1024,206 +1028,3 @@
       </div>
     </div>
   </section>
-
-  <script src="js/custome.js"></script>
-  <script src="js/date-ramge.js"></script>
-  <script>
-      $(document).ready(function () {
-          /* Hotels 
-          var html = $('.new-rooms .row').first().html();
-          $('.add-room').click(function () {
-              row = $('.new-rooms .row').length + 1;
-              if (row <= 5) {
-                  $('.new-rooms').append("<div class='row'>" + html + "");
-                  $('.new-rooms .row:nth-child(' + row + ')').find('.rcount').html(row);
-                  $('.new-rooms .row:nth-child(' + row + ')').find('.custom-select option:selected')
-                      .removeAttr("selected");
-              } else {
-                  alert('Only Five rooms are selected');
-              }
-              $('.rcount').last().val(row);
-              //$(newrow).find('.rcount').val(row);
-          });
-
-          $('.search-box').on('click', '.remove-room', function () {
-              $(this).parent().remove();
-          });*/
-
-          /* Flights
-          $('#flight .nav-tabs .nav-item').click(function () {
-              $('#ftype').val($(this).html());
-
-              $('.returning').hide();
-              $('.add-flight').hide();
-              $('.new-flight').hide();
-              if ($('#ftype').val() == "Return") {
-                  $('.returning').show();
-              } else if ($('#ftype').val() == "One Way") {
-
-              } else {
-                  $('.add-flight').show();
-                  $('.new-flight').show();
-              }
-          }); */
-
-  /*append multi-city*/
-  var newflight = $('.new-flight').html();
-  $('.add-flight').click(function () {
-      $('.new-flight').append(newflight);
-  });
-  /*append multi-city*/
-
-
-  /*Return show hide*/
-  $('#select-box').change( function () {
-  dropdown = $('#select-box').val();
-  $('.tab-content').hide();
-  $('#' + "fbook-" + dropdown).show();                                    
-  });
-
-
-  /*input increase 2*/
-  $("#tAdults").inputSpinner();
-  $("#tChildren").inputSpinner();
-  $("#tInfants").inputSpinner();
-  /*input increase 2*/
-
-
-  /*Select 2*/
-  $('.rom').select2({
-  dropdownAutoWidth : true,
-  width: 'auto',
-  minimumResultsForSearch: Infinity
-  } );
-
-  $('.ecno').select2({
-  dropdownAutoWidth : true,
-  width: 'auto',
-  minimumResultsForSearch: Infinity
-  } );
-
-  $('.anyair').select2({
-  dropdownAutoWidth : true,
-  width: 'auto'
-  } );
-  /*Select 2*/
-
-  /*Sidebar Filter Toggle mobile*/
-  $('.sort-filter').click(function () {
-      $('.we-sort-filter').toggle();
-      $('.we-map').hide();
-  });
-  /*Sidebar Filter Toggle mobile*/
-
-  /*Datepicker*/
-  $('#Rdep').datetimepicker({
-          minDate:new Date(),
-          format: 'DD/MM/YYYY',
-          icons: {
-              previous: "fa fa-chevron-left",
-              next: "fa fa-chevron-right",
-          }
-      });
-
-
-      $('#Rarr').datetimepicker({
-          minDate:new Date(),
-          format: 'DD/MM/YYYY',
-          icons: {
-              previous: "fa fa-chevron-left",
-              next: "fa fa-chevron-right",
-          }
-      });
-
-      $('#Odep').datetimepicker({
-          minDate:new Date(),
-          format: 'DD/MM/YYYY',
-          icons: {
-              previous: "fa fa-chevron-left",
-              next: "fa fa-chevron-right",
-          }
-      });
-
-      $('#MCdep').datetimepicker({
-          minDate:new Date(),
-          format: 'DD/MM/YYYY',
-          icons: {
-              previous: "fa fa-chevron-left",
-              next: "fa fa-chevron-right",
-          }
-      });
-      
-      /*Datepicker*/
-
-      $("#flcancel").click(function(){
-      $(".travellerd").removeClass("show");
-      });
-
-      $("#fldone").click(function(){
-      $(".travellerd").removeClass("show");
-      });
-
-});
-
-$(document).on('click', '.flifgt-navigation .dropdown-menu', function (e) {
-e.stopPropagation();
-});
-
-  </script>
-  <script>      
-      $('.flight-search-filters').click(function() {
-          $('.we-sort-filter').toggle();
-      });
-
-      /*Return show hide*/
-      $(' #select-box-btns .btn input').change( function () {
-          dropdown = $(this).val();
-          $('.tab-content').hide();
-          $('#' + "fbook-" + dropdown).show();  
-      });  
-
-      // $('.select-adult-mobile .btn').click(function(){
-      //     $('.travellerd.dropdown-menu').appendTo('.select-adult-mobile').addClass('show');
-      // });
-
-      // $('#flcancel, #fldone').click(function(){
-      //     $('.travellerd.dropdown-menu').hide();
-      // });
-
-      $('#Rdep').focusout(function(){
-         if($(this).val() !== "") {
-          $('#Rarr').datetimepicker('show');
-         }
-      });
-
-      $('.guests-input').click(function(){
-          $('.guests-dropdown').show();
-      });
-
-      $('.guests-adult-add').click(function(){
-          $('.guests-adult-num').text(parseInt($('.guests-adult-num').text()) + 1);
-      });
-      $('.guests-adult-minus').click(function(){
-          if ($('.guests-adult-num').text() === '0') {
-              $('.guests-adult-num').text('0');
-          } else {
-              $('.guests-adult-num').text(parseInt($('.guests-adult-num').text()) - 1);
-          }
-      });
-
-      $('.guests-child-add').click(function(){
-          $('.guests-child-num').text(parseInt($('.guests-child-num').text()) + 1);
-      });
-      $('.guests-child-minus').click(function(){
-          if ($('.guests-child-num').text() === '0') {
-              $('.guests-child-num').text('0');
-          } else {
-              $('.guests-child-num').text(parseInt($('.guests-child-num').text()) - 1);
-          }
-      });
-
-      $('.guests-done').click(function(){
-          $('.guests-input').val($('.guests-adult-num').text() + ' Adult, '+ $('.guests-child-num').text() + ' Child');
-          $('.guests-dropdown').hide();
-      });
-  </script>
