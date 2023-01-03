@@ -1714,37 +1714,68 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /*T Datepicker*/
-.t-datepicker .input-group {
-    flex-wrap: nowrap;
-}
-
-.t-datepicker .t-check-in, 
-.t-datepicker .t-check-out {
-    width: 100%;
-}
-
-.t-check-out .t-datepicker-day {
-    left: 0;
-}
-
 .full-travellerd-close, 
 .full-travellerd-title  {
     display: none;
 }
 
-.t-datepicker-day {
-    box-shadow: none;
-    border:  none;
-}
-
 .full-date-btn {
-    display: none;
+    /*display: none;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 9999;
+    z-index: 9999;*/
+    width: 150px;
+    display: block;
+    margin: 50px auto;
 }
+
+/*JQuery UI Datepicker*/
+.dp-highlight .ui-state-default {
+  /*background: rgba(10, 48, 73, 0.63);*/
+  background: #0a3049;
+  color: #FFF;
+}
+
+.dp-highlight .ui-state-default.ui-state-active {
+    background: #0a3049;
+}
+
+/*tr .dp-highlight:first-of-type .ui-state-default {
+    background: red;
+}
+
+tr .dp-highlight:last-of-type .ui-state-default {
+    background: blue;
+}*/
+
+@media (max-width: 767px) {
+.ui-datepicker.ui-datepicker-multi {
+        max-width: 300px;
+    display: flex !important;
+    flex-direction: column;
+  width: 100% !important;
+}
+
+.ui-datepicker-multi .ui-datepicker-group {
+    width: 100%
+}
+
+.ui-datepicker-multi .ui-datepicker-group {
+  float: none;
+}
+
+#datepicker {
+  height: 300px;
+  overflow-x: scroll;
+}
+
+.ui-widget {
+  font-size: 100%
+}    
+}
+
 
 /*Full screen traveller*/
 @media (max-width: 767px) {
