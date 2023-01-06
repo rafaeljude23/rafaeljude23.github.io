@@ -1,0 +1,13 @@
+/*Fonts*/
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('../../../fonts/LibreBaskerville/LibreBaskerville-Regular.woff2') format('woff2'),
+        url('../../../fonts/LibreBaskerville/LibreBaskerville-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*General*/
+body {
+    font-family: 'Arial' !important;
+}

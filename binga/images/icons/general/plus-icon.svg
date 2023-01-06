@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="plus-icon" transform="translate(-431 -2906)">
+    <g id="plus-icon-2" data-name="plus-icon" transform="translate(430.998 2906)">
+      <g id="Group_5" data-name="Group 5">
+        <path id="Path_13" data-name="Path 13" d="M22.726,10.219h-7.95V2.276a2.271,2.271,0,1,0-4.543,0v7.947H2.281a2.283,2.283,0,0,0-.007,4.565h7.959v7.936a2.271,2.271,0,1,0,4.543,0V14.788h7.95a2.285,2.285,0,0,0,0-4.57Z"/>
+      </g>
+    </g>
+    <path id="Color_Overlay" data-name="Color Overlay" d="M441.893,2930.333a2.262,2.262,0,0,1-.661-1.608v-7.936h-7.96a2.282,2.282,0,0,1,.006-4.565h7.953v-7.947a2.271,2.271,0,1,1,4.542,0v7.942h7.95a2.285,2.285,0,0,1,0,4.569h-7.95v7.937a2.273,2.273,0,0,1-3.882,1.608Z" fill="#fff"/>
+  </g>
+</svg>
