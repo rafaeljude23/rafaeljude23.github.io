@@ -50,79 +50,36 @@ $(document).ready(function(){
 
 
 $(function () {
-        $('#hcheckin').datetimepicker({
-            minDate:new Date(),
-            format: 'DD/MM/YYYY',
-            icons: {
-                previous: "fa fa-chevron-left",
-                next: "fa fa-chevron-right",
-            }
-        });
+        // $('#hcheckin').datepicker({
+        //     minDate:new Date()
+        // });
 
-        $('#hcheckout').datetimepicker({
-            minDate:new Date(),
-            format: 'DD/MM/YYYY',
-            icons: {
-                previous: "fa fa-chevron-left",
-                next: "fa fa-chevron-right",
-            }
+        // $('#hcheckout').datepicker({
+        //     minDate:new Date(),
+        // });
+
+        $('#fdeparting').datepicker({
+            minDate:new Date()
         });
-        $('#fdeparting').datetimepicker({
-            minDate:new Date(),
-            format: 'DD/MM/YYYY',
-            icons: {
-                previous: "fa fa-chevron-left",
-                next: "fa fa-chevron-right",
-            }
+        $('#fmulticitydeparting').datepicker({
+            minDate:new Date()
         });
-        $('#fmulticitydeparting').datetimepicker({
-            minDate:new Date(),
-            format: 'DD/MM/YYYY',
-            icons: {
-                previous: "fa fa-chevron-left",
-                next: "fa fa-chevron-right",
-            }
+        $('#freturning').datepicker({
+            minDate:new Date()
         });
-        $('#freturning').datetimepicker({
-            minDate:new Date(),
-            format: 'DD/MM/YYYY',
-            icons: {
-                previous: "fa fa-chevron-left",
-                next: "fa fa-chevron-right",
-            }
-        });
-        $('#thingsFrom').datetimepicker({
-            minDate:new Date(),
-            format: 'DD/MM/YYYY',
-            icons: {
-                previous: "fa fa-chevron-left",
-                next: "fa fa-chevron-right",
-            }
-        });
-        $('#thingsTO').datetimepicker({
-            minDate:new Date(),
-            format: 'DD/MM/YYYY',
-            icons: {
-                previous: "fa fa-chevron-left",
-                next: "fa fa-chevron-right",
-            }
-        });
-        $('#insuranceForm').datetimepicker({
-            minDate:new Date(),
-            format: 'DD/MM/YYYY',
-            icons: {
-                previous: "fa fa-chevron-left",
-                next: "fa fa-chevron-right",
-            }
-        });
-        $('#insuranceTo').datetimepicker({
-            minDate:new Date(),
-            format: 'DD/MM/YYYY',
-            icons: {
-                previous: "fa fa-chevron-left",
-                next: "fa fa-chevron-right",
-            }
-        });
+        // $('#thingsFrom').datepicker({
+        //     minDate:new Date()
+        // });
+        // $('#thingsTO').datepicker({
+        //     minDate:new Date()
+        // });
+        
+        // $('#insuranceForm').datepicker({
+        //     minDate:new Date()
+        // });
+        // $('#insuranceTo').datepicker({
+        //     minDate:new Date()
+        // });
         
     });
 

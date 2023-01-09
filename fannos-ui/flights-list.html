@@ -28,9 +28,6 @@
 <!-- Jquery ui -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.css">
-<style type="text/css">
-
-</style>
 
     <link href="css/assets-style.css" rel="stylesheet">
     <title>Flights</title>
@@ -397,7 +394,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="text" class="form-control full-date-toggle" placeholder="DD/MM/YYYY" id="Rdep">
+                                <input type="text" class="form-control  js-checkin" placeholder="MM/DD/YYYY" id="Rdep">
                             </div>
                         </div>
                     </div>
@@ -408,7 +405,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="text" class="form-control full-date-toggle" placeholder="DD/MM/YYYY" id="Rarr">
+                                <input type="text" class="form-control  js-checkout" placeholder="MM/DD/YYYY" id="Rarr">
                             </div>
                         </div>
                     </div>
@@ -482,7 +479,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="search" class="form-control" placeholder="DD/MM/YYYY" id="Odep">
+                                <input type="text" class="form-control" placeholder="MM/DD/YYYY" id="Odep">
                             </div>
                         </div>
                     </div>
@@ -536,7 +533,7 @@
                                             <span class="input-group-text"><i
                                                     class="icon fa fa-calendar-check"></i></span>
                                         </div>
-                                        <input type="search" class="form-control" placeholder="DD/YY/MM" id="MCdep">
+                                        <input type="text" class="form-control" placeholder="DD/YY/MM" id="MCdep">
                                     </div>
                                 </div>
                             </div>
@@ -579,14 +576,13 @@
                         <div class="container">
                             <div class="full-date-close"><i class="fal fa-times"></i></div>
                             <div class="full-search-title">Pick a date</div>
-                            <!-- <input type="text" id="alternate" name=""> -->
                             <p>
                                 <label>Check-in</label><br>
-                                <input class="form-control mb-3" type="text" id="jqueryui-checkin" placeholder="">
+                                <input class="form-control mb-3 js-mobile-checkin" type="text" placeholder="">
                                 <label>Check-out</label>
-                                <input class="form-control" type="text" id="jqueryui-checkout" placeholder="">
+                                <input class="form-control js-mobile-checkout" type="text" placeholder="">
                             </p>
-                            <div class="jqueryui-datepicker"></div>
+                            <div class="js-datepicker"></div>
                             <button class="btn btn-danger full-date-btn" type="btn">Done</button>
                         </div>
                     </div>
@@ -1369,10 +1365,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://shaack.com/projekte/bootstrap-input-spinner/src/bootstrap-input-spinner.js"></script>
-    <!-- <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"
-    integrity="sha512-GDey37RZAxFkpFeJorEUwNoIbkTwsyC736KNSYucu1WJWFK9qTdzYub8ATxktr6Dwke7nbFaioypzbDOQykoRg=="
-    crossorigin="anonymous"></script> -->
 
 
     <script>
@@ -1465,126 +1457,80 @@
 
     /*Datepicker*/
     if ($(window).width() > 991) {
-  $( function() {
-    var dateFormat = "mm/dd/yy",
-      from = $( "#Rdep" )
-        .datepicker({
-          defaultDate: "+1w",
-          changeMonth: true,
-          numberOfMonths: 2,
+          $( function() {
+            var dateFormat = "mm/dd/yy",
+              from = $( ".js-checkin" )
+                .datepicker({
+                  defaultDate: "+1w",
+                  changeMonth: true,
+                  minDate: new Date(),
+                  numberOfMonths: 2,
+                })
+                .on( "change", function() {
+                  to.datepicker( "option", "minDate", getDate( this ) );
+                }),
 
-          // dateFormat: "dd/mm/yy",
-        beforeShowDay: function(date) {
-            var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#Rdep").val());
-            var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#Rarr").val());
-            return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
-        },
-        })
-        .on( "change", function() {
-          to.datepicker( "option", "minDate", getDate( this ) );
-        }),
-
-      to = $( "#Rarr" ).datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        numberOfMonths: 2,
-        // dateFormat: "dd/mm/yy",
-        beforeShowDay: function(date) {
-            var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#Rdep").val());
-            var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#Rarr").val());
-            return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
-        },
-      })
-      .on( "change", function() {
-        from.datepicker( "option", "maxDate", getDate( this ) );
-      });
- 
-    function getDate( element ) {
-      var date;
-      try {
-        date = $.datepicker.parseDate( dateFormat, element.value );
-      } catch( error ) {
-        date = null;
-      }
- 
-      return date;
-    }
-  } );
+              to = $( ".js-checkout" ).datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 2,
+              })
+              .on( "change", function() {
+                from.datepicker( "option", "maxDate", getDate( this ) );
+              });
+         
+            function getDate( element ) {
+              var date;
+              try {
+                date = $.datepicker.parseDate( dateFormat, element.value );
+              } catch( error ) {
+                date = null;
+              }
+         
+              return date;
+            }
+          } );
     } else {
-$(".jqueryui-datepicker").datepicker({
-    numberOfMonths: 2,
-    changeMonth: true,
-    // changeYear: true,
-    // altField: "#alternate",
-    // altFormat: "DD, d MM, yy",
-    beforeShowDay: function(date) {
-        var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#jqueryui-checkin").val());
-        var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#jqueryui-checkout").val());
-        return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
-    },
-    onSelect: function(dateText, inst) {
-        var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#jqueryui-checkin").val());
-        var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#jqueryui-checkout").val());
-        var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
+        $(".js-datepicker").datepicker({
+            numberOfMonths: 2,
+            changeMonth: true,
+            minDate: new Date(),
+            beforeShowDay: function(date) {
+                var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-mobile-checkin").val());
+                var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-mobile-checkout").val());
+                return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+            },
+            onSelect: function(dateText, inst) {
+                var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-mobile-checkin").val());
+                var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-mobile-checkout").val());
+                var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
 
-        if (!date1 || date2) {
-            $("#jqueryui-checkin").val(dateText);
-            $("#jqueryui-checkout").val("");
-            $(this).datepicker();
-        } else if (selectedDate < date1) {
-            $("#jqueryui-checkout").val($("#jqueryui-checkin").val());
-            $("#jqueryui-checkin").val(dateText);
-            $(this).datepicker();
-        } else {
-            $("#jqueryui-checkout").val(dateText);
-            $(this).datepicker();
-        }
+                if (!date1 || date2) {
+                    $(".js-mobile-checkin").val(dateText);
+                    $(".js-mobile-checkout").val("");
+                    $(this).datepicker();
+                } else if (selectedDate < date1) {
+                    $(".js-mobile-checkout").val($(".js-checkin").val());
+                    $(".js-mobile-checkin").val(dateText);
+                    $(this).datepicker();
+                } else {
+                    $(".js-mobile-checkout").val(dateText);
+                    $(this).datepicker();
+                }
+            }
+        });
     }
-});
-
-
-    }
-
-
-    // $('#Rdep').datepicker({
-        // minDate:new Date(),
-        // format: 'DD/MM/YYYY',
-        // icons: {
-        //     previous: "fa fa-chevron-left",
-        //     next: "fa fa-chevron-right",
-        // }
-    // });
-
-
-        // $('#Rarr').datepicker({
-            // minDate:new Date(),
-            // format: 'DD/MM/YYYY',
-            // icons: {
-            //     previous: "fa fa-chevron-left",
-            //     next: "fa fa-chevron-right",
-            // }
-        // });
 
         $('#Odep').datepicker({
-            minDate:new Date(),
-            format: 'DD/MM/YYYY',
-            icons: {
-                previous: "fa fa-chevron-left",
-                next: "fa fa-chevron-right",
-            }
+            minDate: new Date()
         });
 
         $('#MCdep').datepicker({
-            minDate:new Date(),
-            format: 'DD/MM/YYYY',
-            icons: {
-                previous: "fa fa-chevron-left",
-                next: "fa fa-chevron-right",
-            }
-        });
+            minDate: new Date()
+        });;
         
-        /*Datepicker*/
 
+        // Traveller
         $("#flcancel, .full-travellerd-close").click(function(){
         $(".travellerd").removeClass("show");
         });
@@ -1632,12 +1578,6 @@ $(document).on('click', '.flifgt-navigation .dropdown-menu', function (e) {
         //     $('.travellerd.dropdown-menu').hide();
         // });
 
-        // $('#Rdep').focusout(function(){
-        //    if($(this).val() !== "") {
-        //     $('#Rarr').datepicker('show');
-        //    }
-        // });
-
         // Full search
         $('.full-search-toggle').click(function(){
             $('.full-search-canvas').addClass('show-full');
@@ -1651,25 +1591,14 @@ $(document).on('click', '.flifgt-navigation .dropdown-menu', function (e) {
         });
 
         // Full date
-        $('.full-date-toggle').click(function(){
+        $('.js-checkin, .js-checkout').click(function(){
             $('.full-date-canvas').addClass('show-full');
         });
 
         $('.full-date-close, .full-date-btn').click(function(){
             $('.full-date-canvas').removeClass('show-full');
-            $('#Rdep').val( $('#jqueryui-checkin').val() );
-            $('#Rarr').val( $('#jqueryui-checkout').val() );
-        });
-
-
-
-        $('#jqueryui-checkin').click(function(){
-            $('.full-date-btn').addClass('show-full');
-        });
-
-         $('.full-date-btn').click(function(){
-            $(this).removeClass('show-full');
-             $('.full-date-canvas').removeClass('show-full');
+            $('.js-checkin').val( $('.js-mobile-checkin').val() );
+            $('.js-checkout').val( $('.js-mobile-checkout').val() );
         });
 
 

@@ -24,6 +24,11 @@
             integrity="sha512-aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw=="
             crossorigin="anonymous" />
 
+
+<!-- Jquery ui -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.css">
+
     <link href="css/assets-style.css" rel="stylesheet">
     <title>Hotels List</title>
 </head>
@@ -123,7 +128,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="search" class="form-control" placeholder="DD/MM/YYYY" id="Rdep">
+                                <input type="text" class="form-control js-checkin" placeholder="DD/MM/YYYY" id="Rdep">
                             </div>
                         </div>
                     </div>
@@ -134,7 +139,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="search" class="form-control" placeholder="DD/MM/YYYY" id="Rarr">
+                                <input type="text" class="form-control js-checkout" placeholder="DD/MM/YYYY" id="Rarr">
                             </div>
                         </div>
                     </div>
@@ -180,6 +185,22 @@
         </div>
     </div>
 
+
+                    <!-- Full date canvas -->
+                    <div class="full-date-canvas">
+                        <div class="container">
+                            <div class="full-date-close"><i class="fal fa-times"></i></div>
+                            <div class="full-search-title">Pick a date</div>
+                            <p>
+                                <label>Check-in</label><br>
+                                <input class="form-control mb-3 js-mobile-checkin" type="text" placeholder="">
+                                <label>Check-out</label>
+                                <input class="form-control js-mobile-checkout" type="text" placeholder="">
+                            </p>
+                            <div class="js-datepicker"></div>
+                            <button class="btn btn-danger full-date-btn" type="btn">Done</button>
+                        </div>
+                    </div>
 
     <div id="skeletone" >
         <div class="container">
@@ -607,23 +628,83 @@
 
 
 
-            $('#Rdep').datetimepicker({
-                minDate: new Date(),
-                format: 'DD/MM/YYYY',
-                icons: {
-                    previous: "fa fa-chevron-left",
-                    next: "fa fa-chevron-right",
-                }
-            });
+    /*Datepicker*/
+    if ($(window).width() > 991) {
+          $( function() {
+            var dateFormat = "mm/dd/yy",
+              from = $( ".js-checkin" )
+                .datepicker({
+                  defaultDate: "+1w",
+                  changeMonth: true,
+                  minDate: new Date(),
+                  numberOfMonths: 2,
+                })
+                .on( "change", function() {
+                  to.datepicker( "option", "minDate", getDate( this ) );
+                }),
 
-            $('#Rarr').datetimepicker({
-                minDate: new Date(),
-                format: 'DD/MM/YYYY',
-                icons: {
-                    previous: "fa fa-chevron-left",
-                    next: "fa fa-chevron-right",
+              to = $( ".js-checkout" ).datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 2,
+              })
+              .on( "change", function() {
+                from.datepicker( "option", "maxDate", getDate( this ) );
+              });
+         
+            function getDate( element ) {
+              var date;
+              try {
+                date = $.datepicker.parseDate( dateFormat, element.value );
+              } catch( error ) {
+                date = null;
+              }
+         
+              return date;
+            }
+          } );
+    } else {
+        $(".js-datepicker").datepicker({
+            numberOfMonths: 2,
+            changeMonth: true,
+            minDate: new Date(),
+            beforeShowDay: function(date) {
+                var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-mobile-checkin").val());
+                var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-mobile-checkout").val());
+                return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+            },
+            onSelect: function(dateText, inst) {
+                var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-mobile-checkin").val());
+                var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-mobile-checkout").val());
+                var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
+
+                if (!date1 || date2) {
+                    $(".js-mobile-checkin").val(dateText);
+                    $(".js-mobile-checkout").val("");
+                    $(this).datepicker();
+                } else if (selectedDate < date1) {
+                    $(".js-mobile-checkout").val($(".js-checkin").val());
+                    $(".js-mobile-checkin").val(dateText);
+                    $(this).datepicker();
+                } else {
+                    $(".js-mobile-checkout").val(dateText);
+                    $(this).datepicker();
                 }
-            });
+            }
+        });
+    }
+
+        // Full date
+        $('.js-checkin, .js-checkout').click(function(){
+            $('.full-date-canvas').addClass('show-full');
+        });
+
+        $('.full-date-close, .full-date-btn').click(function(){
+            $('.full-date-canvas').removeClass('show-full');
+            $('.js-checkin').val( $('.js-mobile-checkin').val() );
+            $('.js-checkout').val( $('.js-mobile-checkout').val() );
+        });
+
         });
     </script>
     <script>
@@ -648,11 +729,6 @@
             $('.hotel-search').hide();
         });
 
-        $('#Rdep').focusout(function(){
-           if($(this).val() !== "") {
-            $('#Rarr').datetimepicker('show');
-           }
-        });
 
         $('.guests-input').click(function(){
             $('.guests-dropdown').show();

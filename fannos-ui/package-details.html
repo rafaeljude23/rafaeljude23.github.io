@@ -23,11 +23,10 @@
         integrity="sha512-aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw=="
         crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.min.css">
-    
-  <!-- T - Datepicker CSS -->
-<link href="css/t-datepicker.min.css" rel="stylesheet" type="text/css">
-<link href="css/t-datepicker-blue.css" rel="stylesheet" type="text/css">
 
+<!-- Jquery ui -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.css">
     <link href="css/assets-style.css" rel="stylesheet">
     <title>Hotels Details</title>
 </head>
@@ -95,22 +94,19 @@
     </nav>
 
  
-                     <!-- Full date canvas -->
+
+                    <!-- Full date canvas -->
                     <div class="full-date-canvas">
                         <div class="container">
                             <div class="full-date-close"><i class="fal fa-times"></i></div>
                             <div class="full-search-title">Pick a date</div>
-                            <div class="t-datepicker">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="t-check-in mb-3"></div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="t-check-out"></div>
-                                    </div>                              
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
+                            <p>
+                                <label>Check-in</label><br>
+                                <input class="form-control mb-3 js-mobile-checkin" type="text" placeholder="">
+                                <label>Check-out</label>
+                                <input class="form-control js-mobile-checkout" type="text" placeholder="">
+                            </p>
+                            <div class="js-datepicker"></div>
                             <button class="btn btn-danger full-date-btn" type="btn">Done</button>
                         </div>
                     </div>
@@ -155,7 +151,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="search" class="form-control full-date-toggle" placeholder="DD/MM/YYYY" id="Rdep">
+                                <input type="text" class="form-control js-checkin" placeholder="DD/MM/YYYY" id="Rdep">
                             </div>
                         </div>
                     </div>
@@ -166,7 +162,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="search" class="form-control full-date-toggle" placeholder="DD/MM/YYYY" id="Rarr">
+                                <input type="text" class="form-control js-checkout" placeholder="DD/MM/YYYY" id="Rarr">
                             </div>
                         </div>
                     </div>
@@ -687,8 +683,6 @@
     integrity="sha512-GDey37RZAxFkpFeJorEUwNoIbkTwsyC736KNSYucu1WJWFK9qTdzYub8ATxktr6Dwke7nbFaioypzbDOQykoRg=="
     crossorigin="anonymous"></script>
 
-    <!-- T-Datepicker JS -->
-<script src="js/t-datepicker.min.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -768,24 +762,6 @@
 
 
 
-            $('#Rdep').datetimepicker({
-                minDate: new Date(),
-                format: 'DD/MM/YYYY',
-                icons: {
-                    previous: "fa fa-chevron-left",
-                    next: "fa fa-chevron-right",
-                }
-            });
-
-            $('#Rarr').datetimepicker({
-                minDate: new Date(),
-                format: 'DD/MM/YYYY',
-                icons: {
-                    previous: "fa fa-chevron-left",
-                    next: "fa fa-chevron-right",
-                }
-            });
-
         // Guests dropdown
         $('.guests-input').click(function(){
             $('.guests-dropdown').show();
@@ -830,39 +806,83 @@
             $('.full-search-toggle.active').val($('.full-search-input .form-control').val());
         });
 
+    /*Datepicker*/
+    if ($(window).width() > 991) {
+          $( function() {
+            var dateFormat = "mm/dd/yy",
+              from = $( ".js-checkin" )
+                .datepicker({
+                  defaultDate: "+1w",
+                  changeMonth: true,
+                  minDate: new Date(),
+                  numberOfMonths: 2,
+                })
+                .on( "change", function() {
+                  to.datepicker( "option", "minDate", getDate( this ) );
+                }),
+
+              to = $( ".js-checkout" ).datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 2,
+              })
+              .on( "change", function() {
+                from.datepicker( "option", "maxDate", getDate( this ) );
+              });
+         
+            function getDate( element ) {
+              var date;
+              try {
+                date = $.datepicker.parseDate( dateFormat, element.value );
+              } catch( error ) {
+                date = null;
+              }
+         
+              return date;
+            }
+          } );
+    } else {
+        $(".js-datepicker").datepicker({
+            numberOfMonths: 2,
+            changeMonth: true,
+            minDate: new Date(),
+            beforeShowDay: function(date) {
+                var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-mobile-checkin").val());
+                var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-mobile-checkout").val());
+                return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+            },
+            onSelect: function(dateText, inst) {
+                var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-mobile-checkin").val());
+                var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-mobile-checkout").val());
+                var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
+
+                if (!date1 || date2) {
+                    $(".js-mobile-checkin").val(dateText);
+                    $(".js-mobile-checkout").val("");
+                    $(this).datepicker();
+                } else if (selectedDate < date1) {
+                    $(".js-mobile-checkout").val($(".js-checkin").val());
+                    $(".js-mobile-checkin").val(dateText);
+                    $(this).datepicker();
+                } else {
+                    $(".js-mobile-checkout").val(dateText);
+                    $(this).datepicker();
+                }
+            }
+        });
+    }
         // Full date
-        $('.full-date-toggle').click(function(){
+        $('.js-checkin, .js-checkout').click(function(){
             $('.full-date-canvas').addClass('show-full');
         });
 
-        $('.full-date-close').click(function(){
+        $('.full-date-close, .full-date-btn').click(function(){
             $('.full-date-canvas').removeClass('show-full');
-            $('#Rdep').val( $('.t-input-check-in').val() );
-            $('#Rarr').val( $('.t-input-check-out').val() );
+            $('.js-checkin').val( $('.js-mobile-checkin').val() );
+            $('.js-checkout').val( $('.js-mobile-checkout').val() );
         });
 
-        // Call global the function
-        $('.t-datepicker').tDatePicker({
-          // options here
-          // iconDate: '',
-          // titleCheckIn: '',
-          // titleCheckOut: '',
-          formatDate: 'dd-mm-yyyy',
-            showFullDateRanges : true,
-
-          autoClose: false,
-            }).on('afterCheckOut',function(e, dataDate){
-                // $('.full-date-btn').addClass('show-full');
-        });
-
-        $('.t-datepicker').click(function(){
-            $('.full-date-btn').addClass('show-full');
-        });
-
-         $('.full-date-btn').click(function(){
-            $(this).removeClass('show-full');
-            $('.t-datepicker').tDatePicker('hide') // hide all
-        });
+        
         });
 
     </script>

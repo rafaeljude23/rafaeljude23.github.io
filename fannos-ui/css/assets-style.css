@@ -1742,15 +1742,7 @@ input[type="search"]::-webkit-search-cancel-button {
     background: #0a3049;
 }
 
-/*tr .dp-highlight:first-of-type .ui-state-default {
-    background: red;
-}
-
-tr .dp-highlight:last-of-type .ui-state-default {
-    background: blue;
-}*/
-
-@media (max-width: 767px) {
+@media (max-width: 991px) {
 .ui-datepicker.ui-datepicker-multi {
         max-width: 300px;
     display: flex !important;
@@ -1766,7 +1758,7 @@ tr .dp-highlight:last-of-type .ui-state-default {
   float: none;
 }
 
-#datepicker {
+.datepicker {
   height: 300px;
   overflow-x: scroll;
 }
