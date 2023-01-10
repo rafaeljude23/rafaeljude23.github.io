@@ -1022,7 +1022,7 @@ iframe body::-webkit-scrollbar {
 .availability-box-canvas { width: 70%; margin: 0 auto; }
 
 /*Contact*/
-.contact-box {
+.contact-canvas {
     max-width: 600px;
     width: 100%;
     margin: 0 auto;
@@ -1084,4 +1084,59 @@ iframe body::-webkit-scrollbar {
 
 .contact-map-canvas .coco-border .line {
     margin-top: -40px;
+}
+
+/*Tours*/
+.intro-sect .gallery-carousel-canvas {
+    width: 80%;
+    margin: 0 auto 4rem;
+}
+
+.price-wrapper {
+    font-style: italic;
+    text-align: center;
+    margin: 1.5rem 0;
+    /*width: 425px;*/
+    transition: 0.5s;
+}
+
+.price-wrapper h5 {
+    margin-bottom: -5px;
+}
+
+.price-wrapper h5 span {
+    font-size: 16px;
+    letter-spacing: 0;
+}
+
+.price-wrapper h6 {
+    font-style: italic;
+    letter-spacing: 0;
+    margin-bottom: 0.5rem;
+}
+
+.price-wrapper .inclusions-wrapper {
+    justify-content: center;
+    max-width: 600px;
+    margin: 1rem auto 2rem;
+}
+
+.price-wrapper .inclusions-wrapper .inclusion {
+    width: 25%;
+    margin: 10px 0;
+}
+
+.price-wrapper .inclusions-wrapper .inclusion img {
+    width: 30%;
+    margin: 1rem;
+    filter: invert(38%) sepia(38%) saturate(401%) hue-rotate(155deg) brightness(89%) contrast(83%);
+}
+
+.price-wrapper .inclusions-wrapper .inclusion span {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    display: block;
+    width: 75%;
+    margin: 0 auto;
 }

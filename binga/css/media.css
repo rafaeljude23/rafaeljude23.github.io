@@ -638,4 +638,24 @@
 		.main-footer-canvas .main-footer .footer-links > a {
 		    margin-top: 2rem;
 		}
+
+		/*Contact */
+		.contact-social-canvas a {
+			margin-bottom: 1rem;
+		}
+
+		.contact-map-canvas .coco-border {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.contact-map-canvas .coco-border img {
+			height: 120px;
+		}
+
+		/*Tours - Booking*/
+		.price-wrapper .inclusions-wrapper .inclusion {
+		    width: 50%;
+		}
 }
