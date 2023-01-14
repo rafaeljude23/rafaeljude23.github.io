@@ -1270,7 +1270,6 @@ iframe body::-webkit-scrollbar {
     float: right;
 }
 
-
 .blog-canvas .line-title.blue h2 {
     background: var(--white);
     color: var(--blue);
