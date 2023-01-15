@@ -1743,29 +1743,18 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 @media (max-width: 991px) {
-.ui-datepicker.ui-datepicker-multi {
-        max-width: 300px;
-    display: flex !important;
-    flex-direction: column;
-  width: 100% !important;
-}
-
-.ui-datepicker-multi .ui-datepicker-group {
-    width: 100%
-}
-
-.ui-datepicker-multi .ui-datepicker-group {
-  float: none;
-}
-
-.datepicker {
-  height: 300px;
-  overflow-x: scroll;
-}
-
-.ui-widget {
-  font-size: 100%
-}    
+        .ui-datepicker.ui-datepicker-multi  {
+          width: 100% !important;
+        }
+        .ui-datepicker-multi .ui-datepicker-group {
+        float:none;
+        width: 100%;
+        }
+        #datepicker {
+          height: 300px;
+          overflow-x: scroll;
+        }
+.ui-widget { font-size: 100% }   
 }
 
 

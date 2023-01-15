@@ -479,7 +479,18 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="MM/DD/YYYY" id="Odep">
+                                <input type="text" class="form-control js-checkin" placeholder="MM/DD/YYYY" id="Odep">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-6">
+                        <label class="m-0 font-weight-light">Arrival</label>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
+                                </div>
+                                <input type="text" class="form-control  js-checkout" placeholder="MM/DD/YYYY" id="">
                             </div>
                         </div>
                     </div>
@@ -533,7 +544,7 @@
                                             <span class="input-group-text"><i
                                                     class="icon fa fa-calendar-check"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="DD/YY/MM" id="MCdep">
+                                        <input type="text" class="form-control js-checkin" placeholder="DD/YY/MM" id="MCdep">
                                     </div>
                                 </div>
                             </div>
@@ -1456,6 +1467,9 @@
     /*Sidebar Filter Toggle mobile*/
 
     /*Datepicker*/
+       $.datepicker.setDefaults({
+    dateFormat: 'd M'
+});
     if ($(window).width() > 991) {
           $( function() {
             var dateFormat = "mm/dd/yy",
@@ -1491,6 +1505,13 @@
             }
           } );
     } else {
+
+$(".js-checkin, .js-checkout").keydown(function(event) { 
+    return false;
+});
+
+
+
         $(".js-datepicker").datepicker({
             numberOfMonths: 2,
             changeMonth: true,

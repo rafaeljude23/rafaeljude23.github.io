@@ -696,6 +696,9 @@
 
 
     /*Datepicker*/
+       $.datepicker.setDefaults({
+    dateFormat: 'd M'
+});
     if ($(window).width() > 991) {
           $( function() {
             var dateFormat = "mm/dd/yy",
@@ -731,6 +734,12 @@
             }
           } );
     } else {
+
+$(".js-checkin, .js-checkout").keydown(function(event) { 
+    return false;
+});
+
+        
         $(".js-datepicker").datepicker({
             numberOfMonths: 2,
             changeMonth: true,
