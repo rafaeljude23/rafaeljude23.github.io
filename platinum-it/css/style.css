@@ -376,14 +376,15 @@ section {
 
 /* Home */
 .home-services-wrap {
-	padding: 50px;
+	padding: 70px 50px;
 	background-color: var(--first-brand-color);
 	color: var(--white);
 }
 
 .home-services-card {
-	text-align: center;
 	margin-bottom: 30px;
+	display: flex;
+	align-items: center;
 }
 
 .home-services-card h3 {
@@ -391,7 +392,7 @@ section {
 	font-weight: 600;
 	color: var(--white);
 	width: 150px;
-	margin: 20px auto 0;
+	margin-left: 20px;
 }
 
 .home-services-card img {
