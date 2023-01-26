@@ -894,15 +894,15 @@ html {
 }
 
 .bg-\[url\(\'\/images\/intro-bg\.jpg\'\)\] {
-  background-image: url('/images/intro-bg.jpg');
+  background-image: url('images/intro-bg.jpg');
 }
 
 .bg-\[url\(\'\/images\/video-bg\.jpg\'\)\] {
-  background-image: url('/images/video-bg.jpg');
+  background-image: url('images/video-bg.jpg');
 }
 
 .bg-\[url\(\'\/images\/guarantee-box\.png\'\)\] {
-  background-image: url('/images/guarantee-box.png');
+  background-image: url('images/guarantee-box.png');
 }
 
 .bg-cover {
