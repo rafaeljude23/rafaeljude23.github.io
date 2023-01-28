@@ -10,10 +10,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animation.min.css" rel="stylesheet">
 
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -53,39 +49,45 @@
       <div class="hero-inner">
         <div class="container">
           <div class="row align-items-center">
-            <div class="col-md-7">
-              <h1 class="">
+            <div class="col-md-8">
+              <h1 class="wow fade-in-bottom delay-03s">
                 BESPOKE IT SERVICES AND SUPPORT DESIGNED TO HELP YOUR BUSINESS
               </h1>
-              <!-- <a class="button button-grad" href="services.html">Learn More</a> -->
+              <a class="button button-hero mt-4 wow fade-in-top delay-04s" href="services.html">
+                Learn More <span>⟶</span>
+              </a>
             </div>
           </div>
         </div>        
       </div>
       <div class="hero-overlay"></div>
+      <div class="hero-img">
+        <img src="images/home-bg.jpg" alt="">
+      </div>
     </section>
 
-    <section >
+
+    <section class="">
       <div class="container">          
-        <div class="row pb-5 mb-5">
-          <div class="col-md-6">
-            <img class="img-fluid d-block mx-auto" src="images/home-team1.svg" width="400" height="auto" alt="">
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6 order-md-2 wow fade-in-left delay-06s">
+            <img class="img-fluid d-block mx-auto" src="images/team.png" width="500" height="auto" alt="">
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 order-md-1 wow fade-in-right delay-03s">
             <p class="fs-5">Here at Platinum IT Solutions, we know how important mastering your IT foundations are for your business. IT is likely at the very core of your company, and stability and support are vital to helping you thrive and expand. Have you been looking for more support regarding your business' IT processes? Well, you've come to the right place.</p>
           </div>
         </div>
 
-        <div class="row mb-5">
-          <div class="col-md-6">
-            <p class="fs-5">With a team contributing years of experience in the IT field, you'll always be in safe hands when working with us. With a dedicated commitment to providing first-class support and customer service, we take pride in helping our clients reach new heights through innovative technology solutions.</p>
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6 wow fade-in-right delay-03s">
+            <img class="img-fluid d-block mx-auto" src="images/business.png" width="500" height="auto" alt="">
           </div>
-          <div class="col-md-6">
-            <img class="img-fluid d-block mx-auto" src="images/home-team2.svg" width="400" height="auto" alt="">
+          <div class="col-md-6 wow fade-in-left delay-06s">
+            <p class="fs-5">With a team contributing years of experience in the IT field, you'll always be in safe hands when working with us. With a dedicated commitment to providing first-class support and customer service, we take pride in helping our clients reach new heights through innovative technology solutions.</p>
           </div>
         </div>
 
-        <div class="intro">
+        <div class="intro wow fade-in-top delay-09s">
           <p>Want to discover more about who Plantium IT Solutions is at our core? Check out our about page for the rundown on everything you need to know about one of the world-class firms in IT service and support.</p>
           <a class="button button-grad" href="about.html">Who We Are</a> 
         </div>
@@ -94,56 +96,47 @@
     </section>
 
 
-    <section>
+    <section class="home-services-wrap">
       <div class="container">
         
-        <div class="home-services-wrap">
-          <h2 class="text-white mb-3">A vast range of IT services to suit your company needs</h2>
-          <p class="pb-3 mb-5">As a premier IT service and support firm, Plantium IT solutions can help support your business through:</p>
+        <h2 class="mb-3 wow fade-in-right delay-03s">A vast range of IT services to suit your company needs</h2>
+        <p class="mb-5 wow fade-in-left delay-05s">As a premier IT service and support firm, Plantium IT solutions can help support your business through:</p>
 
-          <div class="row align-items-center">
-            <div class="col-md-8">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="home-services-card">
-                    <img class="img-fluid" src="images/software.png" width="50" height="auto" alt="Software Development">
-                    <h3>Software Development</h3>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="home-services-card">
-                    <img class="img-fluid" src="images/project-management.png" width="50" height="auto" alt="IT Project Management">
-                    <h3>IT Project Management</h3>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="home-services-card">
-                    <img class="img-fluid" src="images/network-security.png" width="50" height="auto" alt="Network Security">
-                    <h3>Network Security</h3>
-                  </div>  
-                </div>
-                <div class="col-md-6">
-                  <div class="home-services-card">                  
-                    <img class="img-fluid" src="images/configuration-support.png" width="50" height="auto" alt="Network Security">
-                    <h3>Configuration Support</h3>
-                  </div>  
-                </div>
-              </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="services-card wow fade-in-bottom delay-07s">
+              <img class="img-fluid" src="images/software-development.png" width="70" height="auto" alt="Software Development">
+              <h3>Software Development</h3>
             </div>
-            <div class="col-md-4">
-              <p>We vow to provide simplistic and streamlined solutions no matter your needs or obstacles. See all we have to offer here</p>
-              <a href="services.html" class="button button-white">Learn More</a>
+          </div>
+          <div class="col-md-3">
+            <div class="services-card wow fade-in-top delay-09s">
+              <img class="img-fluid" src="images/project-management.png" width="70" height="auto" alt="IT Project Management">
+              <h3>IT Project Management</h3>
             </div>
-
+          </div>
+          <div class="col-md-3">
+            <div class="services-card wow fade-in-bottom delay-1s">
+              <img class="img-fluid" src="images/network-security.png" width="70" height="auto" alt="Network Security">
+              <h3>Network Security</h3>
+            </div>  
+          </div>
+          <div class="col-md-3">
+            <div class="services-card wow fade-in-top delay-1-2s">                  
+              <img class="img-fluid" src="images/configuration-support.png" width="70" height="auto" alt="Configuration Support">
+              <h3>Configuration Support</h3>
+            </div>  
           </div>
         </div>
-        
 
-
-
-        <div class="intro">
+        <div class="row text-center mt-3">
+          <div class="col-md-8 offset-md-2 wow fade-in-left delay-1-4s">
+            <p>We vow to provide simplistic and streamlined solutions no matter your needs or obstacles. See all we have to offer here</p>
+            <a href="services.html" class="button button-grad">Learn More</a>
+          </div>
           
         </div>
+        
         
       </div>
 
@@ -151,17 +144,25 @@
 
     <section class="section-alternate">
       <div class="container">
-        <p>We aim to empower you as a business through our extensive commitment to customer service and a team with deep knowledge in our chosen field. To provide you with all the necessary tools to function and thrive innovatively. With our help, you never need to fear taking on complex projects and workloads. You will always have an experienced and supportive team on your side when working with Platinum IT Solutions.</p>
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <div class="d-flex align-items-center flex-column flex-md-row text-center text-md-start">
+              <img class="img-fluid me-4 wow swing-in-left-fwd delay-03s" src="images/aim.png" width="90" height="auto" alt="Aim">
+              <p class="wow fade-in-right delay-06s">We aim to empower you as a business through our extensive commitment to customer service and a team with deep knowledge in our chosen field. To provide you with all the necessary tools to function and thrive innovatively. With our help, you never need to fear taking on complex projects and workloads. You will always have an experienced and supportive team on your side when working with Platinum IT Solutions.</p>
+            </div> 
+          </div>
+        </div>
+    
       </div>
     </section>
 
     <section>
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <img class="img-fluid d-block mx-auto" src="images/ensure.svg" width="400" height="auto" alt="Ensure">
+        <div class="row align-items-center">
+          <div class="col-md-6 wow fade-in-right delay-03s">
+            <img class="img-fluid d-block mx-auto" src="images/checklist.png" width="500" height="auto" alt="Ensure">
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6  wow fade-in-left delay-06s">
             <h3 class="mb-4">We ensure to always:</h3>
             <ul class="list-styled">
               <li> Get to know every one of our clients personally.</li>
