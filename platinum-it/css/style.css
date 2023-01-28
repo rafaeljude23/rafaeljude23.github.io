@@ -367,6 +367,7 @@ section {
 	color: var(--white);
 	border-bottom: 1px solid var(--white);
 	padding-bottom: 30px;
+	max-width: 600px;
 }
 
 .hero-overlay {
