@@ -337,8 +337,6 @@ section {
 
 /* Hero Section */
 .hero-section {
-	background: url("../images/hero-bg.jpg") center / cover no-repeat;
-	/*background-image: linear-gradient(var(--first-brand-color), var(--second-brand-color));*/
 	padding: 0;
 	height: 600px;
 	position: relative;
