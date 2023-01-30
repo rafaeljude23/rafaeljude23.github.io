@@ -48,12 +48,12 @@
     <section class="hero-section child">
       <div class="hero-inner">
         <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-12">
-              <h1 class="wow fade-in-right delay-03s">
-                DISCOVER THE BENEFITS OF BUILDING YOUR BUSINESS ON A STRONG IT FOUNDATION
-              </h1>
-            </div>
+          <div class="hero-container wow fade-in-right delay-03s">
+            <h1>OUR SERVICES</h1>
+            <div class="hor-line"></div>     
+            <p>
+              DISCOVER THE BENEFITS OF BUILDING YOUR BUSINESS ON A STRONG IT FOUNDATION
+            </p>
           </div>
         </div>        
       </div>
@@ -243,5 +243,18 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/custom.js"></script>
+    <script>
+      $(window).on('load', function() {
+        var url = window.location.href;
+        var id = url.substring(url.lastIndexOf('#') + 1);
+        // alert(id); 
+        var pos = $('#'+id).offset().top;
+
+
+          if(  window.location.href.search( '#' ) > 0 ) {
+            $(window).scrollTop(pos - 80);
+          }        
+      });
+    </script>
   </body>
 </html>
