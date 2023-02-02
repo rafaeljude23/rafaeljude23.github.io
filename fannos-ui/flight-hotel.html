@@ -105,13 +105,11 @@
                         <div class="container">
                             <div class="full-date-close"><i class="fal fa-times"></i></div>
                             <div class="full-search-title">Pick a date</div>
-                            <p>
+                            <p class="d-none">
                                 <label>Check-in</label><br>
                                 <input class="form-control mb-3 js-mobile-checkin" type="text" placeholder="">
-                                <!-- <input class="form-control mb-3 js-mobile-checkin-text" type="text" placeholder=""> -->
                                 <label>Check-out</label>
                                 <input class="form-control js-mobile-checkout" type="text" placeholder="">
-                                <!-- <input class="form-control mb-3 js-mobile-checkout-text" type="text" placeholder=""> -->
                             </p>
                             <div class="js-datepicker"></div>
                             <button class="btn btn-danger full-date-btn" type="btn">Done</button>
@@ -179,7 +177,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                           </div>
-                          <input type="search" class="form-control fromdate  js-checkin" placeholder="Check-in" id='hcheckin'
+                          <input type="search" class="form-control fromdate  js-checkin" placeholder="DD MM" id='hcheckin'
                             name="check_in">
                         </div>
                       </div>
@@ -191,7 +189,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                           </div>
-                          <input type="search" class="form-control todate  js-checkout" placeholder="Check-out" id='hcheckout'
+                          <input type="search" class="form-control todate  js-checkout" placeholder="DD MM" id='hcheckout'
                             name="check_out">
                         </div>
                       </div>
@@ -214,7 +212,7 @@
                                         <div>Adult</div>
                                         <div>
                                             <button type="button" class="guests-adult-minus btn btn-light rounded-circle"><i class="far fa-minus"></i></button>
-                                            <span class="guests-adult-num mx-2">0</span>
+                                            <span class="guests-adult-num mx-2">2</span>
                                             <button type="button" class="guests-adult-add btn btn-light rounded-circle"><i class="far fa-plus"></i></button>
                                         </div>
                                     </div>
@@ -223,7 +221,7 @@
                                         <div>Child</div>
                                         <div>
                                             <button type="button" class="guests-child-minus btn btn-light rounded-circle"><i class="far fa-minus"></i></button>
-                                            <span class="guests-child-num mx-2">0</span>
+                                            <span class="guests-child-num mx-2">1</span>
                                             <button type="button" class="guests-child-add btn btn-light rounded-circle"><i class="far fa-plus"></i></button>
                                         </div>
                                     </div>
@@ -338,7 +336,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="text" class="form-control  js-checkin" placeholder="MM/DD/YYYY" id="Rdep">
+                                <input type="text" class="form-control  js-checkin" placeholder="DD MM" id="Rdep">
                             </div>
                         </div>
                     </div>
@@ -349,7 +347,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="text" class="form-control  js-checkout" placeholder="MM/DD/YYYY" id="Rarr">
+                                <input type="text" class="form-control  js-checkout" placeholder="DD MM" id="Rarr">
                             </div>
                         </div>
                     </div>
@@ -558,7 +556,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                                 </div>
-                                <input type="text" class="form-control js-checkin" placeholder="DD/MM/YYYY" id="Odep">
+                                <input type="text" class="form-control js-checkin" placeholder="DD MM" id="Odep">
                             </div>
                         </div>
                     </div>
@@ -577,7 +575,8 @@
                 <!-- <div class="row pt-2"> -->
                   <div class="pt-2">
                     <div class="new-flight">
-                        <div class="row">
+                        <div class="fw-bold">Flight <span class="new-flight-label">1</span></div>
+                        <div class="row mb-3">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="m-0">Flying from</label>
@@ -612,7 +611,7 @@
                                             <span class="input-group-text"><i
                                                     class="icon fa fa-calendar-check"></i></span>
                                         </div>
-                                        <input type="search" class="form-control js-checkin" placeholder="DD/YY/MM" id="MCdep">
+                                        <input type="search" class="form-control js-checkin" placeholder="DD MM" id="MCdep">
                                     </div>
                                 </div>
                             </div>
@@ -656,7 +655,7 @@
                             <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                           </div>
                           <input type="search" class="form-control fromdate  js-checkin" name="check_in" id="thingsFrom"
-                            placeholder="Check-in">
+                            placeholder="DD MM">
                         </div>
                       </div>
                     </div>
@@ -667,7 +666,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                           </div>
-                          <input type="search" class="form-control todate  js-checkout" name="check_in" id="thingsTO" placeholder="Check-out">
+                          <input type="search" class="form-control todate  js-checkout" name="check_in" id="thingsTO" placeholder="DD MM">
                         </div>
                       </div>
                     </div>
@@ -1306,10 +1305,10 @@
             }); */
 
     /*append multi-city*/
-    var newflight = $('.new-flight').html();
-    $('.add-flight').click(function () {
-        $('.new-flight').append(newflight);
-    });
+    // var newflight = $('.new-flight').html();
+    // $('.add-flight').click(function () {
+    //     $('.new-flight').append(newflight);
+    // });
     /*append multi-city*/
 
 
@@ -1355,13 +1354,13 @@
     /*Sidebar Filter Toggle mobile*/
 
     /*Datepicker*/
-       $.datepicker.setDefaults({
+    $.datepicker.setDefaults({
     dateFormat: 'd M'
 });
 
     if ($(window).width() > 991) {
           $( function() {
-            var dateFormat = "mm/dd/yy",
+            // var dateFormat = "mm/dd/yy",
               from = $( ".js-checkin" )
                 .datepicker({
                   defaultDate: "+1w",
@@ -1516,7 +1515,7 @@ $(document).on('click', '.flifgt-navigation .dropdown-menu', function (e) {
         });
 
         // Full date
-        $('.js-checkin, .js-checkout').click(function(){
+        $(document).on('click', '.js-checkin, .js-checkout', function(){
             $('.full-date-canvas').addClass('show-full');
         });
 
@@ -1529,6 +1528,20 @@ $(document).on('click', '.flifgt-navigation .dropdown-menu', function (e) {
 
         $('#tAdults, #tChildren, #tInfants').change(function(){
           $('.select-adult-mobile .dropdown-toggle').text(parseInt($('#tAdults').val()) + parseInt($('#tChildren').val()) + parseInt($('#tInfants').val()));
+        });
+
+        $('.full-search-toggle').click(function() {
+          $('.full-search-input input').focus();
+        });
+
+        // Flight
+         var nf =  $('.new-flight-label:last').text();
+        $(document).on('click','.add-flight',function(){
+          setTimeout(function(){
+            nf =  $('.new-flight-label:last').text();
+          }, 300);
+          $('.new-flight-label:last').text(parseInt(nf) + 1);
+
         });
     </script>
 </body>
