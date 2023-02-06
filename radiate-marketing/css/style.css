@@ -220,6 +220,10 @@ section {
 	background-image: linear-gradient(var(--first-brand-color), var(--second-brand-color));
 }
 
+.primary-bg {
+	background-color: var(--first-brand-color);
+}
+
 /* Buttons */
 .button {
 	font-family: 'Montserrat', sans-serif;
@@ -248,6 +252,10 @@ section {
 .button-primary {
 	background-color: var(--first-brand-color);
 	color: var(--white);
+}
+
+.button-primary:hover {
+	opacity: 0.9;
 }
 
 .button-bordered {
@@ -378,6 +386,7 @@ section {
 	color: var(--white);
 	/*border-bottom: 1px solid var(--white);
 	padding-bottom: 30px;*/
+	text-transform: uppercase;
 }
 
 .hero-section .button-hero {
@@ -434,7 +443,22 @@ section {
 }
 
 .hero-section.child {
+	background-color: var(--second-brand-color);
 	height: 300px;
+}
+
+.hero-section.child h1 {
+	width: fit-content;
+	margin: 0 auto;
+}
+
+.hero-section.child h1:after {
+	content: '';
+	background-color: var(--first-brand-color);
+	width: 40%;
+	height: 3px;
+	display: block;
+	margin: 15px auto;
 }
 
 .hero-section.child .hero-inner {
@@ -448,7 +472,7 @@ section {
 
 
 /* Home */
-.home-services-inner {
+.services-inner {
 	border:  1px solid var(--first-brand-color);
 }
 
@@ -460,6 +484,7 @@ section {
 	transition: 0.3s;
 	padding: 20px 20px 50px 20px;
 	position: relative;
+	text-align: center;
 }
 
 .home-services-wrap ul li:hover {
@@ -494,8 +519,13 @@ section {
 	color: var(--white);
 	position: absolute;
 	bottom: 0;
-	left: 20px;
+	left: 50%;
+	transform: translateX(-50%);
 	transition: 0.3s;
+}
+
+.home-services-wrap li a:hover {
+	opacity: 0.8;
 }
 
 .home-services-wrap li a span {
@@ -527,17 +557,97 @@ section {
 }
 
 /* About */
+.about-why-choose {
+	background-color: var(--first-brand-color);
+	color: var(--white);
+}
+
+.about-why-choose ul {
+	display: flex;
+	flex-wrap: wrap;
+	/*justify-content: space-between;*/
+	gap: 30px;
+}
+
+.about-why-choose ul li {
+	border-top: 1px solid var(--white);
+	position: relative;
+	padding: 12px 20px 20px 50px;
+	width: calc(calc(100% - 60px) / 3);
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.about-why-choose ul li:before {
+	content: '';
+	background-image: url('../images/check-icon.png');
+	background-size: cover;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	top: 20px;
+	left: 0;
+}
+
+
+
+
 
 /* Services */
-.services-wrap .services-card {
-	padding: 50px;
-		margin-bottom: 70px;
+.hor-line {
+	background-color: var(--white);
+	width: 100%;
+	height: 2px;
+	margin: 10px 0;
+}
+
+.services-wrap .nav-pills .nav-link {
+	font-size: 20px;
+	font-weight: 700;
+	max-width: 300px;
+	/*width: 100%;*/
+	text-transform: uppercase;
+	opacity: 0.4;
+	border-bottom: 3px solid transparent;
+	border-radius: 0;
+}
+
+.services-wrap .nav-pills .nav-link.active:after {
+	content: '';
+	position: absolute;
+	bottom: -15px;
+	left: 50%;
+	transform: translateX(-50%);
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid var(--first-brand-color);
+}
+
+.services-wrap .nav-pills .nav-link.active {
+	opacity: 1;
+	border-color: var(--first-brand-color);
+}
+
+.services-wrap .nav-pills .nav-link img {
+	margin-bottom: 5px;
+}
+
+.services-wrap .nav-pills .nav-link,
+.services-wrap .nav-pills .nav-link.active {
+	background-color: transparent;
+	color: var(--first-brand-color);
+	filter: invert(41%) sepia(79%) saturate(4733%) hue-rotate(320deg) brightness(99%) contrast(85%);
 }
 
 .services-header {
 	display: flex;
 	align-items: center;
-	background-color: var(--first-brand-color);
+	/*background-color: var(--first-brand-color);*/
+	background-image: linear-gradient(var(--first-brand-color), var(--second-brand-color));
 	padding: 15px 30px;
 }
 
@@ -564,8 +674,22 @@ section {
 	text-align: center;
 }
 
-.contact-canvas h2 {
-	margin-top: 20px;
+.contact-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.contact-header img {
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+	filter: invert(41%) sepia(79%) saturate(4733%) hue-rotate(320deg) brightness(99%) contrast(85%);
+}
+
+.contact-header h2 {
+	margin: 0;
 }
 
 .contact-canvas p a {
@@ -580,7 +704,7 @@ section {
 .contact-form {
 	position: relative;
 	z-index: 1;
-	/*margin-top: -150px;*/
+	margin-top: -150px;
 	background: var(--white);
 }
 
