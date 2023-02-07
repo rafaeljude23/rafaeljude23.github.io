@@ -141,6 +141,7 @@ section {
 	margin: 0;
 }*/
 
+.main-nav li a:focus,
 .main-nav li a:hover {
 	background-color: var(--first-brand-color);
 	color: var(--white);
@@ -595,9 +596,8 @@ section {
 	padding: 12px 20px 20px 50px;
 	width: calc(calc(100% - 60px) / 3);
 	text-transform: uppercase;
-	font-size: 20px;
+	font-size: 17.5px;
 	font-weight: 600;
-	line-height: 1.4;
 }
 
 .about-why-choose ul li:before {
@@ -881,6 +881,19 @@ button:disabled:hover {
 		-webkit-box-direction: normal;
 		    -ms-flex-direction: column;
 		        flex-direction: column;
+	}
+
+	.home-services-wrap li a {
+		opacity: 1;
+		color: var(--white);
+		background-color: var(--first-brand-color);
+		bottom: 30px;
+		padding: 4px 12px;
+		border-radius: 3px;
+	}
+
+	.home-services-wrap ul li {
+		padding-bottom: 70px;
 	}
 
 	.about-why-choose ul {
