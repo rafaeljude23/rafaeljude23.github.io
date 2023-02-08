@@ -1367,6 +1367,11 @@
                   changeMonth: true,
                   minDate: new Date(),
                   numberOfMonths: 2,
+beforeShowDay: function(date) {
+                var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-checkin").val());
+                var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-checkout").val());
+                return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+            },
                 })
                 .on( "change", function() {
                   to.datepicker( "option", "minDate", getDate( this ) );
@@ -1376,6 +1381,11 @@
                 defaultDate: "+1w",
                 changeMonth: true,
                 numberOfMonths: 2,
+beforeShowDay: function(date) {
+                var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-checkin").val());
+                var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-checkout").val());
+                return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+            },
               })
               .on( "change", function() {
                 from.datepicker( "option", "maxDate", getDate( this ) );
