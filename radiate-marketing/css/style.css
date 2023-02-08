@@ -443,6 +443,8 @@ section {
 .hero-img img {
 	width: 100%;
 	height: 100%;
+	-o-object-position: center;
+	   object-position: center;
 	-o-object-fit: cover;
 	   object-fit: cover;
 }
@@ -499,7 +501,10 @@ section {
 }
 
 .home-services-wrap ul li:hover {
-	background-color: var(--first-brand-color);
+	/*background-color: var(--first-brand-color);*/
+	background-image: -webkit-gradient(linear, left top, left bottom, from(var(--first-brand-color)), to(var(--second-brand-color)));
+	background-image: -o-linear-gradient(var(--first-brand-color), var(--second-brand-color));
+	background-image: linear-gradient(var(--first-brand-color), var(--second-brand-color));
 	color: var(--white);
 }
 
@@ -612,9 +617,6 @@ section {
 }
 
 
-
-
-
 /* Services */
 .hor-line {
 	background-color: var(--white);
@@ -623,18 +625,26 @@ section {
 	margin: 10px 0;
 }
 
+/*Desktop*/
+.services-wrap .nav-pills {
+		/*background-color: var(--second-brand-color);*/
+	background-image: -webkit-gradient(linear, left top, left bottom, from(var(--first-brand-color)), to(var(--second-brand-color)));
+	background-image: -o-linear-gradient(var(--first-brand-color), var(--second-brand-color));
+	background-image: linear-gradient(var(--first-brand-color), var(--second-brand-color));
+
+}
 .services-wrap .nav-pills .nav-link {
 	font-size: 20px;
 	font-weight: 700;
 	max-width: 300px;
 	/*width: 100%;*/
 	text-transform: uppercase;
-	opacity: 0.4;
 	border-bottom: 3px solid transparent;
 	border-radius: 0;
+	color: var(--white);
 }
 
-.services-wrap .nav-pills .nav-link.active:after {
+/*.services-wrap .nav-pills .nav-link.active:after {
 	content: '';
 	position: absolute;
 	bottom: -15px;
@@ -647,25 +657,29 @@ section {
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   border-top: 15px solid var(--first-brand-color);
-}
+}*/
 
+.services-wrap .nav-pills .nav-link:hover,
 .services-wrap .nav-pills .nav-link.active {
-	opacity: 1;
-	border-color: var(--first-brand-color);
+/*	opacity: 1;
+	border-color: var(--first-brand-color);*/
+	background-color: transparent;
+	  background-image: -o-radial-gradient(circle, var(--first-brand-color) , rgba(0,0,0,0) 70%);
+	  background-image: radial-gradient(circle, var(--first-brand-color) , rgba(0,0,0,0) 70%);
+
 }
 
 .services-wrap .nav-pills .nav-link img {
+	-webkit-filter: brightness(0) invert(1);
+	        filter: brightness(0) invert(1);
 	margin-bottom: 5px;
 }
 
-.services-wrap .nav-pills .nav-link,
-.services-wrap .nav-pills .nav-link.active {
-	background-color: transparent;
-	color: var(--first-brand-color);
-	-webkit-filter: invert(41%) sepia(79%) saturate(4733%) hue-rotate(320deg) brightness(99%) contrast(85%);
-	        filter: invert(41%) sepia(79%) saturate(4733%) hue-rotate(320deg) brightness(99%) contrast(85%);
+.services-wrap  .tab-content>.tab-pane {
+	padding: 30px;
 }
 
+/*Mobile*/
 .services-header {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -689,7 +703,6 @@ section {
 	color: var(--white);
 	margin-left: 20px;
 }
-
 
 .services-content {
 	padding: 30px;
