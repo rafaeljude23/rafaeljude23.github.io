@@ -501,10 +501,10 @@ section {
 }
 
 .home-services-wrap ul li:hover {
-	/*background-color: var(--first-brand-color);*/
-	background-image: -webkit-gradient(linear, left top, left bottom, from(var(--first-brand-color)), to(var(--second-brand-color)));
+	background-color: var(--first-brand-color);
+	/*background-image: -webkit-gradient(linear, left top, left bottom, from(var(--first-brand-color)), to(var(--second-brand-color)));
 	background-image: -o-linear-gradient(var(--first-brand-color), var(--second-brand-color));
-	background-image: linear-gradient(var(--first-brand-color), var(--second-brand-color));
+	background-image: linear-gradient(var(--first-brand-color), var(--second-brand-color));*/
 	color: var(--white);
 }
 
@@ -687,10 +687,10 @@ section {
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	/*background-color: var(--first-brand-color);*/
-	background-image: -o-linear-gradient(var(--first-brand-color), var(--second-brand-color));
+	background-color: var(--first-brand-color);
+	/*background-image: -o-linear-gradient(var(--first-brand-color), var(--second-brand-color));
 	background-image: -webkit-gradient(linear, left top, left bottom, from(var(--first-brand-color)), to(var(--second-brand-color)));
-	background-image: linear-gradient(var(--first-brand-color), var(--second-brand-color));
+	background-image: linear-gradient(var(--first-brand-color), var(--second-brand-color));*/
 	padding: 15px 30px;
 }
 
