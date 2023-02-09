@@ -141,6 +141,7 @@ section {
 	margin: 0;
 }*/
 
+.main-nav li a.active,
 .main-nav li a:focus,
 .main-nav li a:hover {
 	background-color: var(--first-brand-color);
@@ -555,6 +556,7 @@ section {
 
 .quote-canvas {
 	background-color: var(--first-brand-color);
+	text-align: center;
 }
 
 .quote-inner {
@@ -711,14 +713,14 @@ section {
 
 /* Contact */
 .contact-canvas {
-	/*background-color: var(--first-brand-color);
-	color: var(--white);*/
+	/*background-color: var(--first-brand-color);*/
 	text-align: center;
+	margin-bottom: 50px;
 }
 
 .contact-canvas p {
 	max-width: 1000px;
-	margin: 0 auto;
+	margin: 0 auto 20px;
 }
 
 .contact-header {
@@ -738,28 +740,25 @@ section {
 	width: 50px;
 	height: 50px;
 	margin-right: 10px;
-	-webkit-filter: invert(41%) sepia(79%) saturate(4733%) hue-rotate(320deg) brightness(99%) contrast(85%);
-	        filter: invert(41%) sepia(79%) saturate(4733%) hue-rotate(320deg) brightness(99%) contrast(85%);
 }
 
 .contact-header h2 {
 	margin: 0;
 }
 
-.contact-canvas p a {
+.contact-canvas a {
 	display: inline-block;
 	background-color: var(--second-brand-color);
 	color: var(--white);
-	padding: 5px 10px;
+	padding: 5px 15px;
 	border-radius: 20px;
-	margin-right: 8px;
 	-webkit-transition: 0.3s;
 	-o-transition: 0.3s;
 	transition: 0.3s;
 }
 
-.contact-canvas p a:hover {
-	padding: 5px 15px;
+.contact-canvas a:hover {
+	padding: 5px 20px;
 }
 
 .contact-form {
@@ -898,11 +897,14 @@ button:disabled:hover {
 
 	.home-services-wrap li a {
 		opacity: 1;
-		color: var(--white);
-		background-color: var(--first-brand-color);
+		color: var(--first-brand-color);
 		bottom: 30px;
 		padding: 4px 12px;
 		border-radius: 3px;
+	}
+
+	.home-services-wrap li:hover a {
+		color: var(--white);
 	}
 
 	.home-services-wrap ul li {
