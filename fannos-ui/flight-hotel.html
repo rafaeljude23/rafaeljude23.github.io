@@ -100,9 +100,12 @@
     </div>
   </nav>
 
+
+
+
                     <!-- Full date canvas -->
                     <div class="full-date-canvas">
-                        <div class="container">
+                        <!-- <div class="container"> -->
                             <div class="full-date-close"><i class="fal fa-times"></i></div>
                             <div class="full-search-title">Pick a date</div>
                             <p class="d-none">
@@ -112,8 +115,8 @@
                                 <input class="form-control js-mobile-checkout" type="text" placeholder="">
                             </p>
                             <div class="js-datepicker"></div>
-                            <button class="btn btn-danger full-date-btn" type="btn">Done</button>
-                        </div>
+                            <button class="btn btn-danger full-date-btn" type="button">Done</button>
+                        <!-- </div> -->
                     </div>
 
                     <!-- Full search canvas -->
@@ -1358,60 +1361,15 @@
     dateFormat: 'd M'
 });
 
-    if ($(window).width() > 991) {
-          $( function() {
-            // var dateFormat = "mm/dd/yy",
-              from = $( ".js-checkin" )
-                .datepicker({
-                  defaultDate: "+1w",
-                  changeMonth: true,
-                  minDate: new Date(),
-                  numberOfMonths: 2,
-beforeShowDay: function(date) {
-                var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-checkin").val());
-                var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-checkout").val());
-                return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
-            },
-            onClose: function(date) {
-              $( ".js-checkout" ).focus();
-            },
+        // Full date
+        $(document).on('click', '.js-checkin, .js-checkout', function(){
+            $('.full-date-canvas').appendTo($(this).parent()).addClass('show-full');
+        });
 
-                })
-                .on( "change", function() {
-                  to.datepicker( "option", "minDate", getDate( this ) );
-                  
-                }),
-              to = $( ".js-checkout" ).datepicker({
-                defaultDate: "+1w",
-                changeMonth: true,
-                numberOfMonths: 2,
-beforeShowDay: function(date) {
-                var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-checkin").val());
-                var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-checkout").val());
-                return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
-            },
-              })
-              .on( "change", function() {
-                from.datepicker( "option", "maxDate", getDate( this ) );
-              });
-         
-            function getDate( element ) {
-              var date;
-              try {
-                date = $.datepicker.parseDate( dateFormat, element.value );
-              } catch( error ) {
-                date = null;
-              }
-         
-              return date;
-            }
-          } );
-    } else {
-
-
-
-      $('.js-checkin, .js-checkout').attr('readonly', true);
-
+        $('.full-date-close, .full-date-btn').click(function(){
+            $('.full-date-canvas').removeClass('show-full');
+        });
+        
         $(".js-datepicker").datepicker({
             numberOfMonths: 2,
             changeMonth: true,
@@ -1439,12 +1397,12 @@ beforeShowDay: function(date) {
                     $(this).datepicker();
                 }
 
-
-
+                $('.js-checkin').val( $('.js-mobile-checkin').val() );
+                $('.js-checkout').val( $('.js-mobile-checkout').val() );
 
             }
         });
-    }
+
 
         $('#Odep').datepicker({
             minDate: new Date()
@@ -1526,17 +1484,6 @@ $(document).on('click', '.flifgt-navigation .dropdown-menu', function (e) {
         $('.full-search-close').click(function(){
             $('.full-search-canvas').removeClass('show-full');
             $('.full-search-toggle.active').val($('.full-search-input .form-control').val());
-        });
-
-        // Full date
-        $(document).on('click', '.js-checkin, .js-checkout', function(){
-            $('.full-date-canvas').addClass('show-full');
-        });
-
-        $('.full-date-close, .full-date-btn').click(function(){
-            $('.full-date-canvas').removeClass('show-full');
-            $('.js-checkin').val( $('.js-mobile-checkin').val() );
-            $('.js-checkout').val( $('.js-mobile-checkout').val() );
         });
 
 

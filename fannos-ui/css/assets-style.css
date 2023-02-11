@@ -139,11 +139,11 @@ h5{
     display: none;
 }
 .shadow-box {
-	background: #fff;
-	 box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
-	-webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
-	-ms-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+    background: #fff;
+     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
 }
 .shadow-box.blue-bg, .blue-bg {
     background: #f5fcff;
@@ -154,10 +154,10 @@ h5{
     margin-bottom: 30px;
 }
 .hotel-item, .room-item, .flight-item {
-	background: #fff;
+    background: #fff;
     /*cursor: pointer;*/
     color: #737373;
-	 box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
     -ms-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
@@ -170,7 +170,7 @@ h5{
     color: #737373;
 }
 .hotel-price-from, .room-price-from, .flight-price-from {
-	font-size: 12px;
+    font-size: 12px;
     line-height: 1em;
     background: #ed5565;
     color: #fff;
@@ -304,11 +304,11 @@ a:hover {
     margin: 0;
 }
 select.form-control{
-	-webkit-appearance: none;
-	-webkit-border-radius: 0px;
-	border-radius: 0px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
     background: #ffffff;
-	background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHdpZHRoPScyNCcgaGVpZ2h0PScyNCcgdmlld0JveD0nMCAwIDI0IDI0Jz48cGF0aCBmaWxsPScjNDQ0JyBkPSdNNy40MDYgNy44MjhsNC41OTQgNC41OTQgNC41OTQtNC41OTQgMS40MDYgMS40MDYtNiA2LTYtNnonPjwvcGF0aD48L3N2Zz4=");
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHdpZHRoPScyNCcgaGVpZ2h0PScyNCcgdmlld0JveD0nMCAwIDI0IDI0Jz48cGF0aCBmaWxsPScjNDQ0JyBkPSdNNy40MDYgNy44MjhsNC41OTQgNC41OTQgNC41OTQtNC41OTQgMS40MDYgMS40MDYtNiA2LTYtNnonPjwvcGF0aD48L3N2Zz4=");
     background-position: 100% 50%;
     background-repeat: no-repeat;
 }
@@ -649,11 +649,11 @@ img.sticky {
         background: #fff;
     }
     .shadow-box-mobile {
-    	background: #fff;
-    	 box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
-    	-moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
-    	-webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
-    	-ms-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+        background: #fff;
+         box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+        -ms-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
     }
     .summary-price {
         display: block;
@@ -1728,10 +1728,29 @@ input[type="search"]::-webkit-search-cancel-button {
     z-index: 9999;*/
     width: 150px;
     display: block;
-    margin: 50px auto;
+    margin: 30px auto 0;
 }
 
 /*JQuery UI Datepicker*/
+@media (min-width: 992px) {
+    .full-date-canvas {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 600px;
+        height: auto;
+        background: #fff;
+        z-index: 999;
+        text-align: center;
+    }
+
+    .js-datepicker .ui-datepicker {
+        margin: 0 auto;
+    }    
+}
+
 .dp-highlight .ui-state-default {
   /*background: rgba(10, 48, 73, 0.63);*/
   background: #0a3049;
@@ -1757,12 +1776,16 @@ input[type="search"]::-webkit-search-cancel-button {
 .ui-widget { font-size: 100% }   
 }
 
-
-/*Full screen traveller*/
-@media (max-width: 767px) {
     .show-full {
         display: block;
     }
+
+
+
+
+/*Full screen traveller*/
+@media (max-width: 767px) {
+
 
     .travellerd.show {
         position: fixed !important;
