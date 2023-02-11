@@ -1372,11 +1372,15 @@ beforeShowDay: function(date) {
                 var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $(".js-checkout").val());
                 return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
             },
+            onClose: function(date) {
+              $( ".js-checkout" ).focus();
+            },
+
                 })
                 .on( "change", function() {
                   to.datepicker( "option", "minDate", getDate( this ) );
+                  
                 }),
-
               to = $( ".js-checkout" ).datepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
