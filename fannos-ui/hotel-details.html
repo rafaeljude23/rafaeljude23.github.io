@@ -196,18 +196,14 @@
 
                     <!-- Full date canvas -->
                     <div class="full-date-canvas">
-                        <div class="container">
-                            <div class="full-date-close"><i class="fal fa-times"></i></div>
-                            <div class="full-search-title">Pick a date</div>
-                            <p class="d-none">
-                                <label>Check-in</label><br>
-                                <input class="form-control mb-3 js-mobile-checkin" type="text" placeholder="">
-                                <label>Check-out</label>
-                                <input class="form-control js-mobile-checkout" type="text" placeholder="">
-                            </p>
-                            <div class="js-datepicker"></div>
-                            <button class="btn btn-danger full-date-btn" type="btn">Done</button>
-                        </div>
+                        <div class="full-date-close"><i class="fal fa-times"></i></div>
+                        <div class="full-search-title">Pick a date</div>
+                        <p class="d-none">
+                            <input class="form-control mb-3 js-mobile-checkin" type="text" placeholder="">
+                            <input class="form-control js-mobile-checkout" type="text" placeholder="">
+                        </p>
+                        <div class="js-datepicker"></div>
+                        <button class="btn btn-danger full-date-btn" type="button">Done</button>
                     </div>
 
                     <!-- Full search canvas -->
@@ -699,44 +695,14 @@
        $.datepicker.setDefaults({
     dateFormat: 'd M'
 });
-    if ($(window).width() > 991) {
-          $( function() {
-            var dateFormat = "mm/dd/yy",
-              from = $( ".js-checkin" )
-                .datepicker({
-                  defaultDate: "+1w",
-                  changeMonth: true,
-                  minDate: new Date(),
-                  numberOfMonths: 2,
-                })
-                .on( "change", function() {
-                  to.datepicker( "option", "minDate", getDate( this ) );
-                }),
 
-              to = $( ".js-checkout" ).datepicker({
-                defaultDate: "+1w",
-                changeMonth: true,
-                numberOfMonths: 2,
-              })
-              .on( "change", function() {
-                from.datepicker( "option", "maxDate", getDate( this ) );
-              });
-         
-            function getDate( element ) {
-              var date;
-              try {
-                date = $.datepicker.parseDate( dateFormat, element.value );
-              } catch( error ) {
-                date = null;
-              }
-         
-              return date;
-            }
-          } );
-    } else {
+        $(document).on('click', '.js-checkin, .js-checkout', function(){
+            $('.full-date-canvas').appendTo($(this).parent()).addClass('show-full');
+        });
 
-      $('.js-checkin, .js-checkout').attr('readonly', true);
-
+        $('.full-date-close, .full-date-btn').click(function(){
+            $('.full-date-canvas').removeClass('show-full');
+        });
         
         $(".js-datepicker").datepicker({
             numberOfMonths: 2,
@@ -755,7 +721,7 @@
                 if (!date1 || date2) {
                     $(".js-mobile-checkin").val(dateText);
                     $(".js-mobile-checkout").val("");
-                    $(this).datepicker();
+                    $(this).datepicker();   
                 } else if (selectedDate < date1) {
                     $(".js-mobile-checkout").val($(".js-checkin").val());
                     $(".js-mobile-checkin").val(dateText);
@@ -764,9 +730,13 @@
                     $(".js-mobile-checkout").val(dateText);
                     $(this).datepicker();
                 }
+
+                $('.js-checkin').val( $('.js-mobile-checkin').val() );
+                $('.js-checkout').val( $('.js-mobile-checkout').val() );
+
             }
         });
-    }
+
         });
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=783rtweyugfsdhjb487&callback=initMap"></script>
@@ -825,17 +795,6 @@
         $('.full-search-close').click(function(){
             $('.full-search-canvas').removeClass('show-full');
             $('.full-search-toggle.active').val($('.full-search-input .form-control').val());
-        });
-
-        // Full date
-        $('.js-checkin, .js-checkout').click(function(){
-            $('.full-date-canvas').addClass('show-full');
-        });
-
-        $('.full-date-close, .full-date-btn').click(function(){
-            $('.full-date-canvas').removeClass('show-full');
-            $('.js-checkin').val( $('.js-mobile-checkin').val() );
-            $('.js-checkout').val( $('.js-mobile-checkout').val() );
         });
 
         $('.full-search-toggle').click(function() {
