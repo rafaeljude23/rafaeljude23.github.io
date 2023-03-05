@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animation.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="puzzle-captcha/slidercaptcha.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet">
+
+    <title>Contact | Zendot Media</title>
+  </head> 
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <div class="header-inner">
+          <a href="index.html">
+            <img class="header-logo" src="images/header-logo.png" alt="Zendot Media Logo">
+          </a>
+          <div class="menu-toggle">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a class="active" href="contact.html">Contact Us</a></li>
+            </ul>
+            
+          </nav>          
+        </div>
+      </div>      
+    </header>
+
+
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-intro">
+          <h1 class="wow fade-in-left delay-03s">
+          Contact Us
+        </h1>
+          <p>Our team is passionate about achieving your business goals quickly and reliably, while staying true to our core values. From start to finish, we are committed to generate long-lasting, scalable results. We look forward to hearing from you and exploring how we can work together to take your business to the next level. Please fill out the form below to get started.</p>
+        </div>
+        
+        
+      </div> 
+    </section>
+
+    <section class="bg-white">
+      <div class="container">
+        
+        <div class="contact-form shadow col-md-8  offset-md-2 wow fade-in-bottom delay-1s">
+          <form action="puzzle-captcha/contact.php" method="POST" role="form" class="myForm needs-validation" novalidate="novalidate">
+            <div class="p-4 py-5 p-md-5">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="mb-1">Name</label>
+                  <input type="text" name="name" id="" class="form-control" required="">
+                  <div class="invalid-feedback">
+                    Please provide a name.
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="mb-1">Email</label>
+                  <input type="email" name="email" id="" class="form-control" required="">
+                  <div class="invalid-feedback">
+                    Please provide an email.
+                  </div>
+                </div>            
+              </div>
+              <div class="mb-3">
+                <label class="mb-1">Subject</label>
+                <input type="text" name="subject" id="" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label class="mb-1">Message</label>
+                <textarea class="form-control" name="message" id="" rows="3" required=""></textarea>
+                <div class="invalid-feedback">
+                  Please provide a message.
+                </div>
+              </div>
+
+              <div class="captcha-val-set">
+                   <input type="hidden" name="captcha-val-set" value="">
+              </div>
+              <div class="slidercaptcha card">
+                   <div class="card-header">
+                        <span>Security Check</span>
+                   </div>
+                   <div class="card-body">
+                        <div id="captcha"></div>
+                   </div>
+              </div>
+
+              <div class="d-flex justify-content-center">
+                <button class="button button-primary mt-3" type="submit" id="sendMessageButton" style="margin-top:0px;border:0px;top:0px;">Submit Message</button>
+              </div>
+            </div>
+            
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="container">
+        <a href="index.html">
+          <img class="footer-logo" src="images/footer-logo.png" alt="Zendot Media Logo">
+        </a>
+        <div class="footer-copyright">
+          COPYRIGHT © ZENDOT MEDIA 2023 | DISCLAIMER     
+        </div>
+      </div>  
+    </footer>
+
+    <script src="js/jquery-min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="puzzle-captcha/longbow.slidercaptcha.js"></script>
+    <script src="puzzle-captcha/set-captcha-val.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+  </body>
+</html>
