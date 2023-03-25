@@ -446,6 +446,15 @@ section {
 	padding: 20px;
 }
 
+.services-item a span {
+	display: inline-block;
+	transition: 0.3s;
+}
+
+.services-item a:hover span {
+	transform: translateX(8px);
+}
+
 .services-header {
 	display: -webkit-box;
 	display: -ms-flexbox;
