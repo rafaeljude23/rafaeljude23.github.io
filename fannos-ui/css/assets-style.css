@@ -3,6 +3,7 @@ body {
     font-size: 14px;
     background: rgb(240, 242, 246);
 }
+
 h2{
     font-weight: 700;
     font-size: 36px;
@@ -1796,4 +1797,309 @@ input[type="search"]::-webkit-search-cancel-button {
     .full-travellerd-title {
         display: block;
     }
+}
+
+
+/*Payment*/
+.payment-wrapper {
+    font-size: 16px;
+    background-color: #e8e8e8;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 50px 0;
+}
+
+.payment-step {
+    display: none;
+}
+
+/*.payment-step.active {
+    display: block;
+}*/
+
+.payment-box {
+    background-color: #fff;
+    border-top: 2px solid #c3c3c3;
+    border-bottom: 2px solid #c3c3c3;
+    max-width: 500px;
+    width: 100%;
+    padding: 50px 30px;
+    margin: 0 auto;
+}
+
+.payment-btn {
+    background-color: #2a3246;
+    border-radius: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border:  none;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 40px 0 0;
+    transition: 0.3s;
+}
+
+.payment-btn:focus,
+.payment-btn:hover {
+    background-color: #39435e;
+}
+
+.payment-flocash-logo {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.payment-flocash-logo img {
+    width: 100px;
+    height: auto;
+}
+
+
+
+/*Card*/
+.payment-card-title {
+    font-weight: 700;
+    font-size: 20px;
+    color: #1f262e;
+}
+
+.payment-card-cancel {
+    font-weight: 700;
+    color: #000;
+}
+
+/*Plan*/
+.payment-plan-visa-label {
+    color: #9b9b9b;
+}
+
+.payment-plan-visa-label span {
+    font-weight: 600;
+    color: #000;
+}
+
+.payment-plan-item {
+    background-color: #fff;
+    min-height: 80px;
+    padding: 20px;
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    position: relative;
+    color: #333;
+    margin-bottom: 30px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.payment-plan-item.active {
+    background-color: #e4eeff;
+    border-color: #1434cb;
+}
+
+.payment-plan-item.active .payment-plan-duration {
+    background-color: #1434cb;
+}
+
+
+.payment-plan-item.active .payment-plan-content {
+    display: block;
+}
+
+.payment-plan-content {
+    display: none;
+    margin: 1rem 0;
+}
+
+.payment-plan-content p {
+    color: #777;
+}
+
+.payment-plan-item.full-amount .payment-plan-price {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    color: #111;
+}
+
+.payment-plan-price {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.payment-plan-price span {
+    font-size: 20px;
+}
+
+.payment-plan-duration {
+    background-color: #aeaeae;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    width: 120px;
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.payment-plan-or {
+    position: relative;
+    text-align: center;
+}
+
+.payment-plan-or span {
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    padding: 0 5px;
+}
+
+.payment-plan-or:after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    border-top: 1px dashed #ccc;
+}
+
+.payment-plan-total-fees {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.payment-plan-total-fees li {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.payment-plan-total-fees li:not(:last-child):after {
+    content: '|';
+    color: #767676;
+    margin: 0 10px;
+}
+
+.payment-visa-text span {
+    font-size: 18px;
+    color: #1939cc;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+.payment-plan-learn-more {
+    color: #777;
+    text-decoration: underline;
+}
+
+.payment-plan-learn-more:hover {
+    text-decoration: none;
+}
+
+.payment-plan-desc {
+    color: #777;
+}
+
+/*Confirmation*/
+.payment-confirmation {
+    color: #000;
+}
+
+.payment-confirmation-table {
+    padding: 0;
+    margin: 0;
+}
+
+.payment-confirmation-table li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.payment-confirmation-table.bordered li {
+    font-weight: 700;
+    border-bottom: 1px solid #d8d8d8;
+    padding: 10px 0;
+}
+
+.payment-confirmation-table.bordered li:not(:last-child) {
+        border-top: 1px solid #d8d8d8;
+}
+
+.payment-confirmation-dot {
+    position: relative;
+    top: -4px;
+}
+
+.payment-confirmation-info p {
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.payment-confirmation-info p:last-child {
+    color: #333;
+}
+
+@media (max-width: 575px) {
+    .payment-plan-total-fees {
+        display: block;
+    }
+
+    .payment-plan-total-fees li:not(:last-child):after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: #767676;
+        margin: 10px 0;
+    }
+
+} 
+
+/* Select Payment Method */
+.select-payment-method > li:not(:last-child) {
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.select-payment-method-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 15px 50px 15px 20px;
+    position: relative;
+}
+
+.select-payment-method-header:hover {
+    background-color: #e4eeff;
+}
+
+.select-payment-method-header.active i {
+    transform: rotate(180deg);
+}
+
+.select-payment-method-header i {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    transition: 0.3s;
+}
+
+.select-payment-method-content {
+    display: none;
+    padding: 20px;
 }
