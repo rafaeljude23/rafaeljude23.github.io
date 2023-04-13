@@ -59,7 +59,7 @@ h5{
 }
 .search{
     margin-top: 65px;
-    background: url(../images/assets-search-bg.jpg) no-repeat;
+    /*background: url(../images/assets-search-bg.jpg) no-repeat;*/
     /* min-height: 600px; */
     background-size: cover;
 }
@@ -733,8 +733,8 @@ img.sticky {
     text-decoration: none;
 }
 .infobgimage{
-    background-image: url("../images/infobackground.jpg");
-    background-size: cover;
+    /*background-image: url("../images/infobackground.jpg");
+    background-size: cover;*/
 }
 
 label{margin-left: 20px;}
@@ -907,30 +907,6 @@ label{margin-left: 20px;}
 .flavorful .flrimg{
     /*background: url(../images/dining-.jpg) no-repeat right center;*/
     padding-left: 6%;
-}
-.hero-section {
-    position: relative;
-}
-.hero-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-}
-.hero-intro {
-    position: relative;
-    z-index: 3;
 }
 .flavorful .flrimg .hero-img {
     object-position: right;
@@ -2152,4 +2128,30 @@ input[type="search"]::-webkit-search-cancel-button {
 .select-payment-method-content {
     display: none;
     padding: 20px;
+}
+
+/*Hero*/
+.hero-section {
+    position: relative;
+}
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.hero-intro {
+    position: relative;
+    z-index: 3;
 }
