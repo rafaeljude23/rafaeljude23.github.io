@@ -867,7 +867,7 @@ label{margin-left: 20px;}
 
 .whysection{padding: 80px 0px 0px;}
 .whysection .whydesc{position: relative;padding:0px 20px 20px;}
-.whysection #whych {box-shadow: 0px 0px 10px rgb(0 0 0 / 28%);}
+.whysection .whych {box-shadow: 0px 0px 10px rgb(0 0 0 / 28%);}
 .whysection .whydesc .included-info {background: #0a3049;display: inline-block;width: 12rem;padding: 0px;color: #fff;font-size: 16px;font-weight: 400;line-height: 2.067;text-align: center;text-transform: uppercase;position: absolute;margin-top: -16px;margin-left:auto;margin-right:auto;left: 0px;right: 0px;}
 .whysection .whydesc .included-info i{margin-right: 7px;}
 .whysection .whydesc h3{font-weight: 400;text-transform: uppercase;margin-top: 35px;position: relative;float: left;line-height: 35px;width: 100%;}
@@ -1459,7 +1459,7 @@ input[type="search"]::-webkit-search-cancel-button {
         height: 38px;
     }
 
-    #whych .owl-item img,
+    .whych .owl-item img,
     #HomeBanner .owl-item img {
         width: auto;
         height: 400px;
