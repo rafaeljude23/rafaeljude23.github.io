@@ -2,6 +2,8 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title></title>
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -14,13 +16,18 @@
 	</div>
 
 	<!-- MAIN HEADER -->
-	<header class="main-header" id="top">
+	<header class="header">
 		<div class="container">
-			<div class="main-header-inner">
-				<div class="main-header-left">
-					<img src="img/drone-hawk-logo.png" alt="">
+			<div class="header-inner">
+				<div class="header-left">
+					<div class="header-logo">
+						<img src="img/drone-hawk-logo.png" alt="">
+					</div>			
+					<a href="javascript:void(0)" class="hamburger-wrapper">
+						<div class="hamburger-menu"></div>
+					</a>	
 				</div>
-				<div class="main-header-right">
+				<div class="header-right">
 					<nav class="main-nav">
 						<li>
 							<a class="active" href="#home">Home</a>
@@ -35,7 +42,7 @@
 							<a href="#review">Review</a>
 						</li>
 					</nav>
-					<a class="btn-get" href="#">Get 60% Off</a>		
+					<a class="btn-get go-to-offer" href="#">Get 60% Off</a>		
 				</div>
 			</div>
 		</div>
@@ -49,36 +56,38 @@
 			<p><b>Drone Hawk</b> is a precision engineered drone which is specifically designed for easy flying, making it perfect to fly inside or to record action shots whilst on the move.</p>
 			<ul>
 				<li>
-					<div class="sec1-img">
+					<div class="sec1-icon">
 						<img src="img/foldable-icon.png" alt="">
 					</div>
 					
 					<span>Foldable</span>
 				</li>
 				<li>
-					<div class="sec1-img">
+					<div class="sec1-icon">
 						<img src="img/lightweight-icon.png" alt="">
 					</div>
 					
 					<span>Lightweight</span>
 				</li>
 				<li>
-					<div class="sec1-img">
+					<div class="sec1-icon">
 						<img src="img/durable-icon.png" alt="">
 					</div>
 					
 					<span>Durable</span>
 				</li>
 				<li>
-					<div class="sec1-img">
+					<div class="sec1-icon">
 						<img src="img/hi-tech-icon.png" alt="">
 					</div>
 					
 					<span>Hi-Tech</span>
 				</li>
 			</ul>
-			<a class="btn-order" href="#">Order Now & Get 60% Off</a>
-			<img class="sec1-prod" src="img/drone-prod.png" alt="">
+			<a class="btn-order go-to-offer" href="#">Order Now & Get 60% Off</a>
+			<div class="sec1-drone">
+				<img  src="img/sec1-drone.png" alt="">
+			</div>
 		</div>			
 	</section>
 
@@ -126,6 +135,39 @@
 	<section class="sec4" id="features">
 		<div class="container">
 			<h2 class="heading1">Drone Hawk Features</h2>
+			<h5>Fully Loaded For Superior Durability & Easy Handling</h5>
+			<div class="sec-drone"></div>
+
+			<div class="sec4-inner">
+				<div class="sec4-left">
+					<div class="sec4-box">
+						<h3>Foldable Drone</h3>
+						<p>The propellers fold inwards to make the drone easier to carry and better protected during transit</p>
+					</div>
+					<div class="sec4-box">
+						<h3>HD Photos and Video</h3>
+						<p>Record video in HD at a full 60 frames per second and take high resolution photos.</p>
+					</div>
+					<div class="sec4-box">
+						<div class="sec4-cover"></div>
+					</div>
+				</div>
+				<div class="sec4-right">
+					<div class="sec4-box">
+						<h3>Gravity Sensor</h3>
+						<p>Sensors detect the ground and other obstacles & change the flying course automatically to avoid collision</p>
+					</div>
+					<div class="sec4-box">
+						<h3>Slo-mo Mode</h3>
+						<p>Replay the highlights of your great moments in high-definition slow motion</p>
+					</div>
+					<div class="sec4-box">
+						<div class="sec4-cover"></div>
+					</div>
+				</div>
+			</div>
+
+			<a class="btn-order go-to-offer" href="#">Order Now & Get 60% Off</a>
 		</div>
 	</section>
 
@@ -182,7 +224,7 @@
 					</div>
 				</div>
 			</div>
-			<a class="btn-order" href="#">Order Now & Get 60% Off</a>
+			<a class="btn-order go-to-offer" href="#">Order Now & Get 60% Off</a>
 		</div>
 	</section>
 
@@ -206,11 +248,11 @@
 					<p>"The quality of this drone is staggering compared to the price you pay. This marks a turning point in drones. It is clear from the Drone Hawk that you can now purchase a top-of-the-range drone for a fraction of the cost of some of the leading models. This technology is now accessible to everyone, and we couldn't be more excited!"</p>
 				</div>
 			</div>
-			<a class="btn-order" href="#">Order Now & Get 60% Off</a>
+			<a class="btn-order go-to-offer" href="#">Order Now & Get 60% Off</a>
 		</div>
 	</section>
 
-	<footer class="main-footer">
+	<footer class="footer">
 		<div class="container">
 			<div class="footer-logo">
 				<img src="img/drone-hawk-logo.png" alt="">
@@ -254,6 +296,24 @@ $(document).ready(function(){
     $(".main-nav li a").removeClass('active');
     $(this).addClass('active');
   });
+
+
+	$('.go-to-offer').on('click',function(){
+		window.location.href="https://demo.sellmore.co/drone-hawk/en/us/v1/checkout/";
+	});
+
+
+	// Hamburger menu
+	(function () {
+		$('.hamburger-wrapper').on('click', function() {
+			$('.hamburger-menu').toggleClass('animate');
+			$('.header-right').toggleClass('visible');
+		})
+		$('.main-nav li a').on('click', function () {
+			$('.hamburger-menu').removeClass('animate');
+			$('.header-right').removeClass('visible');
+		})
+	})();
 });
 </script>
 </body>
