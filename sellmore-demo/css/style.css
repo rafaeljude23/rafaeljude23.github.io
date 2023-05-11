@@ -173,6 +173,9 @@ a {
     line-height: 2.4;
     -webkit-transition: 0.3s;
     transition:  0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-order:hover {
@@ -850,10 +853,6 @@ a {
         font-size: 20px;
     }
 
-    .btn-order {
-        padding-top: 5px;
-    }
-
     .sec1 h5 {
         font-size: 25px;
     }
@@ -888,7 +887,7 @@ a {
 
 
     .sec4 {
-        padding: 20px 0;
+        /*padding: 20px 0;*/
         min-height: 0;
         background: #171717 url(../img/sec4-mobile-bg.webp) no-repeat 50%;
         background-size: 154%;
