@@ -14,7 +14,7 @@ $(document).ready(function(){
   // Menu Toggle
   $('.menu-toggle').click(function(){
     $(this).toggleClass('active');
-    $('.main-header').toggleClass('open-menu');
+    $('.main-nav').toggleClass('main-nav-open');
   });
 
 
