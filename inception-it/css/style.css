@@ -87,15 +87,14 @@ section {
 }
 
 .cta-bottom-canvas p {
-	font-size: 1.2rem;
+	/*font-size: 1.2rem;*/
 }
 
 /*Hero image*/
 .hero-image {
-  /*background: #ffffff url("../images/hero-bg.jpg") no-repeat right top;*/
   /*height: 50%;*/
-background: rgb(237,30,121);
-background: radial-gradient(circle, rgba(237,30,121,1) 0%, rgba(102,45,145,1) 100%);
+	background: rgb(237,30,121);
+	background: radial-gradient(circle, rgba(237,30,121,1) 0%, rgba(102,45,145,1) 100%);
   min-height: 700px;
   position: relative;
   display: flex;
@@ -106,6 +105,10 @@ background: radial-gradient(circle, rgba(237,30,121,1) 0%, rgba(102,45,145,1) 10
 
 .hero-image.child {
 	min-height: 400px;
+}
+
+.hero-image h1 b {
+	color: var(--first-brand-color);
 }
 
 /*.hero-image:before {
@@ -139,6 +142,13 @@ background: radial-gradient(circle, rgba(237,30,121,1) 0%, rgba(102,45,145,1) 10
 	box-shadow: 0 0 0 3px var(--third-brand-color);
 }
 
+
+.hero-img {
+	position: absolute;
+	bottom: 0;
+	right: 10%;
+	width: 40%;
+}
 
 /* Main Header */
 .main-header {
@@ -273,7 +283,7 @@ background: radial-gradient(circle, rgba(237,30,121,1) 0%, rgba(102,45,145,1) 10
 
 /* Colors */
 .text-highlight {
-	color: var(--second-brand-color);
+	color: var(--first-brand-color);
 }
 
 /*Typography*/
@@ -514,6 +524,7 @@ background: radial-gradient(circle, rgba(237,30,121,1) 0%, rgba(102,45,145,1) 10
 	background: var(--white);
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
 	margin-top: -100px;
+	border-radius: 20px;
 }
 
 
