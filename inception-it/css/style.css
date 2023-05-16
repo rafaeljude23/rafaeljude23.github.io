@@ -505,6 +505,15 @@ section {
 	transition: 0.3s;
 }
 
+.home-exp ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.home-exp ul li {
+	width: calc(100% / 3);
+}
+
 /* About */
 .about-who h2 {
 	border-top: 2px solid var(--second-brand-color);
@@ -512,7 +521,7 @@ section {
 }
 
 .about-who img {
-	margin-bottom: 25%;
+	/*margin-top: -25%;*/
 }
 
 /* Services */
