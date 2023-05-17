@@ -846,7 +846,7 @@ a {
 
 @media (max-width: 767px) {
 	.hero {
-		background: url("../img/hero.jpg") 50% 50% / cover no-repeat;
+		background: url("../img/hero.jpg") 70% 70% / cover no-repeat;
 		padding: 150px 0;
 	}
 	.hero-earbuds {
@@ -858,6 +858,13 @@ a {
 	.exp-earbuds {
 		width: 280px;
 	}
+
+	.exp-earbuds {
+		top: 300px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
 	.hero-curve {
 		bottom: 0;
 	}
@@ -922,6 +929,10 @@ a {
 
 	.hero-earbuds, .exp-earbuds {
 		width: 200px;
+	}
+
+	.exp-earbuds {
+		
 	}
 
 	.exp-left-top {
