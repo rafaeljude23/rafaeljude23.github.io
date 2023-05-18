@@ -299,6 +299,7 @@ a {
 	bottom: 22px;
 	z-index: 1;
 	width: 30%;
+	max-width: 474px;
 }
 
 /* EXPERIENCE */
@@ -387,10 +388,13 @@ a {
 
 .exp-earbuds {
 	position: absolute;
-	top: 96px;
-	left: 36px;
+	/*top: 96px;
+	left: 36px;*/
+	top: 10%;
+	left: 5%;
 	z-index: 1;
 	width: 30%;
+	max-width: 424px;
 }
 
 /* QUALITY */
@@ -847,6 +851,17 @@ a {
 	margin-bottom: 40px;
 }
 
+@media (max-width:  1199px) {
+	.exp-right {		
+		width: calc(100% - 300px);
+	}
+
+	.exp-earbuds {
+		top: 15%;
+		left: 10%;
+	}
+}
+
 @media (max-width: 991px) {
 	.hero {
 		background: url("../img/hero.jpg") 70% 70% / cover no-repeat;
@@ -869,6 +884,7 @@ a {
 
 	.exp-right {
 		position: static;
+		width: 100%;
 	}
 
 	.quality .title {

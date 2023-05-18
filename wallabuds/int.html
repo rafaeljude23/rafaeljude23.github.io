@@ -523,26 +523,29 @@ Save 50% + Free Shipping!</h3>
 				<li><a href="#">Contact Us</a></li>
 			</ul>      
 
-			<p class="copyright">Copyright  &copy; <script>document.write(new Date().getFullYear())</script>  DWalla Sounds— All rights reserved.</p>
+			<p class="copyright">Copyright  &copy; <script>document.write(new Date().getFullYear())</script>  Walla Sounds — All rights reserved.</p>
 		</div>
 	</footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
+	$(document).ready(function(){
+		// Click function
+		$('.quality-top li').click(function(){
+		  $('.quality-top li').removeClass('active');
+		  $(this).addClass('active');
+		 $('.quality-topright-img').hide();
+		  
+		  var activeTab = $(this).attr('data-target');
+		  $(activeTab).fadeIn();
+		  return false;
+		});		
+	});
 	// Show the first tab and hide the rest
 	$('.quality-top li:first-child').addClass('active');
 	$('.quality-topright-img').hide();
 	$('.quality-topright-img:first').show();
 
-	// Click function
-	$('.quality-top li').click(function(){
-	  $('.quality-top li').removeClass('active');
-	  $(this).addClass('active');
-	 $('.quality-topright-img').hide();
-	  
-	  var activeTab = $(this).attr('data-target');
-	  $(activeTab).fadeIn();
-	  return false;
-	});
+
 </script>
 </body>
 </html>
