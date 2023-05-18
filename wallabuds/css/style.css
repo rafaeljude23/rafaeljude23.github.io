@@ -294,9 +294,11 @@ a {
 
 .hero-earbuds {
 	position: absolute;
-	right: 135px;
+	/*right: 135px;*/
+	right: 10%;
 	bottom: 22px;
 	z-index: 1;
+	width: 30%;
 }
 
 /* EXPERIENCE */
@@ -388,6 +390,7 @@ a {
 	top: 96px;
 	left: 36px;
 	z-index: 1;
+	width: 30%;
 }
 
 /* QUALITY */
@@ -678,6 +681,7 @@ a {
 .why-choose-right {
 	display: flex;
 	position: absolute;
+	gap:  30px;
 	right: 80px;
 	top: -39px;
 }
@@ -689,7 +693,6 @@ a {
 	text-align: center;
 	position: relative;
 	padding-top: 65px;
-	margin: 0 0 0 30px;
 }
 
 .why-choose-item:nth-of-type(1) {
@@ -844,80 +847,132 @@ a {
 	margin-bottom: 40px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
 	.hero {
 		background: url("../img/hero.jpg") 70% 70% / cover no-repeat;
 		padding: 150px 0;
-	}
-	.hero-earbuds {
-		bottom: -30px;
-		right: 50%;
-		transform: translateX(50%);
-	}
-	.hero-earbuds,
-	.exp-earbuds {
-		width: 280px;
-	}
-
-	.exp-earbuds {
-		top: 300px;
-		left: 50%;
-		transform: translateX(-50%);
 	}
 
 	.hero-curve {
 		bottom: 0;
 	}
-.exp-right {
-	position: static;
+
+	.exp-earbuds {
+		top: 30%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.exp-left {
+		margin: 0 auto;
+	}
+
+	.exp-right {
+		position: static;
+	}
+
+	.quality .title {
+		text-align: center;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.quality-top,
+	.quality-bot {
+		display: block;
+	}
+
+	.quality-top {
+		width: fit-content;
+		margin: 0 auto;
+	}
+
+	.quality-topright {
+		margin: 50px 0;
+	}
+
+	.quality-top li {
+		padding: 30px;
+	}
+
+	.quality-bot-left, 
+	.quality-bot-right {
+		width: 100%;
+	}
+
+	.light-top:before {
+		display: none;
+	}
+
+	.light-icon {
+		bottom: -50px;
+	}
+
+	.light h4 {
+		margin-top: 70px;
+	}
+
+	.light-top ul {
+		flex-wrap: wrap;
+	}
+
+	.light-top ul li {
+		flex:  0 0 calc(50% - 16px);
+		margin-bottom: 40px;
+	}
+
+	.light-top ul li:nth-of-type(2) .light-img, 
+	.light-top ul li:nth-of-type(3) .light-img {
+		height: 441px;
+	}
+
+	.light-bot {
+		padding-top: 50px;
+	}
+
+	.why-choose-left {
+		padding: 50px;
+	}
+
+	.why-choose-right {
+		right: 50px;
+	}
+
+	.why-choose-item {
+		width: 150px;
+	}
+
 }
 
-.quality-top,
-.quality-bot,
-.light-top ul,
-.reviews-item {
-	display: block;
-}
+@media (max-width: 767px) {
+	.order-btn {
+		font-size: 20px;
+	}
 
-.quality-bot-left, 
-.quality-bot-right {
-	width: 100%;
-}
+	.hero-earbuds,
+	.exp-earbuds {
+		width: 50%;
+	}
 
-.light-top:before {
-	display: none;
-}
+	.hero-earbuds {
+		bottom: -100px;
+		right: 50%;
+		transform: translateX(50%);
+	}
 
-.light-img {
-	margin: 0 auto;
-}
+	.exp {
+		padding: 120px 0 0;
+	}
 
-.light-icon {
-	bottom: -50px;
-}
+	.exp-earbuds {
+		top: 18%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 
-.light h4 {
-	margin-top: 70px;
-}
-
-.light-top ul li {
-	margin-bottom: 40px;
-}
-
-.why-choose-box {
-	padding: 40px;
-	margin: 20px 0 100px;
-}
-.why-choose-left {
-	padding: 40px;
-}
-.why-choose-right {
-	position: static;
-	margin-top: 100px;
-}
-}
-
-@media (max-width: 575px) {
+	.banner p {
+		font-size: 12px;
+	}
 	.title {
 		font-size: 40px;
 		line-height: 45px;
@@ -927,13 +982,6 @@ a {
 		padding: 150px 0 200px;
 	}
 
-	.hero-earbuds, .exp-earbuds {
-		width: 200px;
-	}
-
-	.exp-earbuds {
-		
-	}
 
 	.exp-left-top {
 		height: 500px;
@@ -952,8 +1000,39 @@ a {
 		padding: 50px 10px;
 	}
 
+	.light-img {
+		margin: 0 auto;
+	}
+
+	.light-top ul {
+		display: block;
+	}
+
 	.light-bot {
 		padding-top: 70px;
+	}
+
+	.why-choose-box {
+		padding: 0;
+		margin: 20px 0 100px;
+	}
+
+	.why-choose-left {
+		padding: 40px;
+	}
+
+	.why-choose-right {
+		position: static;
+		justify-content: center;
+		margin-top: 100px;
+	}
+
+	.why-choose-item {
+		width: 50%;
+	}
+
+	.reviews-item {
+		display: block;
 	}
 
 	.footer {
