@@ -1374,7 +1374,7 @@ a {
 	justify-content: start;
 	align-items: center;
 	flex-direction: column;
-	padding-top: 42px;
+	padding: 42px 20px 0;
 }
 
 .scrolling-cta .subheading {
@@ -1456,4 +1456,34 @@ a {
 
 .footer-cta a i {
 	margin-left: 30px;
+}
+
+@media (max-width:  767px) {
+	.presell-page .header-inner,
+	.footer-cta .container {
+		flex-direction: column;
+	}
+
+	.presell-page .header p {
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+
+	.presell-wrapper {
+		padding: 20px;
+	}
+
+	.presell-inner {
+		flex-direction: column;
+		padding: 25px 25px 50px;
+	}
+
+	.scrolling-cta > img {
+		width: 150px;
+	}
+
+	.footer-cta .subheading {
+		text-align: center;
+		margin: 0 0 10px;
+	}
 }
