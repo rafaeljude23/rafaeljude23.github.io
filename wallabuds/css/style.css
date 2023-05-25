@@ -1100,6 +1100,10 @@ a {
 	margin-left: 70px;
 }
 
+.presell-page .nav li a:hover {
+	color: #FBB043;
+}
+
 .presell-wrapper {
 	padding: 49px 130px 126px;
 }
@@ -1242,6 +1246,15 @@ a {
 	margin-bottom: 50px;
 }
 
+.presell-noise li .exp-list-icon {
+		transition: 0.3s;
+}
+
+.presell-noise li:hover .exp-list-icon{
+	background-color: #FBB043;
+
+}
+
 .presell-noise-title {
 	font-weight: 600;
 	font-size: 18px;
@@ -1377,6 +1390,10 @@ a {
 	padding: 42px 20px 0;
 }
 
+.scrolling-cta:hover > img {
+	transform: translateX(-50%) translateY(-10px);
+}
+
 .scrolling-cta .subheading {
 	line-height: 20px;
 }
@@ -1411,10 +1428,12 @@ a {
 	transform: translateX(-50%);
 	width: 234px;
 	height: auto;
+	transition: 0.3s;
 }
 
 .presell-right .order-btn {
 	justify-content: center;
+	border-radius: 0;
 }
 
 .presell-right .order-btn .fas {
@@ -1458,14 +1477,58 @@ a {
 	margin-left: 30px;
 }
 
-@media (max-width:  767px) {
+
+@media (max-width:  991px) {
 	.presell-page .header-inner,
 	.footer-cta .container {
 		flex-direction: column;
 	}
 
 	.presell-page .header p {
-		font-size: 18px;
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
+
+	.presell-wrapper {
+		padding: 50px;
+	}
+
+	.presell-inner {
+		flex-direction: column;
+		/*padding: 25px 25px 50px;*/
+	}
+
+	/*.scrolling-cta > img {
+		width: 150px;
+	}*/
+
+	.footer-cta .subheading {
+		/*text-align: center;*/
+		margin: 0 0 10px;
+	}
+
+	/*.footer-cta a {
+		font-size: 16px;
+	}*/
+
+	/*.subheading {
+		font-size: 30px;
+    line-height: 35px;
+	}*/
+}
+
+@media (max-width:  575px) {
+	.presell-page .header-inner,
+	.footer-cta .container {
+		flex-direction: column;
+	}
+
+	.presell-page .header {
+		padding: 20px 0;
+	}
+
+	.presell-page .header p {
+		font-size: 16px;
 		margin-bottom: 10px;
 	}
 
@@ -1479,11 +1542,38 @@ a {
 	}
 
 	.scrolling-cta > img {
-		width: 150px;
+		width: 180px;
 	}
 
 	.footer-cta .subheading {
 		text-align: center;
 		margin: 0 0 10px;
+	}
+
+	.footer-cta a {
+		font-size: 16px;
+	}
+
+	.subheading {
+		font-size: 30px;
+    line-height: 35px;
+	}
+
+	.presell-exp li,
+	.presell-noise li {
+		width: 100%;
+	}
+
+	/*.presell-left .order-btn {
+		font-size: 16px;
+		padding: 20px;
+	}*/
+
+	.presell-special-intro {
+		right: 50px;
+	}
+
+	.presell-special img {
+		object-position: left;
 	}
 }
