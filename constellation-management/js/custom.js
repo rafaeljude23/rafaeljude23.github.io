@@ -20,7 +20,8 @@ $(document).ready(function(){
 
   // Footer Behind
   function footer_behind_ctn(){
-    var footerHeight = $('.main-footer').outerHeight() + 10;
+    // var footerHeight = $('.main-footer').outerHeight() + 10;
+    var footerHeight = $('.main-footer').outerHeight();
     $('.page-wrap').css('margin-bottom', footerHeight);
   }
 
