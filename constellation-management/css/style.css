@@ -92,9 +92,7 @@ section {
 
 /*Hero section*/
 .hero-section {
-	/*background-color: white;*/
-	background: -webkit-linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(236,28,101,1) 40%, rgba(96,97,97,1) 100%);
-	background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(236,28,101,1) 40%, rgba(96,97,97,1) 100%);
+	background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(236,28,101,1) 30%);
   min-height: 700px;
   position: relative;
   display: -webkit-box;
@@ -488,9 +486,9 @@ background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/s
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	margin-bottom: 1rem;
 	width: 80px;
 	height: 80px;
+	margin: 0 auto 1rem;
 }
 
 .about-industries img {
@@ -617,20 +615,33 @@ button:disabled:hover {
 		padding: 50px 0;
 	}
 
+	.services-box {
+		border-width: 10px;
+	}
+
 
 	.home-services .services-box,
 	.home-services-card {
 		height: auto;
+	}
+
+	.home-services-card:hover {
+		transform: scale(1.05);
+		border-radius: 20px;
+	}
+
+	.home-services-card a {
+		display: block;
 	}
 }
 
 @media (max-width: 575px) {}
 
 .text-grad {
-  background: -webkit-linear-gradient(45deg, var(--first-brand-color), var(--second-brand-color) 80%);
-
+  /*background: -webkit-linear-gradient(45deg, var(--first-brand-color), var(--second-brand-color) 80%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;*/
+  color: var(--first-brand-color);
 }
 
 .img-white {
