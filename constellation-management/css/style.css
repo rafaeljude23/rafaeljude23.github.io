@@ -7,8 +7,12 @@
 }
 
 @font-face {
-  font-family: Avenir Black;
-  src: url(../fonts/Avenir-Black.ttf);
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir-Black.woff2') format('woff2'),
+      url('../fonts/Avenir-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Scrollbar */
@@ -49,7 +53,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: Avenir Black, sans-serif;
+	  font-family: 'Avenir', sans-serif;
 	/*font-weight: 700;*/
 	/*color: var(--second-brand-color);*/
 	/*text-transform: capitalize;*/
@@ -92,6 +96,7 @@ section {
 
 /*Hero section*/
 .hero-section {
+	background: -webkit-linear-gradient(300deg, rgba(255,255,255,1) 0%, rgba(236,28,101,1) 30%);
 	background: linear-gradient(150deg, rgba(255,255,255,1) 0%, rgba(236,28,101,1) 30%);
   min-height: 700px;
   position: relative;
@@ -109,6 +114,10 @@ section {
 
 .hero-section.child {
 	min-height: 400px;
+}
+
+.hero-section h1 {
+	text-transform: capitalize;
 }
 
 .hero-btn {
@@ -629,7 +638,8 @@ button:disabled:hover {
 	}
 
 	.home-services-card:hover {
-		transform: scale(1.05);
+		-webkit-transform: scale(1.05);
+		        transform: scale(1.05);
 		border-radius: 20px;
 	}
 
