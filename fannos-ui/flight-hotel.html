@@ -33,6 +33,15 @@
 <!-- Jquery ui -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.css">
+  
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="css/assets-style.css">
   <!-- <link rel="stylesheet" href="css/date-range.css"> -->
@@ -812,8 +821,8 @@
     <img class="hero-img" src="images/assets-search-bg.jpg">
   </div>
   <section>
-    <div class="container my-5">
-      <div class="row scrollcards pb-4">
+    <div class="container mt-3 mb-5">
+      <div class="row scrollcards">
         <div class="col-md-4 colwidth">
           <a href="#">
             <div class="col bg-gray-100 addcard mb-3">
@@ -866,304 +875,413 @@
           </a>
         </div>
       </div>
-      <div class="row tour-packages-wrapper">
-        <img src="images/esy-052180791.jpg" alt="" class="mb-5 height d-none d-md-block">
-        <img src="images/esy-052180791.jpg" alt="" class="mb-5 img-fluid d-md-none">
-        <div class="col-md-9">
-          <h2>Top <span style="color: rgba(10, 48, 73, .74);">Tour Packages</span></h2>
-          <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
-          <div class="row g-4">
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 shadow-sm img-wrapper">
-                <img src="images/t1.png" class="card-img-top inner-img" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Up to £100* off all trips</h5>
-                  <p class="card-text">Countless deals and exclusive discount codes for any last-minute trip or big
-                    summer 2022 getaway.</p>
-                </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="tour-packages-banner">
+            <img src="images/left-banner.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="tourPackagesBanner" class="owl-carousel owl-theme">
+            <div class="item">
+              <div class="tour-packages-banner">
+                <img src="images/right-banner.png" alt="">
               </div>
             </div>
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 shadow-sm img-wrapper">
-                <img src="images/t2.png" class="card-img-top inner-img inner-img" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Flash Sales</h5>
-                  <p class="card-text">The next trip of your dreams starts here: save with our flash sale.</p>
-                </div>
+            <div class="item">
+              <div class="tour-packages-banner">
+                <img src="images/right-banner.png" alt="">
               </div>
             </div>
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 shadow-sm img-wrapper">
-                <img src="images/t5.png" class="card-img-top inner-img" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Weekend city breaks</h5>
-                  <p class="card-text">Spent enough time at home recently? Check out our epic weekend deals we’ve got
-                    for you.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 shadow-sm img-wrapper">
-                <img src="images/t6.png" class="card-img-top inner-img" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Up to £100* off all trips</h5>
-                  <p class="card-text">Countless deals and exclusive discount codes for any last-minute trip or big
-                    summer 2022 getaway.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 shadow-sm img-wrapper">
-                <img src="images/t4.png" class="card-img-top inner-img inner-img" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Flash Sales</h5>
-                  <p class="card-text">The next trip of your dreams starts here: save with our flash sale.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 shadow-sm img-wrapper">
-                <img src="images/t3.png" class="card-img-top inner-img" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Weekend city breaks</h5>
-                  <p class="card-text">Spent enough time at home recently? Check out our epic weekend deals we’ve got
-                    for you.</p>
-                </div>
+            <div class="item">
+              <div class="tour-packages-banner">
+                <img src="images/right-banner.png" alt="">
               </div>
             </div>
           </div>
-          <section>
-            <div class="mt-5">
-              <h2>Popular <span style="color: rgba(10, 48, 73, .74);">Cities</span></h2>
-              <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
-            </div>
-            <div class="row g-4">
-              <div class="col-md-6">
-                <div class="card">
-                  <a href="#">
-                    <div class="destination pt-3">
-                      <h4>Europe</h4>
-                    </div>
-                    <div class="tour-mig-like-com"><img src="images/t1.png" alt="Tour Booking" title="Tour Booking"
-                        class="w-100"></div>
-                    <div class="tour-mig-lc-con">
-                      <p><span>12 Pacages</span> Starting from $2400</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="row col-md-6 cardwidth">
-                <div class="col-md-6 rounded mt-0 cardwidth">
-                  <div class="card">
-                    <a href="#">
-                      <div class="destination pt-3">
-                        <h4>Dubai</h4>
-                      </div>
-                      <div class="tour-mig-like-com"><img src="images/t2.png" alt="Tour Booking" title="Tour Booking"
-                          class="w-100"></div>
-                      <div class="tour-mig-lc-con1">
-                        <p>Starting from $2400</p>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-6 mt-0 cardwidth card-top">
-                  <div class="card">
-                    <a href="#">
-                      <div class="destination pt-3">
-                        <h4>London</h4>
-                      </div>
-                      <div class="tour-mig-like-com"><img src="images/t3.png" alt="Tour Booking" title="Tour Booking"
-                          class="w-100"></div>
-                      <div class="tour-mig-lc-con1">
-                        <p>Starting from $2400</p>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-6 cardwidth card-top">
-                  <div class="card">
-                    <a href="#">
-                      <div class="destination pt-3">
-                        <h4>India</h4>
-                      </div>
-                      <div class="tour-mig-like-com"><img src="images/t6.png" alt="Tour Booking" title="Tour Booking"
-                          class="w-100"></div>
-                      <div class="tour-mig-lc-con1">
-                        <p>Starting from $2400</p>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-6 cardwidth card-top">
-                  <div class="card">
-                    <a href="#">
-                      <div class="destination pt-3">
-                        <h4>USA</h4>
-                      </div>
-                      <div class="tour-mig-like-com"><img src="images/t5.png" alt="Tour Booking" title="Tour Booking"
-                          class="w-100"></div>
-                      <div class="tour-mig-lc-con1">
-                        <p>Starting from $2400</p>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section>
-            <div class="row m-0 mt-5">
-              <div class="col infobgimage hero-section bg-white">
-                <div class="card-body hero-intro pl-0 pl-md-1">
-                  <h2>6 more <span style="color: rgba(10, 48, 73, .74);">reasons to go</span></h2>
-                  <p>Discover how we can help you book without a worry</p>
-                  <div class="addcard">
-                    <div class="row no-gutters">
-                      <div class="col-md-1 iconbodyinfo">
-                        <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
-                      </div>
-                      <div class="col-md-10 contentbody">
-                        <div class="">
-                          <h5 class="card-title">On price guarantee</h5>
-                          <p class="card-text">find out more</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="addcard">
-                    <div class="row no-gutters pt-3">
-                      <div class="col-md-1 iconbodyinfo">
-                        <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
-                      </div>
-                      <div class="col-md-10 contentbody">
-                        <div class="">
-                          <h5 class="card-title">On price guarantee</h5>
-                          <p class="card-text">find out more</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="addcard">
-                    <div class="row no-gutters pt-3">
-                      <div class="col-md-1 iconbodyinfo">
-                        <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
-                      </div>
-                      <div class="col-md-10 contentbody">
-                        <div class="">
-                          <h5 class="card-title">On price guarantee</h5>
-                          <p class="card-text">find out more</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="addcard">
-                    <div class="row no-gutters pt-3">
-                      <div class="col-md-1 iconbodyinfo">
-                        <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
-                      </div>
-                      <div class="col-md-10 contentbody">
-                        <div class="">
-                          <h5 class="card-title">On price guarantee</h5>
-                          <p class="card-text">find out more</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="addcard">
-                    <div class="row no-gutters pt-3">
-                      <div class="col-md-1 iconbodyinfo">
-                        <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
-                      </div>
-                      <div class="col-md-10 contentbody">
-                        <div class="">
-                          <h5 class="card-title">On price guarantee</h5>
-                          <p class="card-text">find out more</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="addcard">
-                    <div class="row no-gutters pt-3">
-                      <div class="col-md-1 iconbodyinfo">
-                        <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
-                      </div>
-                      <div class="col-md-10 contentbody">
-                        <div class="">
-                          <h5 class="card-title">On price guarantee</h5>
-                          <p class="card-text">find out more</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <img class="hero-img" src="images/infobackground.jpg">
-              </div>
-            </div>
-          </section>
-          <section>
-            <div class="mt-5">
-              <h2>Hotels <span style="color: rgba(10, 48, 73, .74);">Booking Open Now!</span></h2>
-              <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
-            </div>
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-              <div class="col-md-6 mb-4">
-                <div class="card h-100 shadow-sm img-wrapper">
-                  <img src="images/hotels/8.jpg" class="card-img-top inner-img" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">this is description...</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="card h-100 shadow-sm img-wrapper">
-                  <img src="images/hotels/4.jpg" class="card-img-top inner-img inner-img" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">this is description...</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section>
-            <div class="row mt-2 row-cols-1 row-cols-md-3 g-4">
-              <div class="col-md-4">
-                <div class="card h-100 shadow-sm img-wrapper">
-                  <img src="images/hotels/1.jpg" class="card-img-top inner-img" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">this is description...</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card h-100 shadow-sm img-wrapper">
-                  <img src="images/hotels/2.jpg" class="card-img-top inner-img inner-img" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">this is description...</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card h-100 shadow-sm img-wrapper">
-                  <img src="images/hotels/3.jpg" class="card-img-top inner-img inner-img" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">this is description... this is description... this is description... this is
-                      description...</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-        <div class="col-md-3">
-          <img class="sticky mt-5 w-100 d-none d-md-block" style="height: 500px;" src="images/download.jpg" alt="">
+          
         </div>
       </div>
+      <div class="tour-packages-wrapper">
+        <h2>Top <span style="color: rgba(10, 48, 73, .74);">Tour Packages</span></h2>
+        <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
+        <div class="row">
+          <div class="col-md-9">
+            
+            <div class="row g-4">
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm img-wrapper">
+                  <img src="images/t1.png" class="card-img-top inner-img" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Up to £100* off all trips</h5>
+                    <div class="star-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <p class="card-text">Countless deals and exclusive discount codes for any last-minute trip or big
+                      summer 2022 getaway.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm img-wrapper">
+                  <img src="images/t2.png" class="card-img-top inner-img inner-img" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Flash Sales</h5>
+                    <div class="star-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <p class="card-text">The next trip of your dreams starts here: save with our flash sale.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm img-wrapper">
+                  <img src="images/t5.png" class="card-img-top inner-img" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Weekend city breaks</h5>
+                    <div class="star-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <p class="card-text">Spent enough time at home recently? Check out our epic weekend deals we’ve got
+                      for you.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm img-wrapper">
+                  <img src="images/t6.png" class="card-img-top inner-img" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Up to £100* off all trips</h5>
+                    <div class="star-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <p class="card-text">Countless deals and exclusive discount codes for any last-minute trip or big
+                      summer 2022 getaway.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm img-wrapper">
+                  <img src="images/t4.png" class="card-img-top inner-img inner-img" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Flash Sales</h5>
+                    <div class="star-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <p class="card-text">The next trip of your dreams starts here: save with our flash sale.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm img-wrapper">
+                  <img src="images/t3.png" class="card-img-top inner-img" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Weekend city breaks</h5>
+                    <div class="star-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <p class="card-text">Spent enough time at home recently? Check out our epic weekend deals we’ve got
+                      for you.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <section>
+              <div class="mt-5">
+                <h2>Popular <span style="color: rgba(10, 48, 73, .74);">Cities</span></h2>
+                <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
+              </div>
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="card">
+                    <a href="#">
+                      <div class="destination pt-3">
+                        <h4>Europe</h4>
+                      </div>
+                      <div class="tour-mig-like-com"><img src="images/t1.png" alt="Tour Booking" title="Tour Booking"
+                          class="w-100"></div>
+                      <div class="tour-mig-lc-con">
+                        <p><span>12 Pacages</span> Starting from $2400</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="row col-md-6 cardwidth">
+                  <div class="col-md-6 rounded mt-0 cardwidth">
+                    <div class="card">
+                      <a href="#">
+                        <div class="destination pt-3">
+                          <h4>Dubai</h4>
+                        </div>
+                        <div class="tour-mig-like-com"><img src="images/t2.png" alt="Tour Booking" title="Tour Booking"
+                            class="w-100"></div>
+                        <div class="tour-mig-lc-con1">
+                          <p>Starting from $2400</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mt-0 cardwidth card-top">
+                    <div class="card">
+                      <a href="#">
+                        <div class="destination pt-3">
+                          <h4>London</h4>
+                        </div>
+                        <div class="tour-mig-like-com"><img src="images/t3.png" alt="Tour Booking" title="Tour Booking"
+                            class="w-100"></div>
+                        <div class="tour-mig-lc-con1">
+                          <p>Starting from $2400</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-6 cardwidth card-top">
+                    <div class="card">
+                      <a href="#">
+                        <div class="destination pt-3">
+                          <h4>India</h4>
+                        </div>
+                        <div class="tour-mig-like-com"><img src="images/t6.png" alt="Tour Booking" title="Tour Booking"
+                            class="w-100"></div>
+                        <div class="tour-mig-lc-con1">
+                          <p>Starting from $2400</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-6 cardwidth card-top">
+                    <div class="card">
+                      <a href="#">
+                        <div class="destination pt-3">
+                          <h4>USA</h4>
+                        </div>
+                        <div class="tour-mig-like-com"><img src="images/t5.png" alt="Tour Booking" title="Tour Booking"
+                            class="w-100"></div>
+                        <div class="tour-mig-lc-con1">
+                          <p>Starting from $2400</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <div class="row m-0 mt-5">
+                <div class="col infobgimage hero-section bg-white">
+                  <div class="card-body hero-intro pl-0 pl-md-1">
+                    <h2>6 more <span style="color: rgba(10, 48, 73, .74);">reasons to go</span></h2>
+                    <p>Discover how we can help you book without a worry</p>
+                    <div class="addcard">
+                      <div class="row no-gutters">
+                        <div class="col-md-1 iconbodyinfo">
+                          <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
+                        </div>
+                        <div class="col-md-10 contentbody">
+                          <div class="">
+                            <h5 class="card-title">On price guarantee</h5>
+                            <p class="card-text">find out more</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="addcard">
+                      <div class="row no-gutters pt-3">
+                        <div class="col-md-1 iconbodyinfo">
+                          <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
+                        </div>
+                        <div class="col-md-10 contentbody">
+                          <div class="">
+                            <h5 class="card-title">On price guarantee</h5>
+                            <p class="card-text">find out more</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="addcard">
+                      <div class="row no-gutters pt-3">
+                        <div class="col-md-1 iconbodyinfo">
+                          <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
+                        </div>
+                        <div class="col-md-10 contentbody">
+                          <div class="">
+                            <h5 class="card-title">On price guarantee</h5>
+                            <p class="card-text">find out more</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="addcard">
+                      <div class="row no-gutters pt-3">
+                        <div class="col-md-1 iconbodyinfo">
+                          <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
+                        </div>
+                        <div class="col-md-10 contentbody">
+                          <div class="">
+                            <h5 class="card-title">On price guarantee</h5>
+                            <p class="card-text">find out more</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="addcard">
+                      <div class="row no-gutters pt-3">
+                        <div class="col-md-1 iconbodyinfo">
+                          <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
+                        </div>
+                        <div class="col-md-10 contentbody">
+                          <div class="">
+                            <h5 class="card-title">On price guarantee</h5>
+                            <p class="card-text">find out more</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="addcard">
+                      <div class="row no-gutters pt-3">
+                        <div class="col-md-1 iconbodyinfo">
+                          <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
+                        </div>
+                        <div class="col-md-10 contentbody">
+                          <div class="">
+                            <h5 class="card-title">On price guarantee</h5>
+                            <p class="card-text">find out more</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <img class="hero-img" src="images/infobackground.jpg">
+                </div>
+              </div>
+            </section>
+            <section>
+              <div class="mt-5">
+                <h2>Hotels <span style="color: rgba(10, 48, 73, .74);">Booking Open Now!</span></h2>
+                <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
+              </div>
+              <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100 shadow-sm img-wrapper">
+                    <img src="images/hotels/8.jpg" class="card-img-top inner-img" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <p class="card-text">this is description...</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100 shadow-sm img-wrapper">
+                    <img src="images/hotels/4.jpg" class="card-img-top inner-img inner-img" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <p class="card-text">this is description...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <div class="row mt-2 row-cols-1 row-cols-md-3 g-4">
+                <div class="col-md-4">
+                  <div class="card h-100 shadow-sm img-wrapper">
+                    <img src="images/hotels/1.jpg" class="card-img-top inner-img" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <p class="card-text">this is description...</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card h-100 shadow-sm img-wrapper">
+                    <img src="images/hotels/2.jpg" class="card-img-top inner-img inner-img" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <p class="card-text">this is description...</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card h-100 shadow-sm img-wrapper">
+                    <img src="images/hotels/3.jpg" class="card-img-top inner-img inner-img" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <p class="card-text">this is description... this is description... this is description... this is
+                        description...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="col-md-3">
+            <div class="sticky-img">
+              <img class="d-none d-md-block" src="images/download.jpg" alt="">
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1267,7 +1385,9 @@
 
   <script src="js/custome.js"></script>
   <script src="js/date-ramge.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function () {
             /* Hotels 
@@ -1504,6 +1624,24 @@ $(document).on('click', '.flifgt-navigation .dropdown-menu', function (e) {
           $('.new-flight-label:last').text(parseInt(nf) + 1);
 
         });
+
+    $(document).ready(function () {
+      var owl = $('#tourPackagesBanner');
+      owl.owlCarousel({
+        autoplay: true,
+        autoplayTimeout: 5000,
+        loop: true,
+        margin: 0,
+        items: 1,
+        dots: false,
+        nav: true,
+        singleItem: true,
+        navRewind: true,
+        autoplaySpeed: 500,
+      });
+      $(".owl-prev").html('<i class="fal fa-chevron-left"></i>');
+      $(".owl-next").html('<i class="fal fa-chevron-right"></i>');
+    });
     </script>
 </body>
 </body>

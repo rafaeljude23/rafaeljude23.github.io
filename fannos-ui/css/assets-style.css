@@ -3,7 +3,6 @@ body {
     font-size: 14px;
     background: rgb(240, 242, 246);
 }
-
 h2{
     font-weight: 700;
     font-size: 36px;
@@ -498,13 +497,21 @@ label {
     box-shadow: rgb(0 0 0 / 20%) 0px 3px 5px -1px, rgb(0 0 0 / 4%) 0px 6px 10px 0px, rgb(0 0 0 / 4%) 0px 1px 18px 0px !important;
 }
 
-img.sticky {
-    margin-top: 100px !important;
+.sticky-img {
     position: -webkit-sticky;
     position: sticky;
     top: 60;
-    /* width: 200px; */
-  }
+    max-width: 460px;
+    width: 100%;
+    /*height: 1200px;*/
+    height: calc(90vh - 60px);
+    max-height: 1250px;
+}
+.sticky-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
   .nav {
       overflow: auto;
@@ -574,6 +581,62 @@ img.sticky {
 .tour-packages-wrapper .card-text {
     -webkit-line-clamp: 2;
 }
+
+.tour-packages-banner {
+    width: 100%;
+    height: 188px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.tour-packages-banner:hover > img {
+    transform: scale(1.1);
+}
+
+.tour-packages-banner > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+#tourPackagesBanner {
+    height: 188px;
+}
+
+#tourPackagesBanner .owl-prev,
+#tourPackagesBanner .owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.63);
+    color: #000;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+#tourPackagesBanner .owl-prev {
+    left: 10px;
+}
+
+#tourPackagesBanner .owl-next {
+    right: 10px;
+}
+
+/*#tourPackagesBanner .owl-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}*/
+
+.tour-packages-wrapper  .star-rating  {
+    color: #ffb400;
+    margin: 10px 0;
+}
+
 /* Responsive */
 @media only screen and (max-width:992px){
     .hotel-search .col-6:nth-child(2), .room-search .col-6:nth-child(1)  {
@@ -853,7 +916,11 @@ label{margin-left: 20px;}
 
 
 .progressive .container{margin-top: -100px;}
-.progressive .proimg{width:100%;}
+.progressive .proimg{
+    width:100%;
+    height: 300px;
+    object-fit: cover;
+}
 .progressive .proginnr{background: #fff;box-shadow: 0 0.3rem 1rem 0.2rem rgb(5 5 5 / 9%);margin-top:-50px;padding:100px 20px 20px;position:relative;}
 .progressive .plistheader{background: #303343;color: #fff;max-width: 500px;margin: auto;padding: 15px 30px;text-align: center;position: relative;z-index: 9;}
 .progressive .plistheader h2{margin-bottom: 3px;font-weight: normal;}
@@ -865,7 +932,7 @@ label{margin-left: 20px;}
 .progressive .proginnr .listbox{border-top: 5px solid #0a3049;border-radius: 4px;}
 
 
-.whysection{padding: 80px 0px 0px;}
+.whysection{padding: 60px 0px 0px;}
 .whysection .whydesc{position: relative;padding:0px 20px 20px;}
 .whysection .whych {box-shadow: 0px 0px 10px rgb(0 0 0 / 28%);}
 .whysection .whydesc .included-info {background: #0a3049;display: inline-block;width: 12rem;padding: 0px;color: #fff;font-size: 16px;font-weight: 400;line-height: 2.067;text-align: center;text-transform: uppercase;position: absolute;margin-top: -16px;margin-left:auto;margin-right:auto;left: 0px;right: 0px;}
@@ -1014,7 +1081,6 @@ label{margin-left: 20px;}
     .bannercontainer .bannercontent .btextinr .inrbone .btn{border-color: #fff !important;border-width: 2px;}
 
 
-    .progressive .proimg{height:300px;object-fit: cover;}
     .progressive .proginnr .listbox{padding-left: 30px !important;padding-right: 30px !important;}
 
     .whysection .bannercontent{
@@ -1040,6 +1106,11 @@ label{margin-left: 20px;}
     .nightlife{padding: 50px 0px 30px;}
     .theosias{padding: 100px 0px;}
     .unlimitedscuba{padding: 100px 0px;}
+
+    
+    .bannercontainer .bannercontent .btextinr .inrbone p {
+        margin: 20px 0;
+    }
 }
 
 /* .hotel-item, .room-item, .flight-item:hover{
@@ -1254,6 +1325,12 @@ input[type="search"]::-webkit-search-cancel-button {
 #HomeBanner .table-cell {
     display: table-cell;
     vertical-align: middle;
+}
+
+#HomeBanner .owl-carousel .owl-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 #flreturn .travellerd {
@@ -1824,6 +1901,8 @@ input[type="search"]::-webkit-search-cancel-button {
         display: block;
     }
 }
+<<<<<<< Updated upstream
+=======
 
 
 /*Payment*/
@@ -2155,3 +2234,4 @@ input[type="search"]::-webkit-search-cancel-button {
     position: relative;
     z-index: 3;
 }
+>>>>>>> Stashed changes
