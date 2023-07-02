@@ -582,6 +582,21 @@ label {
     -webkit-line-clamp: 2;
 }
 
+.tour-packages-wrapper .card-price {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    width: fit-content;
+    color: #808080;
+}
+
+.tour-packages-wrapper .card-price span {
+    color: #0a3049;
+    font-weight: bold;
+    font-size: 21px;
+    margin-left: 5px;
+} 
+
 .tour-packages-banner {
     width: 100%;
     height: 188px;
@@ -590,11 +605,11 @@ label {
     position: relative;
 }
 
-.tour-packages-banner:hover > img {
+.tour-packages-banner:hover img {
     transform: scale(1.1);
 }
 
-.tour-packages-banner > img {
+.tour-packages-banner img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -615,6 +630,13 @@ label {
     width: 25px;
     height: 25px;
     border-radius: 50%;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+#tourPackagesBanner .owl-prev:hover,
+#tourPackagesBanner .owl-next:hover {
+    opacity: 1;
 }
 
 #tourPackagesBanner .owl-prev {
@@ -624,6 +646,7 @@ label {
 #tourPackagesBanner .owl-next {
     right: 10px;
 }
+
 
 /*#tourPackagesBanner .owl-dots {
     position: absolute;
