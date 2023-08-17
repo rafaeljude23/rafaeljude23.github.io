@@ -64,7 +64,7 @@
 
         <div id="services-1" class="services-card shadow mb-5 wow fade-in-top delay-03s">
           <div class="services-header d-md-flex align-items-center">
-            <div class="services-img me-3 wow puff-in-center delay-01s">
+            <div class="services-img mx-auto me-md-4 wow puff-in-center delay-01s">
               <img src="images/planning.svg" width="100" height="100" alt="">
             </div>       
             <h2 class="services-title">Business Continuity Planning – Your Blueprint for Success in Uncertainty</h2>
@@ -73,13 +73,16 @@
           <div class="services-content">
             <p>Oceanic Risk Management is your dedicated partner for creating dynamic, resilient business continuity plans (BCPs). We offer tailored plans to navigate unforeseen challenges, ensuring your business thrives even in the most uncertain circumstances.</p>
 
-            <h4>Tailored Business Continuity Planning</h4>
-            <p>Our strength lies in understanding the unique needs of your business and creating a BCP that reflects them. Our team of experts works closely with your business to:</p>
-            <ul class="list-styled">
-              <li>Identify potential risks and disruptions</li>
-              <li>Develop strategies to maintain critical functions during and after a crisis</li>
-              <li>Create response teams ready to tackle potential crises</li>
-            </ul>
+            <div class="services-list">
+              <h4>Tailored Business Continuity Planning</h4>
+              <p>Our strength lies in understanding the unique needs of your business and creating a BCP that reflects them. Our team of experts works closely with your business to:</p>
+              <ul class="list-styled">
+                <li>Identify potential risks and disruptions</li>
+                <li>Develop strategies to maintain critical functions during and after a crisis</li>
+                <li>Create response teams ready to tackle potential crises</li>
+              </ul>
+            </div>
+            
 
             <p>For instance, a tech start-up we worked with faced a critical risk of data breaches and system failures. Our customised BCP allowed them to maintain operations, quickly recover, and strengthen their market position by demonstrating resilience during a significant cyber attack.</p>
 
@@ -98,7 +101,7 @@
 
         <div id="services-2" class="services-card shadow mb-5 wow fade-in-top delay-03s">
           <div class="services-header d-md-flex align-items-center">
-            <div class="services-img me-3 wow puff-in-center delay-01s">
+            <div class="services-img mx-auto me-md-4 wow puff-in-center delay-01s">
               <img src="images/audit.svg" width="100" height="100" alt="">
             </div>       
             <h2 class="services-title">Risk Management and Audit Services – Mastering the Seas of Uncertainty</h2>
@@ -133,7 +136,7 @@
 
         <div id="services-3" class="services-card shadow  wow fade-in-top delay-03s">
           <div class="services-header d-md-flex align-items-center">
-            <div class="services-img me-3 wow puff-in-center delay-01s">
+            <div class="services-img mx-auto me-md-4 wow puff-in-center delay-01s">
               <img src="images/recovery.svg" width="100" height="100" alt="">
             </div>       
             <h2 class="services-title">Crisis Recovery – Ensuring Resilience in the Face of Challenges</h2>
@@ -180,10 +183,11 @@
     <footer class="main-footer">
       <div class="container">
         <a href="index.html">
-          <img class="footer-logo" src="images/logo-white.png" alt="Oceanic Risk Management Logo">
+          <img class="footer-logo" src="images/logo.png" alt="Oceanic Risk Management Logo">
         </a>
+        <p class="terms"><a href="terms.html">Terms & Conditions</a></p>
         <div class="copyright">
-          Copyright &copy; <script>document.write(new Date().getFullYear())</script> Oceanic Risk Management. All Rights Reserved | <a class="terms" href="terms.html">Terms</a>
+          Copyright &copy; <script>document.write(new Date().getFullYear())</script> Oceanic Risk Management. All Rights Reserved</a>
         </div>
       </div>  
     </footer>
@@ -199,7 +203,7 @@
         // alert(id); 
         var pos = $('#'+id).offset().top;
         if(  window.location.href.search( '#' ) > 0 ) {
-          $(window).scrollTop(pos - 80);
+          $(window).scrollTop(pos - 70);
         }      
 
       });
