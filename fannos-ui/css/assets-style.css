@@ -3,6 +3,7 @@ body {
     font-size: 14px;
     background: rgb(240, 242, 246);
 }
+
 h2{
     font-weight: 700;
     font-size: 36px;
@@ -184,6 +185,7 @@ h5{
     display: inline-block;
     margin-top1: 12px;
     margin-bottom1: 12px;
+    word-break: break-all;
 }
 .flight-price {
     font-size: 25px;
@@ -1924,8 +1926,6 @@ input[type="search"]::-webkit-search-cancel-button {
         display: block;
     }
 }
-<<<<<<< Updated upstream
-=======
 
 
 /*Payment*/
@@ -2224,12 +2224,40 @@ input[type="search"]::-webkit-search-cancel-button {
     position: absolute;
     top: 20px;
     right: 10px;
-    transition: 0.3s;
 }
 
 .select-payment-method-content {
     display: none;
     padding: 20px;
+}
+
+.js-pay-head {
+    cursor: pointer;
+}
+
+.js-pay-head i {
+   transition: transform 0.3s;
+}
+
+.select-payment-method-content .js-pay-head i {
+    color: #7d7d7d;
+}
+
+.select-payment-method-content .js-pay-head.active i {
+    transform: rotate(90deg);
+}
+
+.select-pay-btn {
+    border: 1px solid #909090;
+    background-color: white;
+    color: #000;
+    width: 100px;
+    cursor: pointer;
+}
+
+.select-pay-btn:hover {
+    background-color: #0a3049;
+    color: white;
 }
 
 /*Hero*/
@@ -2257,4 +2285,85 @@ input[type="search"]::-webkit-search-cancel-button {
     position: relative;
     z-index: 3;
 }
->>>>>>> Stashed changes
+
+.dates-form .form-control {
+    border: none;
+    background-color: transparent;
+    max-width: 80px;
+}
+
+.dates-form .form-control:focus {
+    box-shadow: none;
+}
+
+.dates-form .input-group-text {
+    border: none;
+}
+
+.dates-form  .input-group {
+    background-color: white;
+    border: 1px solid #ced4da;
+}
+
+#Rdep {
+    border-left: 1px solid #ced4da;
+}
+
+.book-conf-title {
+    background-color: #fcd539;
+    border-bottom: 2px solid #003d50;
+}
+
+.book-conf-title h3 {
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 0;
+    color: #000;
+}
+
+.book-conf-desc {
+    font-weight: 600;
+    color: #003d50;
+}
+
+.book-ref-title {
+    background-color: #e3e3e3;
+    border-top: 1px solid #003d50;
+    border-bottom: 1px solid #003d50;
+}
+
+.book-ref-title h3 {
+    font-size: 25px;
+    color: #003d51;
+}
+
+.book-ref-title h3 span {
+    color: #238e00;
+}
+
+.book-ref-tr {
+    background-color: white;
+    border-bottom: 1px solid #003d50;
+    padding: 10px 0;
+}
+
+.book-ref-th,
+.book-ref-td {
+    font-size: 15px;
+    color: #003d6b;
+    padding: 10px 20px;
+}
+
+.book-ref-th,
+.book-ref-td a {
+    font-weight: 700;
+}
+
+.book-ref-td a {
+    color: #003d6b;
+    text-decoration: underline;
+}
+
+.book-ref-td a:hover {
+    text-decoration: none;
+}

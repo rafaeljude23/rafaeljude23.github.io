@@ -117,8 +117,68 @@
         <div class="container">
             <div class="row mt-2">
                 <div class="col-lg-10">
+                    <div class="book-conf-title px-3 py-4">
+                        <h3>Booking Confirmation</h3>
+                    </div>
 
-                    <div class="flights-list">
+                    <div class="book-conf-desc px-3 pt-4 pb-5">
+                        <p>Thank you for booking with Norwegian.</p>
+
+                        <p>You will need to bring valid photo ID to check in. You must make sure you have all the necessary travel documents, including passport and visas, for your journey. It is your responsibility to check the entry and transit requirements set by the authorities in your destination well before you travel. In some cases, you may be required to complete mandatory documentation before departure. Read more:
+                        www.norwegian.com/uk/flight-status/updates/entry-requirements/</p>
+                    </div>
+
+                    <div class="book-ref-title p-3">
+                        <h3>YOUR BOOKING REFERENCE IS: <span class="fw-bold">QY9UK6</span></h3>
+                    </div>
+                    <div class="book-ref-tr">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="book-ref-th">Flight info</div>
+                                <div class="book-ref-td">D84460-07 Jul 2023</div>
+                                <div class="book-ref-td">Passengers</div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="book-ref-th">From/To</div>
+                                <div class="book-ref-td">
+                                    19:55London-Gatwick <br>
+                                    23:30Stockholm-Arlanda
+                                </div>
+                                <div class="book-ref-td">MUSSIE/SIRAK</div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="book-ref-th">Category/Seating</div>
+                                <div class="book-ref-td">
+                                    LowFare <br>
+                                    Seats not reserved
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="book-ref-th">Links</div>
+                                <div class="book-ref-td">
+                                    <a href="#">Change flight</a><br>
+                                    <a href="#">Reserve seats</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-ref-tr mb-5">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="book-ref-th">Additional products ordered</div>
+                                <div class="book-ref-td">Please follow the link on the right, to view your purchased products</div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="book-ref-th">Links</div>
+                                <div class="book-ref-td">
+                                    <a href="#">View/Add</a><br>
+                                    <a href="#">products</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="flights-list">
                         <div class="flight-item shadow-box1 bg-white p-3 py-4 mb-3">
                             <div class="fs-6 fw-bold text-primary mb-3">Departing Flight</div>
                             <div class="row">
@@ -244,7 +304,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     
                 </div>
@@ -403,9 +463,9 @@
         });
     </script>
     <script>
-        var instance = $('#skeletone').scheletrone({
+        /* var instance = $('#skeletone').scheletrone({
             url : "skeletone/booking-confirmation.html",
-        });
+        }); */
 
         $('#booking-search').click(function() {
             $('.hotel-search').show();

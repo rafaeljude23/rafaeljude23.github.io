@@ -321,45 +321,81 @@
                             </div> -->
                             <ul class="select-payment-method list-unstyled">
                                 <li>
-                                    <div class="select-payment-method-header">
-                                        Paypal 
-                                        <img src="images/payment/visa-logo.png" width="100" height="auto" alt="">
+                                    <div class="select-payment-method-header js-pay-head">
+                                        Mobile Money
+                                        <img src="images/payment/mobile.jpg" width="40" height="auto" alt="">
                                         <i class="far fa-chevron-down"></i>
                                     </div>
-                                    <div class="select-payment-method-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <div class="select-payment-method-content js-pay-cont">
+                                        <div class="row align-items-center js-pay-head">
+                                            <div class="col-4 col-md-3">
+                                                <img src="images/payment/mpesa.jpg" width="80" height="auto" alt="">
+                                            </div>
+                                            <div class="col-4 col-md-3">
+                                                Mpesa
+                                            </div>
+                                            <div class="col-4 col-md-3">
+                                                <i class="far fa-chevron-right"></i>
+                                            </div>                                            
+                                        </div>
+                                        <div class="row js-pay-cont mt-2 mb-4">
+                                            <div class="col-md-6 offset-md-3 d-flex">
+                                                <input class="form-control mr-3" type="text" placeholder="Enter your mobile number" name="">
+                                                <button class="select-pay-btn">PAY</button>
+                                            </div>                                            
+                                        </div>
+                                        <div class="row mt-3 align-items-center js-pay-head">
+                                            <div class="col-4 col-md-3">
+                                                <img src="images/payment/airtel.jpg" width="50" height="auto" alt="">
+                                            </div>
+                                            <div class="col-4 col-md-3">
+                                                Airtel Money
+                                            </div>
+                                            <div class="col-4 col-md-3">
+                                                <i class="far fa-chevron-right"></i>
+                                            </div>                                            
+                                        </div>
+                                        <div class="js-pay-cont">
+                                            <p></p>
+                                        </div>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="select-payment-method-header">
-                                        Net Banking
-                                        <img src="images/payment/paypal-logo.png" width="30" height="auto" alt="">
+                                    <div class="select-payment-method-header js-pay-head">
+                                        Bank Transfer
+                                        <img src="images/payment/bank.jpg" width="40" height="auto" alt="">
                                         <i class="far fa-chevron-down"></i>
                                     </div>                                    
-                                     <div class="select-payment-method-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                     <div class="select-payment-method-content js-pay-cont">
+                                        <div class="row align-items-center js-pay-head">
+                                            <div class="col-4 col-md-3">
+                                                <img src="images/payment/uba.png" width="70" height="auto" alt="">
+                                            </div>
+                                            <div class="col-4 col-md-3">
+                                                UBA Bank
+                                            </div>
+                                            <div class="col-4 col-md-3">
+                                                <i class="far fa-chevron-right"></i>
+                                            </div>                                            
+                                        </div>
+                                        <div class="row js-pay-cont mt-2 mb-4">
+                                            <div class="col-md-6 offset-md-3 d-flex">
+                                                Continue to complete your payment
+                                                <button class="select-pay-btn">PAY</button>
+                                            </div>                                            
+                                        </div>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="select-payment-method-header">
-                                        Credit Card / Debit Card
+                                    <div class="select-payment-method-header js-pay-head">
+                                        Credit Card / Debit Card 
                                         <div class="payment-visa-text">
-                                          <img src="images/payment/visa-text.png" width="50" height="auto" alt="">
-                                          <span>Installments</span>
+                                          <img src="images/payment/visa-logo.png" width="130" height="auto" alt="">
+                                          <!-- <span>Installments</span> -->
                                         </div>
                                         <i class="far fa-chevron-down"></i>
                                     </div>
-                                     <div class="select-payment-method-content">
+                                     <div class="select-payment-method-content js-pay-cont">
 
           <form>
             <div class="payment-step payment-card">
@@ -801,22 +837,31 @@
         });
 
         // Select Payment Method
-        $('.select-payment-method-header').click(function(){
-            $(this).toggleClass('active').parent().siblings().find('.select-payment-method-header').removeClass('active');
-            $('.select-payment-method-header').next('.select-payment-method-content').slideUp(300);
-            if ($(this).hasClass('active')) {
-                $(this).next('.select-payment-method-content').slideDown(300);
+        $('.js-pay-head').click(function(){
+            if ($(this).parent().hasClass('js-pay-cont')) {
+                $(this).next('.js-pay-cont').slideToggle(300);
+                $(this).toggleClass('active');
             } else {
-                $(this).next('.select-payment-method-content').slideUp(300)
-            }
+                $(this).toggleClass('active').parent().siblings().find('.js-pay-head').removeClass('active');
+
+                $('.js-pay-head').next('.js-pay-cont').slideUp(300);
+                if ($(this).hasClass('active')) {
+                    $(this).next('.js-pay-cont').slideDown(300);
+                } else {
+                    $(this).next('.js-pay-cont').slideUp(300);
+                    $(this).next().find('.js-pay-head').removeClass('active');
+                }
+            }            
+
         });
+
 
     });
     </script>
     <script type="text/javascript">
-        // var instance = $('#skeletone').scheletrone({
-        //     url: "skeletone/package-new-checkout.html",
-        // });
+    // var instance = $('#skeletone').scheletrone({
+    //     url: "skeletone/package-new-checkout.html",
+    // });
     </script>
 </body>
 

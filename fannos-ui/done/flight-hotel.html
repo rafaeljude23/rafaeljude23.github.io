@@ -1,5 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
 
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="We Developers">
+  <link rel="shortcut icon" href="favicons/assets-favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous"> -->
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.3/daterangepicker.min.css">-->
 
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
+    integrity="sha512-aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/card/2.4.0/card.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/2.0/animate.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/assets-style.css">
+  <!-- <link rel="stylesheet" href="css/date-range.css"> -->
+
+</head>
+
+<body>
+  <a id="button"></a>
+  <nav id="we-menu" class="navbar navbar-expand-lg">
+    <div class="container d-flex justify-content-between py-2">
+      <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="lni lni-menu"></i>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img class="img-responsive" src="images/assets-logo.png" alt="" height="30">
+      </a>
+      <a href="flight-hotel.html" class="d-block d-md-none"
+        style="width:46px;font-size: 22px;text-align: center;color: #FFF;">
+        <i class="lni lni-user"></i>
+      </a>
+      <div class="collapse navbar-light navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="flight-hotel.html">SEARCH<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="hotels.html">HOTEL</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="flights.html">FLIGHT</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="insurance.html">INSURANCE</a>
+          </li>
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">SUPER ADMIN</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown09">
+              <a class="dropdown-item" href="reports.html">Reports</a>
+              <a class="dropdown-item" href="agencies.html">Agencies</a>
+              <a class="dropdown-item" href="users.html">Users</a>
+              <a class="dropdown-item" href="profile.html">Profile</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="btn btn-danger rounded btn-sm text-white" href="tel:+44 208099 6547">Call us +44 208099 6547</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="flight-hotel.html">DEMO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="flight-hotel.html">LOGIN</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-danger btn-sm" href="flight-hotel.html">LOGOUT</a>
+          </li>
+        </ul>
+        <!--<span class="we-menu-close">
+				<i class='lni lni-close'></i>
+			</span>-->
+      </div>
+    </div>
+  </nav>
   <div class="search py-3 py-md-5">
     <div class="container formbox">
       <div class="row">
@@ -22,7 +116,7 @@
                                             </div>
                                             <input type="search" class="form-control" name="destination" placeholder="City or Station">
                                         </div>
-                      </div> -->
+        							</div> -->
                   <div class="row">
                     <div class="col-md-4">
                       <div class="form-group">
@@ -32,7 +126,7 @@
                             <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i> <span
                                 class="d-none d-md-block"></span></span>
                           </div>
-                          <input type="search" class="form-control full-search-toggle" name="destination" placeholder="City or Station">
+                          <input type="search" class="form-control" name="destination" placeholder="City or Station">
                         </div>
                       </div>
                     </div>
@@ -44,7 +138,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                           </div>
-                          <input type="search" class="form-control fromdate full-date-toggle" placeholder="Check-in" id='hcheckin'
+                          <input type="search" class="form-control fromdate" placeholder="Check-in" id='hcheckin'
                             name="check_in">
                         </div>
                       </div>
@@ -56,7 +150,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                           </div>
-                          <input type="search" class="form-control todate full-date-toggle" placeholder="Check-out" id='hcheckout'
+                          <input type="search" class="form-control todate" placeholder="Check-out" id='hcheckout'
                             name="check_in">
                         </div>
                       </div>
@@ -64,84 +158,67 @@
                   </div>
                   <div class="new-rooms">
                     <div class="row">
-                      <div class="col-md-4">
+                      <div class="col-md-2 widthcolhalf">
                         <!-- <label for="">Room </label> -->
                         <div class="form-group">
-                          <label class="mb-0 m-0 font-weight-light">Guests</label>
-                          <div class="form-group mb-md-0">
-                              <div class="input-group">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text"><i class="icon fa fa-users"></i></span>
-                                  </div>
-                                  <input type="search" class="guests-input form-control" readonly="" value="2 Adult, 1 Child" style="background:#fff;">
-                                  <div class="guests-dropdown shadow-box p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div>Adult</div>
-                                        <div>
-                                            <button type="button" class="guests-adult-minus btn btn-light rounded-circle"><i class="far fa-minus"></i></button>
-                                            <span class="guests-adult-num mx-2">0</span>
-                                            <button type="button" class="guests-adult-add btn btn-light rounded-circle"><i class="far fa-plus"></i></button>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-divider"></div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div>Child</div>
-                                        <div>
-                                            <button type="button" class="guests-child-minus btn btn-light rounded-circle"><i class="far fa-minus"></i></button>
-                                            <span class="guests-child-num mx-2">0</span>
-                                            <button type="button" class="guests-child-add btn btn-light rounded-circle"><i class="far fa-plus"></i></button>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="guests-done btn btn-danger mt-3">Done</button>
-                                </div>
-                              </div>
-
-
+                          <label class="m-0" for="">Room </label>
+                          <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            </div>
+                            <select name="adult[]" class="form-control custom-select">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                            </select>
                           </div>
                         </div>
                       </div>
                       <!-- <div class="col-md-4">
-                            <div class="form-group">
-                              <label class="m-0">Adults</label>
+    								  			<div class="form-group">
+    								  				<label class="m-0">Adults</label>
                                                       <div class="input-group mb-3">
                                                           <div class="input-group-prepend">
                                                               <span class="input-group-text"><i class="fa fa-user"></i></span>
                                                           </div>
-                                <select name="adult[]" class="form-control custom-select">
-                                  <option value="1">1</option>
-                                  <option value="2">2</option>
-                                  <option value="3">3</option>
-                                  <option value="4">4</option>
-                                  <option value="5">5</option>
-                                  <option value="6">6</option>
-                                </select>
+    								  					<select name="adult[]" class="form-control custom-select">
+    								  						<option value="1">1</option>
+    								  						<option value="2">2</option>
+    								  						<option value="3">3</option>
+    								  						<option value="4">4</option>
+    								  						<option value="5">5</option>
+    								  						<option value="6">6</option>
+    								  					</select>
                                                       </div>
                                                   </div>
-                          </div>
+    								  		</div>
                                               <div class="col-md-4">
-                            <div class="form-group">
-                              <label class="m-0">Children <small class="text-danger"><b>(2-12 yrs)</b></small></label>
+    								  			<div class="form-group">
+    								  				<label class="m-0">Children <small class="text-danger"><b>(2-12 yrs)</b></small></label>
                                                       <div class="input-group mb-3">
                                                           <div class="input-group-prepend">
                                                               <span class="input-group-text"><i class="fa fa-child"></i></span>
                                                           </div>
-                                <select name="child[]" class="form-control custom-select">
-                                  <option value="0">0</option>
-                                  <option value="1">1</option>
-                                  <option value="2">2</option>
-                                  <option value="3">3</option>
-                                  <option value="4">4</option>
-                                  <option value="5">5</option>
-                                  <option value="6">6</option>
-                                </select>
+    								  					<select name="child[]" class="form-control custom-select">
+    								  						<option value="0">0</option>
+    								  						<option value="1">1</option>
+    								  						<option value="2">2</option>
+    								  						<option value="3">3</option>
+    								  						<option value="4">4</option>
+    								  						<option value="5">5</option>
+    								  						<option value="6">6</option>
+    								  					</select>
                                                       </div>
                                                   </div>
-                          </div> -->
+    								  		</div> -->
                       <!-- <div class="col-2 text-danger pt-4 remove-room" style="cursor:pointer;">
                                                   Remove
                                               </div> -->
-                      <div class="col-md-8 widthcolhalf">
-                        <div class="d-flex justify-content-end">
+                      <div class="col-md-10 widthcolhalf">
+                        <div class="submitbtn float-end">
                           <input type="submit" name="submit" class="search-hotel btn btn-danger" value="Find Hotels">
                         </div>
                       </div>
@@ -149,7 +226,7 @@
                   </div>
                   <!-- <div class="submitbtn">
                                         <div class="add-room" style="cursor:pointer;"><i class="fa fa-plus-circle"></i> Add more rooms </div>
-                          <input type="submit" name="submit" class="search-hotel btn btn-danger" value="Find Hotels">
+        							    <input type="submit" name="submit" class="search-hotel btn btn-danger" value="Find Hotels">
                                     </div> -->
                 </form>
               </div>
@@ -159,343 +236,176 @@
                   <div class="row">
                     <div class="col-md-8">
                       <div class="nav nav-tabs nav-fill border-0 mb-3" role="tablist">
-                        <a class="nav-item nav-link active" data-toggle="tab" aria-selected="true"
-                          href="#flreturn">Return</a>
-                        <a class="nav-item nav-link" data-toggle="tab" aria-selected="false"
-                          href="#floneway">One Way</a>
-                        <a class="nav-item nav-link" data-toggle="tab" aria-selected="false"
-                          href="#flmulticity">Multi City</a>
+                        <a class="nav-item nav-link -0 active" data-toggle="tab" aria-selected="true"
+                          href="flight-hotel.html">Return</a>
+                        <a class="nav-item nav-link -1" data-toggle="tab" aria-selected="false"
+                          href="flight-hotel.html">One Way</a>
+                        <a class="nav-item nav-link -2" data-toggle="tab" aria-selected="false"
+                          href="flight-hotel.html">Multi City</a>
                       </div>
                     </div>
                   </div>
-
-            <div class="tab-content">
-              <div id="flreturn" class="tab-pane fade active show">
-            
-                <div class="row pt-2">
-                    <div class="col-lg-3 col-12">
-                        <label class="m-0  font-weight-light">Flying from</label>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
-                                </div>
-                                <input type="search" class="form-control full-search-toggle" value="Delhi" style="background:#fff;">
-                            </div>
+                  <div class="row">
+                    <div class="col-md-3 widthcolhalf">
+                      <div class="form-group">
+                        <label class="m-0">Flying from</label>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
+                          </div>
+                          <input type="search" class="form-control" name="residence" placeholder="City or Airport">
                         </div>
+                      </div>
                     </div>
-                    <div class="col-lg-3 col-12">
-                        <label class="m-0 font-weight-light">Destination</label>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
-                                </div>
-                                <input type="search" class="form-control full-search-toggle" value="London"
-                                    style="background:#fff;">
-                            </div>
+                    <div class="col-md-3 widthcolhalf">
+                      <div class="form-group">
+                        <label class="m-0">Destination</label>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
+                          </div>
+                          <input type="search" class="form-control" name="destination" placeholder="City or Airport">
                         </div>
+                      </div>
                     </div>
-                    <div class="col-lg-2 col-6">
-                        <label class="m-0 font-weight-light">Departure</label>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
-                                </div>
-                                <input type="search" class="form-control full-date-toggle" placeholder="DD/MM/YYYY" id="Rdep">
-                            </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label class="m-0">Departing</label>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
+                          </div>
+                          <input type="search" class="form-control fromdate" name="depart[]" id="fdeparting">
                         </div>
+                      </div>
                     </div>
-                    <div class="col-lg-2 col-6">
-                        <label class="m-0 font-weight-light">Arrival</label>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
-                                </div>
-                                <input type="search" class="form-control full-date-toggle" placeholder="DD/MM/YYYY" id="Rarr">
-                            </div>
+                    <div class="col-md-3 returning">
+                      <div class="form-group">
+                        <label class="m-0">Returning</label>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
+                          </div>
+                          <input type="search" class="form-control todate" name="return[]" id="freturning">
                         </div>
+                      </div>
                     </div>
-                    <div class="col-lg-3 col-6 mt-3">
-                        <div class="form-group select-adult-mobile">
-                            <div class="input-group flex-nowrap dropdown">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                </div>
-                                <button class="btn bg-white dropdown-toggle d-flex justify-content-between align-items-center rounded-0 w-100" type="button" id="traveller" data-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Adult</button>
-                          <ul class="dropdown-menu p-2 travellerd rounded shadow" aria-labelledby="traveller">
-                            <div class="full-travellerd-close"><i class="fal fa-times"></i></div>
-                            <div class="full-travellerd-title">Travellers</div>
-                            <div class="btext">We allow up to 6 travellers total per booking.</div>
-                            <div class="adult-count mb-3">
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <label  class="m-0">
-                                            <span class="font-weight-bold">Adults</span><br>
-                                            <span>18 and older</span>
-                                        </label>
-                                    </div>
-                                    <div class="col">
-                                        <input id="tAdults" class="form-control" type="number" value="1" min="1" max="6" step="1" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="children-count mb-3">
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <label  class="m-0">
-                                            <span class="font-weight-bold">Children</span><br>
-                                            <span>Age 2 through 17</span>
-                                        </label>
-                                    </div>
-                                    <div class="col">
-                                        <input id="tChildren" class="form-control" type="number" value="0" min="0" max="6" step="1" />
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group mt-2">
-                                    <label class="m-0">Age of child 1</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fa fa-child"></i></span>
+                  </div>
+                  <!-- <div class="row">
+        								<div class="col-sm-4">
+        									<div class="form-group">
+                                                <label class="m-0">Departing</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
+                                                    </div>
+                                                    <input type="search" class="form-control fromdate" name="depart[]" value="20-10-2021">
+                                                </div>
+        									</div>
+        								</div>
+        								<div class="col-sm-4 returning">
+        									<div class="form-group">
+                                                <label class="m-0">Returning</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
+                                                    </div>
+                                                    <input type="search" class="form-control todate" name="return[]" value="27-10-2021">
+                                                </div>
+        									</div>
                                         </div>
-                                        <select name="child[]" class="form-control custom-select">
-                                            <option value="0">Age</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group mt-2">
-                                    <label class="m-0">Age of child 2</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fa fa-child"></i></span>
-                                        </div>
-                                        <select name="child[]" class="form-control custom-select">
-                                            <option value="0">Age</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="infants-count mb-3">
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <label  class="m-0">
-                                            <span class="font-weight-bold">Infants</span><br>
-                                            <span>Younger than 2</span>
-                                        </label>
-                                    </div>
-                                    <div class="col">
-                                        <input id="tInfants" class="form-control" type="number" value="0" min="0" max="6" step="1" />
-                                    </div>
-                                </div>
-                                <div class="mt-3">
-                                <strong class="lh-1">Infants must sit on a lap or in a seat.</strong>
-                                </div>
-                                <div class="mt-2">
-                                    <div class="form-check lapseat">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" checked>
-                                        <label class="form-check-label m-0" >
-                                            On lap
-                                        </label>
-                                      </div>
-                                      <div class="form-check lapseat">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" >
-                                        <label class="form-check-label m-0">
-                                            In seat
-                                        </label>
-                                      </div>
-                                </div>
-                                <div class="form-group mt-2">
-                                    <label class="m-0">Age of infant 1</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fa fa-child"></i></span>
-                                        </div>
-                                        <select name="child[]" class="form-control custom-select">
-                                            <option value="0">Age</option>
-                                            <option value="Under 1">Under 1</option>
-                                            <option value="1">1</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group mt-2">
-                                    <label class="m-0">Age of infant 2</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fa fa-child"></i></span>
-                                        </div>
-                                        <select name="child[]" class="form-control custom-select">
-                                            <option value="0">Age</option>
-                                            <option value="Under 1">Under 1</option>
-                                            <option value="1">1</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="my-3 airltxt">
-                                <a href="#">Airline age rules</a>
-                            </div>
-
-                            <div class="d-flex gap-2 justify-content-between">
-                                <button class="btn btn-danger" id="flcancel" type="button">Cancel</button>
-                                <button class="btn btn-danger" id="fldone" type="button">Done</button>
-                              </div>
-
-                        </ul>
-                            </div>
+        							</div> -->
+                  <div class="row">
+                    <div class="col-md-3 widthcolhalf">
+                      <div class="form-group">
+                        <label class="m-0">Adults</label>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                          </div>
+                          <select name="adult[]" class="form-control custom-select">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                          </select>
                         </div>
+                      </div>
                     </div>
-                    <div class="col-lg-3 col-6 mt-3">
+                    <div class="col-md-3 widthcolhalf">
+                      <div class="form-group">
+                        <label class="m-0">Children <small class="text-danger"><b>(2-12 yrs)</b></small></label>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-child"></i></span>
+                          </div>
+                          <select name="child[]" class="form-control custom-select">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mt-md-3 mt-0">
+                      <input type="submit" name="submit" style="cursor:pointer; float: right;"
+                        class="search-hotel onewaysubmit btn btn-danger" value="Find Flights">
+                    </div>
+                  </div>
+                  <div class="new-flight" style="display:none;">
+                    <div class="row">
+                      <div class="col-md-4">
                         <div class="form-group">
-                            <div class="input-group flex-nowrap">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-users"></i></span>
-                                </div>
-                              <select id="" class="ecno form-control" name="econo">
-                                <option value="1">Economy</option>
-                                <option value="2">Premium economy</option>
-                                <option value="3">Business class</option>
-                                <option value="3">First class</option>
-                              </select>
+                          <label class="m-0">Flying from</label>
+                          <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
                             </div>
+                            <input type="search" class="form-control" name="residence" placeholder="City or Airport">
+                          </div>
                         </div>
-                    </div>
-                    <div class="col-lg-2 col-12">
-                        <label class="mb-0 font-weight-light invisible ">.</label><br>
-                        <a class="btn btn-danger " href="flight-hotel.html">Search</a>
-                    
-                    </div>
-                </div>
-
-              </div>
-
-
-              <div id="floneway" class="tab-pane fade">
-            
-                <div class="row pt-2">
-                    <div class="col-lg-3 col-12">
-                        <label class="m-0 font-weight-light">Flying from</label>
+                      </div>
+                      <div class="col-md-4">
                         <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
-                                </div>
-                                <input type="search" class="form-control" value="Delhi" style="background:#fff;">
+                          <label class="m-0">Destination</label>
+                          <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
                             </div>
+                            <input type="search" class="form-control" name="destination" placeholder="City or Airport">
+                          </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-12">
-                        <label class="m-0 font-weight-light">Destination</label>
+                      </div>
+                      <div class="col-md-4">
                         <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
-                                </div>
-                                <input type="search" class="form-control" value="London"
-                                    style="background:#fff;">
+                          <label class="m-0">Departing</label>
+                          <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                             </div>
+                            <input type="search" class="form-control fromdate" id="fmulticitydeparting" name="depart[]"
+                              value="">
+                          </div>
                         </div>
+                      </div>
                     </div>
-                    <div class="col-lg-2 col-6">
-                        <label class="m-0 font-weight-light">Departure</label>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
-                                </div>
-                                <input type="search" class="form-control" placeholder="DD/MM/YYYY" id="Odep">
-                            </div>
-                        </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <span class="add-flight float-right" style="cursor:pointer; display:none;"><i
+                          class="fa fa-plus-circle"></i> Add another flight </span>
                     </div>
-                    <div class="col-lg-2 col-12">
-                        <label class="mb-0 font-weight-light invisible ">.</label><br>
-                        <a class="btn btn-danger " href="flight-hotel.html">Search</a>
-                    
+                    <div class="col-md-6">
+                      <input type="submit" name="submit" class="search-hotel multiplesubmit btn btn-danger"
+                        style="float: right; display:none;" value="Find Flights">
                     </div>
-                </div>
-
-              </div>
-
-
-              <div id="flmulticity" class="tab-pane fade">
-
-                <div class="row pt-2">
-                    <div class="new-flight">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="m-0">Flying from</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i
-                                                    class="icon fa fa-map-marker-alt"></i></span>
-                                        </div>
-                                        <input type="search" class="form-control" name="residence"
-                                            placeholder="City or Airport">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="m-0">Destination</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i
-                                                    class="icon fa fa-map-marker-alt"></i></span>
-                                        </div>
-                                        <input type="search" class="form-control" name="destination"
-                                            placeholder="City or Airport">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="m-0">Departing</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i
-                                                    class="icon fa fa-calendar-check"></i></span>
-                                        </div>
-                                        <input type="search" class="form-control" placeholder="DD/YY/MM" id="MCdep">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="add-flight text-right" style="cursor:pointer;">
-                    <i class="fa fa-plus-circle"></i> Add another flight </div>
-                    <div class="col-lg-12 col-12">
-                        <label class="mb-0 font-weight-light invisible ">.</label><br>
-                        <a class="btn btn-danger " href="flight-hotel.html">Search</a>
-                    
-                    </div>
-                </div>
-
-
-              </div>
-              
-            </div>
-
+                  </div>
                 </form>
               </div>
               <div id="things" class="tab-pane fade py-3 m-3 m-md-0 pt-lg-4">
@@ -508,7 +418,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="icon fa fa-map-marker-alt"></i></span>
                           </div>
-                          <input type="search" class="form-control full-search-toggle" name="destination" placeholder="City to Travel">
+                          <input type="search" class="form-control" name="destination" placeholder="City to Travel">
                         </div>
                       </div>
                     </div>
@@ -519,7 +429,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                           </div>
-                          <input type="search" class="form-control fromdate full-date-toggle" name="check_in" id="thingsFrom"
+                          <input type="search" class="form-control fromdate" name="check_in" id="thingsFrom"
                             placeholder="From">
                         </div>
                       </div>
@@ -531,7 +441,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="icon fa fa-calendar-check"></i></span>
                           </div>
-                          <input type="search" class="form-control todate full-date-toggle" name="check_in" id="thingsTO" placeholder="To">
+                          <input type="search" class="form-control todate" name="check_in" id="thingsTO" placeholder="To">
                         </div>
                       </div>
                     </div>
@@ -679,14 +589,14 @@
       <div class="row scrollcards pb-4">
         <div class="col-md-4 colwidth">
           <a href="#">
-            <div class="col bg-gray-100 addcard mb-3">
-              <div class="row no-gutters">
-                <div class="col-3 col-md-2 iconbody offset-md-1">
+            <div class="col bgcolor addcard mb-3">
+              <div class="row g-0">
+                <div class="col-md-2 iconbody">
                   <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
                 </div>
-                <div class="col-9 contentbody">
+                <div class="col-md-10 contentbody">
                   <div class="card-body">
-                    <h5 class="card-title mb-0">Free cancellation</h5>
+                    <h5 class="card-title">Free cancellation</h5>
                     <p class="card-text">on most hotels</p>
                   </div>
                 </div>
@@ -696,14 +606,14 @@
         </div>
         <div class="col-md-4 colwidth">
           <a href="#">
-            <div class="col bg-gray-100 addcard mb-3">
-              <div class="row no-gutters">
-                <div class="col-3 col-md-2 iconbody offset-md-1">
+            <div class="col bgcolor addcard mb-3">
+              <div class="row g-0">
+                <div class="col-md-2 iconbody">
                   <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
                 </div>
-                <div class="col-9 contentbody">
+                <div class="col-md-10 contentbody">
                   <div class="card-body">
-                    <h5 class="card-title mb-0">On price guarantee</h5>
+                    <h5 class="card-title">On price guarantee</h5>
                     <p class="card-text">find out more</p>
                   </div>
                 </div>
@@ -713,14 +623,14 @@
         </div>
         <div class="col-md-4 colwidth">
           <a href="#">
-            <div class="col bg-gray-100 addcard mb-3">
-              <div class="row no-gutters">
-                <div class="col-3 col-md-2 iconbody offset-md-1">
+            <div class="col bgcolor addcard mb-3">
+              <div class="row g-0">
+                <div class="col-md-2 iconbody">
                   <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
                 </div>
-                <div class="col-9 contentbody">
+                <div class="col-md-10 contentbody">
                   <div class="card-body">
-                    <h5 class="card-title mb-0">Get a reward night</h5>
+                    <h5 class="card-title">Get a reward night</h5>
                     <p class="card-text">for every 10 nights you stay</p>
                   </div>
                 </div>
@@ -729,14 +639,13 @@
           </a>
         </div>
       </div>
-      <div class="row tour-packages-wrapper">
-        <img src="images/esy-052180791.jpg" alt="" class="mb-5 height d-none d-md-block">
-        <img src="images/esy-052180791.jpg" alt="" class="mb-5 img-fluid d-md-none">
+      <div class="row">
+        <img src="images/esy-052180791.jpg" alt="" class="mb-5 height">
         <div class="col-md-9">
           <h2>Top <span style="color: rgba(10, 48, 73, .74);">Tour Packages</span></h2>
           <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
-          <div class="row g-4">
-            <div class="col-md-4 mb-4">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
               <div class="card h-100 shadow-sm img-wrapper">
                 <img src="images/t1.png" class="card-img-top inner-img" alt="...">
                 <div class="card-body">
@@ -746,7 +655,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col">
               <div class="card h-100 shadow-sm img-wrapper">
                 <img src="images/t2.png" class="card-img-top inner-img inner-img" alt="...">
                 <div class="card-body">
@@ -755,7 +664,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col">
               <div class="card h-100 shadow-sm img-wrapper">
                 <img src="images/t5.png" class="card-img-top inner-img" alt="...">
                 <div class="card-body">
@@ -765,7 +674,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col">
               <div class="card h-100 shadow-sm img-wrapper">
                 <img src="images/t6.png" class="card-img-top inner-img" alt="...">
                 <div class="card-body">
@@ -775,7 +684,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col">
               <div class="card h-100 shadow-sm img-wrapper">
                 <img src="images/t4.png" class="card-img-top inner-img inner-img" alt="...">
                 <div class="card-body">
@@ -784,7 +693,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col">
               <div class="card h-100 shadow-sm img-wrapper">
                 <img src="images/t3.png" class="card-img-top inner-img" alt="...">
                 <div class="card-body">
@@ -800,8 +709,8 @@
               <h2>Popular <span style="color: rgba(10, 48, 73, .74);">Cities</span></h2>
               <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
             </div>
-            <div class="row g-4">
-              <div class="col-md-6">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col rounded">
                 <div class="card">
                   <a href="#">
                     <div class="destination pt-3">
@@ -815,8 +724,8 @@
                   </a>
                 </div>
               </div>
-              <div class="row col-md-6 cardwidth">
-                <div class="col-md-6 rounded mt-0 cardwidth">
+              <div class="row row-cols-1 row-cols-md-2 g-4 cardwidth">
+                <div class="col rounded mt-0 cardwidth">
                   <div class="card">
                     <a href="#">
                       <div class="destination pt-3">
@@ -830,7 +739,7 @@
                     </a>
                   </div>
                 </div>
-                <div class="col-md-6 mt-0 cardwidth card-top">
+                <div class="col mt-0 cardwidth card-top">
                   <div class="card">
                     <a href="#">
                       <div class="destination pt-3">
@@ -844,7 +753,7 @@
                     </a>
                   </div>
                 </div>
-                <div class="col-md-6 cardwidth card-top">
+                <div class="col cardwidth card-top">
                   <div class="card">
                     <a href="#">
                       <div class="destination pt-3">
@@ -858,7 +767,7 @@
                     </a>
                   </div>
                 </div>
-                <div class="col-md-6 cardwidth card-top">
+                <div class="col cardwidth card-top">
                   <div class="card">
                     <a href="#">
                       <div class="destination pt-3">
@@ -882,7 +791,7 @@
                   <h2>6 more <span style="color: rgba(10, 48, 73, .74);">reasons to go</span></h2>
                   <p>Discover how we can help you book without a worry</p>
                   <div class="addcard">
-                    <div class="row no-gutters">
+                    <div class="row g-0">
                       <div class="col-md-1 iconbodyinfo">
                         <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
                       </div>
@@ -895,7 +804,7 @@
                     </div>
                   </div>
                   <div class="addcard">
-                    <div class="row no-gutters pt-3">
+                    <div class="row g-0 pt-3">
                       <div class="col-md-1 iconbodyinfo">
                         <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
                       </div>
@@ -908,7 +817,7 @@
                     </div>
                   </div>
                   <div class="addcard">
-                    <div class="row no-gutters pt-3">
+                    <div class="row g-0 pt-3">
                       <div class="col-md-1 iconbodyinfo">
                         <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
                       </div>
@@ -921,7 +830,7 @@
                     </div>
                   </div>
                   <div class="addcard">
-                    <div class="row no-gutters pt-3">
+                    <div class="row g-0 pt-3">
                       <div class="col-md-1 iconbodyinfo">
                         <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
                       </div>
@@ -934,7 +843,7 @@
                     </div>
                   </div>
                   <div class="addcard">
-                    <div class="row no-gutters pt-3">
+                    <div class="row g-0 pt-3">
                       <div class="col-md-1 iconbodyinfo">
                         <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
                       </div>
@@ -947,7 +856,7 @@
                     </div>
                   </div>
                   <div class="addcard">
-                    <div class="row no-gutters pt-3">
+                    <div class="row g-0 pt-3">
                       <div class="col-md-1 iconbodyinfo">
                         <img src="images/clock.png" class="img-fluid rounded-start" width="50px" alt="...">
                       </div>
@@ -969,7 +878,7 @@
               <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
             </div>
             <div class="row row-cols-1 row-cols-md-2 g-4">
-              <div class="col-md-6 mb-4">
+              <div class="col">
                 <div class="card h-100 shadow-sm img-wrapper">
                   <img src="images/hotels/8.jpg" class="card-img-top inner-img" alt="...">
                   <div class="card-body">
@@ -978,7 +887,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 mb-4">
+              <div class="col">
                 <div class="card h-100 shadow-sm img-wrapper">
                   <img src="images/hotels/4.jpg" class="card-img-top inner-img inner-img" alt="...">
                   <div class="card-body">
@@ -991,7 +900,7 @@
           </section>
           <section>
             <div class="row mt-2 row-cols-1 row-cols-md-3 g-4">
-              <div class="col-md-4">
+              <div class="col">
                 <div class="card h-100 shadow-sm img-wrapper">
                   <img src="images/hotels/1.jpg" class="card-img-top inner-img" alt="...">
                   <div class="card-body">
@@ -1000,7 +909,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col">
                 <div class="card h-100 shadow-sm img-wrapper">
                   <img src="images/hotels/2.jpg" class="card-img-top inner-img inner-img" alt="...">
                   <div class="card-body">
@@ -1009,7 +918,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col">
                 <div class="card h-100 shadow-sm img-wrapper">
                   <img src="images/hotels/3.jpg" class="card-img-top inner-img inner-img" alt="...">
                   <div class="card-body">
@@ -1023,8 +932,109 @@
           </section>
         </div>
         <div class="col-md-3">
-          <img class="sticky mt-5 w-100 d-none d-md-block" style="height: 500px;" src="images/download.jpg" alt="">
+          <img class="sticky mt-5 w-100" style="height: 500px;" src="images/download.jpg" alt="">
         </div>
       </div>
     </div>
   </section>
+  <section>
+    <div id="we-footer" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-4 text-light mb-5">
+            <h4 class="text-left">LATEST NEWS</h4>
+            <div class="text-left">
+              <p>Up am intention on dependent questions oh elsewhere september. No betrayed pleasure possible jointure we
+                in throwing. And can event rapid any shall woman green. Hope they dear who its bred. Smiling nothing
+                affixed he carried it clothes calling he no. </p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-5 text-light text-center">
+            <h4 class="text-left">MAILING LIST</h4>
+            <div class="text-left" style="">
+              <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</p><br>
+              <form class="">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="form-group">
+                      <input type="email" class="form-control" placeholder="Your Email Address..."
+                        style="font-size:13px;">
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <button class="btn btn-danger" type="button">SUBMIT</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-12 col-sm-3 text-light">
+            <h4 class="text-left">CONTACT US</h4>
+            <div class="text-left">
+              <p>FloCash Ltd Level 39,<br>
+                One Canada Square,<br>
+                Canary Wharf,<br>
+                London, E14 5AB.<br>
+                United Kingdom<br>
+                Tel: +44 208099 6547
+              </p>
+            </div>
+            <div class="text-left social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a> &nbsp;
+              <a href="#"><i class="fab fa-google-plus-g"></i></a>&nbsp;
+              <a href="#"><i class="fab fa-instagram"></i></a>&nbsp;
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="copyright-area rounded-3 bg-white">
+      <div class="container">
+        <div class="row d-flex">
+          <div class="col-md-2">
+            <img src="images/assets-logo.png" style="width: 200px;" alt="">
+          </div>
+          <div class="col-md-7 text-center">
+            <ul class="footer-menu">
+              <!-- <ul> -->
+              <li><a href="#">Terms and Condition</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Sitemap</a></li>
+              <!-- </ul> -->
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <p class="text-dark float-right text-center">2022 FloCash, &copy; All Right Reserved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--<div style="width: 250px;" id="hotel"> <div id='datetimepicker12'></div></div>-->
+
+
+  <script src="js/3.3.1-jquery.min.js"></script>
+  <script src="js/js-bootstrap.min.js"></script>
+  <script src="js/2.16.0-moment.min.js" type="text/javascript"></script>
+  <!--<script src="js/js-bootstrap-datepicker.min.js"></script>
+<script src="js/3.0.3-daterangepicker.min.js"></script>-->
+
+  <script src="js/js-ion.rangeSlider.min.js"></script>
+  <script src="js/1.12.1-jquery-ui.min.js"></script>
+  <script src="js/4.6.4-fotorama.min.js"></script>
+  <script src="js/2.4.0-jquery.card.min.js"></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"
+    integrity="sha512-GDey37RZAxFkpFeJorEUwNoIbkTwsyC736KNSYucu1WJWFK9qTdzYub8ATxktr6Dwke7nbFaioypzbDOQykoRg=="
+    crossorigin="anonymous"></script>
+  <script src="js/custome.js"></script>
+  <script src="js/date-ramge.js"></script>
+</body>
+
+</html>
