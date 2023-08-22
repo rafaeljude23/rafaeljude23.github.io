@@ -2371,7 +2371,6 @@ input[type="search"]::-webkit-search-cancel-button {
 /*Loader*/
 .loader-wrap {
     display: flex;
-    align-items: center;
     justify-content: center;
     width: 100%;
     height: 100vh;
@@ -2380,6 +2379,7 @@ input[type="search"]::-webkit-search-cancel-button {
     top: 0;
     left: 0;
     overflow: hidden;
+    padding-top: 10vh;
 }
 
 .loader-inner {
