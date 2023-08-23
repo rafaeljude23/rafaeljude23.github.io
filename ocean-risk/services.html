@@ -14,11 +14,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="CookiesPopup/cookie-style.css" />
     <link href="css/style.css" rel="stylesheet">
 
     <title>Services | Oceanic Risk Management</title>
   </head> 
   <body>
+    <div class="cookie-popup-container"></div>
     <header class="main-header d-flex align-items-center">
       <div class="container">
         <div class="d-md-flex justify-content-between align-items-center">
@@ -60,7 +62,7 @@
 
     <section class="services-section">
       <div class="container">
-        <p class="mb-5">Welcome to our services page, where we highlight how Oceanic Risk Management serves as your guiding light through the intricate maze of business risks. Our suite of services is designed to empower your business with the strategies and resilience necessary to confront challenges and transform them into growth opportunities.</p>
+        <p class="pe-xl-3 mb-5">Welcome to our services page, where we highlight how Oceanic Risk Management serves as your guiding light through the intricate maze of business risks. Our suite of services is designed to empower your business with the strategies and resilience necessary to confront challenges and transform them into growth opportunities.</p>
 
         <div id="services-1" class="services-card shadow mb-5 wow fade-in-bottom delay-03s">
           <div class="services-header d-md-flex align-items-center">
@@ -108,7 +110,7 @@
           </div>
           
           <div class="services-content">
-            <p>At Oceanic Risk Management, we offer comprehensive risk management and audit services designed to navigate the complex seas of business risks. We equip your business with insightful data, strategic approaches, and reliable tools to mitigate risks and turn them into growth opportunities.</p>
+            <p class="pe-xl-3">At Oceanic Risk Management, we offer comprehensive risk management and audit services designed to navigate the complex seas of business risks. We equip your business with insightful data, strategic approaches, and reliable tools to mitigate risks and turn them into growth opportunities.</p>
 
             <h4 class="title-icon"><img src="images/research.svg" alt="">Our Methodology</h4>
             <p>Our methodology involves a detailed assessment of your business landscape, operations, and potential risks. We adopt a systematic and phased approach:</p>
@@ -195,6 +197,11 @@
     <script src="js/jquery-min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/wow.min.js"></script>
+
+    <script src="CookiesPopup/set-cookie-data.js"></script>
+    <script src="CookiesPopup/set-cookie-in-page.js"></script>
+    <script src="CookiesPopup/cookie.js"></script>
+
     <script src="js/custom.js"></script>
     <script>
       $(window).on('load', function() {
