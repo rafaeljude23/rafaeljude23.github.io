@@ -2383,7 +2383,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .loader-inner {
-    border: 2px solid gray;
+    border: 1px solid lightgray;
     width: 25vw;
     height: 50vh;
     display: flex;
@@ -2411,4 +2411,8 @@ input[type="search"]::-webkit-search-cancel-button {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.change-flight-btn {
+    b
 }
