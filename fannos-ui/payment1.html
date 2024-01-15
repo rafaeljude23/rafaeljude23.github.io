@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicons/assets-favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="css/assets-style.css" rel="stylesheet">
+    <!-- <link href="css/payment.css" rel="stylesheet"> -->
+
+    <title></title>
+  </head>
+  <body>
+    <div class="payment-wrapper">
+      <div class="container">
+
+        <div class="payment-box">
+          <form>
+            <div class="payment-step payment-card">
+                <!-- <div class="payment-card-title">Payment method</div> -->
+                <div class="d-flex align-items-center justify-content-between">
+                  <img src="images/payment/H&M.png" width="50" height="auto" alt="">
+                  <div class="fs-3 fw-bold ">$74.80</div>
+                </div>
+                <div class="d-flex align-items-center justify-content-end mt-4 mb-2">
+                  <img src="images/payment/visa-logo.png" width="100" height="auto" alt="">
+                </div>
+
+                <div class="form-group">
+                  <input type="number" class="form-control" placeholder="Card Number">
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Expires">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="number" class="form-control" placeholder="CVV">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="First Name">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Last Name">
+                    </div>
+                  </div>
+                </div>                
+                <button type="button" class="payment-btn mt-2">CONTINUE</button> 
+                <a class="payment-card-cancel d-block mt-4 mb-5" href="#">Cancel and return back to merchant</a>            
+            </div>
+
+
+            <div class="d-flex align-items-center justify-content-between">
+              <a class="payment-card-cancel" href="#">Terms & Conditions</a>
+              <img src="images/payment/flocash-logo.png" width="100" height="auto" alt="">
+            </div>
+            
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/3.3.1-jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        
+        $('.payment-step').eq(0).show();
+        $('.payment-btn').click(function(){
+          if($(this).closest('.payment-step').next('.payment-step').length) {
+            $('.payment-step').hide();
+            $(this).closest('.payment-step').next('.payment-step').fadeIn();
+          }
+        });
+
+
+        $('.payment-plan-item').click(function(){
+          $('.payment-plan-item').removeClass('active');
+          $(this).addClass('active');
+        });
+
+      })
+    </script>
+  </body>
+</html>
