@@ -2306,7 +2306,7 @@ footer .top_footer .anim_line span:nth-child(2) {
 /*------Header Btn Animation------*/
 @keyframes pulse-blue-small-sm {
   0% {
-    box-shadow: 0 0 0 0 rgba(114, 178, 39, 0.7);
+    box-shadow: 0 0 0 0 rgba(3, 59, 8, 0.7);
   }
 
   100%,
@@ -2317,7 +2317,7 @@ footer .top_footer .anim_line span:nth-child(2) {
 
 @keyframes pulse-blue-medium-sm {
   0% {
-    box-shadow: 0 0 0 0 rgba(114, 178, 39, 0.4);
+    box-shadow: 0 0 0 0 rgba(3, 59, 8, 0.4);
   }
 
   100%,
