@@ -2,8 +2,8 @@
     --light-purple: #fafafa;
     --purple: #72b227;
     --bg-purple: #72b227;
-    --dark-purple: #033b08;
-    --body-text-purple: #033b08;
+    --dark-purple: #053321;
+    --body-text-purple: #053321;
     --text-white: #ffffff;
     --bg-white: #ffffff;
     --slider-dots-color: #D4D2DD;
@@ -161,8 +161,10 @@
     .free_app_section .container .free_app_inner {padding: 20px 15px;}
     .free_app_section .container .free_app_inner .free_img img {transform: scale(.7);}
     .free_app_section .container .free_app_inner .free_img img:last-child {margin-left: -180px;}
-    .free_app_section .container .free_app_inner .free_text .app_btn li a {padding: 10px 20px;}
-
+    /*.free_app_section .container .free_app_inner .free_text .app_btn li a {padding: 10px 20px;}*/
+    .free_app_section .container .free_app_inner .free_text .app_btn li a img {
+        width: 200px;
+    }
     /* latest story section */
     .latest_story {margin-bottom: 40px;}
     .latest_story .story_box .story_text {padding: 15px;}
@@ -236,8 +238,9 @@
     .banner_section .app_btn , .banner_section .used_app {justify-content: center;}
     .banner_section .app_btn li:last-child {margin-left: 0;}
     .banner_section .app_btn li {margin: 0 15px;}
-    .banner_section .app_btn li a {padding: 10px 20px;}
-    .banner_section .app_btn li a img {height: 25px;}
+    /*.banner_section .app_btn li a {padding: 10px 20px;}
+    .banner_section .app_btn li a img {height: 25px;}*/
+    .banner_section .app_btn li a img {width:  auto;height: 49px;}
     .banner_section .banner_slider .left_icon {left: -40px;}
     .banner_section .banner_slider .right_icon {right: -40px; z-index: 1000;}
     .banner_section .banner_slider::before {width: 350px; height: 350px;}
