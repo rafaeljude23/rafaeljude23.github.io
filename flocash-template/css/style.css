@@ -783,11 +783,8 @@ header.fixed .navbar {
 
 /* hero slider mobile frame */
 .banner_section .banner_slider .slider_frame {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 999;
     width: 315px;
+    margin: 0 auto;
 }
 
 .banner_section .banner_slider #frmae_slider::before {
