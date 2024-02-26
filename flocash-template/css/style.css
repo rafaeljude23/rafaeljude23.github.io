@@ -2097,6 +2097,11 @@ footer .bottom_footer .developer_text a {
     opacity: 0;
 }
 
+.anim_line span img {
+    width: 1px;
+    height: 100px;
+}
+
 .anim_line.dark_bg {
     max-width: 1170px;
 }
