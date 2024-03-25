@@ -654,6 +654,13 @@ header.fixed .navbar {
     margin-top: 70px;
     position: relative;
     background-color: #edf1ed;
+    padding: 120px 0;
+}
+
+@media (max-width: 1400px) {
+   .banner_section {
+        padding: 80px 0;
+    }
 }
 
 .banner_section .container {
