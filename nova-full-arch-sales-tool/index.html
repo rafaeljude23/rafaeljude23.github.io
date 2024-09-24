@@ -1,0 +1,2267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NOVA FULL ARCH SALES TOOL</title>
+    <!-- GOOGLE FONTS -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+		<!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body class="bg-body-tertiary">
+    <div class="container">
+    	<img class="logo" src="img/nova-logo.png" alt="Nova logo">
+    	<div class="row">
+    		<div class="col-md-8 offset-md-2">
+    			<p>Total: <span id="total"></span></p>
+    			<form class="bg-white shadow px-3 px-md-5 py-5 my-5">
+    				<div class="d-flex align-items-center justify-content-between mb-4">
+    					<h1 class="h3 mb-0">NOVA FULL ARCH SALES TOOL</h1>
+    					<button type="button" class="reset-btn btn btn-secondary">Reset</button>
+    				</div>
+    				
+				    <div class="accordion mb-4" id="accordionExample0">
+						  <div class="accordion-item">
+						    <h2 class="accordion-header">
+						      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne0" aria-expanded="true" aria-controls="collapseOne0">
+						        1. START BY SELECTING TREATMENT TYPE
+						      </button>
+						    </h2>
+						    <div id="collapseOne0" class="accordion-collapse collapse show" data-bs-parent="#accordionExample0">
+						      <div class="accordion-body">
+						      	<div class="mb-3">
+						      		<label for="treatmentDetails" class="form-label">PLEASE NOTE THIS SETTING WILL UPDATE THE TREATMENT DETAILS *</label>
+									    <select id="treatmentDetails" class="form-select" required="">
+									      <option selected hidden></option>
+									      <option value="1">Upper All-On-X</option>
+									      <option value="2">Lower All-On-X</option>
+									      <option value="3">Upper & Lower All-On-X</option>
+									      <option value="4">Upper All-On-X w/ Pterygoids</option>
+									      <option value="5">Upper & Lower All-On-X w/ Pterygoids</option>
+									    </select>
+						      	</div>
+						      	<div class="mb-3">
+						      		<label for="treatmentCoordinator" class="form-label">SELECT TREATMENT COORDINATOR</label>
+									    <select id="treatmentCoordinator" class="form-select">
+									    	<option selected hidden></option>
+									      <option value="1">Option 1</option>
+									      <option value="2">Option 2</option>
+									    </select>
+						      	</div>
+						      	<div class="mb-3">
+						      		<label for="defaultSurgeon" class="form-label">CHOOSE DEFAULT SURGEON</label>
+									    <select id="defaultSurgeon" class="form-select">
+									    	<option selected hidden></option>
+									      <option value="1">Dr #1</option>
+									      <option value="2">Dr #2</option>
+									    </select>
+						      	</div>	
+
+						      	<div class="accordion d-none" id="accordion1">
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
+										        PREPARATION & WORK-UP (SINGLE  ARCH)
+										      </button>
+										    </h2>
+										    <div id="collapseOne1" class="accordion-collapse collapse show" data-bs-parent="#accordion1">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>	
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															   Work-up Single Arch
+															  </label>
+															</div>
+										      	</div>
+										      	
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="073,075">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text fee-input" class="form-control" placeholder="" def-val="$2000">
+																</div>
+										      		</div>
+										      	</div>		
+
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseOne1 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
+										        UPPER SURGERY
+										      </button>
+										    </h2>
+										    <div id="collapseTwo1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>
+
+														<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	UPPER Implant Surgery
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="688x4, 331, 661x4">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$15000">
+																</div>
+										      		</div>
+										      	</div>
+
+										    		<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Zygoma Surgery and Bone Grafting (as required)
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="243, 247x2">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$6000">
+																</div>
+										      		</div>
+										      	</div>
+
+														<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Quad Zygoma Surgery and Bone Grafting (as required)
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="243, 247x2">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$7700">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Upper Surgical Guide
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="679">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$2000">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Midline Implant
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="688x1,661x1">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$3000">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseTwo1 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree1" aria-expanded="false" aria-controls="collapseThree1">
+										        INTRAOPERATIVE IMPRESSIONS, INDEXATION AND TRY-IN (SINGLE ARCH)
+										      </button>
+										    </h2>
+										    <div id="collapseThree1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	Single Arch
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="(Intraoperative Impressions)" def-val="990">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$2000">
+																</div>
+										      		</div>
+										      	</div>	
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseThree1 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour1" aria-expanded="false" aria-controls="collapseFour1">
+										        UPPER ALL ON X IMMEDIATE FINAL TEETH (RESTORATIVE)
+										      </button>
+										    </h2>
+										    <div id="collapseFour1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>	
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	Upper Prosthesis with Titanium Frame
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="666x1">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$6000">
+																</div>
+										      		</div>
+										      	</div>
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>	
+										      </div>
+										    </div><!-- collapseFour1 -->
+										  </div>
+										</div><!-- accordion1 -->
+
+										<div class="accordion d-none" id="accordion2">
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
+										        PREPARATION & WORK-UP (SINGLE  ARCH)
+										      </button>
+										    </h2>
+										    <div id="collapseOne2" class="accordion-collapse collapse show" data-bs-parent="#accordion2">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>	
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															   Work-up Single Arch
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="073,075">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$2000">
+																</div>
+										      		</div>
+										      	</div>										      									      	
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseOne2 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+										        LOWER SURGERY
+										      </button>
+										    </h2>
+										    <div id="collapseTwo2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>
+
+														<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	LOWER Surgery
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="688x4, 331, 661x4">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$15000">
+																</div>
+										      		</div>
+										      	</div>
+
+									      		<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Nerve Transposition
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="389">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$2000">
+																</div>
+										      		</div>
+										      	</div>
+
+														<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Nerve Transposition (Bilateral)
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="389x2">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$4000">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Lower Surgical Guide
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="679">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$2000">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseTwo2 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">
+										        INTRAOPERATIVE IMPRESSIONS, INDEXATION AND TRY-IN (SINGLE ARCH)
+										      </button>
+										    </h2>
+										    <div id="collapseThree2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	Single Arch
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="(Intraoperative Impressions)" def-val="990">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$2000">
+																</div>
+										      		</div>
+										      	</div>	
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseThree2 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour2" aria-expanded="false" aria-controls="collapseFour2">
+										        LOWER ALL ON X IMMEDIATE FINAL TEETH (RESTORATIVE)
+										      </button>
+										    </h2>
+										    <div id="collapseFour2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>	
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	Lower Prosthesis with Titanium Frame
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="666x1">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val=" $6000">
+																</div>
+										      		</div>
+										      	</div>
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>	
+										      </div>
+										    </div><!-- collapseFour2 -->
+										  </div>
+										</div><!-- accordion2 -->
+
+										<div class="accordion d-none" id="accordion3">
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne3" aria-expanded="true" aria-controls="collapseOne3">
+										        PREPARATION & WORK-UP (DOUBLE ARCH)
+										      </button>
+										    </h2>
+										    <div id="collapseOne3" class="accordion-collapse collapse show" data-bs-parent="#accordion3">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>	
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															   Work-up Single Arch
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="073,075">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$4000">
+																</div>
+										      		</div>
+										      	</div>										      									      	
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseOne3 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo3" aria-expanded="false" aria-controls="collapseTwo3">
+										        UPPER SURGERY
+										      </button>
+										    </h2>
+										    <div id="collapseTwo3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>
+
+														<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	UPPER Implant Surgery
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="688x4, 331, 661x4">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$15000">
+																</div>
+										      		</div>
+										      	</div>
+
+									      		<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Zygoma Surgery and Bone Grafting (as required)
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="243, 247x2">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$7700">
+																</div>
+										      		</div>
+										      	</div>
+
+														<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Quad Zygoma Surgery and Bone Grafting (as required)
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="243, 247x2">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$7700">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Upper Surgical Guide
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="679">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$2000">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Midline Implant
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="688x1, 661x1">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$3000">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseTwo3 -->
+										  </div>
+
+										  <!-- start lower -->
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive3" aria-expanded="false" aria-controls="collapseFive3">
+										        LOWER SURGERY
+										      </button>
+										    </h2>
+										    <div id="collapseFive3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>
+
+														<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	LOWER Surgery
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="688x4, 331, 661x4">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$15000">
+																</div>
+										      		</div>
+										      	</div>
+
+									      		<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Nerve Transposition
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="389">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$2000">
+																</div>
+										      		</div>
+										      	</div>
+
+														<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Nerve Transposition (Bilateral)
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="389x2">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$4000">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Lower Surgical Guide
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="679">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$2000">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseFive3 -->
+										  </div>
+										  <!-- end lower -->
+
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
+										        INTRAOPERATIVE IMPRESSIONS, INDEXATION AND TRY-IN (DOUBLE ARCH)
+										      </button>
+										    </h2>
+										    <div id="collapseThree3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	Double Arch
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="(Intraoperative Impressions)" def-val="990">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$4000">
+																</div>
+										      		</div>
+										      	</div>	
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseThree3 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour3" aria-expanded="false" aria-controls="collapseFour3">
+										        ALL ON X IMMEDIATE FINAL TEETH (RESTORATIVE UPPER AND LOWER)
+										      </button>
+										    </h2>
+										    <div id="collapseFour3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>	
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	Upper Prosthesis 
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="666x1">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$2500">
+																</div>
+										      		</div>
+										      	</div>
+									      		<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Upper Prosthesis ith Titanium Frame
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="666x1">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$6000">
+																</div>
+										      		</div>
+										      	</div>
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>	
+										      </div>
+										    </div><!-- collapseFour3 -->
+										  </div>
+										</div><!-- accordion3 -->
+
+										<div class="accordion d-none" id="accordion4">
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne4" aria-expanded="true" aria-controls="collapseOne4">
+										        PREPARATION & WORK-UP ( SINGLE ARCH w/ Pterygoids)
+										      </button>
+										    </h2>
+										    <div id="collapseOne4" class="accordion-collapse collapse show" data-bs-parent="#accordion4">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>	
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	Work-up Single Arch w/ Pterygoids
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="073,075">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$2000">
+																</div>
+										      		</div>
+										      	</div>										      									      	
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseOne4 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo4" aria-expanded="false" aria-controls="collapseTwo4">
+										        UPPER SURGERY (w/ Pterygoids)
+										      </button>
+										    </h2>
+										    <div id="collapseTwo4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>
+
+														<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	UPPER Implant Surgery
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="688x4, 331, 661x4">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$15000">
+																</div>
+										      		</div>
+										      	</div>
+
+									      		<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Zygoma Surgery and Bone Grafting (as required)
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="243, 247x2">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$6000">
+																</div>
+										      		</div>
+										      	</div>
+
+														<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Quad Zygoma Surgery and Bone Grafting (as required)
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="243, 247x2">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$7700">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Upper Surgical Guide
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="688x4, 331, 661x4">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$2000">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Midline Implant
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="688x1, 661x1">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$3000">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseTwo4 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree4" aria-expanded="false" aria-controls="collapseThree4">
+										        INTRAOPERATIVE IMPRESSIONS, INDEXATION AND TRY-IN (SINGLE ARCH w/ Pterygoids)
+										      </button>
+										    </h2>
+										    <div id="collapseThree4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	Single Arch
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="(Intraoperative Impressions)" def-val="990">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$2000">
+																</div>
+										      		</div>
+										      	</div>	
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseThree4 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour4" aria-expanded="false" aria-controls="collapseFour4">
+										        UPPER ALL ON X IMMEDIATE FINAL TEETH (RESTORATIVE w/ Pterygoids)
+										      </button>
+										    </h2>
+										    <div id="collapseFour4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>	
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	Upper Prosthesis with Titanium Frame
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="666x1">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$6000">
+																</div>
+										      		</div>
+										      	</div>
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>	
+										      </div>
+										    </div><!-- collapseFour4 -->
+										  </div>
+										</div><!-- accordion4 -->
+
+										<div class="accordion d-none" id="accordion5">
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne5" aria-expanded="true" aria-controls="collapseOne5">
+										        PREPARATION & WORK-UP ( DOUBLE ARCH w/ Pterygoids)
+										      </button>
+										    </h2>
+										    <div id="collapseOne5" class="accordion-collapse collapse show" data-bs-parent="#accordion5">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>	
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	Work-up Double Arch w/ Pterygoids
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="073,075">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$4000">
+																</div>
+										      		</div>
+										      	</div>										      									      	
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseOne5 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo5" aria-expanded="false" aria-controls="collapseTwo5">
+										        UPPER SURGERY (DOUBLE ARCH w/ Pterygoids)
+										      </button>
+										    </h2>
+										    <div id="collapseTwo5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>
+
+														<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	UPPER Implant Surgery
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="688x4, 331, 661x4">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$15000">
+																</div>
+										      		</div>
+										      	</div>
+
+									      		<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Zygoma Surgery and Bone Grafting (as required)
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="243, 247x2">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$6000">
+																</div>
+										      		</div>
+										      	</div>
+
+														<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Quad Zygoma Surgery and Bone Grafting (as required)
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="243, 247x2">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$7700">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Upper Surgical Guide
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="679">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$2000">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Midline Implant
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="688x1, 661x1">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$3000">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseTwo5 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree5" aria-expanded="false" aria-controls="collapseThree5">
+										        INTRAOPERATIVE IMPRESSIONS, INDEXATION AND TRY-IN (DOUBLE ARCH w/ Pterygoids )
+										      </button>
+										    </h2>
+										    <div id="collapseThree5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	Double Arch
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="(Intraoperative Impressions)" def-val=" 990">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$4000">
+																</div>
+										      		</div>
+										      	</div>	
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseThree5 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour5" aria-expanded="false" aria-controls="collapseFour5">
+										        UPPER AND LOWER ALL ON X IMMEDIATE FINAL TEETH (RESTORATIVE w/ Pterygoids)
+										      </button>
+										    </h2>
+										    <div id="collapseFour5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>	
+										      	<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	Upper Prosthesis with Titanium Frame
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="666x1">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$6000">
+																</div>
+										      		</div>
+										      	</div>
+										      	<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	LProsthesis with Titanium Frame
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="" def-val="666x1">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="$6000">
+																</div>
+										      		</div>
+										      	</div>
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>	
+										      </div>
+										    </div><!-- collapseFour5 -->
+										  </div>
+										</div><!-- accordion5 -->
+
+										<div class="accordion d-none" id="accordion6">
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne6" aria-expanded="false" aria-controls="collapseOne6">
+										        EXTRACTION OF TEETH 
+										      </button>
+										    </h2>
+										    <div id="collapseOne6" class="accordion-collapse collapse" data-bs-parent="#accordion6">
+										      <div class="accordion-body">
+
+											      <div class="teeth-img">
+											      	<img src="img/teeth.webp" alt="">
+															<div class="teeth-label">
+											      		<label class="tl-1" for="tl-1">1</label>
+											      		<label class="tl-2" for="tl-2">2</label>
+											      		<label class="tl-3" for="tl-3">3</label>
+											      		<label class="tl-4" for="tl-4">4</label>
+											      		<label class="tl-5" for="tl-5">5</label>
+											      		<label class="tl-6" for="tl-6">6</label>
+											      		<label class="tl-7" for="tl-7">7</label>
+											      		<label class="tl-8" for="tl-8">8</label>
+											      		<label class="tl-9" for="tl-9">9</label>
+											      		<label class="tl-10" for="tl-10">10</label>
+											      		<label class="tl-11" for="tl-11">11</label>
+											      		<label class="tl-12" for="tl-12">12</label>
+											      		<label class="tl-13" for="tl-13">13</label>
+											      		<label class="tl-14" for="tl-14">14</label>
+											      		<label class="tl-15" for="tl-15">15</label>
+											      		<label class="tl-16" for="tl-16">16</label>
+											      		<label class="tl-17" for="tl-17">17</label>
+											      		<label class="tl-18" for="tl-18">18</label>
+											      		<label class="tl-19" for="tl-19">19</label>
+											      		<label class="tl-20" for="tl-20">20</label>
+											      		<label class="tl-21" for="tl-21">21</label>
+											      		<label class="tl-22" for="tl-22">22</label>
+											      		<label class="tl-23" for="tl-23">23</label>
+											      		<label class="tl-24" for="tl-24">24</label>
+											      		<label class="tl-25" for="tl-25">25</label>
+											      		<label class="tl-26" for="tl-26">26</label>
+											      		<label class="tl-27" for="tl-27">27</label>
+											      		<label class="tl-28" for="tl-28">28</label>
+											      		<label class="tl-29" for="tl-29">29</label>
+											      		<label class="tl-30" for="tl-30">30</label>
+											      		<label class="tl-31" for="tl-31">31</label>
+											      		<label class="tl-32" for="tl-32">32</label>
+											      	</div>
+											      </div><!-- teeth-img -->
+
+											      <div class="teeth-checkbox row">
+											      	<div class="col-md-6">
+											      		<label class="form-label">UPPER ARCH</label>
+											      		<div class="row">
+											      			<div class="col-6">													      		
+																    <div class="form-check mb-3">
+																		  <input id="tl-1" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">1</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-2" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">2</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-3" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">3</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-4" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">4</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-5" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">5</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-6" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">6</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-7" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">7</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-8" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">8</label>
+																		</div>
+											      			</div>
+											      			<div class="col-6">													      		
+																    <div class="form-check mb-3">
+																		  <input id="tl-9" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">9</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-10" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">10</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-11" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">11</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-12" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">12</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-13" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">13</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-14" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">14</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-15" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">15</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-16" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">16</label>
+																		</div>
+											      			</div>
+											      		</div>										      	
+											      	</div>
+											      	<div class="col-md-6">
+											      		<label class="form-label">LOWER ARCH</label>
+											      		<div class="row">
+											      			<div class="col-6">													      		
+																    <div class="form-check mb-3">
+																		  <input id="tl-17" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">17</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-18" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">18</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-19" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">19</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-20" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">20</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-21" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">21</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-22" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">22</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-23" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">23</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-24" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">24</label>
+																		</div>
+											      			</div>
+											      			<div class="col-6">													      		
+																    <div class="form-check mb-3">
+																		  <input id="tl-25" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">25</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-26" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">26</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-27" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">27</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-28" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">28</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-29" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">29</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-30" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">30</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-31" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">31</label>
+																		</div>
+																		<div class="form-check mb-3">
+																		  <input id="tl-32" class="form-check-input" type="checkbox" value="">
+																		  <label class="form-check-label">32</label>
+																		</div>
+											      			</div>
+											      		</div>										      	
+											      	</div>
+											      </div><!-- teeth-checkbox -->
+
+										      </div>
+										    </div><!-- collapseOne6 -->
+										  </div>
+										  <div class="accordion-item">
+										    <h2 class="accordion-header">
+										      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo6" aria-expanded="false" aria-controls="collapseTwo6">
+										        ADDITIONAL REQUIREMENTS
+										      </button>
+										    </h2>
+										    <div id="collapseTwo6" class="accordion-collapse collapse" data-bs-parent="#accordion6">
+										      <div class="accordion-body">
+										        <div class="mb-3">
+										      		<label class="form-label">TREATING CLINICIAN</label>
+													    <select class="form-select">
+													    	<option selected hidden></option>
+													      <option value="1">Matthew Casey </option>
+													      <option value="2">Fred Meng</option>
+													    </select>
+										      	</div>
+
+														<div class="mb-3">	
+										      		<label class="form-label">TREATMENT STAGE</label>
+										      		<div class="form-check">
+															  <input class="form-check-input" type="checkbox" value="">
+															  <label class="form-check-label">
+															  	Advanced Digital Smile Design (Single Arch)
+															  </label>
+															</div>
+										      	</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="Digital Smile Design" def-val="990">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="2500">
+																</div>
+										      		</div>
+										      	</div>
+
+										    		<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Advanced Digital Smile Design (Double Arch)
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="Digital Smile Design" def-val="990">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="" def-val="5500">
+																</div>
+										      		</div>
+										      	</div>
+
+														<div class="form-check mb-3">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+														  	Anti Clenching Injections
+														  </label>
+														</div>
+										      	<div class="row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">ID</span>
+																  <input type="text" class="form-control" placeholder="Anti Clenching Injections" def-val="990">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">FEE</span>
+																  <input type="text" class="form-control" placeholder="Anti Clenching Injections" def-val="650">
+																</div>
+										      		</div>
+										      	</div>
+
+										      	<div class="row discount-row">
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">DISCOUNT (IF ANY)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      		<div class="col-md-6">
+										      			<div class="input-group mb-3">
+																  <span class="input-group-text">TOTAL DISCOUNT ($)</span>
+																  <input type="text" class="form-control" placeholder="">
+																</div>
+										      		</div>
+										      	</div>
+										      	<button type="button" class="btn btn-primary add-item">ADD ITEM</button>
+										      </div>
+										    </div><!-- collapseTwo6 -->
+										  </div>
+										</div><!-- accordion6 -->
+
+						      </div>
+						    </div>
+						  </div>
+						  <div class="accordion-item">
+						    <h2 class="accordion-header">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo0" aria-expanded="false" aria-controls="collapseTwo0">
+						        2. ANAESHETIC SERVICE OPTIONS FEE OPTIONS
+						      </button>
+						    </h2>
+						    <div id="collapseTwo0" class="accordion-collapse collapse" data-bs-parent="#accordionExample0">
+						      <div class="accordion-body">
+						        <div class="mb-3">
+						      		<label class="form-label">SURGICAL FACILITY</label>
+									    <select class="surgical-facility-select form-select">
+									    	<option selected hidden></option>
+									      <option value="clinic1">Clinic 1</option>
+									      <option value="clinic2">Clinic 2</option>
+									    </select>
+						      	</div>
+						      	<div class="anaesthetic-fee-wrap mb-3 d-none">
+						      		<label class="form-label">ANAESTHETIC FEE</label>
+											<div class="form-check">
+											  <input class="form-check-input" type="radio" name="anaestheticFeeRadio" id="">
+											  <label class="form-check-label" for="">
+											    Standard (not separately itemised in the Proposal)
+											  </label>
+											</div>
+											<div class="form-check">
+											  <input class="form-check-input" type="radio" name="anaestheticFeeRadio" id="">
+											  <label class="form-check-label" for="">
+											    Include within the Proposal Fees Schedule showing medicare rebate
+											  </label>
+											</div>
+											<div class="form-check">
+											  <input class="form-check-input" type="radio" name="anaestheticFeeRadio" id="">
+											  <label class="form-check-label" for="">
+											    Include within the Proposal Fees Schedule excluding medicare rebate (Early Access Super)
+											  </label>
+											</div>
+						      	</div>	
+						      	<div class="mb-3">
+						      		<label class="form-label">CHOOSE TIME/PROCEDURE</label>
+						      		<br>
+						      		<label class="form-label">PLEASE ENSURE IT IS AN OVERESTIMATE</label>
+									    <select class="estimate-select form-select">
+									    	<option selected hidden></option>
+									      <option value="1">Full Arch Implants ($4325)</option>
+									      <option value="2">Full Arch Implants (WIth Zygoma or Grafting)($6225)</option>
+									      <option value="3">Anaesthetic Procedure (4Hours)</option>
+									      <option value="4">New Sleep Dentistry (under 2 hours)</option>
+									      <option value="5">New Sleep Dentistry (under 3 hours)</option>
+									      <option value="6">New Sleep Dentistry (under 4 hours)</option>
+									      <option value="7">New Sleep Dentistry (under 5 hours)</option>
+									      <option value="8">New Sleep Dentistry (under 6 hours)</option>
+									    </select>
+						      	</div>
+										<table class="fee-table table table-hover d-none">
+										  <thead>
+										    <tr>
+										      <th scope="col">FEE BREAKDOWN</th>
+										      <th scope="col">FEE</th>
+										    </tr>
+										  </thead>
+										  <tbody>
+										    <tr>
+										      <th scope="row">Anaesthetic Fee</th>
+										      <td>
+										      	<span class="td-1">$6150</span> 
+										      	<span class="td-2">$6225</span>
+										      	<span class="td-3">$6031</span>
+										      	<span class="td-4">$2650</span>
+										      	<span class="td-5">$3850</span>
+										      	<span class="td-6">$5050</span>
+										      	<span class="td-7">$6260</span>
+										      	<span class="td-8">$6225</span>
+										      </td>
+										    </tr>
+										    <tr>
+										      <th scope="row">Approx Medicare Rebate</th>
+										      <td>
+										      	<span class="td-1">$1230 - $4305</span>
+										      	<span class="td-2">$3618-$4800</span>
+										      	<span class="td-3">$2890-4624</span>
+										      	<span class="td-4">$530-$1855</span>
+										      	<span class="td-5">$770-$2695</span>
+										      	<span class="td-6">$1010-$3535</span>
+										      	<span class="td-7">$1250-4375</span>
+										      	<span class="td-8">$1490-$5215</span>
+										      </td>
+										    </tr>
+										    <tr>
+										      <th scope="row">Facility Fee</th>
+										      <td>
+										      	<span class="td-1">$988</span>
+										      	<span class="td-2">0</span>
+										      	<span class="td-3">$988</span>
+										      	<span class="td-4">0</span>
+										      	<span class="td-5">0</span>
+										      	<span class="td-6">0</span>
+										      	<span class="td-7">0</span>
+										      	<span class="td-8">0</span>
+										      </td>
+										    </tr>
+										  </tbody>
+										</table>	
+						      </div>
+						    </div><!-- collapseTwo0 -->
+						  </div>
+						  <div class="accordion-item">
+						    <h2 class="accordion-header">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree0" aria-expanded="false" aria-controls="collapseThree0">
+						        3. ADDITIONAL OPTIONS + FINANCIAL OTIONS
+						      </button>
+						    </h2>
+						    <div id="collapseThree0" class="accordion-collapse collapse" data-bs-parent="#accordionExample0">
+						      <div class="accordion-body">
+						       <div class="mb-3">
+						      		<label class="form-label">DOES THE PATIENT REQUIRE FINANCE?</label>
+									    <select class="patient-require-select form-select">
+									    	<option selected hidden></option>
+									      <option value="not-required">Not Required</option>
+									      <option value="required">Required</option>
+									    </select>
+						      	</div>
+						      	<div class="patient-require-checkbox d-none mb-3">
+											<div class="form-check">
+											  <input class="form-check-input" type="checkbox" value="" id="">
+											  <label class="form-check-label" for="">
+											    Superannuation/Super Release
+											  </label>
+											</div>
+											<div class="form-check">
+											  <input class="form-check-input" type="checkbox" value="" id="">
+											  <label class="form-check-label" for="">
+											    3rd Party Finance
+											  </label>
+											</div>
+											<div class="form-check">
+											  <input class="form-check-input" type="checkbox" value="" id="">
+											  <label class="form-check-label" for="">
+											    Internal Secured Loan
+											  </label>
+											</div>
+											<div class="form-check">
+											  <input class="form-check-input patient-require-other" type="checkbox" value="" id="patientRequireOther">
+											  <label class="form-check-label patient-require-label" for="patientRequireOther">
+											    Other
+											  </label>
+											</div>	
+											<input type="text" class="patient-require-input form-control d-none" placeholder="Type your answer">		
+										</div><!-- patient-require-checkbox --->
+
+						      </div>
+						    </div><!-- collapseThree0 -->
+						  </div>
+						</div>
+						<button type="button" class="reset-btn btn btn-secondary">Reset</button>
+						<button type="submit" class="btn btn-primary">Submit</button>
+    			</form>
+
+    		</div>
+    	</div>	    	
+    </div>    			
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="custom.js"></script>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.logo {
+	display: block;
+	max-width: 150px;
+	width: 100%;
+	height: auto;
+	margin: 20px 0;
+}
+
+.accordion-button:not(.collapsed),
+.accordion-button {
+	background-color: #002d57;
+	color: #fff;
+}
+
+.accordion-button:not(.collapsed)::after,
+.accordion-button::after {
+	filter: brightness(0) invert(1);
+}
+
+.img-map {
+	display: block;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.teeth-img {
+	position: relative;
+}
+
+.teeth-label label {
+	position: absolute;
+	background-color: #002d57;
+	color: #fff;
+	width: 12px;
+	height: 12px;
+	font-size: 9px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.tl-1 {
+    top: 42.5%;
+    left: 30.5%;
+}
+
+.tl-2 {
+    top: 38.5%;
+    left: 33.5%;
+}
+
+.tl-3 {
+    top: 33.5%;
+    left: 30.5%;
+}
+
+.tl-4 {
+    top: 32.5%;
+    left: 35.5%;
+}
+
+.tl-5 {
+    top: 26.5%;
+    left: 33.5%;
+}
+
+.tl-6 {
+    top: 23.5%;
+    left: 36.5%;
+}
+
+.tl-7 {
+    top: 20.5%;
+    left: 40.5%;
+}
+
+.tl-8 {
+    top: 18.5%;
+    left: 45.5%;
+}
+
+.tl-9 {
+    top: 18.5%;
+    left: 51.5%;
+}
+
+.tl-10 {
+    top: 20.5%;
+    left: 57.5%;
+}
+
+.tl-11 {
+    top: 23.5%;
+    left: 60.5%;
+}
+
+.tl-12 {
+    top: 26.5%;
+    left: 63.5%;
+}
+
+.tl-13 {
+    top: 30.5%;
+    left: 65.5%;
+}
+
+.tl-14 {
+    top: 33.5%;
+    left: 67.5%;
+}
+
+.tl-15 {
+    top: 38.5%;
+    left: 64.5%;
+}
+
+.tl-16 {
+    top: 41.5%;
+    left: 67.5%;
+}
+
+.tl-17 {
+    top: 58.5%;
+    left: 65.5%;
+}
+
+.tl-18 {
+    top: 63.5%;
+    left: 66.5%;
+}
+
+.tl-19 {
+    top: 67.5%;
+    left: 65.5%;
+}
+
+.tl-20 {
+    top: 71.5%;
+    left: 63.5%;
+}
+
+.tl-21 {
+    top: 74.5%;
+    left: 61.5%;
+}
+
+.tl-22 {
+    top: 76.5%;
+    left: 58.5%;
+}
+
+.tl-23 {
+    top: 78.5%;
+    left: 54.5%;
+}
+
+.tl-24 {
+    top: 79.5%;
+    left: 50.5%;
+}
+
+.tl-25 {
+    top: 80.5%;
+    left: 46.5%;
+}
+
+.tl-26 {
+    top: 80.5%;
+    left: 42.5%;
+}
+
+.tl-27 {
+    top: 77.5%;
+    left: 39.5%;
+}
+
+.tl-28 {
+    top: 74.5%;
+    left: 35.5%;
+}
+
+.tl-29 {
+    top: 70.5%;
+    left: 33.5%;
+}
+
+.tl-30 {
+    top: 65.5%;
+    left: 33.5%;
+}
+
+.tl-31 {
+    top: 61.5%;
+    left: 31.5%;
+}
+
+.tl-32 {
+    top: 57.5%;
+    left: 30.5%;
+}
+
+.fee-table td span {
+    display: none;
+}
