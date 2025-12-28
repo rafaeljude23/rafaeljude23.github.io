@@ -1,0 +1,52 @@
+[
+    {
+        "id": "getting-started",
+        "title": "1. Getting Started",
+        "content": "<p>Welcome to the framework. This guide will help you set up your project from scratch. First, ensure you have <strong>Node.js v18+</strong> installed on your machine.</p>"
+    },
+    {
+        "id": "installation",
+        "title": "2. Installation",
+        "content": "<p>Run the following command in your terminal to install the dependencies:</p><pre style='background:#f1f5f9; padding:15px; border-radius:8px;'><code>npm install @standard/core --save</code></pre>"
+    },
+    {
+        "id": "configuration",
+        "title": "3. Configuration",
+        "content": "<p>Create a <code>config.json</code> file in your root directory. Use the following structure:</p><pre style='background:#f1f5f9; padding:10px;'><code>{\n  \"port\": 3000,\n  \"debug\": true\n}</code></pre>"
+    },
+    {
+        "id": "core-concepts",
+        "title": "4. Core Concepts",
+        "content": "<p>Our architecture follows the <em>Model-View-Controller</em> (MVC) pattern. This ensures a clean separation of concerns and easier testing protocols.</p>"
+    },
+    {
+        "id": "api-endpoints",
+        "title": "5. API Endpoints",
+        "content": "<p>The following endpoints are available for data fetching:</p><ul><li><code>GET /users</code> - List all users</li><li><code>POST /users</code> - Create a new user</li><li><code>DELETE /users/:id</code> - Remove a user</li></ul>"
+    },
+    {
+        "id": "authentication",
+        "title": "6. Authentication",
+        "content": "<p>We use <strong>JWT (JSON Web Tokens)</strong> for session management. All protected routes require a <code>Bearer Token</code> in the Authorization header.</p>"
+    },
+    {
+        "id": "styling-guide",
+        "title": "7. Styling Guide",
+        "content": "<p>The UI is built using utility-first CSS. You can customize the theme using the <code>theme.config.js</code> file.</p><p><span style='background:#dcfce7; color:#166534; padding:2px 8px; border-radius:12px; font-size:12px;'>TIP</span> Use CSS variables for brand colors.</p>"
+    },
+    {
+        "id": "database-schema",
+        "title": "8. Database Schema",
+        "content": "<table style='width:100%; border-collapse: collapse;'><thead><tr style='background:#f8fafc;'><th>Field</th><th>Type</th><th>Null</th></tr></thead><tbody><tr><td>id</td><td>UUID</td><td>NO</td></tr><tr><td>email</td><td>String</td><td>NO</td></tr><tr><td>created_at</td><td>DateTime</td><td>YES</td></tr></tbody></table>"
+    },
+    {
+        "id": "deployment",
+        "title": "9. Deployment",
+        "content": "<p>For production, we recommend using <strong>Docker</strong>. Ensure your environment variables are set correctly before running the container.</p>"
+    },
+    {
+        "id": "troubleshooting",
+        "title": "10. Troubleshooting",
+        "content": "<p>Common issues include:</p><ol><li>Port already in use: Change the port in config.</li><li>CORS errors: Update your allowed origins list.</li><li>Memory leaks: Check your middleware logic.</li></ol>"
+    }
+]
