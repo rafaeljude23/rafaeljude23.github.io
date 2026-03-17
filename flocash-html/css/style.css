@@ -203,18 +203,23 @@ input:focus {
 .seamless-section {
     position: relative;
     height: 100vh;
-    /*background: linear-gradient(180deg, #EDF1ED 0%, #EDF1ED 100%);*/
 }
 
-.seamless-section .hero-bg {
+.hero-home .hero-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.1;
     z-index: -1;
+    background-color: #EDF1ED;
+}
+
+.hero-home .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .seamless-inner {
@@ -242,6 +247,14 @@ input:focus {
     padding-left: 10px;
     margin: 20px 0;
     max-width: 520px;
+}
+
+.seamless-img img {
+    transform: scale(1.25);
+    position: relative;
+    right: 5vw;
+    /* bottom: 20%; */
+    top: -5vw;
 }
 
 
@@ -365,7 +378,6 @@ input:focus {
 
 /*TRANSFORM*/
 .transform-section {
-    background-color: #EDF1ED;
     padding: 50px 0;
     border-radius: 24px;
 }
@@ -665,6 +677,9 @@ input:focus {
     justify-content: center;
 }
 
+.footer-social a:hover {
+    border-color: #fff;
+}
 
 .footer-title {
     font-size: 16px;
@@ -685,17 +700,16 @@ input:focus {
 }
 
 .footer-links a:hover {
-    color: #fff;
+    color: #ccc;
 }
 
 .footer-email {
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.67);
+
     height: 44px;
     display: flex;
     justify-content: space-between;
-    padding: 8px 16px;
     margin-top: 10px;
+    position: relative;
 }
 
 .footer-email input,
@@ -704,22 +718,37 @@ input:focus {
     border: none;
 }
 
-.footer-email button {
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 500;
-    color: #353835;
-    cursor: pointer;
-}
+
 
 .footer-email input {
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.67);
     font-size: 12px;
+    width: 100%;
+    height: 100%;
+    padding: 8px 40px 8px 16px;
+}
+
+.footer-email input:focus {
+    background-color: #fff;
 }
 
 .footer-email input:placeholder {
     color: rgba(57, 60, 56, 0.66);
+}
+
+.footer-email button {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+    color: #353835;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
 }
 
 .footer-copyright {
