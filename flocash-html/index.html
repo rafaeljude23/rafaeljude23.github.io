@@ -12,311 +12,405 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
 </head>
 <body>
 
-    <!-- MAIN HEADER -->
-    <header class="main-header">
-        <div class="wrapper">
-            <div class="main-header-inner">
-                <a href="#"><img src="img/logo-main.svg" width="200" height="auto" alt=""></a>
-                <nav>
-                    <a href="#">Home</a>
-                    <a href="#">Services <img src="img/icon-dropdown.svg" alt=""></a>
-                    <a href="#">Developer</a>
-                    <a href="#">Need Help?</a>
-                    <a href="#">About Us</a>
-                    <a href="#">My Account</a>
-                </nav>
-                <a class="btn btn-outline-primary" href="#">Book a DEMO <img src="img/icon-arrow-up.svg" alt=""></a>
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <div class="site-header__inner">
+                <a class="site-header__logo" href="#"><img src="img/logo-main.svg" width="200" height="auto" alt="Flocash logo"></a>
+                <div class="site-header__modal">
+
+                    <div class="site-header__modal-inner">
+                        <img class="site-header__menu-close" src="img/close.svg" alt="">
+                        <nav class="site-header__nav">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li class="site-header__dropdown">
+                                    <a class="site-header__dropdown-toggle" href="#">Services <img src="img/icon-dropdown.svg" alt=""></a>
+                                    <div class="site-header__dropdown-menu">
+                                        <div class="container">
+                                            <h3 class="site-header__dropdown-title">Services</h3>
+                                            <div class="site-header__dropdown-list">
+                                                <div class="site-header__dropdown-item">
+                                                    <h4><img src="img/growth.svg" alt=""> Growth</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#"><img src="img/growth.svg" alt=""> Customer Insights</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><img src="img/growth.svg" alt=""> Performance Tracking</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="site-header__dropdown-item">
+                                                    <h4><img src="img/finance.svg" alt=""> Finance</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#"><img src="img/finance.svg" alt=""> Billing</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><img src="img/finance.svg" alt=""> Performance Tracking</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="site-header__dropdown-item">
+                                                    <h4><img src="img/operations.svg" alt="">  Operations</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#"><img src="img/operations.svg" alt=""> Workflow Automation</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><img src="img/operations.svg" alt=""> Process Optimization</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="site-header__dropdown-item">
+                                                    <h4><img src="img/risk-compliance.svg" alt="">  Risk & Compliance</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#"><img src="img/risk-compliance.svg" alt=""> Fraud Detection</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><img src="img/risk-compliance.svg" alt=""> Compliance Tools</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="site-header__dropdown-item">
+                                                    <h4><img src="img/ecosystem.svg" alt="">  Ecosystem</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#"><img src="img/ecosystem.svg" alt=""> Integrations</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><img src="img/ecosystem.svg" alt=""> API Platform</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </li>
+                                <li><a href="#">Developer</a></li>
+                                <li><a href="#">Need Help?</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">My Account</a></li>
+                            </ul>                    
+                        </nav>
+                        <a class="btn btn--outline btn--sm" href="#">Book a DEMO <img src="img/icon-arrow-up.svg" alt=""></a>
+                    </div>
+                </div>
+                
+                <img class="hide-desktop site-header__menu-toggler" src="img/menu.svg" alt="">
             </div>
         </div>
     </header>
 
-    <!-- SEAMLESS -->
-    <section class="seamless-section hero hero-home">
-        <div class="wrapper">
-            <div class="seamless-inner">
-                <div class="seamless-text">
-                    <h1>Seamless Payment <br> Solutions for <br> <span>Global Business</span></h1>
-                    <p>Empowering businesses, banks, and financial institutions with secure, efficient, and innovative digital payment solutions.</p>
-                    <a class="btn btn-primary" href="#">Learn More <img src="img/icon-arrow-up.svg" alt=""></a>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__inner">
+                <div class="hero__content">
+                    <h1 class="hero__heading">Seamless Payment <br> Solutions for <br> <span>Global Business</span></h1>
+                    <p class="hero__description">Empowering businesses, banks, and financial institutions with secure, efficient, and innovative digital payment solutions.</p>
+                    <a class="btn btn--primary" href="#">Learn More <img src="img/icon-arrow-up.svg" alt=""></a>
                 </div>
-                <div class="seamless-img">
-                    <img src="img/home-img.png" alt="">
+                <div class="hero__media">
+                    <!-- <img src="img/home-img.png" alt="Hero illustration"> -->
+                    <div id="lottie-container"></div>
                 </div>
             </div>
         </div>
 
-        <div class="hero-bg">
-             <img src="img/hero-home.png" alt="">
+        <div class="hero__bg">
+            <img src="img/hero-home.png" alt="">
         </div>
-       
     </section>
 
     <!-- POWERING -->
-    <section class="powering-section hero">
-        <div class="wrapper">
-            <div class="powering-top">GLOBAL PAYMENT INFRASTRUCTURE</div>
-            <h2 class="section-title">Powering the next stage of global commerce</h2>
-            <p>Access local payment methods, financial services, and seamless integrations through one unified, secure, and highly scalable global payment platform.</p>
-            <a href="#" class="btn btn-white">Contact Us <img src="img/icon-arrow-up.svg" alt=""></a>
+    <section class="section powering">
+        <div class="container">
+            <div class="powering__badge">GLOBAL PAYMENT INFRASTRUCTURE</div>
+            <h2 class="powering__title section-title">Powering the next stage of global commerce</h2>
+            <p class="powering__description">Access local payment methods, financial services, and seamless integrations through one unified, secure, and highly scalable global payment platform.</p>
+            <a href="#" class="btn btn--white">Contact Us <img src="img/icon-arrow-up.svg" alt=""></a>
         </div>
-        <img class="hero-bg" src="img/bg-powering.jpg" alt="">
+        <img class="section__bg" src="img/bg-powering.jpg" alt="">
     </section>
 
-    <!-- FLEXIBLE -->
-    <section class="flexible-section">
-        <div class="wrapper">
-            <div class="flexible-header">
-                <div class="flexible-intro">
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="container">
+            <div class="features__header">
+                <div class="features__intro">
                     <h2 class="section-title">Flexible solutions for every business model</h2>
                     <p>Grow your business with a comprehensive set of payments and financial tools⁠ – designed to work individually or together.</p>
                 </div>
-                <a class="btn btn-outline-primary" href="#">Get Started Now <img src="img/icon-arrow-up.svg" alt=""></a>
+                <a class="btn btn--outline btn--wide" href="#">Get Started Now <img src="img/icon-arrow-up.svg" alt=""></a>
             </div>
-            <div class="flexible-row">
-                <div class="flexible-col">
-                    <div class="flexible-card flexible-card-left">
-                        <img src="img/global-payment-solutions.jpg" alt="">
-                        <h3>Global Payment Solutions</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
+
+            <div class="features__grid">
+                <div class="features__col">
+                    <div class="feature-card feature-card--full-height">
+                        <img class="feature-card__image" src="img/global-payment-solutions.jpg" alt="Global Payment Solutions">
+                        <h3 class="feature-card__title">Global Payment Solutions</h3>
+                        <p class="feature-card__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
                     </div>
                 </div>
-                <div class="flexible-col">
-                    <div class="flexible-card">
-                        <img src="img/flexible-integration.jpg" alt="">
-                        <h3>Flexible Integration</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
+                <div class="features__col">
+                    <div class="feature-card">
+                        <img class="feature-card__image" src="img/flexible-integration.jpg" alt="Flexible Integration">
+                        <h3 class="feature-card__title">Flexible Integration</h3>
+                        <p class="feature-card__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
                     </div>
-                    <div class="flexible-card">
-                        <img src="img/real-time-analytics.jpg" alt="">
-                        <h3>Real-Time Analytics</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
+                    <div class="feature-card">
+                        <img class="feature-card__image" src="img/real-time-analytics.jpg" alt="Real-Time Analytics">
+                        <h3 class="feature-card__title">Real-Time Analytics</h3>
+                        <p class="feature-card__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
                     </div>
                 </div>
             </div>
-            <div class="flexible-card">
-                <div class="flexible-card-inner">
-                    <img src="img/enhanced-security.jpg" alt="">
-                    <div class="flexible-card-intro">
-                        <h3>Enhanced Security</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
+
+            <div class="feature-card feature-card--wide feature-card--horizontal">
+                <div class="feature-card__inner">
+                    <img class="feature-card__image" src="img/enhanced-security.jpg" alt="Enhanced Security">
+                    <div class="feature-card__content">
+                        <h3 class="feature-card__title">Enhanced Security</h3>
+                        <p class="feature-card__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
+                        <p class="feature-card__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
+                        <p class="feature-card__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
                     </div>
-                </div>                
+                </div>
             </div>
         </div>
     </section>
 
     <!-- TRANSFORM -->
-    <section class="transform-section hero hero-home">
-        <div class="wrapper">
-            <div class="transform-inner">
-                <div class="transform-intro">
+    <section class="section transform">
+        <div class="container">
+            <div class="transform__inner">
+                <div class="transform__content">
                     <h2 class="section-title">Transform Your Payment Experience with Flocash</h2>
-                    <p>Flocash delivers cutting-edge digital payment solutions for businesses worldwide. From seamless transactions to robust security, we ensure your operations are always efficient, secure, and ready for growth.</p>
-                    <a class="btn btn-primary" href="#">Learn More <img src="img/icon-arrow-up.svg" alt=""></a>
+                    <p class="transform__description">Flocash delivers cutting-edge digital payment solutions for businesses worldwide. From seamless transactions to robust security, we ensure your operations are always efficient, secure, and ready for growth.</p>
+                    <a class="btn btn--primary hide-mobile" href="#">Learn More <img src="img/icon-arrow-up.svg" alt=""></a>
                 </div>
-                <img src="img/transform-hero.png" alt="">
-            </div>
-        </div>
-        <div class="hero-bg">
-             <img src="img/hero-home.png" alt="">
-        </div>
-    </section>
-
-    <!-- SOLUTIONS -->
-    <section class="smart-section">
-        <div class="wrapper">
-            <div class="smart-intro">
-                <h2 class="section-title">Smart Tools to Power Your Business</h2>
-                <p>From marketing automation to performance advertising, our solutions help you attract customers, increase conversions, and scale your business faster.</p>
-            </div>
-            
-            <div class="slider-wrapper">
-                <div class="smart-slider">
-                    <div class="smart-item">
-                        <div class="card-wrapper">
-                            <img src="img/email-marketing.svg">
-                            <div class="card-text">
-                                <h3>Email Marketing</h3>
-                                <p>Automate and personalize your campaigns to increase conversions and build customer loyalty effectively.</p>
-                                <a class="primary-link" href="#">LEARN MORE <img src="img/icon-arrow-up.svg" alt=""></a>
-                            </div>   
-                        </div>                 
-                    </div>
-                    <div class="smart-item">
-                        <div class="card-wrapper">
-                            <img src="img/paid-advertising.svg">
-                            <div class="card-text">
-                                <h3>Paid Advertising</h3>
-                                <p>Maximize your ad spend with data-driven strategies that generate higher conversions and better ROI.</p>
-                                <a class="primary-link" href="#">LEARN MORE <img src="img/icon-arrow-up.svg" alt=""></a>
-                            </div> 
-                        </div>                   
-                    </div>
-                    <div class="smart-item">
-                        <div class="card-wrapper">
-                            <img src="img/email-marketing.svg">
-                            <div class="card-text">
-                                <h3>Email Marketing</h3>
-                                <p>Automate and personalize your campaigns to increase conversions and build customer loyalty effectively.</p>
-                                <a class="primary-link" href="#">LEARN MORE <img src="img/icon-arrow-up.svg" alt=""></a>
-                            </div>   
-                        </div>                 
-                    </div>
-                    <div class="smart-item">
-                        <div class="card-wrapper">
-                            <img src="img/paid-advertising.svg">
-                            <div class="card-text">
-                                <h3>Paid Advertising</h3>
-                                <p>Maximize your ad spend with data-driven strategies that generate higher conversions and better ROI.</p>
-                                <a class="primary-link" href="#">LEARN MORE <img src="img/icon-arrow-up.svg" alt=""></a>
-                            </div> 
-                        </div>                   
-                    </div>
+                <img src="img/transform-hero.png" alt="Transform illustration">
+                <div class="hide-desktop transform__btn--mob">
+                    <a class="btn btn--primary" href="#">Learn More <img src="img/icon-arrow-up.svg" alt=""></a>
                 </div>
                 
             </div>
-            <div class="smart-arrow"></div>
+        </div>
+        <div class="hero__bg">
+            <img src="img/hero-home.png" alt="">
+        </div>
+    </section>
+
+    <!-- SOLUTIONS SLIDER -->
+    <section class="solutions">
+        <div class="container">
+            <div class="solutions__intro">
+                <h2 class="section-title">Smart Tools to Power Your Business</h2>
+                <p>From marketing automation to performance advertising, our solutions help you attract customers, increase conversions, and scale your business faster.</p>
+            </div>
+
+            <div class="solutions__slider-viewport">
+                <div class="solutions__slider">
+                    <div class="solutions__slide">
+                        <div class="card card--flex">
+                            <img src="img/email-marketing.svg" alt="Email Marketing">
+                            <div class="card__body">
+                                <h3 class="card__title">Email Marketing</h3>
+                                <p class="card__description">Automate and personalize your campaigns to increase conversions and build customer loyalty effectively.</p>
+                                <a class="text-link" href="#">LEARN MORE <img src="img/icon-arrow-up.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="solutions__slide">
+                        <div class="card card--flex">
+                            <img src="img/paid-advertising.svg" alt="Paid Advertising">
+                            <div class="card__body">
+                                <h3 class="card__title">Paid Advertising</h3>
+                                <p class="card__description">Maximize ROI with targeted ad campaigns across search, social, and display networks to reach the right audience.</p>
+                                <a class="text-link" href="#">LEARN MORE <img src="img/icon-arrow-up.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="solutions__slide">
+                        <div class="card card--flex">
+                            <img src="img/email-marketing.svg" alt="Email Marketing">
+                            <div class="card__body">
+                                <h3 class="card__title">Email Marketing</h3>
+                                <p class="card__description">Automate and personalize your campaigns to increase conversions and build customer loyalty effectively.</p>
+                                <a class="text-link" href="#">LEARN MORE <img src="img/icon-arrow-up.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="solutions__slide">
+                        <div class="card card--flex">
+                            <img src="img/paid-advertising.svg" alt="Paid Advertising">
+                            <div class="card__body">
+                                <h3 class="card__title">Paid Advertising</h3>
+                                <p class="card__description">Maximize ROI with targeted ad campaigns across search, social, and display networks to reach the right audience.</p>
+                                <a class="text-link" href="#">LEARN MORE <img src="img/icon-arrow-up.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+
+            <div class="solutions__controls">
+            </div>
         </div>
     </section>
 
     <!-- WORK -->
-    <section class="work-section">
-        <div class="wrapper">
-            <div class="work-header">
-                <h2 class="section-title">Work Smarter, not Harder</h2>
-                <p>Save time and focus on what truly matters. Our smart solutions automate routine tasks, streamline your workflow, and help your business grow faster with less effort.</p>
+    <section class="work">
+        <div class="container">
+            <div class="work__header">
+                <h2 class="section-title">How It Works</h2>
+                <p>Everything you need to manage payments, finances, and growth — all in one place.</p>
             </div>
-
-            <div class="work-row">
-                <div class="work-col">
-                    <div class="card-wrapper">
-                        <img class="card-img" src="img/ai-designed.jpg" alt="">
-                        <div class="card-text">
-                            <h3>AI Designed for Finance</h3>
-                            <p>Break complex financial processes with intelligent automation. Our AI analyzes data, detects patterns, and helps teams make faster, more accurate decisions while reducing manual work.</p>
-                            <a class="primary-link" href="#">LEARN MORE <img src="img/icon-arrow-up.svg" alt=""></a>
+            <div class="work__grid">
+                <div class="work__col">
+                    <div class="card">
+                        <img class="card__image" src="img/ai-designed.jpg" alt="Seamless Onboarding">
+                        <div class="card__body">
+                            <h3 class="card__title">Seamless Onboarding</h3>
+                            <p class="card__description">Get started in minutes. Our guided onboarding process walks you through setup so your business is ready to accept payments fast.</p>
+                            <a class="text-link" href="#">LEARN MORE <img src="img/icon-arrow-up.svg" alt=""></a>
                         </div>
                     </div>
                 </div>
-                <div class="work-col">
-                    <div class="card-wrapper">
-                        <img class="card-img" src="img/ai-designed.jpg" alt="">
-                        <div class="card-text">
-                            <h3>Built for Global Scale</h3>
-                            <p>Operate across markets without friction. Manage currencies, payments, and financial operations worldwide through one unified platform designed to scale with your business.</p>
-                            <a class="primary-link" href="#">LEARN MORE <img src="img/icon-arrow-up.svg" alt=""></a>
+                <div class="work__col">
+                    <div class="card">
+                        <img class="card__image" src="img/ai-designed.jpg" alt="Built for Global Scale">
+                        <div class="card__body">
+                            <h3 class="card__title">Built for Global Scale</h3>
+                            <p class="card__description">Operate across markets without friction. Manage currencies, payments, and financial operations worldwide through one unified platform designed to scale with your business.</p>
+                            <a class="text-link" href="#">LEARN MORE <img src="img/icon-arrow-up.svg" alt=""></a>
                         </div>
                     </div>
                 </div>
-                <div class="work-col">
-                    <div class="card-wrapper">
-                        <img class="card-img" src="img/ai-designed.jpg" alt="">
-                        <div class="card-text">
-                            <h3>Controls and Compliance</h3>
-                            <p>Stay compliant with built-in governance and security. Monitor transactions, enforce policies, and maintain regulatory standards with powerful control and reporting tools.</p>
-                            <a class="primary-link" href="#">LEARN MORE <img src="img/icon-arrow-up.svg" alt=""></a>
+                <div class="work__col">
+                    <div class="card">
+                        <img class="card__image" src="img/ai-designed.jpg" alt="Controls and Compliance">
+                        <div class="card__body">
+                            <h3 class="card__title">Controls and Compliance</h3>
+                            <p class="card__description">Stay compliant with built-in governance and security. Monitor transactions, enforce policies, and maintain regulatory standards with powerful control and reporting tools.</p>
+                            <a class="text-link" href="#">LEARN MORE <img src="img/icon-arrow-up.svg" alt=""></a>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- TRANSFORM -->
-    <section class="powering-section hero">
-        <div class="wrapper">
-            <div class="powering-top">Start Your Growth Journey</div>
-            <h2 class="section-title">Are you ready To Transform your business?</h2>
-            <p>We help startups and growing companies turn ideas into measurable results. With data-driven marketing strategies, powerful automation, and creative campaigns, we help you attract more customers, increase conversions, and scale faster than ever.</p>
-            <a href="#" class="btn btn-white">get started <img src="img/icon-arrow-up.svg" alt=""></a>
+    <!-- CTA (reuses powering styles) -->
+    <section class="section powering">
+        <div class="container">
+            <div class="powering__badge">Start Your Growth Journey</div>
+            <h2 class="section-title">Are you ready to transform your business?</h2>
+            <p class="powering__description">We help startups and growing companies turn ideas into measurable results. With data-driven marketing strategies, powerful automation, and creative campaigns, we help you attract more customers, increase conversions, and scale faster than ever.</p>
+            <a href="#" class="btn btn--white">Get Started <img src="img/icon-arrow-up.svg" alt=""></a>
         </div>
-        <img class="hero-bg" src="img/bg-powering.jpg" alt="">
+        <img class="section__bg" src="img/bg-powering.jpg" alt="">
     </section>
 
     <!-- FAQ -->
-    <section class="faq-section">
-        <div class="wrapper">
-            <div class="faq-intro">
-                <h2 class="section-title">Frequently asked questions?</h2>
+    <section class="faq">
+        <div class="container">
+            <div class="faq__intro">
+                <h2 class="section-title">Frequently asked questions</h2>
                 <p>Helping you understand how Finance AI delivers security, compliance, and smarter financial automation.</p>
             </div>
 
-<div class="accordion">
-  <div class="accordion-item">
-    <div class="accordion-header">What can your AI agents automate? <div class="accordion-icon"></div></div>
-    <div class="accordion-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-  </div>
+            <div class="accordion">
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        What can your AI agents automate?
+                        <div class="accordion__icon"></div>
+                    </div>
+                    <div class="accordion__body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
 
-  <div class="accordion-item">
-    <div class="accordion-header">Do I need technical skills to set this up? <div class="accordion-icon"></div></div>
-    <div class="accordion-content">
-      <p>By managing repetitive duties such as dispatch, document management, and customer chats, our agents free up your staff 
-to focus on what truly matters.</p>
-    </div>
-  </div>
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        Do I need technical skills to set this up?
+                        <div class="accordion__icon"></div>
+                    </div>
+                    <div class="accordion__body">
+                        <p>By managing repetitive duties such as dispatch, document management, and customer chats, our agents free up your staff to focus on what truly matters.</p>
+                    </div>
+                </div>
 
-  <div class="accordion-item">
-    <div class="accordion-header">How secure is my data? <div class="accordion-icon"></div></div>
-    <div class="accordion-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-  </div>
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        How secure is my data?
+                        <div class="accordion__icon"></div>
+                    </div>
+                    <div class="accordion__body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
 
-  <div class="accordion-item">
-    <div class="accordion-header">Can I test agents before going live? <div class="accordion-icon"></div></div>
-    <div class="accordion-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-  </div>
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        Can I test agents before going live?
+                        <div class="accordion__icon"></div>
+                    </div>
+                    <div class="accordion__body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
 
-  <div class="accordion-item">
-    <div class="accordion-header">What tools can I integrate with? <div class="accordion-icon"></div></div>
-    <div class="accordion-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-  </div>
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        What tools can I integrate with?
+                        <div class="accordion__icon"></div>
+                    </div>
+                    <div class="accordion__body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
 
-  <div class="accordion-item">
-    <div class="accordion-header">What if I need a custom AI workflow? <div class="accordion-icon"></div></div>
-    <div class="accordion-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-  </div>
-</div>
-            
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        What if I need a custom AI workflow?
+                        <div class="accordion__icon"></div>
+                    </div>
+                    <div class="accordion__body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- MAIN FOOTER -->
-    <footer class="main-footer">
-        <div class="wrapper">
-            <div class="footer-row">
-                <div class="footer-col footer-col-1">
-                    <a class="footer-logo" href="#"><img src="img/logo-main.svg" width="200" height="auto" alt=""></a>
-                    <p class="footer-desc">Our extensive regional expertise combined with unparalleled geographic footprint helps our clients reach virtually any market in Middle East & Africa.</p>
-                    <div class="footer-social">
-                        <a href="#"><img src="img/twitter.svg" alt="Twitter"></a>
-                        <a href="#"><img src="img/youtube.svg" alt="Youtube"></a>
-                        <a href="#"><img src="img/linked-in.svg" alt="Linkedin"></a>
-                        <a href="#"><img src="img/youtube.svg" alt="Youtube"></a>
+    <!-- SITE FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__row">
+                <div class="site-footer__col site-footer__col--brand">
+                    <a class="site-footer__logo" href="#">
+                        <img src="img/logo-main.svg" width="200" height="auto" alt="Flocash logo">
+                    </a>
+                    <p class="site-footer__description">Our extensive regional expertise combined with unparalleled geographic footprint helps our clients reach virtually any market in Middle East &amp; Africa.</p>
+                    <div class="site-footer__social">
+                        <a class="site-footer__social-link" href="#"><img src="img/twitter.svg" alt="Twitter"></a>
+                        <a class="site-footer__social-link" href="#"><img src="img/youtube.svg" alt="YouTube"></a>
+                        <a class="site-footer__social-link" href="#"><img src="img/linked-in.svg" alt="LinkedIn"></a>
+                        <a class="site-footer__social-link" href="#"><img src="img/youtube.svg" alt="YouTube"></a>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h3 class="footer-title">Explore</h3>
-                    <ul class="footer-links">                        
+
+                <div class="site-footer__col">
+                    <h3 class="site-footer__nav-title">Explore</h3>
+                    <ul class="site-footer__nav-list">
                         <li><a href="#">Services</a></li>
                         <li><a href="#">Developer</a></li>
                         <li><a href="#">Need Help?</a></li>
@@ -324,9 +418,10 @@ to focus on what truly matters.</p>
                         <li><a href="#">My Account</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3 class="footer-title">Others</h3>
-                    <ul class="footer-links">                        
+
+                <div class="site-footer__col">
+                    <h3 class="site-footer__nav-title">Others</h3>
+                    <ul class="site-footer__nav-list">
                         <li><a href="#">Services</a></li>
                         <li><a href="#">Developer</a></li>
                         <li><a href="#">Need Help?</a></li>
@@ -334,23 +429,55 @@ to focus on what truly matters.</p>
                         <li><a href="#">My Account</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3 class="footer-title">Newsletter</h3>
+
+                <div class="site-footer__col site-footer__newsletter">
+                    <h3 class="site-footer__nav-title">Newsletter</h3>
                     <p>Join our newsletter to receive the latest news, helpful resources, and exclusive insights to help your business grow.</p>
-                    <form class="footer-email">
-                        <input type="email" name="" placeholder="Enter your email...">
-                        <button type="submit">SEND <img src="img/right-arrow.svg" alt="Right arrow"></button>
+                    <form class="site-footer__newsletter-form">
+                        <input class="site-footer__newsletter-input" type="email" placeholder="Enter your email...">
+                        <button class="site-footer__newsletter-btn" type="submit">
+                            SEND <img src="img/right-arrow.svg" alt="Send">
+                        </button>
                     </form>
                 </div>
             </div>
-            <div class="footer-copyright">
-                <p>Copyright © 2026 Flocash.com</p>
+
+            <div class="site-footer__copyright">
+                <p>Copyright &copy; 2026 Flocash.com</p>
             </div>
         </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>            
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="js/script.js"></script>
+    <script type="text/javascript">
+        // 1. Initialize Lottie (set autoplay to false)
+const lottieAnimation = lottie.loadAnimation({
+  container: document.getElementById('lottie-container'),
+  renderer: 'svg',
+  loop: false,
+  autoplay: false,
+  path: 'js/scene_1.json'
+});
+
+// 2. Wait for the animation to load before controlling it with GSAP
+lottieAnimation.addEventListener('DOMLoaded', () => {
+  const tl = gsap.timeline({
+    repeat: -1, 
+    yoyo: true, 
+    defaults: { duration: 3, ease: "power1.inOut" } 
+  });
+
+  // Use GSAP to animate the "frame" or "progress" of the Lottie animation
+  tl.to(lottieAnimation, {
+    frame: lottieAnimation.totalFrames - 1, // Final frame is 451
+    onUpdate: () => lottieAnimation.goToAndStop(lottieAnimation.frame, true)
+  });
+});
+    </script>
+
 </body>
 </html>
