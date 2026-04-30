@@ -76,6 +76,7 @@ input:focus {
 /* Section title */
 .section-title {
     font-size: 44px;
+    text-transform: capitalize;
 }
 
 /* Inline text link */
@@ -491,7 +492,7 @@ input:focus {
 
 /* Wide feature card (full-width row beneath grid) */
 .feature-card--wide {
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 
