@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giti Tire — AI Tire Selector · Project Proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --dark: #111111;
+    --card: #181818;
+    --border: #252525;
+    --yellow: #F5C400;
+    --yellow-dim: rgba(245,196,0,0.12);
+    --yellow-glow: rgba(245,196,0,0.25);
+    --white: #f0ede8;
+    --muted: #888;
+    --text: #c8c5bf;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px 60px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 50%, rgba(245,196,0,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(245,196,0,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--yellow-dim);
+    border: 1px solid rgba(245,196,0,0.3);
+    color: var(--yellow);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 36px;
+    width: fit-content;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--yellow);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--yellow);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(52px, 8vw, 112px);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: -1px;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+
+  .hero h1 span {
+    color: var(--yellow);
+    display: block;
+  }
+
+  .hero-sub {
+    margin-top: 28px;
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 520px;
+    line-height: 1.7;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .hero-meta {
+    margin-top: 48px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+
+  .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .hero-meta-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .hero-meta-value { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 600; color: var(--white); }
+
+  .tire-graphic {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(520px, 50vw);
+    opacity: 0.06;
+    animation: spinTire 40s linear infinite;
+  }
+
+  @keyframes spinTire { from{transform:translateY(-50%) rotate(0)} to{transform:translateY(-50%) rotate(360deg)} }
+
+  /* ── NAV DOTS ── */
+  .nav-dots {
+    position: fixed;
+    right: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 100;
+  }
+
+  .nav-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    border: 1px solid var(--muted);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+
+  .nav-dot:hover, .nav-dot.active {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    box-shadow: 0 0 12px var(--yellow-glow);
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 100px 60px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--yellow);
+  }
+
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1;
+    letter-spacing: -0.5px;
+    margin-bottom: 48px;
+  }
+
+  /* ── PROBLEM ── */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .problem-card {
+    background: var(--card);
+    padding: 36px 32px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .problem-card:hover { border-color: rgba(245,196,0,0.3); }
+
+  .problem-card::before {
+    content: attr(data-num);
+    position: absolute;
+    right: 20px; top: 16px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: rgba(245,196,0,0.06);
+    line-height: 1;
+  }
+
+  .problem-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .problem-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .problem-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── SOLUTION FLOW ── */
+  .flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 48px;
+    border: 1px solid var(--border);
+  }
+
+  .flow-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s;
+  }
+
+  .flow-step:last-child { border-bottom: none; }
+  .flow-step:hover { background: rgba(245,196,0,0.02); }
+
+  .flow-step-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--yellow);
+    border-right: 1px solid var(--border);
+    padding: 32px 0;
+  }
+
+  .flow-step-content {
+    padding: 32px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .flow-step-content h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .flow-step-content p { font-size: 14px; color: var(--muted); }
+
+  .flow-step-detail {
+    background: var(--yellow-dim);
+    border: 1px solid rgba(245,196,0,0.15);
+    padding: 16px 20px;
+    border-radius: 2px;
+  }
+
+  .flow-step-detail .label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 8px;
+  }
+
+  .flow-step-detail p { font-size: 13px; color: var(--text); }
+
+  /* ── DEMO MOCKUP ── */
+  .demo-container {
+    margin-top: 48px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    background: #0d0d0d;
+  }
+
+  .demo-topbar {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .demo-dots { display: flex; gap: 8px; }
+  .demo-dots span { width: 12px; height: 12px; border-radius: 50%; }
+  .demo-dots span:nth-child(1) { background: #FF5F57; }
+  .demo-dots span:nth-child(2) { background: #FFBD2E; }
+  .demo-dots span:nth-child(3) { background: #28C840; }
+
+  .demo-url {
+    flex: 1;
+    background: #1a1a1a;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: monospace;
+  }
+
+  .demo-screen {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 480px;
+  }
+
+  .demo-sidebar {
+    border-right: 1px solid var(--border);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .demo-sidebar-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--yellow);
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .chat-msg {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .chat-msg.user { align-items: flex-end; }
+  .chat-msg.bot { align-items: flex-start; }
+
+  .chat-bubble {
+    max-width: 90%;
+    padding: 10px 14px;
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .chat-bubble.user {
+    background: var(--yellow);
+    color: #000;
+    font-weight: 500;
+    border-bottom-right-radius: 0;
+  }
+
+  .chat-bubble.bot {
+    background: #1e1e1e;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-bottom-left-radius: 0;
+  }
+
+  .chat-sender {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .typing-indicator {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 4px 0;
+  }
+
+  .typing-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--yellow);
+    animation: typingBounce 1.2s ease infinite;
+  }
+
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes typingBounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+
+  .demo-main {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .demo-main-header {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+  }
+
+  .tire-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .tire-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.25s;
+    position: relative;
+  }
+
+  .tire-card:hover, .tire-card.selected {
+    border-color: var(--yellow);
+    background: rgba(245,196,0,0.04);
+  }
+
+  .tire-card.selected::after {
+    content: '✓ RECOMMENDED';
+    position: absolute;
+    top: 12px; right: 12px;
+    background: var(--yellow);
+    color: #000;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+  }
+
+  .tire-card-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 0.5px;
+  }
+
+  .tire-card-series {
+    font-size: 11px;
+    color: var(--yellow);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .tire-card-specs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .spec-pill {
+    background: #222;
+    border: 1px solid #333;
+    padding: 3px 10px;
+    font-size: 10px;
+    border-radius: 2px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  .perf-bars {
+    margin-top: 14px;
+  }
+
+  .perf-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .perf-bar-label { font-size: 10px; width: 70px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .perf-bar-track {
+    flex: 1;
+    height: 4px;
+    background: #222;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .perf-bar-fill {
+    height: 100%;
+    background: var(--yellow);
+    border-radius: 2px;
+    transition: width 1s ease;
+  }
+
+  /* ── FEATURES ── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .feature-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 40px 36px;
+    transition: all 0.3s;
+  }
+
+  .feature-card:hover {
+    border-color: rgba(245,196,0,0.25);
+    background: rgba(245,196,0,0.02);
+  }
+
+  .feature-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(245,196,0,0.15);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .feature-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .feature-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .feature-tag {
+    display: inline-block;
+    margin-top: 16px;
+    background: var(--yellow-dim);
+    border: 1px solid rgba(245,196,0,0.2);
+    color: var(--yellow);
+    font-size: 10px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+  }
+
+  /* ── SCOPE TABLE ── */
+  .scope-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 48px;
+    font-size: 14px;
+  }
+
+  .scope-table thead th {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    text-align: left;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--card);
+  }
+
+  .scope-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+
+  .scope-table tbody tr:hover { background: rgba(245,196,0,0.02); }
+
+  .scope-table tbody td {
+    padding: 18px 20px;
+    color: var(--text);
+    vertical-align: top;
+  }
+
+  .scope-table tbody td:first-child {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .phase-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+
+  .phase-tag.ph1 { background: rgba(245,196,0,0.15); color: var(--yellow); border: 1px solid rgba(245,196,0,0.3); }
+  .phase-tag.ph2 { background: rgba(100,200,255,0.1); color: #64c8ff; border: 1px solid rgba(100,200,255,0.3); }
+  .phase-tag.ph3 { background: rgba(100,255,150,0.1); color: #64ff96; border: 1px solid rgba(100,255,150,0.3); }
+
+  /* ── KPI ROW ── */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .kpi-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 36px 28px;
+    text-align: center;
+  }
+
+  .kpi-number {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--yellow);
+    line-height: 1;
+    display: block;
+  }
+
+  .kpi-label {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 10px;
+    display: block;
+  }
+
+  .kpi-desc {
+    font-size: 13px;
+    color: var(--text);
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    padding: 120px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: none;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(245,196,0,0.07) 0%, transparent 70%);
+  }
+
+  .cta-section h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(42px, 6vw, 80px);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 0.95;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto 48px;
+    position: relative;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--yellow);
+    color: #000;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 18px 48px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .btn-primary:hover {
+    background: #fff;
+    box-shadow: 0 0 40px rgba(245,196,0,0.3);
+    transform: translateY(-2px);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    background: var(--dark);
+  }
+
+  footer .logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--yellow);
+  }
+
+  footer .sub { font-size: 12px; color: var(--muted); }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    section, .hero { padding: 60px 28px; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .demo-screen { grid-template-columns: 1fr; }
+    .demo-sidebar { display: none; }
+    .flow-step-content { grid-template-columns: 1fr; }
+    .tire-cards { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+    .nav-dots { display: none; }
+    .tire-graphic { width: 60vw; opacity: 0.04; }
+    .hero { padding-top: 100px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV DOTS -->
+<nav class="nav-dots" aria-label="Section navigation">
+  <a href="#hero" class="nav-dot active" title="Overview"></a>
+  <a href="#problem" class="nav-dot" title="Problem"></a>
+  <a href="#solution" class="nav-dot" title="Solution"></a>
+  <a href="#demo" class="nav-dot" title="Demo"></a>
+  <a href="#features" class="nav-dot" title="Features"></a>
+  <a href="#scope" class="nav-dot" title="Scope"></a>
+  <a href="#impact" class="nav-dot" title="Impact"></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <svg class="tire-graphic" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="95" stroke="white" stroke-width="4"/>
+    <circle cx="100" cy="100" r="70" stroke="white" stroke-width="3"/>
+    <circle cx="100" cy="100" r="40" stroke="white" stroke-width="6"/>
+    <circle cx="100" cy="100" r="20" fill="white"/>
+    <line x1="100" y1="5" x2="100" y2="60" stroke="white" stroke-width="3"/>
+    <line x1="100" y1="140" x2="100" y2="195" stroke="white" stroke-width="3"/>
+    <line x1="5" y1="100" x2="60" y2="100" stroke="white" stroke-width="3"/>
+    <line x1="140" y1="100" x2="195" y2="100" stroke="white" stroke-width="3"/>
+    <line x1="33" y1="33" x2="72" y2="72" stroke="white" stroke-width="3"/>
+    <line x1="128" y1="128" x2="167" y2="167" stroke="white" stroke-width="3"/>
+    <line x1="167" y1="33" x2="128" y2="72" stroke="white" stroke-width="3"/>
+    <line x1="72" y1="128" x2="33" y2="167" stroke="white" stroke-width="3"/>
+  </svg>
+
+  <div class="hero-badge">Project Proposal · AI Feature</div>
+  <h1>Smart Tire<span>Advisor</span></h1>
+  <p class="hero-sub">An AI-powered conversational selector embedded in Giti's digital ecosystem — guiding every visitor from question to perfect tire match in under 2 minutes.</p>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Client</span>
+      <span class="hero-meta-value">Giti Tire Global</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Project Type</span>
+      <span class="hero-meta-value">AI Web Feature</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Estimated Timeline</span>
+      <span class="hero-meta-value">10 Weeks</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Proposed Date</span>
+      <span class="hero-meta-value">May 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="section-label">01 · Challenge</div>
+  <h2 class="section-title">The Gap Between<br>Visitors & Conversions</h2>
+  <p style="max-width:600px; color:var(--muted); font-size:15px;">Giti's existing Tire Finder is form-based — users need to already know their vehicle specs. Most don't. This creates friction that turns potential buyers into bounced sessions.</p>
+
+  <div class="problem-grid reveal">
+    <div class="problem-card" data-num="01">
+      <div class="problem-icon">🔍</div>
+      <h3>Spec Confusion</h3>
+      <p>Most drivers don't know their tire size, aspect ratio, or speed rating. Drop-down forms intimidate rather than guide.</p>
+    </div>
+    <div class="problem-card" data-num="02">
+      <div class="problem-icon">🌍</div>
+      <h3>Global Audiences</h3>
+      <p>Giti serves markets across Asia, Europe, the Americas and the Middle East — each with different driving needs and climates.</p>
+    </div>
+    <div class="problem-card" data-num="03">
+      <div class="problem-icon">📊</div>
+      <h3>Product Depth</h3>
+      <p>With dozens of SKUs across GitiComfort, GitiSport, Giti4×4 and more, selecting the right tire demands expert knowledge.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION FLOW -->
+<section id="solution">
+  <div class="section-label">02 · Proposed Solution</div>
+  <h2 class="section-title">AI-Guided Tire<br>Selection Flow</h2>
+  <p style="max-width:600px; color:var(--muted); font-size:15px;">A conversational AI assistant embedded on giti.com that asks simple questions, understands the driver's context, and delivers a confident product recommendation with clear reasoning.</p>
+
+  <div class="flow reveal">
+    <div class="flow-step">
+      <div class="flow-step-num">1</div>
+      <div class="flow-step-content">
+        <div>
+          <h3>Entry Point</h3>
+          <p>User lands on giti.com. A persistent "Find My Tire" widget opens via floating button or dedicated page — no forms, just a conversation starter.</p>
+        </div>
+        <div class="flow-step-detail">
+          <div class="label">Sample Prompt</div>
+          <p>"Hi! Let's find the perfect Giti tire for you. What kind of vehicle do you drive — a city car, SUV, or something sporty?"</p>
+        </div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">2</div>
+      <div class="flow-step-content">
+        <div>
+          <h3>Smart Intake</h3>
+          <p>The AI collects driving profile through natural language: vehicle type, region & climate, primary use (highway, city, off-road), and priority (comfort, performance, longevity, wet-grip).</p>
+        </div>
+        <div class="flow-step-detail">
+          <div class="label">Quick Picks Available</div>
+          <p>Visual chip buttons for fast answers: "City commuter · Daily driver · Weekend adventure" — so users aren't forced to type.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">3</div>
+      <div class="flow-step-content">
+        <div>
+          <h3>Intelligent Matching</h3>
+          <p>The AI cross-references inputs against Giti's full product catalog — series, rim sizes, speed ratings, EV readiness, and AdvanZtech technology tiers.</p>
+        </div>
+        <div class="flow-step-detail">
+          <div class="label">Logic Layer</div>
+          <p>RAG (Retrieval-Augmented Generation) over Giti product data ensures recommendations stay accurate and up-to-date with zero hallucination.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">4</div>
+      <div class="flow-step-content">
+        <div>
+          <h3>Recommendation & Explanation</h3>
+          <p>Top 1–3 tires are presented as rich cards with performance bars, key benefits, and a plain-English reason why each was chosen for this specific driver.</p>
+        </div>
+        <div class="flow-step-detail">
+          <div class="label">Trust Builder</div>
+          <p>Each card links directly to the full product page, the Tire Performance Simulator, and a dealer locator — reducing drop-off to zero.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">5</div>
+      <div class="flow-step-content">
+        <div>
+          <h3>Handoff & Conversion</h3>
+          <p>Users can save results, share the recommendation link, or instantly connect with a regional dealer. Session data feeds Giti's analytics and CRM.</p>
+        </div>
+        <div class="flow-step-detail">
+          <div class="label">Outcome</div>
+          <p>Every conversation captures intent signals — vehicle, region, use case — creating a rich first-party data asset for Giti's marketing team.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO MOCKUP -->
+<section id="demo">
+  <div class="section-label">03 · Interface Concept</div>
+  <h2 class="section-title">What It Looks Like</h2>
+  <p style="max-width:600px; color:var(--muted); font-size:15px;">A high-fidelity concept of the Smart Tire Advisor embedded within giti.com's visual language — dark, precise, and engineered.</p>
+
+  <div class="demo-container reveal">
+    <div class="demo-topbar">
+      <div class="demo-dots"><span></span><span></span><span></span></div>
+      <div class="demo-url">giti.com/tire-advisor</div>
+    </div>
+    <div class="demo-screen">
+      <!-- Chat sidebar -->
+      <div class="demo-sidebar">
+        <div class="demo-sidebar-title">⚡ Giti Tire Advisor</div>
+
+        <div class="chat-msg bot">
+          <span class="chat-sender">Giti AI</span>
+          <div class="chat-bubble bot">Hi! Let's find your perfect tire. What kind of vehicle do you drive?</div>
+        </div>
+
+        <div class="chat-msg user">
+          <span class="chat-sender">You</span>
+          <div class="chat-bubble user">I have a mid-size SUV, mostly city driving</div>
+        </div>
+
+        <div class="chat-msg bot">
+          <span class="chat-sender">Giti AI</span>
+          <div class="chat-bubble bot">Got it. What matters most to you — comfort &amp; quiet, fuel savings, or confident wet grip?</div>
+        </div>
+
+        <div class="chat-msg user">
+          <span class="chat-sender">You</span>
+          <div class="chat-bubble user">Wet grip and long-lasting</div>
+        </div>
+
+        <div class="chat-msg bot">
+          <span class="chat-sender">Giti AI</span>
+          <div class="chat-bubble bot">Great picks. Searching Giti's range for your SUV…</div>
+        </div>
+
+        <div class="typing-indicator">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+      </div>
+
+      <!-- Tire results -->
+      <div class="demo-main">
+        <div class="demo-main-header">3 Matches Found · Sorted by Best Fit</div>
+        <div class="tire-cards">
+          <div class="tire-card selected">
+            <div class="tire-card-series">GitiComfort Series</div>
+            <div class="tire-card-name">GitiComfort T29</div>
+            <div class="perf-bars">
+              <div class="perf-bar-row"><span class="perf-bar-label">Wet Grip</span><div class="perf-bar-track"><div class="perf-bar-fill" style="width:92%"></div></div></div>
+              <div class="perf-bar-row"><span class="perf-bar-label">Longevity</span><div class="perf-bar-track"><div class="perf-bar-fill" style="width:88%"></div></div></div>
+              <div class="perf-bar-row"><span class="perf-bar-label">Comfort</span><div class="perf-bar-track"><div class="perf-bar-fill" style="width:85%"></div></div></div>
+            </div>
+            <div class="tire-card-specs">
+              <span class="spec-pill">15–19" Rim</span>
+              <span class="spec-pill">EV Ready</span>
+              <span class="spec-pill">H–V Rating</span>
+            </div>
+          </div>
+          <div class="tire-card">
+            <div class="tire-card-series">GitiSynergy Series</div>
+            <div class="tire-card-name">GitiSynergy H2</div>
+            <div class="perf-bars">
+              <div class="perf-bar-row"><span class="perf-bar-label">Wet Grip</span><div class="perf-bar-track"><div class="perf-bar-fill" style="width:80%"></div></div></div>
+              <div class="perf-bar-row"><span class="perf-bar-label">Longevity</span><div class="perf-bar-track"><div class="perf-bar-fill" style="width:90%"></div></div></div>
+              <div class="perf-bar-row"><span class="perf-bar-label">Fuel Save</span><div class="perf-bar-track"><div class="perf-bar-fill" style="width:88%"></div></div></div>
+            </div>
+            <div class="tire-card-specs">
+              <span class="spec-pill">14–20" Rim</span>
+              <span class="spec-pill">EV Ready</span>
+              <span class="spec-pill">T–W Rating</span>
+            </div>
+          </div>
+          <div class="tire-card" style="grid-column: 1/-1;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:24px;">
+              <div>
+                <div class="tire-card-series">Giti4×4 Series</div>
+                <div class="tire-card-name">Giti4×4 AT71</div>
+                <p style="font-size:12px; color:var(--muted); margin-top:8px; max-width:340px;">If your city driving occasionally takes you off-road on weekends, the AT71 adds rugged durability without sacrificing wet performance.</p>
+              </div>
+              <div class="perf-bars" style="min-width:200px;">
+                <div class="perf-bar-row"><span class="perf-bar-label">Off-Road</span><div class="perf-bar-track"><div class="perf-bar-fill" style="width:95%"></div></div></div>
+                <div class="perf-bar-row"><span class="perf-bar-label">Wet Grip</span><div class="perf-bar-track"><div class="perf-bar-fill" style="width:75%"></div></div></div>
+                <div class="perf-bar-row"><span class="perf-bar-label">Durability</span><div class="perf-bar-track"><div class="perf-bar-fill" style="width:94%"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-label">04 · Key Features</div>
+  <h2 class="section-title">Built For<br>Every Driver</h2>
+
+  <div class="features-grid reveal">
+    <div class="feature-card">
+      <div class="feature-num">01</div>
+      <h3>Conversational AI Core</h3>
+      <p>Powered by a large language model with retrieval-augmented generation over Giti's product catalog. No hallucinations — every recommendation is grounded in real SKU data. The conversation adapts fluidly: a user can correct themselves, ask follow-ups, or compare two options at any time.</p>
+      <span class="feature-tag">Claude API / LLM</span>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">02</div>
+      <h3>Multilingual Support</h3>
+      <p>Giti operates across 6 continents and dozens of regional sites. The advisor automatically detects user language or site locale — serving the same experience in English, Mandarin, Bahasa, Thai, Spanish, German, and Arabic with zero latency penalty.</p>
+      <span class="feature-tag">i18n · 12+ Languages</span>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">03</div>
+      <h3>EV & AdvanZtech Aware</h3>
+      <p>As Giti expands its EV-ready lineup, the advisor flags AdvanZtech 2.0 compatible tires when users identify an electric or hybrid vehicle. This proactively educates on Giti's technology edge — turning a feature into a sales moment.</p>
+      <span class="feature-tag">Product Intelligence</span>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">04</div>
+      <h3>Climate & Region Logic</h3>
+      <p>Driving conditions vary wildly across Giti's global markets. The advisor factors in local climate (wet tropical, arid desert, snowy winter) automatically from region or user input — recommending winter variants like the WT80 where appropriate.</p>
+      <span class="feature-tag">Geo-Contextual AI</span>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">05</div>
+      <h3>Analytics & CRM Pipeline</h3>
+      <p>Every advisor session generates structured intent data: vehicle type, region, use case, priority attributes, and recommended SKU. This feeds Giti's marketing analytics and can sync to CRM systems for dealer follow-up — transforming anonymous traffic into qualified leads.</p>
+      <span class="feature-tag">Data · First-Party</span>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">06</div>
+      <h3>Seamless Ecosystem Integration</h3>
+      <p>The advisor lives natively within giti.com, sharing its visual language and dark design system. Recommended tires link directly to product pages, the Tire Performance Simulator, and the dealer locator — creating a frictionless path to purchase with zero dead ends.</p>
+      <span class="feature-tag">UX · Integration</span>
+    </div>
+  </div>
+</section>
+
+<!-- SCOPE TABLE -->
+<section id="scope">
+  <div class="section-label">05 · Project Scope</div>
+  <h2 class="section-title">Delivery Plan</h2>
+  <p style="max-width:600px; color:var(--muted); font-size:15px;">A three-phase rollout, from foundational build to global scale.</p>
+
+  <table class="scope-table reveal">
+    <thead>
+      <tr>
+        <th>Deliverable</th>
+        <th>Phase</th>
+        <th>Timeline</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Product Knowledge Base</td>
+        <td><span class="phase-tag ph1">Phase 1</span></td>
+        <td style="color:var(--muted); white-space:nowrap;">Wk 1–2</td>
+        <td style="color:var(--muted); font-size:13px;">Ingest and structure Giti's full tire catalog into a vector database for retrieval-augmented generation. Establish product metadata schema.</td>
+      </tr>
+      <tr>
+        <td>AI Advisor Engine</td>
+        <td><span class="phase-tag ph1">Phase 1</span></td>
+        <td style="color:var(--muted); white-space:nowrap;">Wk 2–5</td>
+        <td style="color:var(--muted); font-size:13px;">Build and test the conversational AI system prompt, intake logic, matching algorithm, and recommendation output structure.</td>
+      </tr>
+      <tr>
+        <td>UI / UX Design</td>
+        <td><span class="phase-tag ph1">Phase 1</span></td>
+        <td style="color:var(--muted); white-space:nowrap;">Wk 3–5</td>
+        <td style="color:var(--muted); font-size:13px;">Design the widget and full-page advisor interface aligned with Giti's design system. Includes chat UI, result cards, and quick-pick chips.</td>
+      </tr>
+      <tr>
+        <td>giti.com Integration</td>
+        <td><span class="phase-tag ph2">Phase 2</span></td>
+        <td style="color:var(--muted); white-space:nowrap;">Wk 6–7</td>
+        <td style="color:var(--muted); font-size:13px;">Embed the advisor as a floating widget and dedicated page on giti.com global. Connect to Tire Performance Simulator and dealer locator.</td>
+      </tr>
+      <tr>
+        <td>Multilingual Launch</td>
+        <td><span class="phase-tag ph2">Phase 2</span></td>
+        <td style="color:var(--muted); white-space:nowrap;">Wk 7–8</td>
+        <td style="color:var(--muted); font-size:13px;">Localize advisor conversations and UI for priority regional sites: EU, LAM, Middle East, Asia. Climate and product filters per region.</td>
+      </tr>
+      <tr>
+        <td>Analytics Dashboard</td>
+        <td><span class="phase-tag ph2">Phase 2</span></td>
+        <td style="color:var(--muted); white-space:nowrap;">Wk 8</td>
+        <td style="color:var(--muted); font-size:13px;">Real-time dashboard for Giti's marketing team: conversation volume, top recommended SKUs, drop-off points, and regional interest heatmaps.</td>
+      </tr>
+      <tr>
+        <td>Fleet / B2B Variant</td>
+        <td><span class="phase-tag ph3">Phase 3</span></td>
+        <td style="color:var(--muted); white-space:nowrap;">Wk 9–10</td>
+        <td style="color:var(--muted); font-size:13px;">Separate advisor flow for fleet.giti.com targeting truck and bus fleet managers, with load index, axle position, and mileage guarantee logic.</td>
+      </tr>
+      <tr>
+        <td>CRM & Lead Export</td>
+        <td><span class="phase-tag ph3">Phase 3</span></td>
+        <td style="color:var(--muted); white-space:nowrap;">Wk 10</td>
+        <td style="color:var(--muted); font-size:13px;">Optional CRM sync (Salesforce / HubSpot) for qualified advisor sessions. Auto-generated dealer referral emails based on user region and selected SKU.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- IMPACT KPIs -->
+<section id="impact">
+  <div class="section-label">06 · Expected Impact</div>
+  <h2 class="section-title">Measurable<br>Outcomes</h2>
+
+  <div class="kpi-row reveal">
+    <div class="kpi-card">
+      <span class="kpi-number">3×</span>
+      <span class="kpi-label">Engagement Depth</span>
+      <p class="kpi-desc">Users who complete the advisor flow visit 3× more product pages vs. standard Tire Finder users</p>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-number">↓40%</span>
+      <span class="kpi-label">Bounce Rate</span>
+      <p class="kpi-desc">Conversational flow reduces friction — users who start the advisor are far less likely to leave empty-handed</p>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-number">100%</span>
+      <span class="kpi-label">Catalog Coverage</span>
+      <p class="kpi-desc">Every Giti tire — passenger, SUV, 4×4, EV-ready — accessible through a single, unified advisor experience</p>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-number">∞</span>
+      <span class="kpi-label">Zero Staff Cost</span>
+      <p class="kpi-desc">The advisor operates 24/7 across all time zones — serving every Giti global site simultaneously with no support overhead</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <h2>Ready To Build<br>The Future of<br>Tire Discovery?</h2>
+  <p>This proposal outlines a production-ready AI feature that fits naturally into Giti's existing digital ecosystem and serves every customer — from first-time buyer to seasoned enthusiast.</p>
+  <a href="mailto:inquiry-sg@giti.com" class="btn-primary">Start the Conversation →</a>
+</section>
+
+<footer>
+  <div>
+    <div class="logo">Giti Tire · Smart Advisor</div>
+    <div class="sub">Project Proposal · May 2026</div>
+  </div>
+  <div class="sub" style="text-align:right;">Prepared for Giti Tire Global Trading<br>giti.com</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Nav dots active state
+  const sections = document.querySelectorAll('section[id], .hero');
+  const dots = document.querySelectorAll('.nav-dot');
+
+  const secObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        dots.forEach(d => {
+          d.classList.toggle('active', d.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => secObserver.observe(s));
+
+  // Animate perf bars on scroll
+  const bars = document.querySelectorAll('.perf-bar-fill');
+  const widths = bars.map(b => b.style.width);
+  bars.forEach(b => b.style.width = '0');
+
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const b = e.target;
+        const idx = Array.from(bars).indexOf(b);
+        setTimeout(() => { b.style.width = widths[idx]; }, 200);
+        barObserver.unobserve(b);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  bars.forEach(b => barObserver.observe(b));
+</script>
+</body>
+</html>
