@@ -1,0 +1,33 @@
+// SMART
+.smart__card {
+	img {
+		margin-left: rem(-15);
+		margin-bottom: rem(-15);
+	}
+	h3 {
+		font-family: $font-open-sans;
+		font-size: rem(20);
+		font-weight: 600;
+	}
+}
+
+.online-card {
+	border-radius: rem(16);
+	padding: rem(16);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	text-align: left;
+	background-color: #555755;
+	height: 100%;
+	@include md {
+		height: auto;
+		margin-bottom: rem(20);
+	}
+	h3 {
+		font-family: $font-open-sans;
+		font-size: rem(48);
+		margin-bottom: rem(10);
+	}
+	p {
+		color: $color-white;
+	}
+}

@@ -1,0 +1,56 @@
+/*MONSTSERRAT*/
+// @font-face {
+//     font-family: 'Montserrat';
+//     src: url('../fonts/montserrat/Montserrat-Bold.woff2') format('woff2'),
+//         url('../fonts/montserrat/Montserrat-Bold.woff') format('woff');
+//     font-weight: bold;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+// MICROSOFT
+@font-face {
+    font-family: 'Microsoft Sans Serif';
+    src: url('../fonts/microsoft/MicrosoftSansSerif.woff2') format('woff2'),
+         url('../fonts/microsoft/MicrosoftSansSerif.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+// ICONS
+@font-face {
+    font-family: 'icons';
+    src: url('../fonts/icons/icons.woff2') format('woff2'),
+        url('../fonts/icons/icons.woff') format('woff');
+}
+
+span[class^="icon-"]:before, span[class*=" icon-"]:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-configure:before {
+    content: "\f101";
+}
+.icon-wrench:before {
+    content: "\f103";
+}
+.icon-wishlist:before {
+    content: "\f105";
+}
+.icon-wishlist-add:before {
+    content: "\f106";
+}
+.icon-compare:before {
+    content: "\f102";
+}
+// .icon-share:before {
+//     content: "\f104";
+// }

@@ -1,0 +1,264 @@
+// ----------------- GENERAL -----------------
+
+/* ==========================================================================
+   HERO  (block: hero)
+   ========================================================================== */
+.hero {
+    position: relative;
+    padding: rem(100) 0;
+    @include md {
+        padding: rem(50) 0;
+    }
+    &.hero--full-height {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        @include md {
+            padding: rem(50) 0;
+            height: auto;
+        }
+    }
+    .hero__heading {
+        font-size: rem(58);
+        @include md {
+            font-size: rem(42);
+        }
+    }
+    .hero__highlight {
+        color: $color-primary;
+    }
+    .hero__description {
+        border-left: 2px solid $color-primary;
+        padding-left: rem(10);
+        margin: rem(20) 0;
+        max-width: 520px;
+    }
+    .hero__bg {
+        position: absolute;
+        inset: 0;
+        background-color: $color-surface;
+        z-index: -1;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;            
+        }
+    }
+}
+
+/* ==========================================================================
+   SECTION  (shared hero/section background helper)
+   ========================================================================== */
+.section {
+    position: relative;
+    padding: rem(100) 0;
+    @include md {
+        padding: rem(50) 0;
+    }    
+    .section__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+}
+
+
+/* Section title */
+.section-title {
+    font-size: rem(44);
+    text-transform: capitalize;
+    @include md {
+        font-size: rem(32);
+    }
+}
+
+/* Inline text link */
+.text-link {
+    font-weight: 500;
+    color: $color-primary;
+    display: inline-flex;
+    align-items: center;
+    gap: rem(5);
+    &:hover {
+        color: lighten($color-primary, 10%);
+    }
+}
+
+/* ==========================================================================
+   BUTTON  (block: btn)
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 187px;
+    height: 56px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    gap: 10px;
+    transition: all 0.3s;
+    @include sm {
+        width: 100%;
+    }
+}
+
+/* btn--primary */
+.btn--primary {
+    background-color: $color-primary;
+    color: $color-white;
+	&:hover {
+	    background-color: lighten($color-primary, 5%);
+	    color: $color-white;
+	}
+	img {
+	    filter: $filter-white;
+	}
+}
+
+
+/* btn--outline */
+.btn--outline {
+    border: 1px solid $color-primary;
+    color: $color-primary;
+	&:hover {
+	    background-color: $color-primary;
+	    color: $color-white;
+	}
+}
+
+
+.btn--outline:hover img,
+.btn--white:hover img {
+    filter: $filter-white;
+}
+
+/* btn--white */
+.btn--white {
+    background-color: $color-white;
+    color: $color-text;
+	&:hover {
+	    background-color: $color-text;
+	    color: $color-white;
+	}
+	img {
+	    filter: $filter-black;
+	}
+}
+
+/* btn--wide  (wider variant used in flexible section) */
+.btn--wide {
+    width: rem(220);
+    height: rem(50);
+}
+
+/* btn--sm  (smaller height variant used in header) */
+.btn--sm {
+    height: rem(50);
+}
+
+
+/* ==========================================================================
+   CARD  (shared card block used in sliders and work grid)
+   ========================================================================== */
+.card {
+    display: block;
+    background-color: $color-surface;
+    border-radius: rem(16);
+    padding: rem(24);
+    border: none;
+    height: auto;
+    margin-bottom: rem(20);
+    @include md {
+        margin-bottom: rem(20);
+        height: auto;
+    }  
+    &.card--flex {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        gap: rem(10);
+        @include md {
+            flex-direction: column;
+        }
+    }
+
+    .card__image {
+        margin-bottom: rem(20);
+        @include sm {
+            width: 100%;
+        }
+    }
+
+    .card__body {
+        /* text content container */
+    }
+
+    .card__title {
+        font-size: rem(28);
+        &::after {
+            content: '';
+            background-image: linear-gradient(
+                270deg,
+                rgba(196, 218, 201, 0) 0%,
+                $color-divider 50%,
+                rgba(196, 218, 201, 0) 100%
+            );
+            display: block;
+            margin: rem(10) 0;
+            width: 100%;
+            height: 1px;
+        }
+    }
+
+    .card__description {
+        margin: rem(20) 0;
+    }
+
+}
+
+/* ==========================================================================
+   CTA  (block: cta)
+   ========================================================================== */
+.cta {
+    color: $color-white;
+    text-align: center;
+    // padding: rem(80) 0;
+    @include sm {
+        text-align: left;
+    }
+    // .cta__bg {
+    //     border-radius: rem(24);
+    // }
+    .cta__badge {
+        padding: rem(6) rem(16);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(11.4px);
+        font-weight: 500;
+        font-size: 14px;
+        border-radius: 100px;
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.08);
+        text-transform: uppercase;
+        margin-bottom: rem(30);
+    }
+
+    .cta__title {
+        max-width: 610px;
+        margin: rem(20) auto;
+        text-transform: capitalize;
+        @include md {
+            margin-left: 0;
+        }
+    }
+
+    .cta__description {
+        max-width: 750px;
+        margin: rem(20) auto;
+        color: rgba(255, 255, 255, 0.8);
+    }
+}

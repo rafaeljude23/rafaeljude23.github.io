@@ -1,0 +1,72 @@
+// ----------------- MIXINS -----------------
+
+@mixin flex-center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-right-all {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+@mixin flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin absolute-all {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
+// BREAKPOINTS
+$screen-max-xl: 1399px;
+$screen-max-lg: 1199px;
+$screen-max-md: 991px;
+$screen-max-sm: 767px;
+$screen-max-xs: 575px;
+
+@mixin xl {
+    @media (max-width: #{$screen-max-xl}) {
+        @content;
+    }
+ }
+
+@mixin lg {
+    @media (max-width: #{$screen-max-lg}) {
+        @content;
+    }
+ }
+ 
+ @mixin md {
+    @media (max-width: #{$screen-max-md}) {
+        @content;
+    }
+ }
+
+ @mixin sm {
+    @media (max-width: #{$screen-max-sm}) {
+        @content;
+    }
+ }
+
+ @mixin xs {
+    @media (max-width: #{$screen-max-xs}) {
+        @content;
+    }
+ }
+
+

@@ -1,0 +1,99 @@
+// BUILD
+.build {
+	.build__title {
+		max-width: 500px;
+	}
+
+	.build__card {
+		margin-bottom: rem(30);
+		img {
+			width: rem(70);
+			height: rem(70);
+		}
+		h3 {
+			font-family: $font-open-sans;
+			font-size: rem(20);
+			font-weight: 600;
+			margin: rem(10) 0;
+		}
+	}	
+
+	.build__agent {
+		background-color: $color-surface;
+		border-radius: rem(16);
+		padding: rem(16);
+		min-height: rem(488);
+		@include flex-center-all;
+		flex-direction: column;
+		gap: rem(10);
+		.build__list, .btn {
+			width: 100%;
+
+		}
+	}	
+}
+
+.build__list {
+	li {
+		border-radius: rem(8);
+		padding: rem(16);
+		background-color: $color-white;
+		box-shadow: 0px 8px 20px 0px rgba(122, 135, 103, 0.09);
+		margin-bottom: rem(10);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: rem(10);
+		p {
+			font-family: $font-open-sans;
+			font-size: rem(20);
+			font-weight: 600;
+			margin: 0;
+			display: flex;
+			align-items: center;
+			gap: rem(10);
+			letter-spacing: -1px;
+		}
+	}
+}
+.build__badge {
+	font-family: $font-open-sans;
+	font-size: rem(14);
+	font-weight: 600;
+	padding: rem(6) rem(8);
+	border-radius: rem(6);
+	&.green {
+		background-color: #D9F4E6;
+		color: #00C876;
+	}		
+	&.red {
+		background-color: #FDE6E3;
+		color: #FE351B;
+	}
+	&.orange {
+		background-color: #FDF1DA;
+		color: #C68F00;
+	}
+	&.blue {
+		background-color: #E1E8F9;
+		color: #006DEC;
+	}
+}
+
+
+// FOLLOW UP
+.follow-up {
+	background-color: $color-surface;
+	.follow-up__title {
+		text-transform: uppercase;
+		margin-bottom: rem(16);
+	}
+}
+
+.insights {
+	.card__title {
+		font-family: $font-open-sans;
+		font-size: rem(20);
+		font-weight: 600;
+	}
+}

@@ -1,0 +1,303 @@
+// ----------------- LAYOUT -----------------
+
+/* ==========================================================================
+   SITE HEADER  (block: site-header)
+   ========================================================================== */
+.site-header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: $color-white;
+    z-index: 1;
+	background-color: $color-white;
+	@include md {
+		padding: rem(20) 0;
+	}
+	.site-header__inner {
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+	}
+}
+
+// SITE NAVIGATION
+.site-nav {
+	@include lg {
+		display: none;
+	}
+	.site-nav__list {
+	    display: flex;
+	    gap: rem(20);
+	}
+	a {
+		color: $color-text;
+		&:hover {
+			color: $color-primary;
+		}
+	}
+	.site-nav__item {
+		padding: rem(35) 0;				
+	}
+	.site-nav__dropdown {
+		&:hover .megamenu {
+		    opacity: 1;
+		    z-index: 1;
+		    pointer-events: auto;
+		}	
+		> a {
+			display: flex;
+			align-items: center;
+			gap: rem(7);
+			img {
+				transition: all 0.3s;
+			}
+		}			
+	}
+}
+
+// MEGAMENU
+.megamenu {
+	background-color: $color-white;
+	box-shadow: 0px 8px 20px 0px rgba(199, 203, 193, 0.36);
+	padding: rem(32) rem(40);
+	border-radius: 0 0 rem(16) rem(16);
+	transition: opacity 0.3s;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+	z-index: -1;
+	pointer-events: none;
+	h3 {
+	    font-size: rem(24);
+	    margin-bottom: rem(20);
+	}
+	h4 {
+	    font-size: rem(20);
+	    padding-bottom: rem(20);
+	    border-bottom: 1px solid #EDF1ED;
+	    margin-bottom: rem(20);
+	    display: flex;
+	    align-items: center;
+	    gap: 10px;
+		img {
+		    display: none;
+		}
+	}
+
+	ul {
+		li {
+			display: block;
+			&:not(:last-child) {
+				margin-bottom: rem(10);
+			}
+			a {
+			    display: flex;
+			    align-items: center;
+			    gap: rem(16);
+			}	
+		}		
+	}
+}
+
+// MOBILE MENU
+.mobile-menu {
+	display: none;
+	position: fixed;
+	top: 74px;
+	left: 0;
+	width: 100%;
+	height: calc(100vh - 74px);
+	background: rgba(67, 88, 72, 0.46);
+	backdrop-filter: blur(12px);
+	overflow: auto;
+	z-index: 1;
+	padding: 5%;
+	&.is-active {
+		@include md {
+			display: block;
+		}	
+	}
+	.mobile-menu__inner {
+		border-radius: rem(16);
+		padding: rem(60) rem(20) rem(20);
+		background: $color-white;
+	} 
+	.mobile-menu__close {
+		position: absolute;
+		top: rem(20);
+		right: rem(20);
+		z-index: 1;
+	}
+	.mobile-menu__nav {
+		a {
+			color: $color-text;
+			&:hover {
+				color: $color-primary;
+			}
+		}		
+	}
+	.mobile-menu__list-item:not(:last-child) {
+		margin-bottom: rem(30);
+	}
+	.mobile-menu__dropdown-menu {
+		display: none;
+	}
+	.mobile-menu__dropdown-item {	
+		margin-top: rem(20);
+		h4 {
+			font-family: $font-poppins;
+			font-size: rem(16);
+			font-weight: 500;
+			display: flex;
+			gap: rem(15);
+			align-items: center;
+			padding-bottom: rem(15);
+			border-bottom: 2px solid $color-surface;
+			margin-bottom: rem(15);
+			img {
+				width: 56px;
+				height: 56px;
+			}
+		}
+		ul {
+			li {
+				&:not(:last-child) {
+					margin-bottom: rem(10);
+				}
+			}
+		}
+	}	
+	.mobile-menu__dropdown-toggle {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		img {
+			transition: transform 0.3s ease-in-out;
+			width: 20px;
+			height: auto;
+		}
+		&.is-active {
+			img {
+				filter: $filter-primary;
+				transform: rotate(180deg)
+			}
+		}
+	}
+	.btn--outline {
+		width: 100%;
+		margin-top: rem(20);
+	}
+}
+
+/* ==========================================================================
+   SITE FOOTER  (block: site-footer)
+   ========================================================================== */
+.site-footer {
+    background: linear-gradient(108.42deg, #484848 -0.83%, #343734 97.16%);
+    color: $color-surface;
+    font-size: rem(14);
+    .site-footer__top {
+        padding: rem(50) 0;
+    }
+
+    .site-footer__logo {
+        filter: $filter-white;
+    }
+
+    .site-footer__description {
+        font-size: rem(15);
+        margin: rem(20) 0;
+        max-width: 400px;
+    }
+
+    .site-footer__social {
+        display: flex;
+        gap: rem(10);
+        @include md {
+        	margin-bottom: rem(40);
+        }
+    }
+
+    .site-footer__social-link {
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 45px;
+        height: 45px;
+        border-radius: rem(8);
+        @include flex-center-all;
+        &:hover {
+            border-color: $color-white;
+        }
+    }
+
+
+    .site-footer__nav-title {
+        font-size: 16px;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 10px;
+    }
+
+    .site-footer__nav-list a {
+        display: inline-block;
+        color: $color-surface;
+        font-size: rem(14);
+        margin-bottom: rem(10);
+        &:hover {
+            color: lighten($color-primary, 10%);
+        }
+
+    }
+
+    .site-footer__newsletter {
+    	margin-top: rem(20);
+    }
+
+    .site-footer__newsletter-form {
+        height: 44px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: rem(10);
+        position: relative;
+    }
+
+    .site-footer__newsletter-input {
+        border-radius: rem(8);
+        background: rgba(255, 255, 255, 0.67);
+        font-size: rem(12);
+        width: 100%;
+        height: 100%;
+        padding: rem(8) rem(80) rem(8) rem(16);
+        border: none;
+        &:focus {
+            background-color: $color-white;
+        }
+    }
+
+
+    .site-footer__newsletter-btn {
+        background: transparent;
+        border: none;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: rem(5);
+        font-weight: 500;
+        color: #353835;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: rem(16);
+    }
+
+    .site-footer__copyright {
+        text-align: center;
+        border-top: 1px solid rgba(217, 217, 217, 0.21);
+        padding: rem(30) 0;
+        font-size: rem(14);
+    }
+
+}

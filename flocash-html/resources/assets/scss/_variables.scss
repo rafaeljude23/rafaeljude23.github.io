@@ -1,0 +1,31 @@
+// Colors
+$color-primary: #646B30;
+$color-secondary: #A3B18A;
+
+$color-text: #1A1D1A;
+$color-background: #fff;
+
+$color-surface: #EDF1ED;
+$color-divider: #C4DAC9;
+
+$color-black: #000;
+$color-white: #fff;
+
+
+
+// Convert PX to REM
+@function rem($value) {
+    $remValue: ($value / 16) + rem; 
+    @return $remValue;
+}
+
+// Font Family
+$font-poppins: "Poppins", sans-serif;
+$font-mss:  'Microsoft Sans Serif';
+$font-open-sans: "Open Sans", sans-serif;
+
+
+// Filter
+$filter-primary: brightness(0) saturate(100%) invert(37%) sepia(58%) saturate(373%) hue-rotate(27deg) brightness(92%) contrast(91%);
+$filter-white: brightness(0) invert(1);
+$filter-black: brightness(0%);
