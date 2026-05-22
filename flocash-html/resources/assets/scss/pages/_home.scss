@@ -273,7 +273,7 @@
         font-size: rem(24);
         font-family: $font-mss;
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
         align-items: center;
         padding: 0;
         border: none;
@@ -313,6 +313,7 @@
         height: rem(32);
         position: relative;
         border-radius: 50%;
+        margin-left: auto;
         &:before {
             content: '';
             background-image: url('../images/pages/home/icon-dropdown.svg');

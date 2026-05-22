@@ -1,0 +1,90 @@
+.fw-600 {
+	font-weight: 600;
+}
+
+.contact__inner {
+	background-color: $color-surface;
+	padding: rem(40);
+	border-radius: rem(24);
+	@include md {
+		padding: rem(16) rem(16) rem(32);
+	}
+}
+
+.contact__title {
+	font-family: $font-open-sans;
+	font-size: rem(28);
+	font-weight: 600;
+	@include md {
+		font-size: rem(24);
+	}
+}
+
+.contact__card {
+	background-color: $color-white;
+	border-radius: rem(12);
+	padding: rem(24);
+	@include md {
+		border-radius: rem(8);
+	}
+}
+
+
+.contact__divider {
+	&:after {
+		content: '';
+		width: 100%;
+		height: 1px;
+		display: block;
+		margin: 1rem 0;
+		background-image: linear-gradient(270deg, rgba(196, 218, 201, 0) 0%, #C4DAC9 50%, rgba(196, 218, 201, 0) 100%);
+	}
+}
+
+.contact__info {
+	display: flex;
+	align-items: flex-start;
+	gap: rem(10);
+}
+
+.contact__associates {
+	color: $color-white;
+	background: linear-gradient(108.42deg, #484848 -0.83%, #343734 97.16%);
+	@include md {
+		margin: rem(30) 0;
+	}
+	h3:after {
+		background-image: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 50%, rgba(255, 255, 255, 0) 100%);
+	}
+}
+
+.contact__interested {
+	height: 100%;
+	@include md {
+		height: auto;
+	}
+	.faq__accordion {
+		.accordion-item {
+			border-radius: rem(12);
+			padding: rem(24);
+			@include md {
+				padding: rem(16);
+			}
+		}
+	
+		.accordion-button {
+			font-size: rem(20);
+			@include md {
+				font-size: rem(16);
+			}
+			img {
+				margin-right: rem(15);
+			}
+		}
+
+		.accordion__icon:before {
+			transform: translate(-50%, -50%) rotate(-90deg);
+		}
+	}
+}
+
