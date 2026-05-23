@@ -1,0 +1,74 @@
+.privacy {
+  .privacy__sidebar {
+    position: sticky;
+    top: rem(120);
+    max-width: 200px;
+    @include sm {
+      margin-bottom: rem(50);
+    }
+    a {
+      color: $color-text;
+      display: block;
+      border: none;
+      border-bottom: 1px solid transparent;
+      padding: 0 0 rem(10);
+      margin-bottom: 1rem;
+      transition: border 0.3s ease-in-out;
+      &.active, &:hover  {
+         background: none;
+      }
+      &.active {
+        color: $color-primary;
+        border-color: $color-primary;
+      }
+    }
+  }
+
+
+
+  .privacy__item {
+    margin-bottom: rem(50);
+  }
+
+  h4 {
+    // font-family: $font-open-sans;
+    // font-size: rem(28);
+    // font-weight: 600;
+    @extend .contact__title;
+  }
+
+  p {
+    margin: rem(20) 0;
+  }
+}
+
+.privacy__list {
+  background-color: $color-surface;
+  border-radius: rem(12);
+  padding: rem(24);
+  li {
+    position: relative;
+    padding-left: rem(15);
+    &:before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $color-primary;
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 0;
+    }
+    &:not(:last-child){
+      margin-bottom: rem(10);
+    }
+    span {
+      font-weight: 600;
+      @include sm {
+        display: block;
+        margin-bottom: rem(10);
+      }
+    }
+  }
+}
