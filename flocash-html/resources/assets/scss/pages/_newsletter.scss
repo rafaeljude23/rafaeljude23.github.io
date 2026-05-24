@@ -1,0 +1,18 @@
+.newsletter {
+	.newsletter__inner {
+		background-color: $color-surface;
+		padding: rem(40);
+		border-radius: rem(24);
+		@include sm {
+			padding: rem(16) rem(16) rem(32);
+			border-radius: rem(16);
+		}
+	}
+	.form-control,
+	.form-select {
+		background-color: #F3F6F3;
+		border-radius: rem(16);
+		border: none;
+		padding: rem(16) rem(24);
+	}
+}
