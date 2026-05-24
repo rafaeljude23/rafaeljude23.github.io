@@ -166,7 +166,7 @@
     }
 
     .slick-track {
-        display: flex;
+        display: flex;        
     }
 
     .slick-slide {
@@ -175,6 +175,14 @@
         @include md {
             margin-right: 0;
         }
+        > div,
+        .solutions__slide {
+            height: 100%;
+        }
+    }
+
+    .card {
+        height: 100%;
     }
 }
 

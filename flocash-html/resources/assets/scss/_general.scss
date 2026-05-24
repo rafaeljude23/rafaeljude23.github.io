@@ -173,10 +173,12 @@
     border: none;
     height: auto;
     margin-bottom: rem(20);
-    @include md {
-        margin-bottom: rem(20);
-        height: auto;
-    }  
+    &.card--full-height {
+        height: 100%;
+        @include md {
+            height: auto;
+        }  
+    }
     &.card--flex {
         display: flex;
         align-items: flex-start;

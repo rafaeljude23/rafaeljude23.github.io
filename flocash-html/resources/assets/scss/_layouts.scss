@@ -227,6 +227,7 @@
         height: 45px;
         border-radius: rem(8);
         @include flex-center-all;
+        transition: border 0.3s ease-in-out;
         &:hover {
             border-color: $color-white;
         }

@@ -246,17 +246,17 @@
   </div>
 
   <!-- HERO -->
-  <section class="hero contact-hero">
+  <section class="hero">
     <div class="container">
       <div class="row align-items-center pt-5">
         <div class="col-md-6">
-          <h1 class="hero__heading wow fade-in-bottom delay-03s">
+          <h1 class="hero__heading wow fade-in-bottom delay-02s">
             Contact Us
           </h1>
-          <p class="hero__description wow fade-in-bottom delay-04s">Have a question, need support, or looking to explore how we can help your business grow? Our team is here to assist you.</p>
+          <p class="hero__description wow fade-in-bottom delay-03s">Have a question, need support, or looking to explore how we can help your business grow? Our team is here to assist you.</p>
         </div>
         <div class="col-md-6">
-          <img class="wow fade-in-bottom delay-05s" src="./resources/assets/images/pages/contact/hero.png" alt="Hero illustration">
+          <img class="wow fade-in-bottom delay-04s" src="./resources/assets/images/pages/contact/hero.png" alt="Hero illustration">
           <!-- <div id="lottie-container"></div> -->
         </div>
       </div>
@@ -274,25 +274,25 @@
       
         <div class="row">
           <div class="col-lg-4">
-            <div class="wow fade-in-bottom delay-03s">
+            <div class="wow fade-in-bottom delay-02s">
               <h3 class="contact__title mb-4">Push what’s possible</h3>
               <p>Want to take your business technologies, teams and operations to the next level?</p>
               <p class="fw-600">We’re ready when you are. Start the process of making progress with us.</p>
             </div>
 
-            <div class="contact__card wow fade-in-bottom delay-04s mb-4">
+            <div class="contact__card wow fade-in-bottom delay-03s mb-4">
               <h3 class="contact__title contact__divider">Global Headquarters</h3>
               <p class="contact__info"><img src="./resources/assets/images/pages/contact/map.svg" alt=""> 801 Lakeview Dr. Ste 100, Blue Bell, PA 19422</p>
               <p class="contact__info"><img src="./resources/assets/images/pages/contact/phone.svg" alt=""> 888-409-9579</p>
             </div>
 
-            <div class="contact__associates contact__card wow fade-in-bottom delay-05s">
+            <div class="contact__associates contact__card wow fade-in-bottom delay-04s">
               <h3 class="contact__title contact__divider">Associates are available</h3>
               <p class="contact__info"><img src="./resources/assets/images/pages/contact/time.svg" alt=""> Mon–Fri 9:00 AM – 5:00 PM EST</p>
             </div>
           </div>
           <div class="col-lg-8">
-            <div class="contact__interested contact__card wow fade-in-bottom delay-06s">
+            <div class="contact__interested contact__card wow fade-in-bottom delay-05s">
               <h3 class="contact__title mb-4">I am interested in:</h3>
               <div class="faq__accordion accordion" id="accordionExample">
                 <div class="accordion-item">
@@ -439,28 +439,7 @@
   <!-- Page specific functions -->
   <script type="text/javascript">
     jQuery(document).ready(function(){
-var observer = new IntersectionObserver(function (entries) {
-  $.each(entries, function (_, entry) {
-    if (!entry.isIntersecting) return;
 
-    var $el   = $(entry.target);
-    var min   = parseInt($el.data('min'));
-    var max   = parseInt($el.data('max'));
-    var speed = 1000 / (max - min); // 1 second total
-
-    observer.unobserve(entry.target); // run once, then stop watching
-
-    var current = min;
-    var timer = setInterval(function () {
-      $el.text(current);
-      if (current >= max) { clearInterval(timer); } else { current++; }
-    }, speed);
-  });
-}, { threshold: 0.3 }); // fires when 30% of the element is visible
-
-$('.scroll-counter').each(function () {
-  observer.observe(this);
-});
 
     });
   </script>
