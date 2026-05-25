@@ -1,3 +1,7 @@
-<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M16.7999 15.363C13.6067 18.723 5.46178 10.6509 8.66696 7.27756C10.6242 5.21754 8.41364 2.86418 7.1897 1.13216C4.89247 -2.11454 -0.148631 2.36818 0.00336173 5.2202C0.487339 14.215 10.2162 24.8737 19.6371 23.9431C22.5837 23.6524 25.9702 18.3297 22.5903 16.3843C20.8997 15.411 18.5785 13.491 16.7999 15.3616" fill="#1A1D1A"/>
-</svg>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg fill="#1a1d1a" width="800px" height="800px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" stroke="#1a1d1a">
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="SVGRepo_iconCarrier"> <path d="M1920 428.266v1189.54l-464.16-580.146-88.203 70.585 468.679 585.904H83.684l468.679-585.904-88.202-70.585L0 1617.805V428.265l959.944 832.441L1920 428.266ZM1919.932 226v52.627l-959.943 832.44L.045 278.628V226h1919.887Z" fill-rule="evenodd"/> </g>
+</svg>

@@ -190,10 +190,8 @@
     }
 
     .card__image {
+        width: 100%;
         margin-bottom: rem(20);
-        @include sm {
-            width: 100%;
-        }
     }
 
     .card__body {
@@ -259,7 +257,7 @@
     }
 
     .cta__description {
-        max-width: 750px;
+        // max-width: 750px;
         margin: rem(20) auto;
         color: rgba(255, 255, 255, 0.8);
     }

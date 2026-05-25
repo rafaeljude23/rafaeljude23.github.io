@@ -18,9 +18,9 @@
 	text-align: left;
 	background-color: #555755;
 	height: 100%;
-	@include md {
+	@include sm {
 		height: auto;
-		margin-bottom: rem(20);
+		// margin-bottom: rem(20);
 	}
 	h3 {
 		font-family: $font-open-sans;

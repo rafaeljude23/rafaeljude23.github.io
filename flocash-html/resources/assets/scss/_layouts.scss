@@ -11,7 +11,7 @@
     background-color: $color-white;
     z-index: 1;
 	background-color: $color-white;
-	@include md {
+	@include lg {
 		padding: rem(20) 0;
 	}
 	.site-header__inner {

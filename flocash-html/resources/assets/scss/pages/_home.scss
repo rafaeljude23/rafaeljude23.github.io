@@ -172,7 +172,7 @@
     .slick-slide {
         margin-right: rem(20);
         height: auto;
-        @include md {
+        @include sm {
             margin-right: 0;
         }
         > div,
@@ -258,6 +258,9 @@
         p {
             max-width: 500px;
             margin: 0 auto;
+            @include md {
+                margin: 0;
+            }
         }
     }
 }
