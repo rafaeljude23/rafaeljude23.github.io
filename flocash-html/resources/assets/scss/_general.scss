@@ -262,3 +262,27 @@
         color: rgba(255, 255, 255, 0.8);
     }
 }
+
+// BACK TO TOP
+#back-to-top {
+    display: none;
+    z-index: 1;
+    background-color: $color-primary;
+    border-radius: rem(5);
+    position: fixed;
+    bottom: rem(40);
+    right: rem(40);
+    padding: rem(5);
+    cursor: pointer;
+    @include sm {
+        bottom: rem(20);
+        right: rem(20);
+    }
+    &:hover {
+        background-color: lighten($color-primary, 5%);
+    }
+    img {
+        filter: $filter-white;
+        transform: rotate(180deg);
+    }
+}

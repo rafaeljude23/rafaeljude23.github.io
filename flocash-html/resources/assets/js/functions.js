@@ -7,28 +7,57 @@ $(document).ready(function() {
 //   mobile: false
 // }).init();
 
-  $('.site-header__toggler').click(function(){
-    $('.mobile-menu').fadeToggle(300);
+$('.site-header__toggler').on('click', function (e) {
+  e.stopPropagation();
+
+  $('.mobile-menu')
+    .stop(true, true)
+    .fadeToggle(300);
+});
+
+$('.mobile-menu__dropdown-toggle').on('click', function (e) {
+  e.preventDefault();
+
+  $(this)
+    .toggleClass('is-active')
+    .next('.mobile-menu__dropdown-menu')
+    .stop(true, true)
+    .slideToggle(300);
+});
+
+$('.mobile-menu__close').on('click', function () {
+  $('.mobile-menu')
+    .stop(true, true)
+    .fadeOut(300);
+});
+
+$(document).on('click', function (e) {
+  const $container = $('.mobile-menu__inner');
+  const $menu = $('.mobile-menu');
+
+  if (
+    $menu.is(':visible') &&
+    !$container.is(e.target) &&
+    $container.has(e.target).length === 0
+  ) {
+    $menu.stop(true, true).fadeOut(300);
+  }
+});
+  // BACK TO TOP
+  const $backToTop = $('#back-to-top');
+
+  $(window).on('scroll', function () {
+    if ($(this).scrollTop() > 300) {
+      $backToTop.fadeIn();
+    } else {
+      $backToTop.fadeOut();
+    }
   });
 
-  $('.mobile-menu__dropdown-toggle').click(function(){
-    $(this).toggleClass('is-active').next('.mobile-menu__dropdown-menu').slideToggle();
+  $backToTop.on('click', function () {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 300);
   });
-
-  $('.mobile-menu__close').click(function(){
-     $('.mobile-menu').fadeOut(300);
-  });
-
-  $(document).mouseup(function(e) 
-  {
-      var container = $(".mobile-menu__inner");
-
-      // if the target of the click isn't the container nor a descendant of the container
-      if (!container.is(e.target) && container.has(e.target).length === 0) 
-      {
-        $('.mobile-menu').fadeOut(300);
-      }
-  });
-
 
 });
