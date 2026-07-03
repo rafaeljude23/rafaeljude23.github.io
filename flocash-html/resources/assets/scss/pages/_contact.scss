@@ -2,8 +2,9 @@
 	font-weight: 600;
 }
 
+
 .contact__inner {
-	background-color: $color-surface;
+	background-color: #FEF1EB;
 	padding: rem(40);
 	border-radius: rem(24);
 	@include md {
@@ -69,6 +70,7 @@
 	}
 	.faq__accordion {
 		.accordion-item {
+			background-color:  rgba(254, 238, 230, 0.77);
 			border-radius: rem(12);
 			padding: rem(24);
 			@include md {

@@ -1,5 +1,93 @@
 // ----------------- GENERAL -----------------
 
+// COLORS
+.text-black {
+    color: $color-text !important;
+}
+
+// BACKGROUND COLORS
+.bg-FEF1E4,
+.bg-red {
+    background-color: #FEF1E4 !important;
+}
+
+.bg-E9F4F8,
+.bg-blue {
+    background-color: #E9F4F8 !important;
+}
+
+.bg-EAF7F6,
+.bg-blue-100 {
+    background-color: #EAF7F6 !important;
+}
+
+.bg-F3F2FE,
+.bg-blue-200 {
+    background-color: #F3F2FE !important;
+}
+
+.bg-ebf5f9,
+.bg-blue-300 {
+    background-color: #ebf5f9 !important;
+}
+
+.bg-F4F0F8,
+.bg-gray {
+    background-color: #F4F0F8 !important;
+}
+
+.bg-F6F8F4,
+.bg-gray-100 {
+    background-color: #F6F8F4 !important;
+}
+
+.bg-F4F9FB {
+   background-color: #F4F9FB !important;
+}
+
+.bg-grad-1,
+.bg-grad-gray {
+    /* gradient */
+    background: linear-gradient(177.55deg, rgba(255, 240, 236, 0.6) 2.05%, rgba(235, 224, 245, 0.6) 128.37%) !important;
+}
+
+.bg-grad-1,
+.bg-grad-gray-100 {
+    background: linear-gradient(94.98deg, rgba(255, 240, 236, 0.6) 13.31%, rgba(235, 224, 245, 0.6) 106.96%) !important;
+}
+
+.bg-grad-3 {
+    background: linear-gradient(90.2deg, #FCEAD7 15.86%, #FAE8D4 83.39%);
+}
+
+.bg-FAFFFF {
+    background-color: #FAFFFF !important;
+}
+
+.bg-FCFCFE {
+    background-color: #FCFCFE !important;
+}
+
+.bg-FFF4F2 {
+    background-color: #FFF4F2 !important;
+}
+
+// TEXT LIMITS
+.text-limit-sm {
+    max-width: 500px;
+    margin-inline: auto;
+}
+
+.text-limit-md {
+    max-width: 700px;
+    margin-inline: auto;
+}
+
+.text-limit-lg {
+    max-width: 900px;
+    margin-inline: auto;
+}
+
 /* ==========================================================================
    HERO  (block: hero)
    ========================================================================== */
@@ -43,6 +131,19 @@
             height: 100%;
             object-fit: cover;            
         }
+    }
+}
+
+.page-hero {
+    @extend .hero;
+    height: calc(100vh - 90px);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    padding: rem(50) 0;
+    @include sm {
+        height: auto;
+        padding-bottom: rem(250);
     }
 }
 
@@ -171,6 +272,8 @@
     border-radius: rem(16);
     padding: rem(24);
     margin-bottom: rem(20);
+    align-items: flex-start;
+    border: none;
     .card__image {
         width: 100%;
         height: auto;
@@ -226,43 +329,6 @@
 .card--colored {
     --divider-color: #fff;
     border: none; 
-}
-
-.bg-red {
-    background-color: #FEF1E4 !important;
-}
-
-.bg-blue {
-    background-color: #E9F4F8 !important;
-}
-
-.bg-blue-100 {
-    background-color: #EAF7F6 !important;
-}
-
-.bg-blue-200 {
-    background-color: #F3F2FE !important;
-}
-
-.bg-blue-300 {
-    background-color: #EBF5F9 !important;
-}
-
-.bg-gray {
-    background-color: #F4F0F8 !important;
-}
-
-.bg-gray-100 {
-    background-color: #F6F8F4 !important;
-}
-
-.bg-grad-gray {
-    /* gradient */
-    background: linear-gradient(177.55deg, rgba(255, 240, 236, 0.6) 2.05%, rgba(235, 224, 245, 0.6) 128.37%) !important;
-}
-
-.bg-grad-gray-100 {
-    background: linear-gradient(94.98deg, rgba(255, 240, 236, 0.6) 13.31%, rgba(235, 224, 245, 0.6) 106.96%) !important;
 }
 
 /* ==========================================================================

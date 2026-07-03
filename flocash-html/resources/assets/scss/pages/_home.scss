@@ -183,6 +183,9 @@
 
     .card {
         flex-direction: row;
+        @include sm {
+            flex-direction: column;
+        }
     }
 }
 
@@ -355,4 +358,10 @@
 	width: 500px;
 	height: 500px;
 	margin: 0 auto;
+}
+
+.home-integrate-wrap {
+    @include sm {
+        padding-bottom: rem(200);
+    }
 }
