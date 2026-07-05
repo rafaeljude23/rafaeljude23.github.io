@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Payment Orchestration | Flocash</title>
+  <title>Insight Embedded Finance | Flocash</title>
 
   <!-- FAVICON -->
   <link rel="icon" type="image/x-icon" href="./resources/assets/images/general/favicon.ico" />
 
   <!-- GOOGLE FONTS -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- STYLSHEETS -->
   <link rel="stylesheet" type="text/css" href="./resources/assets/dist/vendors/bootstrap/bootstrap.css">
@@ -246,208 +246,167 @@
   </div>
 
   <!-- HERO -->
-  <section class="hero page-hero">
+  <section class="hero">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <img src="./resources/assets/images/pages/payment-orchestration/revenue.svg" alt="">
-          <h1 class="hero__heading wow fade-in-bottom delay-02s">
-            Payment orchestration.  For cross-border <span class="hero__highlight">global businesses</span>.
+      <div class="row align-items-center pt-5">
+        <div class="col-md-6">
+          <h1 class="hero__heading mb-3 wow fade-in-bottom delay-03s">
+            <span class="hero__highlight">UNSCRIPTED:</span> Align field service with your commercial strategy.
           </h1>
-          <p class="wow fade-in-bottom delay-03s">Flocash offers cross-border businesses the solution and services to  drive growth, efficiency and customer experience.</p>
-          <div class="row">
-            <div class="col-md-auto">
-              <a class="btn btn--primary wow fade-in-bottom delay-04s" href="contact.html">Contact Page <img src="./resources/assets/images/pages/home/icon-arrow-up.svg" alt=""></a>
-            </div>
-            <div class="col-md-auto mt-3 mt-md-0">
-              <a href="contact.html" class="btn btn--white wow fade-in-bottom delay-05s">Request Demo <img src="./resources/assets/images/pages/home/icon-arrow-up.svg" alt=""></a>
-            </div>
-          </div>
+          <a class="btn btn--primary" href="#">Learn More <img src="./resources/assets/images/pages/home/icon-arrow-up.svg" alt=""></a>
         </div>
+        <div class="col-md-6">
+          <img class="d-md-none" src="./resources/assets/images/pages/unscripted/hero-mob.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="hero__bg">
+      <img class="d-none d-md-block" src="./resources/assets/images/pages/unscripted/hero-bg.jpg" alt="">
+      <img class="d-md-none" src="./resources/assets/images/pages/unscripted/hero-bg-mob.jpg" alt="">
+    </div>
+  </section>
+
+  <!-- UNSCRIPTED - CONTENT -->
+  <section class="section unscripted">
+    <div class="container">
+      
+      <!-- START -->
+      <h3>What Is Embedded Finance?</h3>
+      <p><strong>Embedded finance</strong> is the seamless integration of banking services—like payments, loans, or insurance—directly into non-financial apps and websites.</p>
+      <p>Instead of redirecting customers to a traditional bank or a third-party payment gate, businesses use APIs (Application Programming Interfaces) to "plug" these financial tools right into their existing platforms. This keeps users inside the app they are already using, making transactions smooth and frictionless.</p>
+      <p>Real-World Examples</p>
+      <p>You likely use embedded finance every day without even realizing it:</p>
+      <ul class="privacy__list">
+        <li>Ride-sharing: Paying for your Uber or Lyft automatically inside the app when your trip ends.</li>
+        <li>Travel booking: Adding travel insurance to your cart with a single click while buying a flight.</li>
+        <li>E-commerce: Splitting a purchase into monthly instalments using "Buy Now, Pay Later" at checkout.</li>
+      </ul>
+      <p>By blending finance into everyday digital activities, businesses can eliminate friction, boost sales, and keep users engaged longer.</p>
+
+      <h3>Overcoming the limits of traditional checkout</h3>
+      <p>Embedded finance addresses several significant barriers for both businesses and consumers:</p>
+      <ul class="privacy__list">
+        <li>Operational and Financial Costs: It allows developers to launch financial products in weeks rather than the years by bypassing banking license requirements and custom infrastructure builds.
+        <li>Risk Mitigation: Offloads compliance and security risks by handling fraud, credit, and regulatory compliance on behalf of non-financial brands, removing the need for internal expertise.
+        <li>Friction in the Customer Journey: It eliminates the need for "redirects" to external systems, which often cause high cart abandonment rates.
+        • Vendor Fragmentation: For small businesses, it unifies disconnected business tools—like standalone booking software and separate payment gateways—into a single, consolidated workflow.</li>
+        <li>Credit Gaps: In sectors like B2B lending, it helps <strong>SMEs</strong> access credit that traditional banks might deny due to limited data, by using the platform's real-time transaction signals for underwriting.</li>
+      </ul>
+      <img class="d-block my-5" src="./resources/assets/images/pages/unscripted/Embedded_FInance.jpeg" alt="">
+
+      <h3>How Does Flocash enable Embedded Finance?</h3>
+      <p>Operating on a "pull" model, Flocash delivers financial products exactly when they match a user's task. Here is how the technical process works: </p>
+      <ol>
+        <li>API Integration: A platform connects to Flocash’s infrastructure via APIs.</li>
+        <li>Layered Infrastructure: Flocash supplies the regulated "rails," while the platform handles the user interface and presentation, so the experience feels native.</li>
+        <li>Facilitation Models:  The platform is setup to use Flocash’s automated Know Your Customer (KYC) identity checks and user registration workflow to control onboarding and fees.</li>
+        <li>Data-Driven Workflows: For services like lending, the platform shares real-time signals (e.g., sales volume or invoice history) with Flocash to power instant, automated underwriting and disbursement.</li>
+      </ol>
+
+      <h3>Top Businesses Winning with Embedded Finance</h3>
+      <ul class="privacy__list">
+        <li>E-Commerce Retailers
+          <ul>
+            <li>Boosts sales by offering instant Buy Now, Pay Later (BNPL) credit.</li>
+            <li>Reduces abandoned shopping baskets with frictionless one-click checkouts.</li>
+          </ul>
+        </li>
+        <li>SaaS and Software Platforms
+          <ul>
+            <li>Increases software subscription value by adding payment processing tools.</li>
+            <li>Earns recurring revenue from transaction fees instead of just software fees.</li> 
+          </ul>
+        </li>
+        <li>Gig Economy and Marketplace Platforms
+          <ul>
+            <li>Retains drivers or couriers by giving them instant earnings payouts.</li>
+            <li>Issues branded debit cards to workers to build brand loyalty.</li>
+            </ul> 
+        </li>
+        <li>B2B Supply Chain Companies
+          <ul>
+            <li>Speeds up cash flow between suppliers using automated trade financing.</li>
+            <li>Extends flexible payment terms to business buyers during checkout.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>The Value Drop</h3>
+      <ul class="privacy__list">
+        <li>For Businesses (Embedders): It creates "stickier" products by increasing customer touchpoints and loyalty. It also diversifies revenue through transaction fees, interest sharing, or commissions.</li>
+        <li>For Consumers: It provides hyper-personalized and frictionless experiences, allowing them to access financial tools exactly when and where they need them.</li>
+        <li>For Financial Institutions (Providers): It serves as a massive customer acquisition engine, with some leads costing 15 to 20 times less than traditional distribution channels.</li>
+        <li>Economic Performance: Merchants using embedded lending have seen checkout conversions increase by 20–30% and basket sizes grow significantly.</li>
+      </ul>
+
+      <h3>How to Launch in 3 Simple Steps with Flocash</h3>
+      <ol>
+        <li>
+          <strong>Define Your Model</strong>
+          <p class="ms-3">o Decide whether to integrate Flocash's Embedded Payment platform to distribute digital wallets, accept payments, or for bespoke Buy Now, Pay Later (BNPL) lending.</p>
+        </li>
+        <li>
+          <strong>Integrate your platform</strong>
+          <p class="ms-3">o To start implementing, simply create a developer account to access the Flocash embedded payment API and automated KYC onboarding and risk assessment tools.</p> 
+        </li>
+        <li>
+          <strong>Audit and Deploy Modules</strong>
+          <p class="ms-3">o Certify your integration by securing your live API credentials to officially deploy the system. Your platform can then seamlessly process native payments, support popular digital wallets, and manage lending features without ever redirecting users away from your site. </p> 
+          </li>      
+      </ol>        
+      <!-- END -->
 
       </div>
     </div>
-
-    <div class="hero__bg">
-      <img class="d-none d-md-block" src="./resources/assets/images/pages/payment-orchestration/hero.webp" alt="">
-      <img class="d-md-none" src="./resources/assets/images/pages/payment-orchestration/hero-mob.jpg" alt="">
-    </div>
   </section>
+
 
   <!-- WORK -->
   <section class="section">
     <div class="container">
-      	
-    	<div class="row text-center mb-4">
-    		<div class="col-lg-8 offset-lg-2">
-          <h2 class="section-title wow fade-in-bottom delay-02s">Get paid on time. Repatriate all your funds. </h2>
-    			<p class="wow fade-in-bottom delay-03s">Repatriate global funds rapidly with predictable FX. Our platform protects margins with higher payment acceptance and ultra-low fees.</p>
-    		</div>
-    	</div>
-        
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+          <h2 class="section-title text-limit-sm wow fade-in-bottom delay-02s">Insights for modern sales teams</h2>
+        </div>
+        <div class="col-md-6">
+          <p class="wow fade-in-bottom delay-03s">Personalisation and market intelligence help you grow revenue faster. Below are selected insights to help sales teams improve performance and buyer engagement.</p>
+        </div>
+      </div>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="card h-100 card--colored bg-EAF7F6 wow fade-in-bottom delay-04s">
-            <img class="card__image" src="./resources/assets/images/pages/payment-orchestration/global-collection.jpg" alt="Global Collection">
+          <div class="card h-100 bg-FFF4F2 wow fade-in-bottom delay-04s">
+            <img class="card__image" src="./resources/assets/images/pages/home/ai-designed.jpg" alt="Seamless Onboarding">
             <div class="card__body">
-              <h3 class="card__title">Global Collection</h3>
-              <p class="card__description">Aggregate localized payment methods worldwide through one connection. Accept preferred regional options effortlessly without managing multiple platform integrations.</p>
-              <a class="text-link" href="contact.html">LEARN MORE <img src="./resources/assets/images/pages/home/icon-arrow-up.svg" alt="">
+              <h3 class="card__title">AI Designed for Finance</h3>
+              <p class="card__description">Break complex financial processes with intelligent automation. Our AI analyzes data, detects patterns, and helps teams make faster, more accurate decisions while reducing manual work.</p>
+              <a class="text-link" href="#">LEARN MORE <img src="./resources/assets/images/pages/home/icon-arrow-up.svg" alt="">
               </a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100 card--colored bg-F3F2FE wow fade-in-bottom delay-05s">
-            <img class="card__image" src="./resources/assets/images/pages/payment-orchestration/local-acquiring.jpg" alt="Local Acquiring">
+          <div class="card h-100 bg-FFF4F2 wow fade-in-bottom delay-05s">
+            <img class="card__image" src="./resources/assets/images/pages/unscripted/built-for-global-scale.jpg" alt="Built for Global Scale">
             <div class="card__body">
-              <h3 class="card__title">Local Acquiring</h3>
-              <p class="card__description">Local acquiring through domestic networks to maximize approval rates, eliminate cross-border fees, and deliver a frictionless checkout experience for global customers.</p>
-              <a class="text-link" href="contact.html">LEARN MORE <img src="./resources/assets/images/pages/home/icon-arrow-up.svg" alt="">
+              <h3 class="card__title">Built for Global Scale</h3>
+              <p class="card__description">Operate across markets without friction. Manage currencies, payments, and financial operations worldwide through one unified platform designed to scale with your business.</p>
+              <a class="text-link" href="#">LEARN MORE <img src="./resources/assets/images/pages/home/icon-arrow-up.svg" alt="">
               </a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100 card--colored bg-FEF1E4 wow fade-in-bottom delay-06s">
-            <img class="card__image" src="./resources/assets/images/pages/payment-orchestration/low-acceptance-fee.jpg" alt="Low Acceptance Fee">
+          <div class="card h-100 bg-FFF4F2 wow fade-in-bottom delay-06s">
+            <img class="card__image" src="./resources/assets/images/pages/unscripted/controls-and-compliance.jpg" alt="Controls and Compliance">
             <div class="card__body">
-              <h3 class="card__title">Low Acceptance Fee</h3>
-              <p class="card__description">Price in local currencies to access low acquiring fees, to improve acceptance rate, cut your cost, and reduce fraud and chargeback.</p>
-              <a class="text-link" href="contact.html">LEARN MORE <img src="./resources/assets/images/pages/home/icon-arrow-up.svg" alt="">
+              <h3 class="card__title">Controls and Compliance</h3>
+              <p class="card__description">Stay compliant with built-in governance and security. Monitor transactions, enforce policies, and maintain regulatory standards with powerful control and reporting tools.</p>
+              <a class="text-link" href="#">LEARN MORE <img src="./resources/assets/images/pages/home/icon-arrow-up.svg" alt="">
               </a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- TRANSFORM -->
-  <section class="hero pt-0 pb-5 pb-md-0">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 py-5">
-          <h2 class="section-title wow fade-in-bottom delay-02s">Zero integration. Zero fees.</h2>
-          <p class="transform__description wow fade-in-bottom delay-03s">Flocash requires zero integration or implementation fees because it is already natively built into major tech stacks for airlines, banks, transport and media industries. </p>
-          <a class="btn btn--primary d-none d-lg-inline-flex wow fade-in-bottom delay-04s" href="contact.html">Learn More <img src="./resources/assets/images/pages/home/icon-arrow-up.svg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-6">
-          <img class="wow fade-in-bottom delay-05s" src="./resources/assets/images/pages/payment-orchestration/zero-integration.png" alt="Transform illustration">
-          <div class="d-lg-none">
-            <a class="btn btn--primary w-100 wow fade-in-bottom delay-04s" href="contact.html">Learn More <img src="./resources/assets/images/pages/home/icon-arrow-up.svg" alt="">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero__bg">
-      <img src="./resources/assets/images/pages/payment-orchestration/cta.webp" alt="">
-    </div>
-  </section>
-
-  <!-- SMART -->
-  <section class="smart section">
-  	<div class="container">
-  		<div class="text-center mb-4">
-  			<h2 class="section-title wow fade-in-bottom delay-02s">Built for Global Scale, Trusted Worldwide</h2>
-  			<div class="row">
-  				<div class="col-lg-8 offset-lg-2">
-  					<p class="wow fade-in-bottom delay-03s">Flocash provides a single access point to aggregate local payment collection methods globally. We simplify your cross-border processing, tax compliance and streamline fund repatriation.</p>
-  				</div>
-  			</div>  			
-  		</div>
-
-  		<div class="row g-4">
-  			<div class="col-md-6">
-  				<div class="card h-100 smart__card bg-EAF7F6 wow fade-in-bottom delay-04s">
-  					<img src="./resources/assets/images/pages/payment-orchestration/tax-localization.svg" alt="Tax Localization">
-  					<h3>Tax Localization</h3>
-  					<p>Eliminate global tax complexities. The platform automatically calculates, applies, and tracks local regional taxes at the point of sale.</p>
-  				</div>
-  			</div>
-  			<div class="col-md-6">
-  				<div class="card h-100 smart__card bg-F3F2FE wow fade-in-bottom delay-04s">
-  					<img src="./resources/assets/images/pages/payment-orchestration/cross-border-compliance.svg" alt="Cross-Border Compliance">
-  					<h3>Cross-Border Compliance</h3>
-  					<p>There are no contracts or local setup requirements. Flocash handles local compliance through a single agreement. </p>
-  				</div>
-  			</div>
-        <div class="col-md-6">
-          <div class="card h-100 smart__card bg-FEF1E4 wow fade-in-bottom delay-05s">
-            <img src="./resources/assets/images/pages/payment-orchestration/fund-repatriation.svg" alt="Fund Repatriation">
-            <h3>Fund Repatriation</h3>
-            <p>Guaranteed funds repatriation for all your sales. Collect locally and settle globally to improve your cashflow positions.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card h-100 smart__card bg-E9F4F8 wow fade-in-bottom delay-05s">
-            <img src="./resources/assets/images/pages/payment-orchestration/simplified-reconciliation.svg" alt="Simplified Reconciliation">
-            <h3>Simplified Reconciliation</h3>
-            <p>Provides a single, consolidated and cost-efficient reporting solution for cross-border businesses to simplify and automate reconciliation process.</p>
-          </div>
-        </div>
-  		</div>
-
-  	</div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section cta">
-    <div class="container">
-      <h2 class="section-title wow fade-in-bottom delay-02s">Tokenization</h2>
-      <div class="row g-4 mt-5">
-      	<div class="col-md-6 col-lg-3">
-      		<div class="online-card wow fade-in-bottom delay-03s">
-      			<h3><span class="scroll-counter" data-min="1"  data-max="400">400</span>+</h3>
-      			<p>Drive global conversions with support for over 400 local payment options.</p>
-      		</div>
-      	</div>
-      	<div class="col-md-6 col-lg-3">
-      		<div class="online-card wow fade-in-bottom delay-04s">
-      			<h3><span class="scroll-counter" data-min="1"  data-max="120">120</span>+</h3>
-      			<p>Launch and scale across 120+ countries through a single integration.</p>
-      		</div>
-      	</div>
-      	<div class="col-md-6 col-lg-3">
-      		<div class="online-card wow fade-in-bottom delay-05s">
-      			<h3><span class="scroll-counter" data-min="1"  data-max="2">2</span> billion +</h3>
-      			<p>Access a massive global market of 2 billion+ bank and wallet accounts.</p>
-      		</div>
-      	</div>
-      	<div class="col-md-6 col-lg-3">
-      		<div class="online-card wow fade-in-bottom delay-06s">
-      			<h3><span class="scroll-counter" data-min="1"  data-max="99">99</span>.9%</h3>
-      			<p>Rock-solid reliability: 99.9% uptime for uninterrupted global commerce.</p>
-      		</div>
-      	</div>
-      </div>
-    </div>
-    <img class="section__bg" src="./resources/assets/images/general/cta.jpg" alt="">
-  </section>
-
-  <!-- HERO -->
-  <section class="hero py-5 bg-FAFFFF">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <h2 class="section-title wow fade-in-bottom delay-02s">Simplify Your Global Expansion Today</h2>
-          <p class="transform__description wow fade-in-bottom delay-03s">Eliminate the complexities of global commerce. Our unified platform provides a single point of access to manage global payment acceptance, regulatory compliance, local tax localization, and seamless fund repatriation.</p>
-          <a class="btn btn--primary d-none d-md-inline-flex wow fade-in-bottom delay-04s" href="contact.html">Contact Us <img src="./resources/assets/images/pages/home/icon-arrow-up.svg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-6">
-          <img class="wow fade-in-bottom delay-05s" src="./resources/assets/images/pages/payment-orchestration/simplify.png" alt="Smart Payments">
-          <div class="d-md-none">
-            <a class="btn btn--primary w-100 wow fade-in-bottom delay-04s" href="contact.html">Learn More <img src="./resources/assets/images/pages/home/icon-arrow-up.svg" alt="">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero__bg">
-      <!-- <img src="./resources/assets/images/pages/home/hero-home.png" alt=""> -->
     </div>
   </section>
 
@@ -548,31 +507,45 @@
   
   <!-- Page specific functions -->
   <script type="text/javascript">
-    jQuery(document).ready(function(){
-      var observer = new IntersectionObserver(function (entries) {
-        $.each(entries, function (_, entry) {
-          if (!entry.isIntersecting) return;
+jQuery(document).ready(function () {
 
-          var $el   = $(entry.target);
-          var min   = parseInt($el.data('min'));
-          var max   = parseInt($el.data('max'));
-          var speed = 1000 / (max - min); // 1 second total
+  const sections = $('.privacy__item');
+  const navLinks = $('#privacy__links a');
 
-          observer.unobserve(entry.target); // run once, then stop watching
+  // Smooth scroll
+  navLinks.on('click', function (e) {
+    e.preventDefault();
 
-          var current = min;
-          var timer = setInterval(function () {
-            $el.text(current);
-            if (current >= max) { clearInterval(timer); } else { current++; }
-          }, speed);
-        });
-      }, { threshold: 0.3 }); // fires when 30% of the element is visible
+    const target = $($(this).attr('href'));
 
-      $('.scroll-counter').each(function () {
-        observer.observe(this);
-      });
+    $('html, body').animate({
+      scrollTop: target.offset().top - 120
+    }, 400);
+  });
 
+  // Active state on scroll
+  $(window).on('scroll', function () {
+
+    let current = '';
+
+    sections.each(function () {
+      const sectionTop = $(this).offset().top - 140;
+
+      if ($(window).scrollTop() >= sectionTop) {
+        current = $(this).find('h4').attr('id');
+      }
     });
+
+    navLinks.removeClass('active');
+
+    if (current) {
+      $('#privacy__links a[href="#' + current + '"]').addClass('active');
+    }
+
+  });
+
+});
+
   </script>
 </body>
 </html>
