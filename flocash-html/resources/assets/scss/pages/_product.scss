@@ -101,3 +101,10 @@
 .empowering-businesses {
 	margin-top: -2rem;
 }
+
+.embedded-payments-terminal {
+	background: linear-gradient(90deg, #FEEEDA 45.07%, #FDBE98 100%);	
+	@include sm {
+		background: #feefde;
+	}
+}
