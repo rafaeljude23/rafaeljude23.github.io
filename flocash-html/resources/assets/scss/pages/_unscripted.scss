@@ -15,3 +15,10 @@
 .insight-list {
 	background-color: #FFF4F2;
 }
+
+.insight-hero {
+	min-height: 600px;
+	.hero__bg img {
+		object-position: center;
+	}
+}
