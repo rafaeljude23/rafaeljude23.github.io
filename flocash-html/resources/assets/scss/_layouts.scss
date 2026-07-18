@@ -100,10 +100,10 @@
 		    gap: rem(16);
 		    &:hover {
 		    	.megamenu__icon {
-		    		// background-color: $color-primary;
-		    		border-color: $color-primary;
+		    		background-color: $color-primary;
+		    		// border-color: $color-primary;
 		    		img {
-		    			// filter: $filter-white;
+		    			filter: $filter-white;
 		    		}
 		    	}
 		    }
@@ -119,7 +119,7 @@
 		// padding: rem(5);
 		flex-shrink: 0;
 		border: 1px solid $color-surface;
-		transition: border 0.3s;
+		transition: all 0.3s;
 	}
 }
 
