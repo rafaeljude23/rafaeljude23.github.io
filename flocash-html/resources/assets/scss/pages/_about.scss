@@ -1,0 +1,43 @@
+.about-hero {
+	@include sm {
+		min-height: 700px;
+		align-items: flex-start;
+		.hero__bg img {
+			object-position: bottom center;
+		}		
+	}
+	
+}
+
+
+.who-we-are {
+	.sub-text {
+		text-transform: uppercase;
+	}
+	.online-card {
+		background-color: #F4F8FE;
+		
+		h3, p {
+			color: $color-black;
+		}
+	}
+}
+
+
+.our-core-values {
+
+	background: linear-gradient(0deg, #F5F5F5, #F5F5F5), #FFFFFF;
+	overflow: hidden;
+	.build__card img {
+		width: 90px;
+		height: 90px;
+		margin: 0 0 -20px -20px;
+	}
+
+	.our-core-values-img-right {
+		transform: scale(1.5);
+		@include sm {
+			transform: scale(1.2);
+		}
+	}
+}

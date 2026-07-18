@@ -1,5 +1,25 @@
 // ----------------- GENERAL -----------------
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color-primary;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  // background: #555;
+}
+
 // COLORS
 .text-black {
     color: $color-text !important;
@@ -76,6 +96,11 @@
     background-color: #FFF4F2 !important;
 }
 
+.bg-EBF3E7 {
+    background-color: #EBF3E7 !important;
+}
+
+
 // TEXT LIMITS
 .text-limit-sm {
     max-width: 500px;
@@ -114,6 +139,9 @@
         font-size: rem(58);
         @include md {
             font-size: rem(42);
+        }
+        @include sm {
+            font-size: rem(36);
         }
     }
     .hero__highlight {
