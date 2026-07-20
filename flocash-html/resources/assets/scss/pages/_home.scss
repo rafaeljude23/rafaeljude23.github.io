@@ -288,11 +288,11 @@
         }
 
         p {
-            max-width: 500px;
-            margin: 0 auto;
-            @include md {
-                margin: 0;
-            }
+            // max-width: 500px;
+            // margin: 0 auto;
+            // @include md {
+            //     margin: 0;
+            // }
         }
     }
 }

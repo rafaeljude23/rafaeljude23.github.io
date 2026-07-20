@@ -438,3 +438,31 @@
         transform: rotate(180deg);
     }
 }
+
+#cookiepolicy {
+    background-color: $color-white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+
+    z-index: 999;
+    .container {
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    p, button {
+        font-size: rem(13);
+    }
+    p {
+        margin: 0;
+    }
+    button {
+        min-width: 100px;
+        height: 40px;
+        margin-left: rem(10);
+        border-radius: 6px;
+    }
+}

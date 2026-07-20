@@ -98,12 +98,15 @@
 		    display: flex;
 		    align-items: center;
 		    gap: rem(16);
+		    position: relative;
+
 		    &:hover {
+
 		    	.megamenu__icon {
-		    		background-color: $color-primary;
+		    		// background-color: $color-primary;
 		    		// border-color: $color-primary;
 		    		img {
-		    			filter: $filter-white;
+		    			// filter: $filter-white;
 		    		}
 		    	}
 		    }

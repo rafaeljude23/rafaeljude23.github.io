@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+  $('#cookie-accept').click(function(){
+    Cookies.set('cookiepolicy', 'accept');
+    $('#cookiepolicy').remove();
+  });
+  if(Cookies.get('cookiepolicy') == 'accept'){
+    $('#cookiepolicy').remove();
+  }
+  
    // WOW JS
     new WOW().init();
 
