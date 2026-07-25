@@ -30,7 +30,7 @@
     <div class="container">
       <div class="site-header__inner">
         <a class="site-header__logo" href="./">
-          <img src="./resources/assets/images/general/logo.svg" width="200" height="auto" alt="Flocash logo">
+          <img src="./resources/assets/images/general/logo.png" width="200" height="auto" alt="Flocash logo">
         </a>
         <nav class="site-nav">
           <ul class="site-nav__list">
@@ -614,10 +614,26 @@
             <div class="col-md-6 site-footer__newsletter">
               <h3 class="site-footer__nav-title">Newsletter</h3>
               <p>Join our newsletter to receive the latest news, helpful resources, and exclusive insights to help your business grow.</p>
-              <form class="site-footer__newsletter-form">
-                <input class="site-footer__newsletter-input" type="email" placeholder="Enter your email...">
-                <button class="site-footer__newsletter-btn" type="submit"> SEND <img src="./resources/assets/images/pages/home/right-arrow.svg" alt="Send">
-                </button>
+                <form class="needs-validation ajax-form" novalidate
+                data-access-key="edf5db46-f886-4900-9557-76acc296c7ea"
+                data-form-type="newsletter"
+                data-success-modal="#newsletterSuccessModal"
+                data-min-seconds="1">
+                <div class="input-group has-validation">
+                  <div class="site-footer__newsletter-form">
+                    <input class="site-footer__newsletter-input" type="email" placeholder="Enter your email..." name="email" required="">
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                    <button class="site-footer__newsletter-btn" type="submit"> SEND <img src="./resources/assets/images/pages/home/right-arrow.svg" alt="Send">
+                    </button>
+                  </div>
+                 
+                </div>
+                <!-- Honeypot -->
+      <div class="hp-field" aria-hidden="true">
+        <label for="newsletter-website">Leave this field empty</label>
+        <input type="text" id="newsletter-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+      <input type="hidden" name="form_timestamp" class="form-timestamp" value="">
               </form>
             </div>
           </div>
@@ -628,21 +644,40 @@
     </div>
   </footer>
 
+<!-- Success modal -->
+<div class="modal fade" id="newsletterSuccessModal" tabindex="-1" aria-labelledby="newsletterSuccessModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newsletterSuccessModalLabel">You're subscribed!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Thanks for subscribing. Keep an eye on your inbox for our next update.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn--primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <div id="back-to-top">
     <img src="./resources/assets/images/icons/arrow-down.svg" width="25" height="auto" alt="Back to top">
   </div>
 
-  <script src="./resources/assets/dist/vendors/cookie-consent.js"></script>
+
 
 
     <!-- SCRIPTS -->
   <script src="./resources/assets/dist/vendors/jquery/jquery-min.js"></script>
+    <script src="./resources/assets/dist/vendors/cookie-consent.js"></script>
+
   <script src="./resources/assets/dist/vendors/bootstrap/bootstrap.js"></script>
   <script src="./resources/assets/dist/vendors/slick-carousel/slick.js"></script>
   <!-- <script src="./resources/assets/dist/vendors/choices-js/choices.min.js"></script> -->
   <script src="./resources/assets/dist/vendors/wow/wow.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+  <script src="./resources/assets/js/forms.js"></script>
   <script src="./resources/assets/dist/functions.js"></script>
 <!-- SYNC:FOOTER:END -->
 

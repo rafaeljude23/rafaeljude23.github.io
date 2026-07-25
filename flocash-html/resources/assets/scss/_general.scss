@@ -466,3 +466,13 @@
         border-radius: 6px;
     }
 }
+
+    /* Honeypot: off-screen, never display:none (some bots skip display:none) */
+    .hp-field {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }

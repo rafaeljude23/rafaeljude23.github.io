@@ -30,7 +30,7 @@
     <div class="container">
       <div class="site-header__inner">
         <a class="site-header__logo" href="./">
-          <img src="./resources/assets/images/general/logo.svg" width="200" height="auto" alt="Flocash logo">
+          <img src="./resources/assets/images/general/logo.png" width="200" height="auto" alt="Flocash logo">
         </a>
         <nav class="site-nav">
           <ul class="site-nav__list">
@@ -347,24 +347,39 @@ United Kingdom
                   <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                       <p>Connect with our growth team to explore custom pricing tiers, schedule a live platform walkthrough, or discuss enterprise-level plans tailored to your team's specific workflows.</p>
-                      <form class="row newsletter">
+                      <form class="row newsletter  needs-validation ajax-form" novalidate
+                        data-access-key="edf5db46-f886-4900-9557-76acc296c7ea"
+                        data-form-type="contact"
+                        data-subject="Solutions"
+                        data-success-modal="#formSuccessModal">
                         <div class="col-md-6 mb-3">
-                          <input type="text" placeholder="First Name" class="form-control bg-white" name="">
+                          <input type="text" placeholder="First Name" class="form-control bg-white" name="first_name" required="">
+                          <div class="invalid-feedback">Please enter your first name.</div>
                         </div>
                         <div class="col-md-6 mb-3">
-                          <input type="text" placeholder="Last Name" class="form-control bg-white" name="">
+                          <input type="text" placeholder="Last Name" class="form-control bg-white" name="last_name" required="">
+                          <div class="invalid-feedback">Please enter your last name.</div>
                         </div>
                         <div class="col-md-12 mb-3">
-                          <input type="email" placeholder="Email" class="form-control bg-white" name="">
+                          <input type="email" placeholder="Email" class="form-control bg-white" name="email" required="">
+                          <div class="invalid-feedback">Please enter a valid email address.</div>
                         </div>
                         <div class="col-md-12 mb-3">
-                          <input type="text" placeholder="Company name" class="form-control bg-white" name="">
+                          <input type="text" placeholder="Company name" class="form-control bg-white" name="company" required="">
+                          <div class="invalid-feedback">Please enter your company name.</div>
                         </div>
                         <div class="col-md-12 mb-3">
-                          <textarea class="form-control bg-white" placeholder="Anything specific you'd like to see in the demo?"></textarea>
+                          <textarea class="form-control bg-white" placeholder="Anything specific you'd like to see in the demo?" name="message" required=""></textarea>
+                          <div class="invalid-feedback">Please enter a message.</div>
                         </div>
+                        <!-- Honeypot -->
+                        <div class="hp-field" aria-hidden="true">
+                          <label for="solutions-website">Leave this field empty</label>
+                          <input type="text" id="solutions-website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+                        <input type="hidden" name="form_timestamp" class="form-timestamp" value="">
                         <div class="col-md-12">
-                          <button class="btn btn--primary w-100" href="#">SUBMIT <img src="./resources/assets/images/icons/arrow-up.svg" alt=""></button>
+                          <button class="btn btn--primary w-100" type="submit">SUBMIT <img src="./resources/assets/images/icons/arrow-up.svg" alt=""></button>
                         </div>
                         
                       </form>
@@ -381,24 +396,39 @@ United Kingdom
                   <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                       <p>Reach out to technical support for immediate assistance with system troubleshooting, bug reporting, software updates, or resolving account access and login issues.</p>
-                      <form class="row newsletter">
+                      <form class="row newsletter  needs-validation ajax-form" novalidate
+                        data-access-key="edf5db46-f886-4900-9557-76acc296c7ea"
+                        data-form-type="contact"
+                        data-subject="Product Support"
+                        data-success-modal="#formSuccessModal">
                         <div class="col-md-6 mb-3">
-                          <input type="text" placeholder="First Name" class="form-control bg-white" name="">
+                          <input type="text" placeholder="First Name" class="form-control bg-white" name="first_name" required="">
+                          <div class="invalid-feedback">Please enter your first name.</div>
                         </div>
                         <div class="col-md-6 mb-3">
-                          <input type="text" placeholder="Last Name" class="form-control bg-white" name="">
+                          <input type="text" placeholder="Last Name" class="form-control bg-white" name="last_name" required="">
+                          <div class="invalid-feedback">Please enter your last name.</div>
                         </div>
                         <div class="col-md-12 mb-3">
-                          <input type="email" placeholder="Email" class="form-control bg-white" name="">
+                          <input type="email" placeholder="Email" class="form-control bg-white" name="email" required="">
+                          <div class="invalid-feedback">Please enter a valid email address.</div>
                         </div>
                         <div class="col-md-12 mb-3">
-                          <input type="text" placeholder="Company name" class="form-control bg-white" name="">
+                          <input type="text" placeholder="Company name" class="form-control bg-white" name="company" required="">
+                          <div class="invalid-feedback">Please enter your company name.</div>
                         </div>
                         <div class="col-md-12 mb-3">
-                          <textarea class="form-control bg-white" placeholder="Anything specific you'd like to see in the demo?"></textarea>
+                          <textarea class="form-control bg-white" placeholder="Anything specific you'd like to see in the demo?" name="message" required=""></textarea>
+                          <div class="invalid-feedback">Please enter a message.</div>
                         </div>
+                        <!-- Honeypot -->
+                        <div class="hp-field" aria-hidden="true">
+                          <label for="solutions-website">Leave this field empty</label>
+                          <input type="text" id="solutions-website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+                        <input type="hidden" name="form_timestamp" class="form-timestamp" value="">
                         <div class="col-md-12">
-                          <button class="btn btn--primary w-100" href="#">SUBMIT <img src="./resources/assets/images/icons/arrow-up.svg" alt=""></button>
+                          <button class="btn btn--primary w-100" type="submit">SUBMIT <img src="./resources/assets/images/icons/arrow-up.svg" alt=""></button>
                         </div>
                         
                       </form>
@@ -415,24 +445,39 @@ United Kingdom
                   <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                       <p>Contact general inquiries for help with billing and invoices, media or press requests, career opportunities, or any other questions not covered by sales or technical support.</p>
-                      <form class="row newsletter">
+                      <form class="row newsletter  needs-validation ajax-form" novalidate
+                        data-access-key="edf5db46-f886-4900-9557-76acc296c7ea"
+                        data-form-type="contact"
+                        data-subject="Other Inquiries"
+                        data-success-modal="#formSuccessModal">
                         <div class="col-md-6 mb-3">
-                          <input type="text" placeholder="First Name" class="form-control bg-white" name="">
+                          <input type="text" placeholder="First Name" class="form-control bg-white" name="first_name" required="">
+                          <div class="invalid-feedback">Please enter your first name.</div>
                         </div>
                         <div class="col-md-6 mb-3">
-                          <input type="text" placeholder="Last Name" class="form-control bg-white" name="">
+                          <input type="text" placeholder="Last Name" class="form-control bg-white" name="last_name" required="">
+                          <div class="invalid-feedback">Please enter your last name.</div>
                         </div>
                         <div class="col-md-12 mb-3">
-                          <input type="email" placeholder="Email" class="form-control bg-white" name="">
+                          <input type="email" placeholder="Email" class="form-control bg-white" name="email" required="">
+                          <div class="invalid-feedback">Please enter a valid email address.</div>
                         </div>
                         <div class="col-md-12 mb-3">
-                          <input type="text" placeholder="Company name" class="form-control bg-white" name="">
+                          <input type="text" placeholder="Company name" class="form-control bg-white" name="company" required="">
+                          <div class="invalid-feedback">Please enter your company name.</div>
                         </div>
                         <div class="col-md-12 mb-3">
-                          <textarea class="form-control bg-white" placeholder="Anything specific you'd like to see in the demo?"></textarea>
+                          <textarea class="form-control bg-white" placeholder="Anything specific you'd like to see in the demo?" name="message" required=""></textarea>
+                          <div class="invalid-feedback">Please enter a message.</div>
                         </div>
+                        <!-- Honeypot -->
+                        <div class="hp-field" aria-hidden="true">
+                          <label for="solutions-website">Leave this field empty</label>
+                          <input type="text" id="solutions-website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+                        <input type="hidden" name="form_timestamp" class="form-timestamp" value="">
                         <div class="col-md-12">
-                          <button class="btn btn--primary w-100" href="#">SUBMIT <img src="./resources/assets/images/icons/arrow-up.svg" alt=""></button>
+                          <button class="btn btn--primary w-100" type="submit">SUBMIT <img src="./resources/assets/images/icons/arrow-up.svg" alt=""></button>
                         </div>
                         
                       </form>
@@ -449,6 +494,24 @@ United Kingdom
 
     </div>
   </section>
+
+<!-- Shared success modal (include this once per page) -->
+<div class="modal fade" id="formSuccessModal" tabindex="-1" aria-labelledby="formSuccessModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="formSuccessModalLabel">Message Sent</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Thanks for reaching out! We've received your message and will get back to you shortly.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn--primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <!-- SYNC:FOOTER:START -->
@@ -503,10 +566,26 @@ United Kingdom
             <div class="col-md-6 site-footer__newsletter">
               <h3 class="site-footer__nav-title">Newsletter</h3>
               <p>Join our newsletter to receive the latest news, helpful resources, and exclusive insights to help your business grow.</p>
-              <form class="site-footer__newsletter-form">
-                <input class="site-footer__newsletter-input" type="email" placeholder="Enter your email...">
-                <button class="site-footer__newsletter-btn" type="submit"> SEND <img src="./resources/assets/images/pages/home/right-arrow.svg" alt="Send">
-                </button>
+                <form class="needs-validation ajax-form" novalidate
+                data-access-key="edf5db46-f886-4900-9557-76acc296c7ea"
+                data-form-type="newsletter"
+                data-success-modal="#newsletterSuccessModal"
+                data-min-seconds="1">
+                <div class="input-group has-validation">
+                  <div class="site-footer__newsletter-form">
+                    <input class="site-footer__newsletter-input" type="email" placeholder="Enter your email..." name="email" required="">
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                    <button class="site-footer__newsletter-btn" type="submit"> SEND <img src="./resources/assets/images/pages/home/right-arrow.svg" alt="Send">
+                    </button>
+                  </div>
+                 
+                </div>
+                <!-- Honeypot -->
+      <div class="hp-field" aria-hidden="true">
+        <label for="newsletter-website">Leave this field empty</label>
+        <input type="text" id="newsletter-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+      <input type="hidden" name="form_timestamp" class="form-timestamp" value="">
               </form>
             </div>
           </div>
@@ -517,21 +596,40 @@ United Kingdom
     </div>
   </footer>
 
+<!-- Success modal -->
+<div class="modal fade" id="newsletterSuccessModal" tabindex="-1" aria-labelledby="newsletterSuccessModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newsletterSuccessModalLabel">You're subscribed!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Thanks for subscribing. Keep an eye on your inbox for our next update.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn--primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <div id="back-to-top">
     <img src="./resources/assets/images/icons/arrow-down.svg" width="25" height="auto" alt="Back to top">
   </div>
 
-  <script src="./resources/assets/dist/vendors/cookie-consent.js"></script>
+
 
 
     <!-- SCRIPTS -->
   <script src="./resources/assets/dist/vendors/jquery/jquery-min.js"></script>
+    <script src="./resources/assets/dist/vendors/cookie-consent.js"></script>
+
   <script src="./resources/assets/dist/vendors/bootstrap/bootstrap.js"></script>
   <script src="./resources/assets/dist/vendors/slick-carousel/slick.js"></script>
   <!-- <script src="./resources/assets/dist/vendors/choices-js/choices.min.js"></script> -->
   <script src="./resources/assets/dist/vendors/wow/wow.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+  <script src="./resources/assets/js/forms.js"></script>
   <script src="./resources/assets/dist/functions.js"></script>
 <!-- SYNC:FOOTER:END -->
 
